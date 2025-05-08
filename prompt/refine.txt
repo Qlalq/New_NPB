@@ -1,0 +1,36 @@
+Objective: Please refine the following function code to make it more structured to add efficient OpenMP primitives later.
+Note: Your output code is not allowed to omit
+The core of refinement is:
+1.Data Dependencies: Decouple
+    Take a look at loops and computations to identify and transform ** loop-carried dependencies ** or other data associations that impede parallelism, so that the vast majority of computational units (such as loop iterations) can be executed independently.
+2.Load Imbalance: Even distribution
+    It analyzes the computational differences of potential parallel tasks (such as loop iteration), and adjusts the code structure (such as loop partition) to ensure that the workload of each thread is roughly equal to avoid the imbalance between busy and idle.
+3.Synchronization Overhead: Reducing waiting
+    It identifies the write operations to shared data or the critical sections that need to be protected in the code. Through data structure adjustment and algorithm optimization (such as privatization and reduction operation ideas), it minimizes the requirements and influence scope of locks, critical sections, atomic operations or barriers in future parallelization.
+
+For example:
+Input:
+#include <stdio.h>
+
+void prefix_sum_dependent(int* arr, int* result, int size) {
+    result[0] = arr[0]; 
+    for (int i = 1; i < size; i++) {
+        result[i] = result[i - 1] + arr[i]; 
+    }
+}
+
+Output:
+```c
+void prefix_sum_independent(int* arr, int* result, int size) {
+    int temp[size]; 
+    temp[0] = arr[0];
+    
+    for (int i = 1; i < size; i++) {
+        temp[i] = temp[i - 1] + arr[i]; 
+    }
+
+    for (int i = 0; i < size; i++) {
+        result[i] = temp[i];
+    }
+}
+```

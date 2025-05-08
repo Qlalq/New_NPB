@@ -1,0 +1,25 @@
+In the context of OpenMP program optimization, attention must be paid to the nowait optimization process. Upon detection, if there are multiple parallel code blocks in the original code, proceed with the following steps:
+
+Step 1: Identify Parallel Code Blocks
+
+Step 2: Determine whether the region/statement immediately following a parallel code block is another parallel region or a serial region/statement.
+   - If it is a parallel region, add the nowait primitive to that parallel code block.
+   - Otherwise, do not add nowait and continue with Step 1 to find the next parallel code block.
+   
+Attention:
+(1) If there are no data dependencies between parallel regions, the nowait clause can be used with the following directives:
+   -#pragma omp for nowait
+   -#pragma omp sections nowait
+   -#pragma omp single nowait
+
+(2)  The directive #pragma omp parallel for nowait is illegal and should be rewritten as:
+#pragma omp parallel
+{
+#pragma omp for nowait
+...
+}
+
+(3) The nowait clause cannot be nested within another work-sharing region.
+Work-sharing regions refer to directives such as #pragma omp for, #pragma omp parallel for, and #pragma omp sections.
+
+Note: You can only add and delete omp primitives and use the.patch file format for output

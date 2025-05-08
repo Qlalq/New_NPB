@@ -1,0 +1,10 @@
+In the context of OpenMP program optimization, attention must be paid to the process of optimizing outer loops. Upon detection, if there are code blocks containing multi-level nested loops in the original code, proceed with the following steps:
+
+1. Identify multi-level nested loops and analyze from innermost to outermost which layer has data dependencies.
+2. If a data dependency exists in the innermost loop:
+   - Attempt to restructure the code to eliminate this data dependency and apply OpenMP optimization primitives at the outermost loop.
+3. If restructuring is not feasible:
+   - Determine if it is possible to add OpenMP primitives at any level of nesting, prioritizing adding them at the outermost level whenever possible.
+   - If the innermost loop still has data dependencies that cannot be eliminated, the original code structure is retained, parallelization is not performed, and the original code is output.
+
+Note: You can only add and delete omp primitives and use the.patch file format for output

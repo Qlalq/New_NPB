@@ -1,0 +1,24 @@
+In the context of OpenMP program optimization, attention must be paid to the process of optimizing external functions. Upon detection, if there are code blocks containing external functions or return/break/goto/continue statements in the original code, proceed with the following steps:
+
+1. Identify external functions and analyze whether there is a data race within these functions.
+For example:
+```c
+void process_data(int* data, int i) {{
+    data[i] += data[i - 1];
+}}
+```
+If a data race exists, do not optimize this function. If OpenMP optimization primitives were previously added to it, remove them.
+
+2. Identify return/break/goto/continue statements and analyze whether they are inside loop bodies.
+For example:
+```c
+for (int i = 1; i < size; ++i) {{
+    if(i == size/2)
+        return i;
+}}
+```
+If such statements are inside loop bodies, attempt to restructure the code to move these statements outside while ensuring correctness. If restructuring is not feasible without compromising correctness, do not optimize that loop body. If OpenMP optimization primitives were previously added to it, remove them.
+
+3. Apply parallel optimizations using OpenMP primitives based on rules from Step A.1 and Step A.2.
+
+Note: You can only add and delete omp primitives and use the.patch file format for output

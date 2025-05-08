@@ -1,0 +1,12 @@
+In the context of OpenMP program optimization, attention must be paid to the reduction optimization process. Upon detection, if there are shared variables within loops being updated by multiple threads in the original code, proceed with the following steps:
+
+Step 1:
+   - Analyze which variables are being updated by multiple threads.
+
+Step 2:
+   - Determine whether these variables involve only a few types of reduction operations.
+     - If only one type of reduction operation is involved for a variable, directly use the `reduction` primitive.
+     - If two or more types of reduction operations are involved, attempt to restructure the code to separate these operations and then apply `reduction` primitives individually for each variable.
+     - If restructuring is not feasible, output the original code as it is.
+
+Note: You can only add and delete omp primitives and use the.patch file format for output

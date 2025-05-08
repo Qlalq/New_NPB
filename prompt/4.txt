@@ -1,0 +1,38 @@
+In the context of OpenMP program optimization, attention must be paid to the process of optimizing parallel regions. Upon detection, if there are multiple parallel code blocks in the original code that can be optimized, proceed with the following steps:
+
+Step 1:
+   - Merge all parallel regions where possible. For example:
+     ```c
+     #pragma omp parallel for
+     for (int i = 1; i < size; ++i) {{
+         ...
+     }}
+     #pragma omp parallel for
+     for (int j = 1; j < size; ++j) {{
+         ...
+     }}
+     ```
+   - These two separate parallel code blocks can be optimized as follows:
+     ```c
+     #pragma omp parallel
+     {{
+         #pragma omp for
+         for (int i = 1; i < size; ++i) {{
+             ...
+         }}
+         #pragma omp for
+         for (int j = 1; j < size; ++j) {{
+             ...
+         }}
+    }}
+    ```
+
+Step A.2:
+   - If adjacent parallel regions can be merged, attempt to modify the code structure accordingly.
+
+Step A.3:
+   - If there are serial sections within two merged or adjacent parallel regions, use `#pragma omp critical` to separate them appropriately.
+
+Attention: Each for loop can be considered a parallel region and is treated as a parallel code block.
+
+Note: You can only add and delete omp primitives and use the.patch file format for output
