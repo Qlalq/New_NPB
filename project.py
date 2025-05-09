@@ -66,7 +66,7 @@ def run_NPB(bench, CLASS):
     
     Args:
         bench (str): NPB 基准测试名称，例如 "BT"
-        CLASS (str): 数据大小，例如 "S"
+        CLASS (str): 数据大小，例如 "S", 从小到大可选"S" "W" "A" "B" "C" 
     """
     bench = bench.lower()
     # 构建 make 命令
