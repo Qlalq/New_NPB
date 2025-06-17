@@ -27,12 +27,10 @@ Step 1:
     }}
     ```
 
-Step A.2:
+Step 2:
    - If adjacent parallel regions can be merged, attempt to modify the code structure accordingly.
 
-Step A.3:
+Step 3:
    - If there are serial sections within two merged or adjacent parallel regions, use `#pragma omp critical` to separate them appropriately.
 
 Attention: Each for loop can be considered a parallel region and is treated as a parallel code block.
-
-Note: You can only add and delete omp primitives and use the.patch file format for output

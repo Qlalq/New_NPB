@@ -1,0 +1,33 @@
+Please follow the OpenMP best practices to add the omp primitive to the following C code (including line numbers).
+
+Note: 
+1. Use the code block output of.patch(like ```patch).
+2. Omp primitives can be added, deleted or modified, but c/cpp code cannot.
+3. You can only generate one @@ -old_line_start,old_line_count +new_line_start,new_line_count @@
+
+Sample input:
+static void add(void) {
+  int i, j, k, m;
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	for (m = 0; m < 5; m++) {
+	  u[i][j][k][m] = u[i][j][k][m] + rhs[i][j][k][m];
+	}
+      }
+    }
+  }
+}
+
+Sample output:
+```patch
+--- a/code.c
++++ b/code.c
+@@ -1,5 +1,8 @@
+ static void add(void) {
+   int i, j, k, m;
++#pragma omp parallel for default(shared)
+   for (i = 1; i < grid_points[0]-1; i++) {
+     for (j = 1; j < grid_points[1]-1; j++) {
+       for (k = 1; k < grid_points[2]-1; k++) {
+```

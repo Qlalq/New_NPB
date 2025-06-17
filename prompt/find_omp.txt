@@ -1,0 +1,10 @@
+The list of calling functions contained in the function fragment is "function_list". Please use the code block (``` the name of the called function) to provide the omp primitives that have an effect on the called function.Please pay special attention to the original language containing "parallel"
+For example
+void adi(void) {
+#pragma omp parallel
+compute_rhs (); }
+Then it should be the output.
+```compute_rhs
+#pragma omp parallel
+```
+function_list: 

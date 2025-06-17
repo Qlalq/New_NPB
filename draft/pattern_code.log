@@ -1,0 +1,2727 @@
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+BT has been initialized
+找到的待优化函数有(含main): {'x_solve_cell', 'z_solve_cell', 'lhsx', 'main', 'rhs_norm', 'lhsy', 'exact_rhs', 'set_constants', 'binvrhs', 'error_norm', 'y_backsubstitute', 'add', 'y_solve', 'exact_solution', 'compute_rhs', 'x_solve', 'z_backsubstitute', 'lhsz', 'z_solve', 'adi', 'verify', 'lhsinit', 'initialize', 'matvec_sub', 'matmul_sub', 'y_solve_cell', 'binvcrhs', 'x_backsubstitute'}
+Optimization order for functions in BT: ['main', 'adi', 'exact_rhs', 'initialize', 'lhsinit', 'set_constants', 'verify', 'add', 'compute_rhs', 'x_solve', 'y_solve', 'z_solve', 'exact_solution', 'error_norm', 'rhs_norm', 'lhsx', 'x_backsubstitute', 'x_solve_cell', 'lhsy', 'y_backsubstitute', 'y_solve_cell', 'lhsz', 'z_backsubstitute', 'z_solve_cell', 'binvcrhs', 'binvrhs', 'matmul_sub', 'matvec_sub']
+Warning: File for function main not found in /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_#_omp, skipping...
+Processing adi.c in BT...
+
+Generation Code:
+static void adi(void) {
+    #pragma omp single
+    {
+        compute_rhs();
+        x_solve();
+        y_solve();
+        z_solve();
+        add();
+    }
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/adi.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 adi 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,0.05
+**********
+New best time for BT: 0.05 seconds with optimization of adi
+Found OMP primitives for add: #pragma omp single
+Found OMP primitives for compute_rhs: #pragma omp single
+Found OMP primitives for x_solve: #pragma omp single
+Found OMP primitives for y_solve: #pragma omp single
+Found OMP primitives for z_solve: #pragma omp single
+Processing exact_rhs.c in BT...
+
+Generation Code:
+static void exact_rhs(void) {
+{
+  double dtemp[5], xi, eta, zeta, dtpp;
+  int m, i, j, k, ip1, im1, jp1, jm1, km1, kp1;
+
+  // 1. Initialize forcing array
+  #pragma omp parallel for private(j, k, m) schedule(static)
+  for (i = 0; i < grid_points[0]; i++) {
+    for (j = 0; j < grid_points[1]; j++) {
+      for (k = 0; k < grid_points[2]; k++) {
+	for (m = 0; m < 5; m++) {
+	  forcing[i][j][k][m] = 0.0;
+	}
+      }
+    }
+  }
+
+  // 2. Calculate X-derivative contributions
+  for (j = 1; j < grid_points[1]-1; j++) { // Outer loop j - sequential
+    eta = (double)j * dnym1;
+    for (k = 1; k < grid_points[2]-1; k++) { // Outer loop k - sequential
+      zeta = (double)k * dnzm1;
+      #pragma omp parallel private(dtemp, xi, dtpp, i, m, im1, ip1)
+      // Outer loop variables j, k, eta, zeta are shared and constant within this parallel region.
+      // Global arrays ue, buf, cuf, q, forcing are shared.
+      {
+        #pragma omp for schedule(static)
+        for (i = 0; i < grid_points[0]; i++) {
+          xi = (double)i * dnxm1;
+          exact_solution(xi, eta, zeta, dtemp);
+          for (m = 0; m < 5; m++) {
+            ue[i][m] = dtemp[m];
+          }
+          dtpp = 1.0 / dtemp[0];
+          for (m = 1; m <= 4; m++) {
+            buf[i][m] = dtpp * dtemp[m];
+          }
+          cuf[i]   = buf[i][1] * buf[i][1];
+          buf[i][0] = cuf[i] + buf[i][2] * buf[i][2] + 
+            buf[i][3] * buf[i][3];
+          q[i] = 0.5*(buf[i][1]*ue[i][1] + buf[i][2]*ue[i][2] +
+              buf[i][3]*ue[i][3]);
+        } // Implicit barrier
+
+        #pragma omp for schedule(static)
+        for (i = 1; i < grid_points[0]-1; i++) {
+          im1 = i-1;
+          ip1 = i+1;
+          forcing[i][j][k][0] = forcing[i][j][k][0] -
+            tx2*(ue[ip1][1]-ue[im1][1])+
+            dx1tx1*(ue[ip1][0]-2.0*ue[i][0]+ue[im1][0]);
+          forcing[i][j][k][1] = forcing[i][j][k][1] -
+            tx2 * ((ue[ip1][1]*buf[ip1][1]+c2*(ue[ip1][4]-q[ip1]))-
+             (ue[im1][1]*buf[im1][1]+c2*(ue[im1][4]-q[im1])))+
+            xxcon1*(buf[ip1][1]-2.0*buf[i][1]+buf[im1][1])+
+            dx2tx1*( ue[ip1][1]-2.0* ue[i][1]+ ue[im1][1]);
+          forcing[i][j][k][2] = forcing[i][j][k][2] -
+            tx2 * (ue[ip1][2]*buf[ip1][1]-ue[im1][2]*buf[im1][1])+
+            xxcon2*(buf[ip1][2]-2.0*buf[i][2]+buf[im1][2])+
+            dx3tx1*( ue[ip1][2]-2.0* ue[i][2]+ ue[im1][2]);
+          forcing[i][j][k][3] = forcing[i][j][k][3] -
+            tx2*(ue[ip1][3]*buf[ip1][1]-ue[im1][3]*buf[im1][1])+
+            xxcon2*(buf[ip1][3]-2.0*buf[i][3]+buf[im1][3])+
+            dx4tx1*( ue[ip1][3]-2.0* ue[i][3]+ ue[im1][3]);
+          forcing[i][j][k][4] = forcing[i][j][k][4] -
+            tx2*(buf[ip1][1]*(c1*ue[ip1][4]-c2*q[ip1])-
+                 buf[im1][1]*(c1*ue[im1][4]-c2*q[im1]))+
+            0.5*xxcon3*(buf[ip1][0]-2.0*buf[i][0]+buf[im1][0])+
+            xxcon4*(cuf[ip1]-2.0*cuf[i]+cuf[im1])+
+            xxcon5*(buf[ip1][4]-2.0*buf[i][4]+buf[im1][4])+
+            dx5tx1*( ue[ip1][4]-2.0* ue[i][4]+ ue[im1][4]);
+        } // Implicit barrier
+
+        #pragma omp for schedule(static)
+        for (m = 0; m < 5; m++) {
+          i = 1; // Uses thread-private i
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (5.0*ue[i][m] - 4.0*ue[i+1][m] +ue[i+2][m]);
+          i = 2; // Uses thread-private i
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (-4.0*ue[i-1][m] + 6.0*ue[i][m] -
+              4.0*ue[i+1][m] +     ue[i+2][m]);
+          
+          // This inner loop uses its own 'i_loop', distinct from thread-private 'i'
+          for (int i_loop = 1*3; i_loop <= grid_points[0]-3*1-1; i_loop++) {
+            forcing[i_loop][j][k][m] = forcing[i_loop][j][k][m] - dssp*
+              (ue[i_loop-2][m] - 4.0*ue[i_loop-1][m] +
+               6.0*ue[i_loop][m] - 4.0*ue[i_loop+1][m] + ue[i_loop+2][m]);
+          }
+          
+          i = grid_points[0]-3; // Uses thread-private i
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (ue[i-2][m] - 4.0*ue[i-1][m] +
+             6.0*ue[i][m] - 4.0*ue[i+1][m]);
+          i = grid_points[0]-2; // Uses thread-private i
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (ue[i-2][m] - 4.0*ue[i-1][m] + 5.0*ue[i][m]);
+        } // Implicit barrier
+      } // End #pragma omp parallel
+    } // End k loop
+  } // End j loop
+
+  // 3. Calculate Y-derivative contributions
+  for (i = 1; i < grid_points[0]-1; i++) { // Outer loop i - sequential
+    xi = (double)i * dnxm1;
+    for (k = 1; k < grid_points[2]-1; k++) { // Outer loop k - sequential
+      zeta = (double)k * dnzm1;
+      #pragma omp parallel private(dtemp, eta, dtpp, j, m, jm1, jp1)
+      // Outer loop variables i, k, xi, zeta are shared and constant within this parallel region.
+      {
+        #pragma omp for schedule(static)
+        for (j = 0; j < grid_points[1]; j++) {
+          eta = (double)j * dnym1;
+          exact_solution(xi, eta, zeta, dtemp);
+          for (m = 0; m < 5; m++) {
+            ue[j][m] = dtemp[m];
+          }
+          dtpp = 1.0/dtemp[0];
+          for (m = 1; m <= 4; m++) {
+            buf[j][m] = dtpp * dtemp[m];
+          }
+          cuf[j]   = buf[j][2] * buf[j][2];
+          buf[j][0] = cuf[j] + buf[j][1] * buf[j][1] + 
+            buf[j][3] * buf[j][3];
+          q[j] = 0.5*(buf[j][1]*ue[j][1] + buf[j][2]*ue[j][2] +
+              buf[j][3]*ue[j][3]);
+        } // Implicit barrier
+
+        #pragma omp for schedule(static)
+        for (j = 1; j < grid_points[1]-1; j++) {
+          jm1 = j-1;
+          jp1 = j+1;
+          forcing[i][j][k][0] = forcing[i][j][k][0] -
+            ty2*( ue[jp1][2]-ue[jm1][2] )+
+            dy1ty1*(ue[jp1][0]-2.0*ue[j][0]+ue[jm1][0]);
+          forcing[i][j][k][1] = forcing[i][j][k][1] -
+            ty2*(ue[jp1][1]*buf[jp1][2]-ue[jm1][1]*buf[jm1][2])+
+            yycon2*(buf[jp1][1]-2.0*buf[j][1]+buf[jm1][1])+
+            dy2ty1*( ue[jp1][1]-2.0* ue[j][1]+ ue[jm1][1]);
+          forcing[i][j][k][2] = forcing[i][j][k][2] -
+            ty2*((ue[jp1][2]*buf[jp1][2]+c2*(ue[jp1][4]-q[jp1]))-
+                 (ue[jm1][2]*buf[jm1][2]+c2*(ue[jm1][4]-q[jm1])))+
+            yycon1*(buf[jp1][2]-2.0*buf[j][2]+buf[jm1][2])+
+            dy3ty1*( ue[jp1][2]-2.0*ue[j][2] +ue[jm1][2]);
+          forcing[i][j][k][3] = forcing[i][j][k][3] -
+            ty2*(ue[jp1][3]*buf[jp1][2]-ue[jm1][3]*buf[jm1][2])+
+            yycon2*(buf[jp1][3]-2.0*buf[j][3]+buf[jm1][3])+
+            dy4ty1*( ue[jp1][3]-2.0*ue[j][3]+ ue[jm1][3]);
+          forcing[i][j][k][4] = forcing[i][j][k][4] -
+            ty2*(buf[jp1][2]*(c1*ue[jp1][4]-c2*q[jp1])-
+                 buf[jm1][2]*(c1*ue[jm1][4]-c2*q[jm1]))+
+            0.5*yycon3*(buf[jp1][0]-2.0*buf[j][0]+
+                        buf[jm1][0])+
+            yycon4*(cuf[jp1]-2.0*cuf[j]+cuf[jm1])+
+            yycon5*(buf[jp1][4]-2.0*buf[j][4]+buf[jm1][4])+
+            dy5ty1*(ue[jp1][4]-2.0*ue[j][4]+ue[jm1][4]);
+        } // Implicit barrier
+
+        #pragma omp for schedule(static)
+        for (m = 0; m < 5; m++) {
+          j = 1; // Uses thread-private j
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (5.0*ue[j][m] - 4.0*ue[j+1][m] +ue[j+2][m]);
+          j = 2; // Uses thread-private j
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (-4.0*ue[j-1][m] + 6.0*ue[j][m] -
+             4.0*ue[j+1][m] +       ue[j+2][m]);
+
+          for (int j_loop = 1*3; j_loop <= grid_points[1]-3*1-1; j_loop++) {
+            forcing[i][j_loop][k][m] = forcing[i][j_loop][k][m] - dssp*
+              (ue[j_loop-2][m] - 4.0*ue[j_loop-1][m] +
+               6.0*ue[j_loop][m] - 4.0*ue[j_loop+1][m] + ue[j_loop+2][m]);
+          }
+          
+          j = grid_points[1]-3; // Uses thread-private j
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (ue[j-2][m] - 4.0*ue[j-1][m] +
+             6.0*ue[j][m] - 4.0*ue[j+1][m]);
+          j = grid_points[1]-2; // Uses thread-private j
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (ue[j-2][m] - 4.0*ue[j-1][m] + 5.0*ue[j][m]);
+        } // Implicit barrier
+      } // End #pragma omp parallel
+    } // End k loop
+  } // End i loop
+
+  // 4. Calculate Z-derivative contributions
+  for (i = 1; i < grid_points[0]-1; i++) { // Outer loop i - sequential
+    xi = (double)i * dnxm1;
+    for (j = 1; j < grid_points[1]-1; j++) { // Outer loop j - sequential
+      eta = (double)j * dnym1;
+      #pragma omp parallel private(dtemp, zeta, dtpp, k, m, km1, kp1)
+      // Outer loop variables i, j, xi, eta are shared and constant within this parallel region.
+      {
+        #pragma omp for schedule(static)
+        for (k = 0; k < grid_points[2]; k++) {
+          zeta = (double)k * dnzm1;
+          exact_solution(xi, eta, zeta, dtemp);
+          for (m = 0; m < 5; m++) {
+            ue[k][m] = dtemp[m];
+          }
+          dtpp = 1.0/dtemp[0];
+          for (m = 1; m <= 4; m++) {
+            buf[k][m] = dtpp * dtemp[m];
+          }
+          cuf[k]   = buf[k][3] * buf[k][3];
+          buf[k][0] = cuf[k] + buf[k][1] * buf[k][1] + 
+            buf[k][2] * buf[k][2];
+          q[k] = 0.5*(buf[k][1]*ue[k][1] + buf[k][2]*ue[k][2] +
+              buf[k][3]*ue[k][3]);
+        } // Implicit barrier
+
+        #pragma omp for schedule(static)
+        for (k = 1; k < grid_points[2]-1; k++) {
+          km1 = k-1;
+          kp1 = k+1;
+          forcing[i][j][k][0] = forcing[i][j][k][0] -
+            tz2*( ue[kp1][3]-ue[km1][3] )+
+            dz1tz1*(ue[kp1][0]-2.0*ue[k][0]+ue[km1][0]);
+          forcing[i][j][k][1] = forcing[i][j][k][1] -
+            tz2 * (ue[kp1][1]*buf[kp1][3]-ue[km1][1]*buf[km1][3])+
+            zzcon2*(buf[kp1][1]-2.0*buf[k][1]+buf[km1][1])+
+            dz2tz1*( ue[kp1][1]-2.0* ue[k][1]+ ue[km1][1]);
+          forcing[i][j][k][2] = forcing[i][j][k][2] -
+            tz2 * (ue[kp1][2]*buf[kp1][3]-ue[km1][2]*buf[km1][3])+
+            zzcon2*(buf[kp1][2]-2.0*buf[k][2]+buf[km1][2])+
+            dz3tz1*(ue[kp1][2]-2.0*ue[k][2]+ue[km1][2]);
+          forcing[i][j][k][3] = forcing[i][j][k][3] -
+            tz2 * ((ue[kp1][3]*buf[kp1][3]+c2*(ue[kp1][4]-q[kp1]))-
+                   (ue[km1][3]*buf[km1][3]+c2*(ue[km1][4]-q[km1])))+
+            zzcon1*(buf[kp1][3]-2.0*buf[k][3]+buf[km1][3])+
+            dz4tz1*( ue[kp1][3]-2.0*ue[k][3] +ue[km1][3]);
+          forcing[i][j][k][4] = forcing[i][j][k][4] -
+            tz2 * (buf[kp1][3]*(c1*ue[kp1][4]-c2*q[kp1])-
+                   buf[km1][3]*(c1*ue[km1][4]-c2*q[km1]))+
+            0.5*zzcon3*(buf[kp1][0]-2.0*buf[k][0]
+                        +buf[km1][0])+
+            zzcon4*(cuf[kp1]-2.0*cuf[k]+cuf[km1])+
+            zzcon5*(buf[kp1][4]-2.0*buf[k][4]+buf[km1][4])+
+            dz5tz1*( ue[kp1][4]-2.0*ue[k][4]+ ue[km1][4]);
+        } // Implicit barrier
+
+        #pragma omp for schedule(static)
+        for (m = 0; m < 5; m++) {
+          k = 1; // Uses thread-private k
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (5.0*ue[k][m] - 4.0*ue[k+1][m] +ue[k+2][m]);
+          k = 2; // Uses thread-private k
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (-4.0*ue[k-1][m] + 6.0*ue[k][m] -
+             4.0*ue[k+1][m] +       ue[k+2][m]);
+
+          for (int k_loop = 1*3; k_loop <= grid_points[2]-3*1-1; k_loop++) {
+            forcing[i][j][k_loop][m] = forcing[i][j][k_loop][m] - dssp*
+              (ue[k_loop-2][m] - 4.0*ue[k_loop-1][m] +
+               6.0*ue[k_loop][m] - 4.0*ue[k_loop+1][m] + ue[k_loop+2][m]);
+          }
+
+          k = grid_points[2]-3; // Uses thread-private k
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (ue[k-2][m] - 4.0*ue[k-1][m] +
+             6.0*ue[k][m] - 4.0*ue[k+1][m]);
+          k = grid_points[2]-2; // Uses thread-private k
+          forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
+            (ue[k-2][m] - 4.0*ue[k-1][m] + 5.0*ue[k][m]);
+        } // Implicit barrier
+      } // End #pragma omp parallel
+    } // End j loop
+  } // End i loop
+
+  // 5. Final negation of forcing
+  #pragma omp parallel for private(j, k, m) schedule(static)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	for (m = 0; m < 5; m++) {
+	  forcing[i][j][k][m] = -1.0 * forcing[i][j][k][m];
+	}
+      }
+    }
+  }
+}
+} 
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/exact_rhs.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 exact_rhs 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,0.06
+**********
+No improvement or execution failed. Reverting changes for exact_rhs.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing initialize.c in BT...
+
+Generation Code:
+for (i = 0; i < IMAX; i++) {
+        for (j = 0; j < IMAX; j++) {
+            for (k = 0; k < IMAX; k++) {
+                for (m = 0; m < 5; m++) {
+                    u[i][j][k][m] = 1.0;
+                }
+            }
+        }
+    } 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/initialize.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 initialize 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for initialize.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing lhsinit.c in BT...
+
+Generation Code:
+static void lhsinit(void) {
+{
+  int i, j, k, m, n;
+
+  // Start a single parallel region to cover both loop nests.
+  // default(none) requires explicit sharing attributes for all variables.
+  // lhs and grid_points are shared: grid_points is read-only, lhs is written to by different threads in distinct locations.
+  // m and n are private: each thread needs its own copy for the inner loops.
+  // i,j,k are loop control variables for the omp for constructs and will be automatically privatized by them.
+#pragma omp parallel default(none) private(m, n) shared(lhs, grid_points)
+  {
+    // First loop nest: Initialize elements to 0.0.
+    // collapse(3) combines the outer three loops for better scheduling.
+#pragma omp for collapse(3)
+    for (i = 0; i < grid_points[0]; i++) {
+      for (j = 0; j < grid_points[1]; j++) {
+        for (k = 0; k < grid_points[2]; k++) {
+          for (m = 0; m < 5; m++) {
+            for (n = 0; n < 5; n++) {
+              lhs[i][j][k][0][m][n] = 0.0;
+              lhs[i][j][k][1][m][n] = 0.0;
+              lhs[i][j][k][2][m][n] = 0.0;
+            }
+          }
+        }
+      }
+    }
+    // Implicit barrier: all threads synchronize here before proceeding.
+
+    // Second loop nest: Initialize diagonal elements to 1.0.
+#pragma omp for collapse(3)
+    for (i = 0; i < grid_points[0]; i++) {
+      for (j = 0; j < grid_points[1]; j++) {
+        for (k = 0; k < grid_points[2]; k++) {
+          for (m = 0; m < 5; m++) {
+            lhs[i][j][k][1][m][m] = 1.0;
+          }
+        }
+      }
+    }
+    // Implicit barrier: all threads synchronize here.
+  } // End of parallel region. Implicit barrier here.
+}
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/lhsinit.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 lhsinit 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,0.06
+**********
+No improvement or execution failed. Reverting changes for lhsinit.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing set_constants.c in BT...
+
+Generation Code:
+#include <math.h> // For fmax, if max is not a macro. Or provide a macro definition.
+// Assuming max is defined appropriately, e.g.:
+#ifndef max
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+#endif
+
+// Declarations for global variables used (assuming they exist elsewhere)
+extern double ce[5][13];
+extern double c1, c2, c3, c4, c5;
+extern double dnxm1, dnym1, dnzm1;
+extern int grid_points[3]; // Assuming size 3, e.g., {NMAX, NMAX, NMAX}
+extern double c1c2, c1c5, c3c4, c1345, conz1;
+extern double tx1, tx2, tx3, ty1, ty2, ty3, tz1, tz2, tz3;
+extern double dx1, dx2, dx3, dx4, dx5;
+extern double dy1, dy2, dy3, dy4, dy5;
+extern double dz1, dz2, dz3, dz4, dz5;
+extern double dxmax, dymax, dzmax;
+extern double dssp, c4dssp, c5dssp;
+extern double dt; // Delta t, timestep
+extern double dttx1, dttx2, dtty1, dtty2, dttz1, dttz2;
+extern double c2dttx1, c2dtty1, c2dttz1;
+extern double dtdssp, comz1, comz4, comz5, comz6;
+extern double c3c4tx3, c3c4ty3, c3c4tz3;
+extern double dx1tx1, dx2tx1, dx3tx1, dx4tx1, dx5tx1;
+extern double dy1ty1, dy2ty1, dy3ty1, dy4ty1, dy5ty1;
+extern double dz1tz1, dz2tz1, dz3tz1, dz4tz1, dz5tz1;
+extern double c2iv, con43, con16;
+extern double xxcon1, xxcon2, xxcon3, xxcon4, xxcon5;
+extern double yycon1, yycon2, yycon3, yycon4, yycon5;
+extern double zzcon1, zzcon2, zzcon3, zzcon4, zzcon5;
+
+
+static void set_constants(void) {
+#pragma omp parallel
+  {
+#pragma omp sections
+    {
+#pragma omp section
+      {
+        ce[0][0]  = 2.0; ce[0][1]  = 0.0; ce[0][2]  = 0.0; ce[0][3]  = 4.0; ce[0][4]  = 5.0;
+        ce[0][5]  = 3.0; ce[0][6]  = 0.5; ce[0][7]  = 0.02; ce[0][8]  = 0.01; ce[0][9]  = 0.03;
+        ce[0][10] = 0.5; ce[0][11] = 0.4; ce[0][12] = 0.3;
+      }
+#pragma omp section
+      {
+        ce[1][0]  = 1.0; ce[1][1]  = 0.0; ce[1][2]  = 0.0; ce[1][3]  = 0.0; ce[1][4]  = 1.0;
+        ce[1][5]  = 2.0; ce[1][6]  = 3.0; ce[1][7]  = 0.01; ce[1][8]  = 0.03; ce[1][9]  = 0.02;
+        ce[1][10] = 0.4; ce[1][11] = 0.3; ce[1][12] = 0.5;
+      }
+#pragma omp section
+      {
+        ce[2][0]  = 2.0; ce[2][1]  = 2.0; ce[2][2]  = 0.0; ce[2][3]  = 0.0; ce[2][4]  = 0.0;
+        ce[2][5]  = 2.0; ce[2][6]  = 3.0; ce[2][7]  = 0.04; ce[2][8]  = 0.03; ce[2][9]  = 0.05;
+        ce[2][10] = 0.3; ce[2][11] = 0.5; ce[2][12] = 0.4;
+      }
+#pragma omp section
+      {
+        ce[3][0]  = 2.0; ce[3][1]  = 2.0; ce[3][2]  = 0.0; ce[3][3]  = 0.0; ce[3][4]  = 0.0;
+        ce[3][5]  = 2.0; ce[3][6]  = 3.0; ce[3][7]  = 0.03; ce[3][8]  = 0.05; ce[3][9]  = 0.04;
+        ce[3][10] = 0.2; ce[3][11] = 0.1; ce[3][12] = 0.3;
+      }
+#pragma omp section
+      {
+        ce[4][0]  = 5.0; ce[4][1]  = 4.0; ce[4][2]  = 3.0; ce[4][3]  = 2.0; ce[4][4]  = 0.1;
+        ce[4][5]  = 0.4; ce[4][6]  = 0.3; ce[4][7]  = 0.05; ce[4][8]  = 0.04; ce[4][9]  = 0.03;
+        ce[4][10] = 0.1; ce[4][11] = 0.3; ce[4][12] = 0.2;
+      }
+#pragma omp section
+      {
+        c1 = 1.4;
+        c2 = 0.4;
+        c3 = 0.1;
+        c4 = 1.0;
+        c5 = 1.4;
+      }
+#pragma omp section
+      {
+        dx1 = 0.75; dx2 = 0.75; dx3 = 0.75; dx4 = 0.75; dx5 = 0.75;
+        dy1 = 0.75; dy2 = 0.75; dy3 = 0.75; dy4 = 0.75; dy5 = 0.75;
+        dz1 = 1.0;  dz2 = 1.0;  dz3 = 1.0;  dz4 = 1.0;  dz5 = 1.0;
+      }
+#pragma omp section
+      {
+        c2iv  = 2.5;
+        con43 = 4.0/3.0;
+        con16 = 1.0/6.0;
+      }
+    } // End of sections: implicit barrier here ensures all above assignments are complete.
+
+#pragma omp single
+    {
+      dnxm1 = 1.0 / (double)(grid_points[0]-1);
+      dnym1 = 1.0 / (double)(grid_points[1]-1);
+      dnzm1 = 1.0 / (double)(grid_points[2]-1);
+
+      c1c2 = c1 * c2;
+      c1c5 = c1 * c5;
+      c3c4 = c3 * c4;
+      c1345 = c1c5 * c3c4;
+      conz1 = (1.0-c1c5);
+
+      tx1 = 1.0 / (dnxm1 * dnxm1);
+      tx2 = 1.0 / (2.0 * dnxm1);
+      tx3 = 1.0 / dnxm1;
+
+      ty1 = 1.0 / (dnym1 * dnym1);
+      ty2 = 1.0 / (2.0 * dnym1);
+      ty3 = 1.0 / dnym1;
+
+      tz1 = 1.0 / (dnzm1 * dnzm1);
+      tz2 = 1.0 / (2.0 * dnzm1);
+      tz3 = 1.0 / dnzm1;
+
+      dxmax = max(dx3, dx4);
+      dymax = max(dy2, dy4);
+      dzmax = max(dz2, dz3);
+
+      dssp = 0.25 * max(dx1, max(dy1, dz1) );
+
+      c4dssp = 4.0 * dssp;
+      c5dssp = 5.0 * dssp;
+
+      dttx1 = dt*tx1;
+      dttx2 = dt*tx2;
+      dtty1 = dt*ty1;
+      dtty2 = dt*ty2;
+      dttz1 = dt*tz1;
+      dttz2 = dt*tz2;
+
+      c2dttx1 = 2.0*dttx1;
+      c2dtty1 = 2.0*dtty1;
+      c2dttz1 = 2.0*dttz1;
+
+      dtdssp = dt*dssp;
+      comz1  = dtdssp;
+      comz4  = 4.0*dtdssp;
+      comz5  = 5.0*dtdssp;
+      comz6  = 6.0*dtdssp;
+
+      c3c4tx3 = c3c4*tx3;
+      c3c4ty3 = c3c4*ty3;
+      c3c4tz3 = c3c4*tz3;
+
+      dx1tx1 = dx1*tx1;
+      dx2tx1 = dx2*tx1;
+      dx3tx1 = dx3*tx1;
+      dx4tx1 = dx4*tx1;
+      dx5tx1 = dx5*tx1;
+
+      dy1ty1 = dy1*ty1;
+      dy2ty1 = dy2*ty1;
+      dy3ty1 = dy3*ty1;
+      dy4ty1 = dy4*ty1;
+      dy5ty1 = dy5*ty1;
+
+      dz1tz1 = dz1*tz1;
+      dz2tz1 = dz2*tz1;
+      dz3tz1 = dz3*tz1;
+      dz4tz1 = dz4*tz1;
+      dz5tz1 = dz5*tz1;
+
+      xxcon1 = c3c4tx3*con43*tx3;
+      xxcon2 = c3c4tx3*tx3;
+      xxcon3 = c3c4tx3*conz1*tx3;
+      xxcon4 = c3c4tx3*con16*tx3;
+      xxcon5 = c3c4tx3*c1c5*tx3;
+
+      yycon1 = c3c4ty3*con43*ty3;
+      yycon2 = c3c4ty3*ty3;
+      yycon3 = c3c4ty3*conz1*ty3;
+      yycon4 = c3c4ty3*con16*ty3;
+      yycon5 = c3c4ty3*c1c5*ty3;
+
+      zzcon1 = c3c4tz3*con43*tz3;
+      zzcon2 = c3c4tz3*tz3;
+      zzcon3 = c3c4tz3*conz1*tz3;
+      zzcon4 = c3c4tz3*con16*tz3;
+      zzcon5 = c3c4tz3*c1c5*tz3;
+    } // End of single construct
+  } // End of parallel region: implicit barrier here
+}
+
+// Dummy declarations for compilation if needed standalone
+// double ce[5][13];
+// double c1, c2, c3, c4, c5;
+// double dnxm1, dnym1, dnzm1;
+// int grid_points[3] = {64, 64, 64}; // Example values
+// double c1c2, c1c5, c3c4, c1345, conz1;
+// double tx1, tx2, tx3, ty1, ty2, ty3, tz1, tz2, tz3;
+// double dx1, dx2, dx3, dx4, dx5;
+// double dy1, dy2, dy3, dy4, dy5;
+// double dz1, dz2, dz3, dz4, dz5;
+// double dxmax, dymax, dzmax;
+// double dssp, c4dssp, c5dssp;
+// double dt = 0.001; // Example value
+// double dttx1, dttx2, dtty1, dtty2, dttz1, dttz2;
+// double c2dttx1, c2dtty1, c2dttz1;
+// double dtdssp, comz1, comz4, comz5, comz6;
+// double c3c4tx3, c3c4ty3, c3c4tz3;
+// double dx1tx1, dx2tx1, dx3tx1, dx4tx1, dx5tx1;
+// double dy1ty1, dy2ty1, dy3ty1, dy4ty1, dy5ty1;
+// double dz1tz1, dz2tz1, dz3tz1, dz4tz1, dz5tz1;
+// double c2iv, con43, con16;
+// double xxcon1, xxcon2, xxcon3, xxcon4, xxcon5;
+// double yycon1, yycon2, yycon3, yycon4, yycon5;
+// double zzcon1, zzcon2, zzcon3, zzcon4, zzcon5; 
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/set_constants.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 set_constants 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,0.06
+**********
+No improvement or execution failed. Reverting changes for set_constants.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing verify.c in BT...
+
+Generation Code:
+for (m = 0; m < 5; m++) {
+      xcr[m] = xcr[m] / dt;
+    } 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/verify.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 verify 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for verify.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing add.c in BT...
+
+Generation Code:
+static void add(void) {
+  int i, j, k, m;
+  // Parallelize the three outer loops.
+  // i, j, k are loop counters for the collapsed loops; OpenMP makes them private.
+  // m is the loop counter for the innermost loop; it needs to be private to each thread.
+  // u, rhs, and grid_points are shared by default, which is correct.
+#pragma omp parallel for collapse(3) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	for (m = 0; m < 5; m++) {
+	  u[i][j][k][m] = u[i][j][k][m] + rhs[i][j][k][m];
+	}
+      }
+    }
+  }
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/add.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 add 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,0.78
+**********
+No improvement or execution failed. Reverting changes for add.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing compute_rhs.c in BT...
+
+Generation Code:
+static void compute_rhs(void) {
+  int i, j, k, m;
+  double rho_inv, uijk, up1, um1, vijk, vp1, vm1, wijk, wp1, wm1;
+
+#pragma omp parallel for collapse(3) private(rho_inv)
+  for (i = 0; i < grid_points[0]; i++) {
+    for (j = 0; j < grid_points[1]; j++) {
+      for (k = 0; k < grid_points[2]; k++) {
+	rho_inv = 1.0/u[i][j][k][0];
+	rho_i[i][j][k] = rho_inv;
+	us[i][j][k] = u[i][j][k][1] * rho_inv;
+	vs[i][j][k] = u[i][j][k][2] * rho_inv;
+	ws[i][j][k] = u[i][j][k][3] * rho_inv;
+	square[i][j][k] = 0.5 * (u[i][j][k][1]*u[i][j][k][1] + 
+				 u[i][j][k][2]*u[i][j][k][2] +
+				 u[i][j][k][3]*u[i][j][k][3] ) * rho_inv;
+	qs[i][j][k] = square[i][j][k] * rho_inv;
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(m)
+  for (i = 0; i < grid_points[0]; i++) {
+    for (j = 0; j < grid_points[1]; j++) {
+      for (k = 0; k < grid_points[2]; k++) {
+	for (m = 0; m < 5; m++) {
+	  rhs[i][j][k][m] = forcing[i][j][k][m];
+	}
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(uijk, up1, um1)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	uijk = us[i][j][k];
+	up1  = us[i+1][j][k];
+	um1  = us[i-1][j][k];
+	rhs[i][j][k][0] = rhs[i][j][k][0] + dx1tx1 * 
+	  (u[i+1][j][k][0] - 2.0*u[i][j][k][0] + 
+	   u[i-1][j][k][0]) -
+	  tx2 * (u[i+1][j][k][1] - u[i-1][j][k][1]);
+	rhs[i][j][k][1] = rhs[i][j][k][1] + dx2tx1 * 
+	  (u[i+1][j][k][1] - 2.0*u[i][j][k][1] + 
+	   u[i-1][j][k][1]) +
+	  xxcon2*con43 * (up1 - 2.0*uijk + um1) -
+	  tx2 * (u[i+1][j][k][1]*up1 - 
+		 u[i-1][j][k][1]*um1 +
+		 (u[i+1][j][k][4]- square[i+1][j][k]-
+		  u[i-1][j][k][4]+ square[i-1][j][k])*
+		 c2);
+	rhs[i][j][k][2] = rhs[i][j][k][2] + dx3tx1 * 
+	  (u[i+1][j][k][2] - 2.0*u[i][j][k][2] +
+	   u[i-1][j][k][2]) +
+	  xxcon2 * (vs[i+1][j][k] - 2.0*vs[i][j][k] +
+		    vs[i-1][j][k]) -
+	  tx2 * (u[i+1][j][k][2]*up1 - 
+		 u[i-1][j][k][2]*um1);
+	rhs[i][j][k][3] = rhs[i][j][k][3] + dx4tx1 * 
+	  (u[i+1][j][k][3] - 2.0*u[i][j][k][3] +
+	   u[i-1][j][k][3]) +
+	  xxcon2 * (ws[i+1][j][k] - 2.0*ws[i][j][k] +
+		    ws[i-1][j][k]) -
+	  tx2 * (u[i+1][j][k][3]*up1 - 
+		 u[i-1][j][k][3]*um1);
+	rhs[i][j][k][4] = rhs[i][j][k][4] + dx5tx1 * 
+	  (u[i+1][j][k][4] - 2.0*u[i][j][k][4] +
+	   u[i-1][j][k][4]) +
+	  xxcon3 * (qs[i+1][j][k] - 2.0*qs[i][j][k] +
+		    qs[i-1][j][k]) +
+	  xxcon4 * (up1*up1 -       2.0*uijk*uijk + 
+		    um1*um1) +
+	  xxcon5 * (u[i+1][j][k][4]*rho_i[i+1][j][k] - 
+		    2.0*u[i][j][k][4]*rho_i[i][j][k] +
+		    u[i-1][j][k][4]*rho_i[i-1][j][k]) -
+	  tx2 * ( (c1*u[i+1][j][k][4] - 
+		   c2*square[i+1][j][k])*up1 -
+		  (c1*u[i-1][j][k][4] - 
+		   c2*square[i-1][j][k])*um1 );
+      }
+    }
+  }
+
+  // Note: In the following boundary condition loops, 'i' is fixed.
+  // We parallelize over 'j' and 'k'.
+  i = 1;
+#pragma omp parallel for collapse(2) private(m)
+  for (j = 1; j < grid_points[1]-1; j++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m]- dssp * 
+	  ( 5.0*u[i][j][k][m] - 4.0*u[i+1][j][k][m] +
+	    u[i+2][j][k][m]);
+      }
+    }
+  }
+
+  i = 2;
+#pragma omp parallel for collapse(2) private(m)
+  for (j = 1; j < grid_points[1]-1; j++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp * 
+	  (-4.0*u[i-1][j][k][m] + 6.0*u[i][j][k][m] -
+	   4.0*u[i+1][j][k][m] + u[i+2][j][k][m]);
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(m)
+  for (i = 3; i < grid_points[0]-3; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	for (m = 0; m < 5; m++) {
+	  rhs[i][j][k][m] = rhs[i][j][k][m] - dssp * 
+	    (  u[i-2][j][k][m] - 4.0*u[i-1][j][k][m] + 
+	       6.0*u[i][j][k][m] - 4.0*u[i+1][j][k][m] + 
+	       u[i+2][j][k][m] );
+	}
+      }
+    }
+  }
+
+  i = grid_points[0]-3;
+#pragma omp parallel for collapse(2) private(m)
+  for (j = 1; j < grid_points[1]-1; j++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp *
+	  ( u[i-2][j][k][m] - 4.0*u[i-1][j][k][m] + 
+	    6.0*u[i][j][k][m] - 4.0*u[i+1][j][k][m] );
+      }
+    }
+  }
+
+  i = grid_points[0]-2;
+#pragma omp parallel for collapse(2) private(m)
+  for (j = 1; j < grid_points[1]-1; j++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp *
+	  ( u[i-2][j][k][m] - 4.*u[i-1][j][k][m] +
+	    5.0*u[i][j][k][m] );
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(vijk, vp1, vm1)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	vijk = vs[i][j][k];
+	vp1  = vs[i][j+1][k];
+	vm1  = vs[i][j-1][k];
+	rhs[i][j][k][0] = rhs[i][j][k][0] + dy1ty1 * 
+	  (u[i][j+1][k][0] - 2.0*u[i][j][k][0] + 
+	   u[i][j-1][k][0]) -
+	  ty2 * (u[i][j+1][k][2] - u[i][j-1][k][2]);
+	rhs[i][j][k][1] = rhs[i][j][k][1] + dy2ty1 * 
+	  (u[i][j+1][k][1] - 2.0*u[i][j][k][1] + 
+	   u[i][j-1][k][1]) +
+	  yycon2 * (us[i][j+1][k] - 2.0*us[i][j][k] + 
+		    us[i][j-1][k]) -
+	  ty2 * (u[i][j+1][k][1]*vp1 - 
+		 u[i][j-1][k][1]*vm1);
+	rhs[i][j][k][2] = rhs[i][j][k][2] + dy3ty1 * 
+	  (u[i][j+1][k][2] - 2.0*u[i][j][k][2] + 
+	   u[i][j-1][k][2]) +
+	  yycon2*con43 * (vp1 - 2.0*vijk + vm1) -
+	  ty2 * (u[i][j+1][k][2]*vp1 - 
+		 u[i][j-1][k][2]*vm1 +
+		 (u[i][j+1][k][4] - square[i][j+1][k] - 
+		  u[i][j-1][k][4] + square[i][j-1][k])
+		 *c2);
+	rhs[i][j][k][3] = rhs[i][j][k][3] + dy4ty1 * 
+	  (u[i][j+1][k][3] - 2.0*u[i][j][k][3] + 
+	   u[i][j-1][k][3]) +
+	  yycon2 * (ws[i][j+1][k] - 2.0*ws[i][j][k] + 
+		    ws[i][j-1][k]) -
+	  ty2 * (u[i][j+1][k][3]*vp1 - 
+		 u[i][j-1][k][3]*vm1);
+	rhs[i][j][k][4] = rhs[i][j][k][4] + dy5ty1 * 
+	  (u[i][j+1][k][4] - 2.0*u[i][j][k][4] + 
+	   u[i][j-1][k][4]) +
+	  yycon3 * (qs[i][j+1][k] - 2.0*qs[i][j][k] + 
+		    qs[i][j-1][k]) +
+	  yycon4 * (vp1*vp1       - 2.0*vijk*vijk + 
+		    vm1*vm1) +
+	  yycon5 * (u[i][j+1][k][4]*rho_i[i][j+1][k] - 
+		    2.0*u[i][j][k][4]*rho_i[i][j][k] +
+		    u[i][j-1][k][4]*rho_i[i][j-1][k]) -
+	  ty2 * ((c1*u[i][j+1][k][4] - 
+		  c2*square[i][j+1][k]) * vp1 -
+		 (c1*u[i][j-1][k][4] - 
+		  c2*square[i][j-1][k]) * vm1);
+      }
+    }
+  }
+
+  // Note: In the following boundary condition loops, 'j' is fixed.
+  // We parallelize over 'i' and 'k'.
+  j = 1;
+#pragma omp parallel for collapse(2) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m]- dssp * 
+	  ( 5.0*u[i][j][k][m] - 4.0*u[i][j+1][k][m] +
+	    u[i][j+2][k][m]);
+      }
+    }
+  }
+
+  j = 2;
+#pragma omp parallel for collapse(2) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp * 
+	  (-4.0*u[i][j-1][k][m] + 6.0*u[i][j][k][m] -
+	   4.0*u[i][j+1][k][m] + u[i][j+2][k][m]);
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 3; j < grid_points[1]-3; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	for (m = 0; m < 5; m++) {
+	  rhs[i][j][k][m] = rhs[i][j][k][m] - dssp * 
+	    (  u[i][j-2][k][m] - 4.0*u[i][j-1][k][m] + 
+	       6.0*u[i][j][k][m] - 4.0*u[i][j+1][k][m] + 
+	       u[i][j+2][k][m] );
+	}
+      }
+    }
+  }
+
+  j = grid_points[1]-3;
+#pragma omp parallel for collapse(2) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp *
+	  ( u[i][j-2][k][m] - 4.0*u[i][j-1][k][m] + 
+	    6.0*u[i][j][k][m] - 4.0*u[i][j+1][k][m] );
+      }
+    }
+  }
+
+  j = grid_points[1]-2;
+#pragma omp parallel for collapse(2) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp *
+	  ( u[i][j-2][k][m] - 4.*u[i][j-1][k][m] +
+	    5.*u[i][j][k][m] );
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(wijk, wp1, wm1)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	wijk = ws[i][j][k];
+	wp1  = ws[i][j][k+1];
+	wm1  = ws[i][j][k-1];
+	rhs[i][j][k][0] = rhs[i][j][k][0] + dz1tz1 * 
+	  (u[i][j][k+1][0] - 2.0*u[i][j][k][0] + 
+	   u[i][j][k-1][0]) -
+	  tz2 * (u[i][j][k+1][3] - u[i][j][k-1][3]);
+	rhs[i][j][k][1] = rhs[i][j][k][1] + dz2tz1 * 
+	  (u[i][j][k+1][1] - 2.0*u[i][j][k][1] + 
+	   u[i][j][k-1][1]) +
+	  zzcon2 * (us[i][j][k+1] - 2.0*us[i][j][k] + 
+		    us[i][j][k-1]) -
+	  tz2 * (u[i][j][k+1][1]*wp1 - 
+		 u[i][j][k-1][1]*wm1);
+	rhs[i][j][k][2] = rhs[i][j][k][2] + dz3tz1 * 
+	  (u[i][j][k+1][2] - 2.0*u[i][j][k][2] + 
+	   u[i][j][k-1][2]) +
+	  zzcon2 * (vs[i][j][k+1] - 2.0*vs[i][j][k] + 
+		    vs[i][j][k-1]) -
+	  tz2 * (u[i][j][k+1][2]*wp1 - 
+		 u[i][j][k-1][2]*wm1);
+	rhs[i][j][k][3] = rhs[i][j][k][3] + dz4tz1 * 
+	  (u[i][j][k+1][3] - 2.0*u[i][j][k][3] + 
+	   u[i][j][k-1][3]) +
+	  zzcon2*con43 * (wp1 - 2.0*wijk + wm1) -
+	  tz2 * (u[i][j][k+1][3]*wp1 - 
+		 u[i][j][k-1][3]*wm1 +
+		 (u[i][j][k+1][4] - square[i][j][k+1] - 
+		  u[i][j][k-1][4] + square[i][j][k-1])
+		 *c2);
+	rhs[i][j][k][4] = rhs[i][j][k][4] + dz5tz1 * 
+	  (u[i][j][k+1][4] - 2.0*u[i][j][k][4] + 
+	   u[i][j][k-1][4]) +
+	  zzcon3 * (qs[i][j][k+1] - 2.0*qs[i][j][k] + 
+		    qs[i][j][k-1]) +
+	  zzcon4 * (wp1*wp1 - 2.0*wijk*wijk + 
+		    wm1*wm1) +
+	  zzcon5 * (u[i][j][k+1][4]*rho_i[i][j][k+1] - 
+		    2.0*u[i][j][k][4]*rho_i[i][j][k] +
+		    u[i][j][k-1][4]*rho_i[i][j][k-1]) -
+	  tz2 * ( (c1*u[i][j][k+1][4] - 
+		   c2*square[i][j][k+1])*wp1 -
+		  (c1*u[i][j][k-1][4] - 
+		   c2*square[i][j][k-1])*wm1);
+      }
+    }
+  }
+
+  // Note: In the following boundary condition loops, 'k' is fixed.
+  // We parallelize over 'i' and 'j'.
+  k = 1;
+#pragma omp parallel for collapse(2) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m]- dssp * 
+	  ( 5.0*u[i][j][k][m] - 4.0*u[i][j][k+1][m] +
+	    u[i][j][k+2][m]);
+      }
+    }
+  }
+
+  k = 2;
+#pragma omp parallel for collapse(2) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp * 
+	  (-4.0*u[i][j][k-1][m] + 6.0*u[i][j][k][m] -
+	   4.0*u[i][j][k+1][m] + u[i][j][k+2][m]);
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 3; k < grid_points[2]-3; k++) {
+	for (m = 0; m < 5; m++) {
+	  rhs[i][j][k][m] = rhs[i][j][k][m] - dssp * 
+	    (  u[i][j][k-2][m] - 4.0*u[i][j][k-1][m] + 
+	       6.0*u[i][j][k][m] - 4.0*u[i][j][k+1][m] + 
+	       u[i][j][k+2][m] );
+	}
+      }
+    }
+  }
+
+  k = grid_points[2]-3;
+#pragma omp parallel for collapse(2) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp *
+	  ( u[i][j][k-2][m] - 4.0*u[i][j][k-1][m] + 
+	    6.0*u[i][j][k][m] - 4.0*u[i][j][k+1][m] );
+      }
+    }
+  }
+
+  k = grid_points[2]-2;
+#pragma omp parallel for collapse(2) private(m)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (m = 0; m < 5; m++) {
+	rhs[i][j][k][m] = rhs[i][j][k][m] - dssp *
+	  ( u[i][j][k-2][m] - 4.0*u[i][j][k-1][m] +
+	    5.0*u[i][j][k][m] );
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(i)
+  for (j = 1; j < grid_points[1]-1; j++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      for (m = 0; m < 5; m++) {
+	for (i = 1; i < grid_points[0]-1; i++) {
+	  rhs[i][j][k][m] = rhs[i][j][k][m] * dt;
+	}
+      }
+    }
+  }
+} 
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/compute_rhs.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 compute_rhs 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,15.13
+**********
+No improvement or execution failed. Reverting changes for compute_rhs.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing x_solve.c in BT...
+
+Generation Code:
+static void x_solve(void) {
+  // Create a new parallel region.
+  // This allows lhsx(), x_solve_cell(), and x_backsubstitute()
+  // to use worksharing constructs like #pragma omp for if they
+  // are designed to do so, utilizing the threads of this new team.
+  // This assumes nested parallelism is enabled and beneficial.
+  #pragma omp parallel
+  {
+    // Ensure that the sequence of calls is executed by a single thread
+    // within the newly created parallel team.
+    // #pragma omp single ensures the block is executed by one arbitrary thread
+    // from the team and includes an implicit barrier at the end (unless 'nowait' is specified).
+    // #pragma omp master could also be used; it's executed by the master thread
+    // and has no implicit barrier. Given the functions are black boxes, 'single'
+    // is a safer default choice.
+    #pragma omp single
+    {
+      lhsx();
+      x_solve_cell();
+      x_backsubstitute();
+    }
+  } // Implicit barrier: all threads in the new team synchronize here.
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/x_solve.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 x_solve 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,0.72
+**********
+No improvement or execution failed. Reverting changes for x_solve.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing y_solve.c in BT...
+
+Generation Code:
+static void y_solve(void) {
+  // Create a new parallel region. The single thread that entered y_solve()
+  // will become the master of this new team of threads.
+  #pragma omp parallel
+  {
+    // All threads in the team call lhsy().
+    // It is assumed that lhsy() contains worksharing constructs (e.g., #pragma omp for)
+    // to distribute its workload among the threads of this team.
+    // An implicit barrier at the end of the worksharing construct(s) in lhsy()
+    // ensures all its work is completed before any thread proceeds.
+    lhsy();
+
+    // All threads in the team call y_solve_cell().
+    // Similar assumptions about internal worksharing and synchronization apply.
+    y_solve_cell();
+
+    // All threads in the team call y_backsubstitute().
+    // Similar assumptions about internal worksharing and synchronization apply.
+    y_backsubstitute();
+  }
+  // Implicit barrier at the end of the #pragma omp parallel region.
+  // All threads synchronize here, the team is disbanded, and the master thread
+  // (the one that originally entered y_solve) continues.
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/y_solve.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 y_solve 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,1.3
+**********
+No improvement or execution failed. Reverting changes for y_solve.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing z_solve.c in BT...
+
+Generation Code:
+static void z_solve(void) {
+  // This function is called by a single thread due to an external #pragma omp single.
+  // To parallelize the work within z_solve, we create a new team of threads.
+#pragma omp parallel
+  {
+    // All threads in the team execute this block of code.
+
+    // lhsz() is called. If it's internally parallelized (e.g., with #pragma omp for),
+    // work is distributed. All threads synchronize implicitly at the end of
+    // worksharing constructs within lhsz() before proceeding.
+    lhsz();
+
+    // z_solve_cell() is called after lhsz() completes for all threads.
+    // Similar parallelism and synchronization apply if it's internally parallel.
+    z_solve_cell();
+
+    // z_backsubstitute() is called after z_solve_cell() completes for all threads.
+    // Similar parallelism and synchronization apply.
+    z_backsubstitute();
+  }
+  // Implicit barrier here: all threads synchronize before the parallel region ends.
+  // The original single thread then continues execution after z_solve() returns.
+}
+
+// Dummy implementations for lhsz, z_solve_cell, z_backsubstitute for completeness,
+// assuming they might use OpenMP internally (though not shown here).
+// If they were provided, their internal structure would confirm this pattern.
+static void lhsz(void) {
+  // Potentially contains OpenMP directives like #pragma omp for
+  // Example:
+  // #pragma omp for
+  // for (int i = 0; i < N; ++i) { /* compute LHS part i */ }
+}
+
+static void z_solve_cell(void) {
+  // Potentially contains OpenMP directives like #pragma omp for
+  // Example:
+  // #pragma omp for
+  // for (int i = 0; i < M; ++i) { /* solve cell i */ }
+}
+
+static void z_backsubstitute(void) {
+  // Potentially contains OpenMP directives like #pragma omp for
+  // Example:
+  // #pragma omp for
+  // for (int i = 0; i < K; ++i) { /* backsubstitute part i */ }
+}
+
+// Example main to make it runnable (actual problem context might differ)
+// int main() {
+//   #pragma omp parallel // Outer parallel region
+//   {
+//     #pragma omp single
+//     {
+//       z_solve();
+//     }
+//   }
+//   return 0;
+// } 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/z_solve.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 z_solve 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for z_solve.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Warning: File for function exact_solution not found in /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_#_omp, skipping...
+Processing error_norm.c in BT...
+
+Generation Code:
+for (m = 0; m < 5; m++) {
+    rms[m] = 0.0;
+  } 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/error_norm.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 error_norm 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for error_norm.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing rhs_norm.c in BT...
+
+Generation Code:
+// ...
+  for (m = 0; m < 5; m++) {
+    rms[m] = 0.0; // This initialization should be outside the parallel region
+                   // or handled carefully if done inside.
+                   // The current code does it before the main parallel loop.
+  }
+
+  // Parallelize the outer loops.
+  // Each thread will compute a partial sum for rms.
+  // The `add` variable is local to each iteration.
+  #pragma omp parallel for private(j, k, m, add) reduction(+:rms[:5]) // Or reduction(+:rms[0],rms[1],rms[2],rms[3],rms[4])
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+        for (m = 0; m < 5; m++) {
+          add = rhs[i][j][k][m];
+          rms[m] = rms[m] + add*add;
+        }
+      }
+    }
+  }
+// ... 
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/rhs_norm.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 rhs_norm 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for rhs_norm.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing lhsx.c in BT...
+
+Generation Code:
+#pragma omp parallel for private(k, i, tmp1, tmp2, tmp3)
+for (j = 1; j < grid_points[1]-1; j++) {
+  // ...
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/lhsx.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 lhsx 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for lhsx.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing x_backsubstitute.c in BT...
+
+Generation Code:
+static void x_backsubstitute(void) {
+  int i, j, k, m, n;
+  for (i = grid_points[0]-2; i >= 0; i--) {
+    #pragma omp parallel for collapse(3) private(n)
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	for (m = 0; m < BLOCK_SIZE; m++) {
+	  for (n = 0; n < BLOCK_SIZE; n++) {
+	    rhs[i][j][k][m] = rhs[i][j][k][m]
+	      - lhs[i][j][k][CC][m][n]*rhs[i+1][j][k][n];
+	  }
+	}
+      }
+    }
+  }
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/x_backsubstitute.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 x_backsubstitute 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,9.91
+**********
+No improvement or execution failed. Reverting changes for x_backsubstitute.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing x_solve_cell.c in BT...
+
+Generation Code:
+static void x_solve_cell(void) {
+  int i,j,k,isize;
+  isize = grid_points[0]-1;
+
+#pragma omp parallel for collapse(2) schedule(static)
+  for (j = 1; j < grid_points[1]-1; j++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      binvcrhs( lhs[0][j][k][BB],
+		lhs[0][j][k][CC],
+		rhs[0][j][k] );
+    }
+  }
+
+  for (i = 1; i < isize; i++) {
+#pragma omp parallel for collapse(2) schedule(static)
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	matvec_sub(lhs[i][j][k][AA],
+		   rhs[i-1][j][k], rhs[i][j][k]);
+	matmul_sub(lhs[i][j][k][AA],
+		   lhs[i-1][j][k][CC],
+		   lhs[i][j][k][BB]);
+	binvcrhs( lhs[i][j][k][BB],
+		  lhs[i][j][k][CC],
+		  rhs[i][j][k] );
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(2) schedule(static)
+  for (j = 1; j < grid_points[1]-1; j++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      matvec_sub(lhs[isize][j][k][AA],
+		 rhs[isize-1][j][k], rhs[isize][j][k]);
+      matmul_sub(lhs[isize][j][k][AA],
+		 lhs[isize-1][j][k][CC],
+		 lhs[isize][j][k][BB]);
+      // Note: The variable 'i' here refers to its value after the preceding loop, 
+      // which is 'isize'. This is consistent with the original serial code's behavior.
+      binvrhs( lhs[i][j][k][BB],
+	       rhs[i][j][k] );
+    }
+  }
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/x_solve_cell.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 x_solve_cell 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,11.17
+**********
+No improvement or execution failed. Reverting changes for x_solve_cell.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing lhsy.c in BT...
+
+Generation Code:
+static void lhsy(void) {
+  int i, j, k;
+  // Assuming tmp1, tmp2, tmp3, and other constants/arrays (u, fjac, njac, lhs, grid_points,
+  // c1, c2, c3c4, con43, c1345, dt, ty1, ty2, dy1-5, AA, BB, CC, pow2)
+  // are defined and accessible in this scope.
+  // tmp1, tmp2, tmp3 will be privatized in the OpenMP directives.
+
+#pragma omp parallel for collapse(3) private(tmp1, tmp2, tmp3)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 0; j < grid_points[1]; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	tmp1 = 1.0 / u[i][j][k][0];
+	tmp2 = tmp1 * tmp1;
+	tmp3 = tmp1 * tmp2;
+	fjac[ i][ j][ k][0][0] = 0.0;
+	fjac[ i][ j][ k][0][1] = 0.0;
+	fjac[ i][ j][ k][0][2] = 1.0;
+	fjac[ i][ j][ k][0][3] = 0.0;
+	fjac[ i][ j][ k][0][4] = 0.0;
+	fjac[i][j][k][1][0] = - ( u[i][j][k][1]*u[i][j][k][2] )
+	  * tmp2;
+	fjac[i][j][k][1][1] = u[i][j][k][2] * tmp1;
+	fjac[i][j][k][1][2] = u[i][j][k][1] * tmp1;
+	fjac[i][j][k][1][3] = 0.0;
+	fjac[i][j][k][1][4] = 0.0;
+	fjac[i][j][k][2][0] = - ( u[i][j][k][2]*u[i][j][k][2]*tmp2)
+	  + 0.50 * c2 * ( (  u[i][j][k][1] * u[i][j][k][1]
+			     + u[i][j][k][2] * u[i][j][k][2]
+			     + u[i][j][k][3] * u[i][j][k][3] )
+			  * tmp2 );
+	fjac[i][j][k][2][1] = - c2 *  u[i][j][k][1] * tmp1;
+	fjac[i][j][k][2][2] = ( 2.0 - c2 )
+	  *  u[i][j][k][2] * tmp1;
+	fjac[i][j][k][2][3] = - c2 * u[i][j][k][3] * tmp1;
+	fjac[i][j][k][2][4] = c2;
+	fjac[i][j][k][3][0] = - ( u[i][j][k][2]*u[i][j][k][3] )
+	  * tmp2;
+	fjac[i][j][k][3][1] = 0.0;
+	fjac[i][j][k][3][2] = u[i][j][k][3] * tmp1;
+	fjac[i][j][k][3][3] = u[i][j][k][2] * tmp1;
+	fjac[i][j][k][3][4] = 0.0;
+	fjac[i][j][k][4][0] = ( c2 * (  u[i][j][k][1] * u[i][j][k][1]
+					+ u[i][j][k][2] * u[i][j][k][2]
+					+ u[i][j][k][3] * u[i][j][k][3] )
+				* tmp2
+				- c1 * u[i][j][k][4] * tmp1 ) 
+	  * u[i][j][k][2] * tmp1;
+	fjac[i][j][k][4][1] = - c2 * u[i][j][k][1]*u[i][j][k][2] 
+	  * tmp2;
+	fjac[i][j][k][4][2] = c1 * u[i][j][k][4] * tmp1 
+	  - 0.50 * c2 
+	  * ( (  u[i][j][k][1]*u[i][j][k][1]
+		 + 3.0 * u[i][j][k][2]*u[i][j][k][2]
+		 + u[i][j][k][3]*u[i][j][k][3] )
+	      * tmp2 );
+	fjac[i][j][k][4][3] = - c2 * ( u[i][j][k][2]*u[i][j][k][3] )
+	  * tmp2;
+	fjac[i][j][k][4][4] = c1 * u[i][j][k][2] * tmp1; 
+	njac[i][j][k][0][0] = 0.0;
+	njac[i][j][k][0][1] = 0.0;
+	njac[i][j][k][0][2] = 0.0;
+	njac[i][j][k][0][3] = 0.0;
+	njac[i][j][k][0][4] = 0.0;
+	njac[i][j][k][1][0] = - c3c4 * tmp2 * u[i][j][k][1];
+	njac[i][j][k][1][1] =   c3c4 * tmp1;
+	njac[i][j][k][1][2] =   0.0;
+	njac[i][j][k][1][3] =   0.0;
+	njac[i][j][k][1][4] =   0.0;
+	njac[i][j][k][2][0] = - con43 * c3c4 * tmp2 * u[i][j][k][2];
+	njac[i][j][k][2][1] =   0.0;
+	njac[i][j][k][2][2] =   con43 * c3c4 * tmp1;
+	njac[i][j][k][2][3] =   0.0;
+	njac[i][j][k][2][4] =   0.0;
+	njac[i][j][k][3][0] = - c3c4 * tmp2 * u[i][j][k][3];
+	njac[i][j][k][3][1] =   0.0;
+	njac[i][j][k][3][2] =   0.0;
+	njac[i][j][k][3][3] =   c3c4 * tmp1;
+	njac[i][j][k][3][4] =   0.0;
+	njac[i][j][k][4][0] = - (  c3c4
+          - c1345 ) * tmp3 * (pow2(u[i][j][k][1]))
+	  - ( con43 * c3c4
+	      - c1345 ) * tmp3 * (pow2(u[i][j][k][2]))
+	  - ( c3c4 - c1345 ) * tmp3 * (pow2(u[i][j][k][3]))
+	  - c1345 * tmp2 * u[i][j][k][4];
+	njac[i][j][k][4][1] = (  c3c4 - c1345 ) * tmp2 * u[i][j][k][1];
+	njac[i][j][k][4][2] = ( con43 * c3c4
+				- c1345 ) * tmp2 * u[i][j][k][2];
+	njac[i][j][k][4][3] = ( c3c4 - c1345 ) * tmp2 * u[i][j][k][3];
+	njac[i][j][k][4][4] = ( c1345 ) * tmp1;
+      }
+    }
+  }
+
+#pragma omp parallel for collapse(3) private(tmp1, tmp2)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	tmp1 = dt * ty1;
+	tmp2 = dt * ty2;
+	lhs[i][j][k][AA][0][0] = - tmp2 * fjac[i][j-1][k][0][0]
+	  - tmp1 * njac[i][j-1][k][0][0]
+	  - tmp1 * dy1;
+	lhs[i][j][k][AA][0][1] = - tmp2 * fjac[i][j-1][k][0][1]
+	  - tmp1 * njac[i][j-1][k][0][1];
+	lhs[i][j][k][AA][0][2] = - tmp2 * fjac[i][j-1][k][0][2]
+	  - tmp1 * njac[i][j-1][k][0][2];
+	lhs[i][j][k][AA][0][3] = - tmp2 * fjac[i][j-1][k][0][3]
+	  - tmp1 * njac[i][j-1][k][0][3];
+	lhs[i][j][k][AA][0][4] = - tmp2 * fjac[i][j-1][k][0][4]
+	  - tmp1 * njac[i][j-1][k][0][4];
+	lhs[i][j][k][AA][1][0] = - tmp2 * fjac[i][j-1][k][1][0]
+	  - tmp1 * njac[i][j-1][k][1][0];
+	lhs[i][j][k][AA][1][1] = - tmp2 * fjac[i][j-1][k][1][1]
+	  - tmp1 * njac[i][j-1][k][1][1]
+	  - tmp1 * dy2;
+	lhs[i][j][k][AA][1][2] = - tmp2 * fjac[i][j-1][k][1][2]
+	  - tmp1 * njac[i][j-1][k][1][2];
+	lhs[i][j][k][AA][1][3] = - tmp2 * fjac[i][j-1][k][1][3]
+	  - tmp1 * njac[i][j-1][k][1][3];
+	lhs[i][j][k][AA][1][4] = - tmp2 * fjac[i][j-1][k][1][4]
+	  - tmp1 * njac[i][j-1][k][1][4];
+	lhs[i][j][k][AA][2][0] = - tmp2 * fjac[i][j-1][k][2][0]
+	  - tmp1 * njac[i][j-1][k][2][0];
+	lhs[i][j][k][AA][2][1] = - tmp2 * fjac[i][j-1][k][2][1]
+	  - tmp1 * njac[i][j-1][k][2][1];
+	lhs[i][j][k][AA][2][2] = - tmp2 * fjac[i][j-1][k][2][2]
+	  - tmp1 * njac[i][j-1][k][2][2]
+	  - tmp1 * dy3;
+	lhs[i][j][k][AA][2][3] = - tmp2 * fjac[i][j-1][k][2][3]
+	  - tmp1 * njac[i][j-1][k][2][3];
+	lhs[i][j][k][AA][2][4] = - tmp2 * fjac[i][j-1][k][2][4]
+	  - tmp1 * njac[i][j-1][k][2][4];
+	lhs[i][j][k][AA][3][0] = - tmp2 * fjac[i][j-1][k][3][0]
+	  - tmp1 * njac[i][j-1][k][3][0];
+	lhs[i][j][k][AA][3][1] = - tmp2 * fjac[i][j-1][k][3][1]
+	  - tmp1 * njac[i][j-1][k][3][1];
+	lhs[i][j][k][AA][3][2] = - tmp2 * fjac[i][j-1][k][3][2]
+	  - tmp1 * njac[i][j-1][k][3][2];
+	lhs[i][j][k][AA][3][3] = - tmp2 * fjac[i][j-1][k][3][3]
+	  - tmp1 * njac[i][j-1][k][3][3]
+	  - tmp1 * dy4;
+	lhs[i][j][k][AA][3][4] = - tmp2 * fjac[i][j-1][k][3][4]
+	  - tmp1 * njac[i][j-1][k][3][4];
+	lhs[i][j][k][AA][4][0] = - tmp2 * fjac[i][j-1][k][4][0]
+	  - tmp1 * njac[i][j-1][k][4][0];
+	lhs[i][j][k][AA][4][1] = - tmp2 * fjac[i][j-1][k][4][1]
+	  - tmp1 * njac[i][j-1][k][4][1];
+	lhs[i][j][k][AA][4][2] = - tmp2 * fjac[i][j-1][k][4][2]
+	  - tmp1 * njac[i][j-1][k][4][2];
+	lhs[i][j][k][AA][4][3] = - tmp2 * fjac[i][j-1][k][4][3]
+	  - tmp1 * njac[i][j-1][k][4][3];
+	lhs[i][j][k][AA][4][4] = - tmp2 * fjac[i][j-1][k][4][4]
+	  - tmp1 * njac[i][j-1][k][4][4]
+	  - tmp1 * dy5;
+	lhs[i][j][k][BB][0][0] = 1.0
+	  + tmp1 * 2.0 * njac[i][j][k][0][0]
+	  + tmp1 * 2.0 * dy1;
+	lhs[i][j][k][BB][0][1] = tmp1 * 2.0 * njac[i][j][k][0][1];
+	lhs[i][j][k][BB][0][2] = tmp1 * 2.0 * njac[i][j][k][0][2];
+	lhs[i][j][k][BB][0][3] = tmp1 * 2.0 * njac[i][j][k][0][3];
+	lhs[i][j][k][BB][0][4] = tmp1 * 2.0 * njac[i][j][k][0][4];
+	lhs[i][j][k][BB][1][0] = tmp1 * 2.0 * njac[i][j][k][1][0];
+	lhs[i][j][k][BB][1][1] = 1.0
+	  + tmp1 * 2.0 * njac[i][j][k][1][1]
+	  + tmp1 * 2.0 * dy2;
+	lhs[i][j][k][BB][1][2] = tmp1 * 2.0 * njac[i][j][k][1][2];
+	lhs[i][j][k][BB][1][3] = tmp1 * 2.0 * njac[i][j][k][1][3];
+	lhs[i][j][k][BB][1][4] = tmp1 * 2.0 * njac[i][j][k][1][4];
+	lhs[i][j][k][BB][2][0] = tmp1 * 2.0 * njac[i][j][k][2][0];
+	lhs[i][j][k][BB][2][1] = tmp1 * 2.0 * njac[i][j][k][2][1];
+	lhs[i][j][k][BB][2][2] = 1.0
+	  + tmp1 * 2.0 * njac[i][j][k][2][2]
+	  + tmp1 * 2.0 * dy3;
+	lhs[i][j][k][BB][2][3] = tmp1 * 2.0 * njac[i][j][k][2][3];
+	lhs[i][j][k][BB][2][4] = tmp1 * 2.0 * njac[i][j][k][2][4];
+	lhs[i][j][k][BB][3][0] = tmp1 * 2.0 * njac[i][j][k][3][0];
+	lhs[i][j][k][BB][3][1] = tmp1 * 2.0 * njac[i][j][k][3][1];
+	lhs[i][j][k][BB][3][2] = tmp1 * 2.0 * njac[i][j][k][3][2];
+	lhs[i][j][k][BB][3][3] = 1.0
+	  + tmp1 * 2.0 * njac[i][j][k][3][3]
+	  + tmp1 * 2.0 * dy4;
+	lhs[i][j][k][BB][3][4] = tmp1 * 2.0 * njac[i][j][k][3][4];
+	lhs[i][j][k][BB][4][0] = tmp1 * 2.0 * njac[i][j][k][4][0];
+	lhs[i][j][k][BB][4][1] = tmp1 * 2.0 * njac[i][j][k][4][1];
+	lhs[i][j][k][BB][4][2] = tmp1 * 2.0 * njac[i][j][k][4][2];
+	lhs[i][j][k][BB][4][3] = tmp1 * 2.0 * njac[i][j][k][4][3];
+	lhs[i][j][k][BB][4][4] = 1.0
+	  + tmp1 * 2.0 * njac[i][j][k][4][4] 
+	  + tmp1 * 2.0 * dy5;
+	lhs[i][j][k][CC][0][0] =  tmp2 * fjac[i][j+1][k][0][0]
+	  - tmp1 * njac[i][j+1][k][0][0]
+	  - tmp1 * dy1;
+	lhs[i][j][k][CC][0][1] =  tmp2 * fjac[i][j+1][k][0][1]
+	  - tmp1 * njac[i][j+1][k][0][1];
+	lhs[i][j][k][CC][0][2] =  tmp2 * fjac[i][j+1][k][0][2]
+	  - tmp1 * njac[i][j+1][k][0][2];
+	lhs[i][j][k][CC][0][3] =  tmp2 * fjac[i][j+1][k][0][3]
+	  - tmp1 * njac[i][j+1][k][0][3];
+	lhs[i][j][k][CC][0][4] =  tmp2 * fjac[i][j+1][k][0][4]
+	  - tmp1 * njac[i][j+1][k][0][4];
+	lhs[i][j][k][CC][1][0] =  tmp2 * fjac[i][j+1][k][1][0]
+	  - tmp1 * njac[i][j+1][k][1][0];
+	lhs[i][j][k][CC][1][1] =  tmp2 * fjac[i][j+1][k][1][1]
+	  - tmp1 * njac[i][j+1][k][1][1]
+	  - tmp1 * dy2;
+	lhs[i][j][k][CC][1][2] =  tmp2 * fjac[i][j+1][k][1][2]
+	  - tmp1 * njac[i][j+1][k][1][2];
+	lhs[i][j][k][CC][1][3] =  tmp2 * fjac[i][j+1][k][1][3]
+	  - tmp1 * njac[i][j+1][k][1][3];
+	lhs[i][j][k][CC][1][4] =  tmp2 * fjac[i][j+1][k][1][4]
+	  - tmp1 * njac[i][j+1][k][1][4];
+	lhs[i][j][k][CC][2][0] =  tmp2 * fjac[i][j+1][k][2][0]
+	  - tmp1 * njac[i][j+1][k][2][0];
+	lhs[i][j][k][CC][2][1] =  tmp2 * fjac[i][j+1][k][2][1]
+	  - tmp1 * njac[i][j+1][k][2][1];
+	lhs[i][j][k][CC][2][2] =  tmp2 * fjac[i][j+1][k][2][2]
+	  - tmp1 * njac[i][j+1][k][2][2]
+	  - tmp1 * dy3;
+	lhs[i][j][k][CC][2][3] =  tmp2 * fjac[i][j+1][k][2][3]
+	  - tmp1 * njac[i][j+1][k][2][3];
+	lhs[i][j][k][CC][2][4] =  tmp2 * fjac[i][j+1][k][2][4]
+	  - tmp1 * njac[i][j+1][k][2][4];
+	lhs[i][j][k][CC][3][0] =  tmp2 * fjac[i][j+1][k][3][0]
+	  - tmp1 * njac[i][j+1][k][3][0];
+	lhs[i][j][k][CC][3][1] =  tmp2 * fjac[i][j+1][k][3][1]
+	  - tmp1 * njac[i][j+1][k][3][1];
+	lhs[i][j][k][CC][3][2] =  tmp2 * fjac[i][j+1][k][3][2]
+	  - tmp1 * njac[i][j+1][k][3][2];
+	lhs[i][j][k][CC][3][3] =  tmp2 * fjac[i][j+1][k][3][3]
+	  - tmp1 * njac[i][j+1][k][3][3]
+	  - tmp1 * dy4;
+	lhs[i][j][k][CC][3][4] =  tmp2 * fjac[i][j+1][k][3][4]
+	  - tmp1 * njac[i][j+1][k][3][4];
+	lhs[i][j][k][CC][4][0] =  tmp2 * fjac[i][j+1][k][4][0]
+	  - tmp1 * njac[i][j+1][k][4][0];
+	lhs[i][j][k][CC][4][1] =  tmp2 * fjac[i][j+1][k][4][1]
+	  - tmp1 * njac[i][j+1][k][4][1];
+	lhs[i][j][k][CC][4][2] =  tmp2 * fjac[i][j+1][k][4][2]
+	  - tmp1 * njac[i][j+1][k][4][2];
+	lhs[i][j][k][CC][4][3] =  tmp2 * fjac[i][j+1][k][4][3]
+	  - tmp1 * njac[i][j+1][k][4][3];
+	lhs[i][j][k][CC][4][4] =  tmp2 * fjac[i][j+1][k][4][4]
+	  - tmp1 * njac[i][j+1][k][4][4]
+	  - tmp1 * dy5;
+      }
+    }
+  }
+} 
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/lhsy.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 lhsy 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,1.97
+**********
+No improvement or execution failed. Reverting changes for lhsy.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing y_backsubstitute.c in BT...
+
+Generation Code:
+static void y_backsubstitute(void) {
+  int i, j, k, m, n;
+  for (j = grid_points[1]-2; j >= 0; j--) {
+    #pragma omp parallel for collapse(2) default(none) shared(grid_points, rhs, lhs, j) private(m, n)
+    for (i = 1; i < grid_points[0]-1; i++) {
+      for (k = 1; k < grid_points[2]-1; k++) {
+	for (m = 0; m < BLOCK_SIZE; m++) {
+	  for (n = 0; n < BLOCK_SIZE; n++) {
+	    rhs[i][j][k][m] = rhs[i][j][k][m] 
+	      - lhs[i][j][k][CC][m][n]*rhs[i][j+1][k][n];
+	  }
+	}
+      }
+    }
+  }
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/y_backsubstitute.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 y_backsubstitute 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,8.93
+**********
+No improvement or execution failed. Reverting changes for y_backsubstitute.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing y_solve_cell.c in BT...
+
+Generation Code:
+for (i = 1; i < grid_points[0]-1; i++) {
+    for (k = 1; k < grid_points[2]-1; k++) {
+      binvcrhs( lhs[i][0][k][BB],
+		lhs[i][0][k][CC],
+		rhs[i][0][k] );
+    }
+  } 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/y_solve_cell.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 y_solve_cell 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for y_solve_cell.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing lhsz.c in BT...
+
+Generation Code:
+for (i = 1; i < grid_points[0]-1; i++) {
+      for (j = 1; j < grid_points[1]-1; j++) {
+        for (k = 0; k < grid_points[2]; k++) {
+          // calculations for fjac[i][j][k] and njac[i][j][k]
+        }
+      }
+    } 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/lhsz.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 lhsz 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for lhsz.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing z_backsubstitute.c in BT...
+
+Generation Code:
+static void z_backsubstitute(void) {
+  int i, j, k, m, n;
+
+#pragma omp parallel for collapse(2) private(k, m, n)
+  for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      for (k = grid_points[2]-2; k >= 0; k--) {
+	for (m = 0; m < BLOCK_SIZE; m++) {
+	  for (n = 0; n < BLOCK_SIZE; n++) {
+	    rhs[i][j][k][m] = rhs[i][j][k][m]
+	      - lhs[i][j][k][CC][m][n]*rhs[i][j][k+1][n];
+	  }
+	}
+      }
+    }
+  }
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/z_backsubstitute.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 z_backsubstitute 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,0.79
+**********
+No improvement or execution failed. Reverting changes for z_backsubstitute.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing z_solve_cell.c in BT...
+
+Generation Code:
+for (i = 1; i < grid_points[0]-1; i++) {
+    for (j = 1; j < grid_points[1]-1; j++) {
+      binvcrhs( lhs[i][j][0][BB],
+		lhs[i][j][0][CC],
+		rhs[i][j][0] );
+    }
+  } 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/z_solve_cell.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 z_solve_cell 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+False,9999
+**********
+No improvement or execution failed. Reverting changes for z_solve_cell.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing binvcrhs.c in BT...
+
+Generation Code:
+static void binvcrhs(double lhs[5][5], double c[5][5], double r[5]) {
+  double pivot, coeff;
+
+  // STAGE 0: Pivot on lhs[0][0]
+  // Normalize row 0
+  pivot = 1.00/lhs[0][0];
+  lhs[0][1] = lhs[0][1]*pivot;
+  lhs[0][2] = lhs[0][2]*pivot;
+  lhs[0][3] = lhs[0][3]*pivot;
+  lhs[0][4] = lhs[0][4]*pivot;
+  c[0][0] = c[0][0]*pivot;
+  c[0][1] = c[0][1]*pivot;
+  c[0][2] = c[0][2]*pivot;
+  c[0][3] = c[0][3]*pivot;
+  c[0][4] = c[0][4]*pivot;
+  r[0]   = r[0]  *pivot;
+
+  // Eliminate elements in column 0 for rows 1, 2, 3, 4 using normalized row 0
+#pragma omp parallel sections private(coeff)
+  {
+    #pragma omp section
+    {
+      coeff = lhs[1][0];
+      lhs[1][1]= lhs[1][1] - coeff*lhs[0][1];
+      lhs[1][2]= lhs[1][2] - coeff*lhs[0][2];
+      lhs[1][3]= lhs[1][3] - coeff*lhs[0][3];
+      lhs[1][4]= lhs[1][4] - coeff*lhs[0][4];
+      c[1][0] = c[1][0] - coeff*c[0][0];
+      c[1][1] = c[1][1] - coeff*c[0][1];
+      c[1][2] = c[1][2] - coeff*c[0][2];
+      c[1][3] = c[1][3] - coeff*c[0][3];
+      c[1][4] = c[1][4] - coeff*c[0][4];
+      r[1]   = r[1]   - coeff*r[0];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[2][0];
+      lhs[2][1]= lhs[2][1] - coeff*lhs[0][1];
+      lhs[2][2]= lhs[2][2] - coeff*lhs[0][2];
+      lhs[2][3]= lhs[2][3] - coeff*lhs[0][3];
+      lhs[2][4]= lhs[2][4] - coeff*lhs[0][4];
+      c[2][0] = c[2][0] - coeff*c[0][0];
+      c[2][1] = c[2][1] - coeff*c[0][1];
+      c[2][2] = c[2][2] - coeff*c[0][2];
+      c[2][3] = c[2][3] - coeff*c[0][3];
+      c[2][4] = c[2][4] - coeff*c[0][4];
+      r[2]   = r[2]   - coeff*r[0];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[3][0];
+      lhs[3][1]= lhs[3][1] - coeff*lhs[0][1];
+      lhs[3][2]= lhs[3][2] - coeff*lhs[0][2];
+      lhs[3][3]= lhs[3][3] - coeff*lhs[0][3];
+      lhs[3][4]= lhs[3][4] - coeff*lhs[0][4];
+      c[3][0] = c[3][0] - coeff*c[0][0];
+      c[3][1] = c[3][1] - coeff*c[0][1];
+      c[3][2] = c[3][2] - coeff*c[0][2];
+      c[3][3] = c[3][3] - coeff*c[0][3];
+      c[3][4] = c[3][4] - coeff*c[0][4];
+      r[3]   = r[3]   - coeff*r[0];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[4][0];
+      lhs[4][1]= lhs[4][1] - coeff*lhs[0][1];
+      lhs[4][2]= lhs[4][2] - coeff*lhs[0][2];
+      lhs[4][3]= lhs[4][3] - coeff*lhs[0][3];
+      lhs[4][4]= lhs[4][4] - coeff*lhs[0][4];
+      c[4][0] = c[4][0] - coeff*c[0][0];
+      c[4][1] = c[4][1] - coeff*c[0][1];
+      c[4][2] = c[4][2] - coeff*c[0][2];
+      c[4][3] = c[4][3] - coeff*c[0][3];
+      c[4][4] = c[4][4] - coeff*c[0][4];
+      r[4]   = r[4]   - coeff*r[0];
+    }
+  }
+
+  // STAGE 1: Pivot on lhs[1][1]
+  // Normalize row 1
+  pivot = 1.00/lhs[1][1];
+  lhs[1][2] = lhs[1][2]*pivot;
+  lhs[1][3] = lhs[1][3]*pivot;
+  lhs[1][4] = lhs[1][4]*pivot;
+  c[1][0] = c[1][0]*pivot;
+  c[1][1] = c[1][1]*pivot;
+  c[1][2] = c[1][2]*pivot;
+  c[1][3] = c[1][3]*pivot;
+  c[1][4] = c[1][4]*pivot;
+  r[1]   = r[1]  *pivot;
+
+  // Eliminate elements in column 1 for rows 0, 2, 3, 4 using normalized row 1
+#pragma omp parallel sections private(coeff)
+  {
+    #pragma omp section
+    {
+      coeff = lhs[0][1];
+      lhs[0][2]= lhs[0][2] - coeff*lhs[1][2];
+      lhs[0][3]= lhs[0][3] - coeff*lhs[1][3];
+      lhs[0][4]= lhs[0][4] - coeff*lhs[1][4];
+      c[0][0] = c[0][0] - coeff*c[1][0];
+      c[0][1] = c[0][1] - coeff*c[1][1];
+      c[0][2] = c[0][2] - coeff*c[1][2];
+      c[0][3] = c[0][3] - coeff*c[1][3];
+      c[0][4] = c[0][4] - coeff*c[1][4];
+      r[0]   = r[0]   - coeff*r[1];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[2][1];
+      lhs[2][2]= lhs[2][2] - coeff*lhs[1][2];
+      lhs[2][3]= lhs[2][3] - coeff*lhs[1][3];
+      lhs[2][4]= lhs[2][4] - coeff*lhs[1][4];
+      c[2][0] = c[2][0] - coeff*c[1][0];
+      c[2][1] = c[2][1] - coeff*c[1][1];
+      c[2][2] = c[2][2] - coeff*c[1][2];
+      c[2][3] = c[2][3] - coeff*c[1][3];
+      c[2][4] = c[2][4] - coeff*c[1][4];
+      r[2]   = r[2]   - coeff*r[1];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[3][1];
+      lhs[3][2]= lhs[3][2] - coeff*lhs[1][2];
+      lhs[3][3]= lhs[3][3] - coeff*lhs[1][3];
+      lhs[3][4]= lhs[3][4] - coeff*lhs[1][4];
+      c[3][0] = c[3][0] - coeff*c[1][0];
+      c[3][1] = c[3][1] - coeff*c[1][1];
+      c[3][2] = c[3][2] - coeff*c[1][2];
+      c[3][3] = c[3][3] - coeff*c[1][3];
+      c[3][4] = c[3][4] - coeff*c[1][4];
+      r[3]   = r[3]   - coeff*r[1];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[4][1];
+      lhs[4][2]= lhs[4][2] - coeff*lhs[1][2];
+      lhs[4][3]= lhs[4][3] - coeff*lhs[1][3];
+      lhs[4][4]= lhs[4][4] - coeff*lhs[1][4];
+      c[4][0] = c[4][0] - coeff*c[1][0];
+      c[4][1] = c[4][1] - coeff*c[1][1];
+      c[4][2] = c[4][2] - coeff*c[1][2];
+      c[4][3] = c[4][3] - coeff*c[1][3];
+      c[4][4] = c[4][4] - coeff*c[1][4];
+      r[4]   = r[4]   - coeff*r[1];
+    }
+  }
+
+  // STAGE 2: Pivot on lhs[2][2]
+  // Normalize row 2
+  pivot = 1.00/lhs[2][2];
+  lhs[2][3] = lhs[2][3]*pivot;
+  lhs[2][4] = lhs[2][4]*pivot;
+  c[2][0] = c[2][0]*pivot;
+  c[2][1] = c[2][1]*pivot;
+  c[2][2] = c[2][2]*pivot;
+  c[2][3] = c[2][3]*pivot;
+  c[2][4] = c[2][4]*pivot;
+  r[2]   = r[2]  *pivot;
+
+  // Eliminate elements in column 2 for rows 0, 1, 3, 4 using normalized row 2
+#pragma omp parallel sections private(coeff)
+  {
+    #pragma omp section
+    {
+      coeff = lhs[0][2];
+      lhs[0][3]= lhs[0][3] - coeff*lhs[2][3];
+      lhs[0][4]= lhs[0][4] - coeff*lhs[2][4];
+      c[0][0] = c[0][0] - coeff*c[2][0];
+      c[0][1] = c[0][1] - coeff*c[2][1];
+      c[0][2] = c[0][2] - coeff*c[2][2];
+      c[0][3] = c[0][3] - coeff*c[2][3];
+      c[0][4] = c[0][4] - coeff*c[2][4];
+      r[0]   = r[0]   - coeff*r[2];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[1][2];
+      lhs[1][3]= lhs[1][3] - coeff*lhs[2][3];
+      lhs[1][4]= lhs[1][4] - coeff*lhs[2][4];
+      c[1][0] = c[1][0] - coeff*c[2][0];
+      c[1][1] = c[1][1] - coeff*c[2][1];
+      c[1][2] = c[1][2] - coeff*c[2][2];
+      c[1][3] = c[1][3] - coeff*c[2][3];
+      c[1][4] = c[1][4] - coeff*c[2][4];
+      r[1]   = r[1]   - coeff*r[2];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[3][2];
+      lhs[3][3]= lhs[3][3] - coeff*lhs[2][3];
+      lhs[3][4]= lhs[3][4] - coeff*lhs[2][4];
+      c[3][0] = c[3][0] - coeff*c[2][0];
+      c[3][1] = c[3][1] - coeff*c[2][1];
+      c[3][2] = c[3][2] - coeff*c[2][2];
+      c[3][3] = c[3][3] - coeff*c[2][3];
+      c[3][4] = c[3][4] - coeff*c[2][4];
+      r[3]   = r[3]   - coeff*r[2];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[4][2];
+      lhs[4][3]= lhs[4][3] - coeff*lhs[2][3];
+      lhs[4][4]= lhs[4][4] - coeff*lhs[2][4];
+      c[4][0] = c[4][0] - coeff*c[2][0];
+      c[4][1] = c[4][1] - coeff*c[2][1];
+      c[4][2] = c[4][2] - coeff*c[2][2];
+      c[4][3] = c[4][3] - coeff*c[2][3];
+      c[4][4] = c[4][4] - coeff*c[2][4];
+      r[4]   = r[4]   - coeff*r[2];
+    }
+  }
+
+  // STAGE 3: Pivot on lhs[3][3]
+  // Normalize row 3
+  pivot = 1.00/lhs[3][3];
+  lhs[3][4] = lhs[3][4]*pivot;
+  c[3][0] = c[3][0]*pivot;
+  c[3][1] = c[3][1]*pivot;
+  c[3][2] = c[3][2]*pivot;
+  c[3][3] = c[3][3]*pivot;
+  c[3][4] = c[3][4]*pivot;
+  r[3]   = r[3]  *pivot;
+
+  // Eliminate elements in column 3 for rows 0, 1, 2, 4 using normalized row 3
+#pragma omp parallel sections private(coeff)
+  {
+    #pragma omp section
+    {
+      coeff = lhs[0][3];
+      lhs[0][4]= lhs[0][4] - coeff*lhs[3][4];
+      c[0][0] = c[0][0] - coeff*c[3][0];
+      c[0][1] = c[0][1] - coeff*c[3][1];
+      c[0][2] = c[0][2] - coeff*c[3][2];
+      c[0][3] = c[0][3] - coeff*c[3][3];
+      c[0][4] = c[0][4] - coeff*c[3][4];
+      r[0]   = r[0]   - coeff*r[3];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[1][3];
+      lhs[1][4]= lhs[1][4] - coeff*lhs[3][4];
+      c[1][0] = c[1][0] - coeff*c[3][0];
+      c[1][1] = c[1][1] - coeff*c[3][1];
+      c[1][2] = c[1][2] - coeff*c[3][2];
+      c[1][3] = c[1][3] - coeff*c[3][3];
+      c[1][4] = c[1][4] - coeff*c[3][4];
+      r[1]   = r[1]   - coeff*r[3];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[2][3];
+      lhs[2][4]= lhs[2][4] - coeff*lhs[3][4];
+      c[2][0] = c[2][0] - coeff*c[3][0];
+      c[2][1] = c[2][1] - coeff*c[3][1];
+      c[2][2] = c[2][2] - coeff*c[3][2];
+      c[2][3] = c[2][3] - coeff*c[3][3];
+      c[2][4] = c[2][4] - coeff*c[3][4];
+      r[2]   = r[2]   - coeff*r[3];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[4][3];
+      lhs[4][4]= lhs[4][4] - coeff*lhs[3][4];
+      c[4][0] = c[4][0] - coeff*c[3][0];
+      c[4][1] = c[4][1] - coeff*c[3][1];
+      c[4][2] = c[4][2] - coeff*c[3][2];
+      c[4][3] = c[4][3] - coeff*c[3][3];
+      c[4][4] = c[4][4] - coeff*c[3][4];
+      r[4]   = r[4]   - coeff*r[3];
+    }
+  }
+
+  // STAGE 4: Pivot on lhs[4][4]
+  // Normalize row 4 (only c and r, lhs effectively done)
+  pivot = 1.00/lhs[4][4];
+  c[4][0] = c[4][0]*pivot;
+  c[4][1] = c[4][1]*pivot;
+  c[4][2] = c[4][2]*pivot;
+  c[4][3] = c[4][3]*pivot;
+  c[4][4] = c[4][4]*pivot;
+  r[4]   = r[4]  *pivot;
+
+  // Eliminate elements in column 4 for rows 0, 1, 2, 3 using normalized row 4
+#pragma omp parallel sections private(coeff)
+  {
+    #pragma omp section
+    {
+      coeff = lhs[0][4];
+      // No lhs updates here as j > 4 is empty for lhs[0][j]
+      c[0][0] = c[0][0] - coeff*c[4][0];
+      c[0][1] = c[0][1] - coeff*c[4][1];
+      c[0][2] = c[0][2] - coeff*c[4][2];
+      c[0][3] = c[0][3] - coeff*c[4][3];
+      c[0][4] = c[0][4] - coeff*c[4][4];
+      r[0]   = r[0]   - coeff*r[4];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[1][4];
+      c[1][0] = c[1][0] - coeff*c[4][0];
+      c[1][1] = c[1][1] - coeff*c[4][1];
+      c[1][2] = c[1][2] - coeff*c[4][2];
+      c[1][3] = c[1][3] - coeff*c[4][3];
+      c[1][4] = c[1][4] - coeff*c[4][4];
+      r[1]   = r[1]   - coeff*r[4];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[2][4];
+      c[2][0] = c[2][0] - coeff*c[4][0];
+      c[2][1] = c[2][1] - coeff*c[4][1];
+      c[2][2] = c[2][2] - coeff*c[4][2];
+      c[2][3] = c[2][3] - coeff*c[4][3];
+      c[2][4] = c[2][4] - coeff*c[4][4];
+      r[2]   = r[2]   - coeff*r[4];
+    }
+    #pragma omp section
+    {
+      coeff = lhs[3][4];
+      c[3][0] = c[3][0] - coeff*c[4][0];
+      c[3][1] = c[3][1] - coeff*c[4][1];
+      c[3][2] = c[3][2] - coeff*c[4][2];
+      c[3][3] = c[3][3] - coeff*c[4][3];
+      c[3][4] = c[3][4] - coeff*c[4][4];
+      r[3]   = r[3]   - coeff*r[4];
+    }
+  }
+} 
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/binvcrhs.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 binvcrhs 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,13644.81
+**********
+No improvement or execution failed. Reverting changes for binvcrhs.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Processing binvrhs.c in BT...
+
+Generation Code:
+static void binvrhs(double lhs[5][5], double r[5]) {
+  double pivot, coeff;
+
+  // Stage k=0
+#pragma omp parallel private(coeff)
+  {
+#pragma omp single
+    {
+      pivot = 1.00/lhs[0][0];
+    }
+
+    // Normalize row 0
+#pragma omp sections
+    {
+#pragma omp section
+      lhs[0][1] = lhs[0][1]*pivot;
+#pragma omp section
+      lhs[0][2] = lhs[0][2]*pivot;
+#pragma omp section
+      lhs[0][3] = lhs[0][3]*pivot;
+#pragma omp section
+      lhs[0][4] = lhs[0][4]*pivot;
+#pragma omp section
+      r[0]   = r[0]  *pivot;
+    }
+    // Implicit barrier
+
+    // Update rows 1,2,3,4 based on row 0
+#pragma omp sections
+    {
+#pragma omp section
+      {
+        coeff = lhs[1][0];
+        lhs[1][1]= lhs[1][1] - coeff*lhs[0][1];
+        lhs[1][2]= lhs[1][2] - coeff*lhs[0][2];
+        lhs[1][3]= lhs[1][3] - coeff*lhs[0][3];
+        lhs[1][4]= lhs[1][4] - coeff*lhs[0][4];
+        r[1]   = r[1]   - coeff*r[0];
+      }
+#pragma omp section
+      {
+        coeff = lhs[2][0];
+        lhs[2][1]= lhs[2][1] - coeff*lhs[0][1];
+        lhs[2][2]= lhs[2][2] - coeff*lhs[0][2];
+        lhs[2][3]= lhs[2][3] - coeff*lhs[0][3];
+        lhs[2][4]= lhs[2][4] - coeff*lhs[0][4];
+        r[2]   = r[2]   - coeff*r[0];
+      }
+#pragma omp section
+      {
+        coeff = lhs[3][0];
+        lhs[3][1]= lhs[3][1] - coeff*lhs[0][1];
+        lhs[3][2]= lhs[3][2] - coeff*lhs[0][2];
+        lhs[3][3]= lhs[3][3] - coeff*lhs[0][3];
+        lhs[3][4]= lhs[3][4] - coeff*lhs[0][4];
+        r[3]   = r[3]   - coeff*r[0];
+      }
+#pragma omp section
+      {
+        coeff = lhs[4][0];
+        lhs[4][1]= lhs[4][1] - coeff*lhs[0][1];
+        lhs[4][2]= lhs[4][2] - coeff*lhs[0][2];
+        lhs[4][3]= lhs[4][3] - coeff*lhs[0][3];
+        lhs[4][4]= lhs[4][4] - coeff*lhs[0][4];
+        r[4]   = r[4]   - coeff*r[0];
+      }
+    } // End of sections for k=0 elimination
+  } // End of parallel region for stage k=0
+
+  // Stage k=1
+#pragma omp parallel private(coeff)
+  {
+#pragma omp single
+    {
+      pivot = 1.00/lhs[1][1];
+    }
+
+    // Normalize row 1
+#pragma omp sections
+    {
+#pragma omp section
+      lhs[1][2] = lhs[1][2]*pivot;
+#pragma omp section
+      lhs[1][3] = lhs[1][3]*pivot;
+#pragma omp section
+      lhs[1][4] = lhs[1][4]*pivot;
+#pragma omp section
+      r[1]   = r[1]  *pivot;
+    }
+    // Implicit barrier
+
+    // Update rows 0,2,3,4 based on row 1
+#pragma omp sections
+    {
+#pragma omp section
+      {
+        coeff = lhs[0][1];
+        lhs[0][2]= lhs[0][2] - coeff*lhs[1][2];
+        lhs[0][3]= lhs[0][3] - coeff*lhs[1][3];
+        lhs[0][4]= lhs[0][4] - coeff*lhs[1][4];
+        r[0]   = r[0]   - coeff*r[1];
+      }
+#pragma omp section
+      {
+        coeff = lhs[2][1];
+        lhs[2][2]= lhs[2][2] - coeff*lhs[1][2];
+        lhs[2][3]= lhs[2][3] - coeff*lhs[1][3];
+        lhs[2][4]= lhs[2][4] - coeff*lhs[1][4];
+        r[2]   = r[2]   - coeff*r[1];
+      }
+#pragma omp section
+      {
+        coeff = lhs[3][1];
+        lhs[3][2]= lhs[3][2] - coeff*lhs[1][2];
+        lhs[3][3]= lhs[3][3] - coeff*lhs[1][3];
+        lhs[3][4]= lhs[3][4] - coeff*lhs[1][4];
+        r[3]   = r[3]   - coeff*r[1];
+      }
+#pragma omp section
+      {
+        coeff = lhs[4][1];
+        lhs[4][2]= lhs[4][2] - coeff*lhs[1][2];
+        lhs[4][3]= lhs[4][3] - coeff*lhs[1][3];
+        lhs[4][4]= lhs[4][4] - coeff*lhs[1][4];
+        r[4]   = r[4]   - coeff*r[1];
+      }
+    } // End of sections for k=1 elimination
+  } // End of parallel region for stage k=1
+
+  // Stage k=2
+#pragma omp parallel private(coeff)
+  {
+#pragma omp single
+    {
+      pivot = 1.00/lhs[2][2];
+    }
+
+    // Normalize row 2
+#pragma omp sections
+    {
+#pragma omp section
+      lhs[2][3] = lhs[2][3]*pivot;
+#pragma omp section
+      lhs[2][4] = lhs[2][4]*pivot;
+#pragma omp section
+      r[2]   = r[2]  *pivot;
+    }
+    // Implicit barrier
+
+    // Update rows 0,1,3,4 based on row 2
+#pragma omp sections
+    {
+#pragma omp section
+      {
+        coeff = lhs[0][2];
+        lhs[0][3]= lhs[0][3] - coeff*lhs[2][3];
+        lhs[0][4]= lhs[0][4] - coeff*lhs[2][4];
+        r[0]   = r[0]   - coeff*r[2];
+      }
+#pragma omp section
+      {
+        coeff = lhs[1][2];
+        lhs[1][3]= lhs[1][3] - coeff*lhs[2][3];
+        lhs[1][4]= lhs[1][4] - coeff*lhs[2][4];
+        r[1]   = r[1]   - coeff*r[2];
+      }
+#pragma omp section
+      {
+        coeff = lhs[3][2];
+        lhs[3][3]= lhs[3][3] - coeff*lhs[2][3];
+        lhs[3][4]= lhs[3][4] - coeff*lhs[2][4];
+        r[3]   = r[3]   - coeff*r[2];
+      }
+#pragma omp section
+      {
+        coeff = lhs[4][2];
+        lhs[4][3]= lhs[4][3] - coeff*lhs[2][3];
+        lhs[4][4]= lhs[4][4] - coeff*lhs[2][4];
+        r[4]   = r[4]   - coeff*r[2];
+      }
+    } // End of sections for k=2 elimination
+  } // End of parallel region for stage k=2
+
+  // Stage k=3
+#pragma omp parallel private(coeff)
+  {
+#pragma omp single
+    {
+      pivot = 1.00/lhs[3][3];
+    }
+
+    // Normalize row 3
+#pragma omp sections
+    {
+#pragma omp section
+      lhs[3][4] = lhs[3][4]*pivot;
+#pragma omp section
+      r[3]   = r[3]  *pivot;
+    }
+    // Implicit barrier
+
+    // Update rows 0,1,2,4 based on row 3
+#pragma omp sections
+    {
+#pragma omp section
+      {
+        coeff = lhs[0][3];
+        lhs[0][4]= lhs[0][4] - coeff*lhs[3][4];
+        r[0]   = r[0]   - coeff*r[3];
+      }
+#pragma omp section
+      {
+        coeff = lhs[1][3];
+        lhs[1][4]= lhs[1][4] - coeff*lhs[3][4];
+        r[1]   = r[1]   - coeff*r[3];
+      }
+#pragma omp section
+      {
+        coeff = lhs[2][3];
+        lhs[2][4]= lhs[2][4] - coeff*lhs[3][4];
+        r[2]   = r[2]   - coeff*r[3];
+      }
+#pragma omp section
+      {
+        coeff = lhs[4][3];
+        lhs[4][4]= lhs[4][4] - coeff*lhs[3][4];
+        r[4]   = r[4]   - coeff*r[3];
+      }
+    } // End of sections for k=3 elimination
+  } // End of parallel region for stage k=3
+
+  // Stage k=4
+#pragma omp parallel private(coeff)
+  {
+#pragma omp single
+    {
+      pivot = 1.00/lhs[4][4];
+    }
+
+    // Normalize row 4 - only r[4] is affected
+#pragma omp single // Use single for a single operation, ensuring it's done once
+    {
+      r[4]   = r[4]  *pivot;
+    }
+    // Implicit barrier
+
+    // Update rows 0,1,2,3 based on row 4
+#pragma omp sections
+    {
+#pragma omp section
+      {
+        coeff = lhs[0][4];
+        r[0]   = r[0]   - coeff*r[4];
+      }
+#pragma omp section
+      {
+        coeff = lhs[1][4];
+        r[1]   = r[1]   - coeff*r[4];
+      }
+#pragma omp section
+      {
+        coeff = lhs[2][4];
+        r[2]   = r[2]   - coeff*r[4];
+      }
+#pragma omp section
+      {
+        coeff = lhs[3][4];
+        r[3]   = r[3]   - coeff*r[4];
+      }
+    } // End of sections for k=4 elimination
+  } // End of parallel region for stage k=4
+} 
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/binvrhs.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 binvrhs 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,0.06
+**********
+No improvement or execution failed. Reverting changes for binvrhs.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Warning: File for function matmul_sub not found in /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_#_omp, skipping...
+Processing matvec_sub.c in BT...
+
+Generation Code:
+static void matvec_sub(double ablock[5][5], double avec[5], double bvec[5]) {
+  int i;
+#pragma omp parallel for
+  for (i = 0; i < 5; i++) {
+    bvec[i] = bvec[i] - ablock[i][0]*avec[0]
+      - ablock[i][1]*avec[1]
+      - ablock[i][2]*avec[2]
+      - ablock[i][3]*avec[3]
+      - ablock[i][4]*avec[4];
+  }
+} 
+   =========================================
+   =      NAS Parallel Benchmarks 2.3      =
+   =      OpenMP C Versions                =
+   =========================================
+
+cd BT; make CLASS=S
+make[1]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+make[2]: Entering directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/sys'
+../sys/setparams bt S
+gcc  -c -I../common -O3 -fopenmp bt.c
+gcc -fopenmp -lm -o ../bin/bt.S bt.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm
+make[1]: Leaving directory '/data/localssd/workspace/yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT'
+
+Saved generated C file to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/function_pattern_baseline/C_code/matvec_sub.c
+Created backup of /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c to /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c_tmp
+已将 matvec_sub 函数从 function_pattern_baseline/C_code 替换到 bt.c 中
+**********
+True,2708.68
+**********
+No improvement or execution failed. Reverting changes for matvec_sub.
+Restored /home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/BT/bt.c from backup.
+Finished processing folder: BT
+Best execution time: 0.05 seconds
+OMP primitives collected: {'add': '#pragma omp single', 'compute_rhs': '#pragma omp single', 'x_solve': '#pragma omp single', 'y_solve': '#pragma omp single', 'z_solve': '#pragma omp single'}
+All folders processed!

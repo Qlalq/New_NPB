@@ -1,0 +1,1200 @@
+BT/bt_#_omp.c:441:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:442:22: missed: not vectorized: no vectype for stmt: _1 = ce[m_52][0];
+ scalar_type: double
+BT/bt_#_omp.c:599:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:599:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:600:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:600:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:676:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:679:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:601:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:605:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:914:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:914:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:915:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:919:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:916:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:919:54: missed: not vectorized: no vectype for stmt: _102 = fjac[i_612][_1519][k_616][0][0];
+ scalar_type: double
+BT/bt_#_omp.c:830:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:830:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:831:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:833:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:832:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:833:25: missed: not vectorized: no vectype for stmt: _1 = u[i_611][j_613][k_615][0];
+ scalar_type: double
+BT/bt_#_omp.c:1640:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1640:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1641:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1641:19: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1642:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1644:34: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1631:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1635:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1621:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1625:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1608:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1608:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1609:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1613:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1599:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1603:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1589:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1593:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1538:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1538:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1539:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1552:15: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1540:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1541:7: missed: not vectorized: no vectype for stmt: wijk_888 = ws[i_676][j_657][k_479];
+ scalar_type: double
+BT/bt_#_omp.c:1529:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1533:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1519:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1523:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1506:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1506:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1507:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1511:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1497:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1501:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1487:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1491:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1436:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1436:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1437:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1450:17: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1438:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1439:7: missed: not vectorized: no vectype for stmt: vijk_919 = vs[i_670][j_655][k_645];
+ scalar_type: double
+BT/bt_#_omp.c:1427:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1431:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1417:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1421:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1404:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1404:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1405:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1409:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1395:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1399:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1385:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1389:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1334:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1334:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1335:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1339:7: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1336:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1337:7: missed: not vectorized: no vectype for stmt: uijk_951 = us[i_668][j_649][k_639];
+ scalar_type: double
+BT/bt_#_omp.c:1325:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1325:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1326:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1329:38: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1310:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1310:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1311:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1315:14: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1312:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1313:26: missed: not vectorized: no vectype for stmt: _1 = u[i_666][j_647][k_637][0];
+ scalar_type: double
+BT/bt_#_omp.c:1947:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1947:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:1930:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1930:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:183:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:183:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:173:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:173:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:174:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:174:19: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:175:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:177:8: missed: not vectorized: no vectype for stmt: add_327 = rhs[i_272][j_314][k_302][0];
+ scalar_type: double
+BT/bt_#_omp.c:160:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:160:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:146:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:146:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:148:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:148:19: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:150:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:152:2: missed: statement clobbers memory: exact_solution (xi_224, eta_228, zeta_232, &u_exact);
+BT/bt_#_omp.c:152:2: missed: statement clobbers memory: exact_solution (xi_224, eta_228, zeta_232, &u_exact);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _546 = sqrt (_386);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _280 = sqrt (_269);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _610 = sqrt (_608);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _628 = sqrt (_626);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _416 = sqrt (_448);
+BT/bt_#_omp.c:1816:3: missed: statement clobbers memory: compute_rhs ();
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _206 = sqrt (_208);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _46 = sqrt (_175);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _347 = sqrt (_400);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _423 = sqrt (_313);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _197 = sqrt (_322);
+BT/bt_#_omp.c:1923:5: missed: statement clobbers memory: __builtin_puts (&" Unknown class"[0]);
+BT/bt_#_omp.c:1915:5: missed: statement clobbers memory: printf (" Verification being performed for class %1c\n", _26);
+BT/bt_#_omp.c:1916:5: missed: statement clobbers memory: printf (" accuracy setting for epsilon = %20.13e\n", 1.00000000000000002092256083012847267532663408928783610463e-8);
+BT/bt_#_omp.c:1920:7: missed: statement clobbers memory: printf (" DT does not match the reference value of %15.8e\n", dtref_51);
+BT/bt_#_omp.c:1928:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of residual"[0]);
+BT/bt_#_omp.c:1926:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of residual"[0]);
+BT/bt_#_omp.c:1938:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_204, pretmp_600, pretmp_598, _33);
+BT/bt_#_omp.c:1935:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_204, pretmp_600, pretmp_598, _33);
+BT/bt_#_omp.c:1932:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_204, pretmp_600);
+BT/bt_#_omp.c:1945:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of solution error"[0]);
+BT/bt_#_omp.c:1943:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of solution error"[0]);
+BT/bt_#_omp.c:1955:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_181, pretmp_597, pretmp_595, _42);
+BT/bt_#_omp.c:1952:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_181, pretmp_597, pretmp_595, _42);
+BT/bt_#_omp.c:1949:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_181, pretmp_597);
+BT/bt_#_omp.c:1965:5: missed: statement clobbers memory: __builtin_puts (&" Verification failed"[0]);
+BT/bt_#_omp.c:1963:5: missed: statement clobbers memory: __builtin_puts (&" Verification Successful"[0]);
+BT/bt_#_omp.c:1960:5: missed: statement clobbers memory: __builtin_puts (&" No reference values provided"[0]);
+BT/bt_#_omp.c:1961:5: missed: statement clobbers memory: __builtin_puts (&" No verification performed"[0]);
+BT/bt_#_omp.c:1838:15: missed: Using original scalar computation for live lane because there is an out-of-loop definition for it
+BT/bt_#_omp.c:558:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:564:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:546:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:552:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:534:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:540:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:522:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:528:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:510:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:510:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:498:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:504:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:464:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:464:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:466:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:468:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:455:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:455:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:456:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:459:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (1.0e+0, eta_187, zeta_189, &MEM <double> [(void *)&Pface + 120B]);
+BT/bt_#_omp.c:475:4: missed: statement clobbers memory: exact_solution (xi_185, 0.0, zeta_189, &MEM <double> [(void *)&Pface + 40B]);
+BT/bt_#_omp.c:475:4: missed: statement clobbers memory: exact_solution (xi_185, 1.0e+0, zeta_189, &MEM <double> [(void *)&Pface + 160B]);
+BT/bt_#_omp.c:479:4: missed: statement clobbers memory: exact_solution (xi_185, eta_187, 0.0, &MEM <double> [(void *)&Pface + 80B]);
+BT/bt_#_omp.c:479:4: missed: statement clobbers memory: exact_solution (xi_185, eta_187, 1.0e+0, &MEM <double> [(void *)&Pface + 200B]);
+BT/bt_#_omp.c:451:13: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:451:13: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:123:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:123:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:124:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:127:30: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2459:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2459:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2460:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2464:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2461:36: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2464:36: missed: not vectorized: no vectype for stmt: _2126 = rhs[i_2526][j_2531][k_2548][0];
+ scalar_type: double
+BT/bt_#_omp.c:2496:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2497:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2482:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2482:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2483:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2484:18: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2475:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:2476:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:1153:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1153:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1154:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1158:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1155:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1158:54: missed: not vectorized: no vectype for stmt: _207 = fjac[i_2067][j_2097][_204][0][0];
+ scalar_type: double
+BT/bt_#_omp.c:1070:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1070:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1071:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1073:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1072:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1073:25: missed: not vectorized: no vectype for stmt: _96 = u[i_1917][j_1947][k_2007][0];
+ scalar_type: double
+BT/bt_#_omp.c:2403:32: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2403:32: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2404:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2408:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2405:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2408:36: missed: not vectorized: no vectype for stmt: _2286 = rhs[i_736][j_619][k_708][0];
+ scalar_type: double
+BT/bt_#_omp.c:2440:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2441:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2426:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2426:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2427:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2428:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2419:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:2420:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:1975:32: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1975:32: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1976:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1980:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1977:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1980:36: missed: not vectorized: no vectype for stmt: _2446 = rhs[i_1890][j_1860][k_1750][0];
+ scalar_type: double
+BT/bt_#_omp.c:2012:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:2013:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:1998:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1998:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1999:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:2000:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:1991:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:1992:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:134:5: missed: statement clobbers memory: compute_rhs ();
+BT/bt_#_omp.c:1969:3: missed: statement clobbers memory: lhsx ();
+BT/bt_#_omp.c:2397:3: missed: statement clobbers memory: lhsy ();
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:2006:2: missed: statement clobbers memory: binvcrhs (_656, _658, _652);
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:2019:7: missed: statement clobbers memory: binvrhs (_675, _674);
+BT/bt_#_omp.c:2397:3: missed: statement clobbers memory: lhsy ();
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2434:2: missed: statement clobbers memory: binvcrhs (_593, _595, _589);
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2447:7: missed: statement clobbers memory: binvrhs (_608, _604);
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2490:2: missed: statement clobbers memory: binvcrhs (_72, _74, _68);
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2503:7: missed: statement clobbers memory: binvrhs (_87, _83);
+BT/bt_#_omp.c:2464:22: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:84:25: missed: couldn't vectorize loop
+BT/bt_#_omp.c:84:25: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:427:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:427:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:428:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:431:49: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:352:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:352:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:354:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:354:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:409:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:411:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:372:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:375:40: missed: not vectorized: no vectype for stmt: _680 = forcing[i_649][j_654][k_606][0];
+ scalar_type: double
+BT/bt_#_omp.c:356:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:358:2: missed: statement clobbers memory: exact_solution (xi_640, eta_644, zeta_648, &dtemp);
+BT/bt_#_omp.c:277:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:277:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:279:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:279:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:334:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:336:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:297:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:300:40: missed: not vectorized: no vectype for stmt: _413 = forcing[i_934][j_906][k_925][0];
+ scalar_type: double
+BT/bt_#_omp.c:281:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:283:2: missed: statement clobbers memory: exact_solution (xi_373, eta_381, zeta_377, &dtemp);
+BT/bt_#_omp.c:203:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:203:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:205:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:205:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:259:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:261:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:223:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:226:40: missed: not vectorized: no vectype for stmt: _145 = forcing[i_99][j_279][k_286][0];
+ scalar_type: double
+BT/bt_#_omp.c:207:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:209:2: missed: statement clobbers memory: exact_solution (xi_113, eta_105, zeta_109, &dtemp);
+BT/bt_#_omp.c:194:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:194:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:195:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:198:24: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:196:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:198:24: missed: not vectorized: no vectype for stmt: forcing[i_242][j_254][k_270][0] = 0.0;
+ scalar_type: double
+BT/bt_#_omp.c:586:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:586:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:587:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:590:26: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:588:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:590:26: missed: not vectorized: no vectype for stmt: lhs[i_918][j_1051][k_2387][1][0][0] = 1.0e+0;
+ scalar_type: double
+BT/bt_#_omp.c:573:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:573:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:574:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:578:28: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:48:22: missed: couldn't vectorize loop
+BT/bt_#_omp.c:48:22: missed: not vectorized: number of iterations cannot be computed.
+BT/bt_#_omp.c:46:22: missed: couldn't vectorize loop
+BT/bt_#_omp.c:46:22: missed: not vectorized: number of iterations cannot be computed.
+BT/bt_#_omp.c:40:3: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - BT Benchmark\n"[0]);
+BT/bt_#_omp.c:42:8: missed: statement clobbers memory: fp_48 = fopen ("inputbt.data", "r");
+BT/bt_#_omp.c:53:5: missed: statement clobbers memory: __builtin_puts (&" No input file inputbt.data. Using compiled defaults"[0]);
+BT/bt_#_omp.c:44:5: missed: statement clobbers memory: printf (" Reading from input file inputbt.data");
+BT/bt_#_omp.c:45:5: missed: statement clobbers memory: fscanf (fp_48, "%d", &niter);
+BT/bt_#_omp.c:46:12: missed: statement clobbers memory: _1 = fgetc (fp_48);
+BT/bt_#_omp.c:47:5: missed: statement clobbers memory: fscanf (fp_48, "%lg", &dt);
+BT/bt_#_omp.c:48:12: missed: statement clobbers memory: _2 = fgetc (fp_48);
+BT/bt_#_omp.c:49:5: missed: statement clobbers memory: fscanf (fp_48, "%d%d%d", &grid_points[0], &grid_points[1], &grid_points[2]);
+BT/bt_#_omp.c:51:5: missed: statement clobbers memory: fclose (fp_48);
+BT/bt_#_omp.c:60:3: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d\n", _5, _4, _3);
+BT/bt_#_omp.c:62:3: missed: statement clobbers memory: printf (" Iterations: %3d   dt: %10.6f\n", niter.1_7, dt.0_6);
+BT/bt_#_omp.c:72:5: missed: statement clobbers memory: initialize ();
+BT/bt_#_omp.c:209:2: missed: statement clobbers memory: exact_solution (xi_113, eta_105, zeta_109, &dtemp);
+BT/bt_#_omp.c:283:2: missed: statement clobbers memory: exact_solution (xi_373, eta_381, zeta_377, &dtemp);
+BT/bt_#_omp.c:358:2: missed: statement clobbers memory: exact_solution (xi_640, eta_644, zeta_648, &dtemp);
+BT/bt_#_omp.c:75:5: missed: statement clobbers memory: adi ();
+BT/bt_#_omp.c:76:5: missed: statement clobbers memory: initialize ();
+BT/bt_#_omp.c:78:3: missed: statement clobbers memory: timer_clear (1);
+BT/bt_#_omp.c:79:3: missed: statement clobbers memory: timer_start (1);
+BT/bt_#_omp.c:86:17: missed: statement clobbers memory: printf (" Time step %4d\n", step_208);
+BT/bt_#_omp.c:88:9: missed: statement clobbers memory: adi ();
+BT/bt_#_omp.c:95:16: missed: statement clobbers memory: nthreads_73 = omp_get_num_threads ();
+BT/bt_#_omp.c:99:3: missed: statement clobbers memory: timer_stop (1);
+BT/bt_#_omp.c:100:10: missed: statement clobbers memory: tmax_76 = timer_read (1);
+BT/bt_#_omp.c:103:5: missed: statement clobbers memory: verify (niter.3_15, &class, &verified);
+BT/bt_#_omp.c:115:3: missed: statement clobbers memory: c_print_results ("BT", _37, _16, _17, _19, niter.6_35, nthreads_73, tmax_76, mflops_39, "          floating point", verified.5_34, "3.0 structured", "13 May 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp", "-fopenmp -lm", "(none)");
+BT/bt_#_omp.c:66:5: missed: statement clobbers memory: printf (" %dx%dx%d\n", _8, _12, _11);
+BT/bt_#_omp.c:67:5: missed: statement clobbers memory: __builtin_puts (&" Problem size too big for compiled array sizes"[0]);
+BT/bt_#_omp.c:68:5: missed: statement clobbers memory: exit (1);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:30:5: missed: statement clobbers memory: printf ("\n\n %s Benchmark Completed\n", name_6(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:32:5: missed: statement clobbers memory: printf (" Class           =                        %c\n", _1);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:37:9: missed: statement clobbers memory: printf (" Size            =              %3dx%3dx%3d\n", n1_12(D), n2_10(D), n3_11(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:35:9: missed: statement clobbers memory: printf (" Size            =             %12d\n", n1_12(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:39:5: missed: statement clobbers memory: printf (" Iterations      =             %12d\n", niter_15(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:41:5: missed: statement clobbers memory: printf (" Threads         =             %12d\n", nthreads_17(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:43:5: missed: statement clobbers memory: printf (" Time in seconds =             %12.2f\n", t_19(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:45:5: missed: statement clobbers memory: printf (" Mop/s total     =             %12.2f\n", mops_21(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:47:5: missed: statement clobbers memory: printf (" Operation type  = %24s\n", optype_23(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:52:9: missed: statement clobbers memory: __builtin_puts (&" Verification    =             UNSUCCESSFUL"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:50:9: missed: statement clobbers memory: __builtin_puts (&" Verification    =               SUCCESSFUL"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:54:5: missed: statement clobbers memory: printf (" Version         =           %12s\n", npbversion_28(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:56:5: missed: statement clobbers memory: printf (" Compile date    =             %12s\n", compiletime_30(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:58:5: missed: statement clobbers memory: __builtin_puts (&"\n Compile options:"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:60:5: missed: statement clobbers memory: printf ("    CC           = %s\n", cc_33(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:62:5: missed: statement clobbers memory: printf ("    CLINK        = %s\n", clink_35(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:64:5: missed: statement clobbers memory: printf ("    C_LIB        = %s\n", c_lib_37(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:66:5: missed: statement clobbers memory: printf ("    C_INC        = %s\n", c_inc_39(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:68:5: missed: statement clobbers memory: printf ("    CFLAGS       = %s\n", cflags_41(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:70:5: missed: statement clobbers memory: printf ("    CLINKFLAGS   = %s\n", clinkflags_43(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:72:5: missed: statement clobbers memory: printf ("    RAND         = %s\n", rand_45(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_randdp.c:118:19: missed: couldn't vectorize loop
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_randdp.c:127:12: missed: not vectorized: unsupported use in stmt.
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/wtime.c:8:3: missed: statement clobbers memory: gettimeofday (&tv, 0B);
+BT/bt_#_omp.c:441:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:442:22: missed: not vectorized: no vectype for stmt: _1 = ce[m_52][0];
+ scalar_type: double
+BT/bt_#_omp.c:599:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:599:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:600:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:600:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:676:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:679:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:601:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:605:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:914:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:914:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:915:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:919:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:916:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:919:54: missed: not vectorized: no vectype for stmt: _102 = fjac[i_612][_1519][k_616][0][0];
+ scalar_type: double
+BT/bt_#_omp.c:830:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:830:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:831:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:833:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:832:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:833:25: missed: not vectorized: no vectype for stmt: _1 = u[i_611][j_613][k_615][0];
+ scalar_type: double
+BT/bt_#_omp.c:1640:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1640:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1641:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1641:19: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1642:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1644:34: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1631:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1635:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1621:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1625:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1608:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1608:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1609:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1613:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1599:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1603:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1589:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1593:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1538:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1538:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1539:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1552:15: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1540:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1541:7: missed: not vectorized: no vectype for stmt: wijk_888 = ws[i_676][j_657][k_479];
+ scalar_type: double
+BT/bt_#_omp.c:1529:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1533:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1519:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1523:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1506:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1506:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1507:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1511:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1497:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1501:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1487:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1491:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1436:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1436:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1437:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1450:17: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1438:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1439:7: missed: not vectorized: no vectype for stmt: vijk_919 = vs[i_670][j_655][k_645];
+ scalar_type: double
+BT/bt_#_omp.c:1427:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1431:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1417:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1421:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1404:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1404:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1405:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1409:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1395:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1399:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1385:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1389:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1334:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1334:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1335:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1339:7: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1336:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1337:7: missed: not vectorized: no vectype for stmt: uijk_951 = us[i_668][j_649][k_639];
+ scalar_type: double
+BT/bt_#_omp.c:1325:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1325:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1326:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1329:38: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1310:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1310:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1311:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1315:14: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1312:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1313:26: missed: not vectorized: no vectype for stmt: _1 = u[i_666][j_647][k_637][0];
+ scalar_type: double
+BT/bt_#_omp.c:1947:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1947:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:1930:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1930:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:183:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:183:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:173:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:173:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:174:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:174:19: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:175:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:177:8: missed: not vectorized: no vectype for stmt: add_327 = rhs[i_272][j_314][k_302][0];
+ scalar_type: double
+BT/bt_#_omp.c:160:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:160:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:146:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:146:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:148:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:148:19: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:150:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:152:2: missed: statement clobbers memory: exact_solution (xi_224, eta_228, zeta_232, &u_exact);
+BT/bt_#_omp.c:152:2: missed: statement clobbers memory: exact_solution (xi_224, eta_228, zeta_232, &u_exact);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _546 = sqrt (_386);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _280 = sqrt (_269);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _610 = sqrt (_608);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _628 = sqrt (_626);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _416 = sqrt (_448);
+BT/bt_#_omp.c:1816:3: missed: statement clobbers memory: compute_rhs ();
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _206 = sqrt (_208);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _46 = sqrt (_175);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _347 = sqrt (_400);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _423 = sqrt (_313);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _197 = sqrt (_322);
+BT/bt_#_omp.c:1923:5: missed: statement clobbers memory: __builtin_puts (&" Unknown class"[0]);
+BT/bt_#_omp.c:1915:5: missed: statement clobbers memory: printf (" Verification being performed for class %1c\n", _26);
+BT/bt_#_omp.c:1916:5: missed: statement clobbers memory: printf (" accuracy setting for epsilon = %20.13e\n", 1.00000000000000002092256083012847267532663408928783610463e-8);
+BT/bt_#_omp.c:1920:7: missed: statement clobbers memory: printf (" DT does not match the reference value of %15.8e\n", dtref_51);
+BT/bt_#_omp.c:1928:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of residual"[0]);
+BT/bt_#_omp.c:1926:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of residual"[0]);
+BT/bt_#_omp.c:1938:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_204, pretmp_600, pretmp_598, _33);
+BT/bt_#_omp.c:1935:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_204, pretmp_600, pretmp_598, _33);
+BT/bt_#_omp.c:1932:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_204, pretmp_600);
+BT/bt_#_omp.c:1945:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of solution error"[0]);
+BT/bt_#_omp.c:1943:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of solution error"[0]);
+BT/bt_#_omp.c:1955:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_181, pretmp_597, pretmp_595, _42);
+BT/bt_#_omp.c:1952:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_181, pretmp_597, pretmp_595, _42);
+BT/bt_#_omp.c:1949:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_181, pretmp_597);
+BT/bt_#_omp.c:1965:5: missed: statement clobbers memory: __builtin_puts (&" Verification failed"[0]);
+BT/bt_#_omp.c:1963:5: missed: statement clobbers memory: __builtin_puts (&" Verification Successful"[0]);
+BT/bt_#_omp.c:1960:5: missed: statement clobbers memory: __builtin_puts (&" No reference values provided"[0]);
+BT/bt_#_omp.c:1961:5: missed: statement clobbers memory: __builtin_puts (&" No verification performed"[0]);
+BT/bt_#_omp.c:1838:15: missed: Using original scalar computation for live lane because there is an out-of-loop definition for it
+BT/bt_#_omp.c:558:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:564:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:546:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:552:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:534:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:540:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:522:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:528:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:510:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:510:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:498:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:504:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:464:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:464:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:466:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:468:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:455:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:455:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:456:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:459:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (1.0e+0, eta_187, zeta_189, &MEM <double> [(void *)&Pface + 120B]);
+BT/bt_#_omp.c:475:4: missed: statement clobbers memory: exact_solution (xi_185, 0.0, zeta_189, &MEM <double> [(void *)&Pface + 40B]);
+BT/bt_#_omp.c:475:4: missed: statement clobbers memory: exact_solution (xi_185, 1.0e+0, zeta_189, &MEM <double> [(void *)&Pface + 160B]);
+BT/bt_#_omp.c:479:4: missed: statement clobbers memory: exact_solution (xi_185, eta_187, 0.0, &MEM <double> [(void *)&Pface + 80B]);
+BT/bt_#_omp.c:479:4: missed: statement clobbers memory: exact_solution (xi_185, eta_187, 1.0e+0, &MEM <double> [(void *)&Pface + 200B]);
+BT/bt_#_omp.c:451:13: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:451:13: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:123:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:123:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:124:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:127:30: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2459:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2459:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2460:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2464:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2461:36: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2464:36: missed: not vectorized: no vectype for stmt: _2126 = rhs[i_2526][j_2531][k_2548][0];
+ scalar_type: double
+BT/bt_#_omp.c:2496:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2497:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2482:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2482:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2483:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2484:18: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2475:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:2476:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:1153:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1153:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1154:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1158:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1155:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1158:54: missed: not vectorized: no vectype for stmt: _207 = fjac[i_2067][j_2097][_204][0][0];
+ scalar_type: double
+BT/bt_#_omp.c:1070:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1070:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1071:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1073:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1072:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1073:25: missed: not vectorized: no vectype for stmt: _96 = u[i_1917][j_1947][k_2007][0];
+ scalar_type: double
+BT/bt_#_omp.c:2403:32: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2403:32: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2404:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2408:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2405:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2408:36: missed: not vectorized: no vectype for stmt: _2286 = rhs[i_736][j_619][k_708][0];
+ scalar_type: double
+BT/bt_#_omp.c:2440:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2441:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2426:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2426:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2427:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2428:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2419:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:2420:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:1975:32: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1975:32: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1976:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1980:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1977:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1980:36: missed: not vectorized: no vectype for stmt: _2446 = rhs[i_1890][j_1860][k_1750][0];
+ scalar_type: double
+BT/bt_#_omp.c:2012:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:2013:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:1998:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1998:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1999:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:2000:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:1991:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:1992:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:134:5: missed: statement clobbers memory: compute_rhs ();
+BT/bt_#_omp.c:1969:3: missed: statement clobbers memory: lhsx ();
+BT/bt_#_omp.c:2397:3: missed: statement clobbers memory: lhsy ();
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:2006:2: missed: statement clobbers memory: binvcrhs (_656, _658, _652);
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:2019:7: missed: statement clobbers memory: binvrhs (_675, _674);
+BT/bt_#_omp.c:2397:3: missed: statement clobbers memory: lhsy ();
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2434:2: missed: statement clobbers memory: binvcrhs (_593, _595, _589);
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2447:7: missed: statement clobbers memory: binvrhs (_608, _604);
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2490:2: missed: statement clobbers memory: binvcrhs (_72, _74, _68);
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2503:7: missed: statement clobbers memory: binvrhs (_87, _83);
+BT/bt_#_omp.c:2464:22: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:84:25: missed: couldn't vectorize loop
+BT/bt_#_omp.c:84:25: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:427:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:427:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:428:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:431:49: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:352:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:352:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:354:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:354:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:409:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:411:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:372:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:375:40: missed: not vectorized: no vectype for stmt: _680 = forcing[i_649][j_654][k_606][0];
+ scalar_type: double
+BT/bt_#_omp.c:356:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:358:2: missed: statement clobbers memory: exact_solution (xi_640, eta_644, zeta_648, &dtemp);
+BT/bt_#_omp.c:277:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:277:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:279:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:279:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:334:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:336:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:297:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:300:40: missed: not vectorized: no vectype for stmt: _413 = forcing[i_934][j_906][k_925][0];
+ scalar_type: double
+BT/bt_#_omp.c:281:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:283:2: missed: statement clobbers memory: exact_solution (xi_373, eta_381, zeta_377, &dtemp);
+BT/bt_#_omp.c:203:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:203:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:205:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:205:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:259:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:261:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:223:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:226:40: missed: not vectorized: no vectype for stmt: _145 = forcing[i_99][j_279][k_286][0];
+ scalar_type: double
+BT/bt_#_omp.c:207:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:209:2: missed: statement clobbers memory: exact_solution (xi_113, eta_105, zeta_109, &dtemp);
+BT/bt_#_omp.c:194:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:194:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:195:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:198:24: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:196:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:198:24: missed: not vectorized: no vectype for stmt: forcing[i_242][j_254][k_270][0] = 0.0;
+ scalar_type: double
+BT/bt_#_omp.c:586:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:586:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:587:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:590:26: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:588:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:590:26: missed: not vectorized: no vectype for stmt: lhs[i_918][j_1051][k_2387][1][0][0] = 1.0e+0;
+ scalar_type: double
+BT/bt_#_omp.c:573:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:573:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:574:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:578:28: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:48:22: missed: couldn't vectorize loop
+BT/bt_#_omp.c:48:22: missed: not vectorized: number of iterations cannot be computed.
+BT/bt_#_omp.c:46:22: missed: couldn't vectorize loop
+BT/bt_#_omp.c:46:22: missed: not vectorized: number of iterations cannot be computed.
+BT/bt_#_omp.c:40:3: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - BT Benchmark\n"[0]);
+BT/bt_#_omp.c:42:8: missed: statement clobbers memory: fp_48 = fopen ("inputbt.data", "r");
+BT/bt_#_omp.c:53:5: missed: statement clobbers memory: __builtin_puts (&" No input file inputbt.data. Using compiled defaults"[0]);
+BT/bt_#_omp.c:44:5: missed: statement clobbers memory: printf (" Reading from input file inputbt.data");
+BT/bt_#_omp.c:45:5: missed: statement clobbers memory: fscanf (fp_48, "%d", &niter);
+BT/bt_#_omp.c:46:12: missed: statement clobbers memory: _1 = fgetc (fp_48);
+BT/bt_#_omp.c:47:5: missed: statement clobbers memory: fscanf (fp_48, "%lg", &dt);
+BT/bt_#_omp.c:48:12: missed: statement clobbers memory: _2 = fgetc (fp_48);
+BT/bt_#_omp.c:49:5: missed: statement clobbers memory: fscanf (fp_48, "%d%d%d", &grid_points[0], &grid_points[1], &grid_points[2]);
+BT/bt_#_omp.c:51:5: missed: statement clobbers memory: fclose (fp_48);
+BT/bt_#_omp.c:60:3: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d\n", _5, _4, _3);
+BT/bt_#_omp.c:62:3: missed: statement clobbers memory: printf (" Iterations: %3d   dt: %10.6f\n", niter.1_7, dt.0_6);
+BT/bt_#_omp.c:72:5: missed: statement clobbers memory: initialize ();
+BT/bt_#_omp.c:209:2: missed: statement clobbers memory: exact_solution (xi_113, eta_105, zeta_109, &dtemp);
+BT/bt_#_omp.c:283:2: missed: statement clobbers memory: exact_solution (xi_373, eta_381, zeta_377, &dtemp);
+BT/bt_#_omp.c:358:2: missed: statement clobbers memory: exact_solution (xi_640, eta_644, zeta_648, &dtemp);
+BT/bt_#_omp.c:75:5: missed: statement clobbers memory: adi ();
+BT/bt_#_omp.c:76:5: missed: statement clobbers memory: initialize ();
+BT/bt_#_omp.c:78:3: missed: statement clobbers memory: timer_clear (1);
+BT/bt_#_omp.c:79:3: missed: statement clobbers memory: timer_start (1);
+BT/bt_#_omp.c:86:17: missed: statement clobbers memory: printf (" Time step %4d\n", step_208);
+BT/bt_#_omp.c:88:9: missed: statement clobbers memory: adi ();
+BT/bt_#_omp.c:95:16: missed: statement clobbers memory: nthreads_73 = omp_get_num_threads ();
+BT/bt_#_omp.c:99:3: missed: statement clobbers memory: timer_stop (1);
+BT/bt_#_omp.c:100:10: missed: statement clobbers memory: tmax_76 = timer_read (1);
+BT/bt_#_omp.c:103:5: missed: statement clobbers memory: verify (niter.3_15, &class, &verified);
+BT/bt_#_omp.c:115:3: missed: statement clobbers memory: c_print_results ("BT", _37, _16, _17, _19, niter.6_35, nthreads_73, tmax_76, mflops_39, "          floating point", verified.5_34, "3.0 structured", "13 May 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp", "-fopenmp -lm", "(none)");
+BT/bt_#_omp.c:66:5: missed: statement clobbers memory: printf (" %dx%dx%d\n", _8, _12, _11);
+BT/bt_#_omp.c:67:5: missed: statement clobbers memory: __builtin_puts (&" Problem size too big for compiled array sizes"[0]);
+BT/bt_#_omp.c:68:5: missed: statement clobbers memory: exit (1);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:30:5: missed: statement clobbers memory: printf ("\n\n %s Benchmark Completed\n", name_6(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:32:5: missed: statement clobbers memory: printf (" Class           =                        %c\n", _1);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:37:9: missed: statement clobbers memory: printf (" Size            =              %3dx%3dx%3d\n", n1_12(D), n2_10(D), n3_11(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:35:9: missed: statement clobbers memory: printf (" Size            =             %12d\n", n1_12(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:39:5: missed: statement clobbers memory: printf (" Iterations      =             %12d\n", niter_15(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:41:5: missed: statement clobbers memory: printf (" Threads         =             %12d\n", nthreads_17(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:43:5: missed: statement clobbers memory: printf (" Time in seconds =             %12.2f\n", t_19(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:45:5: missed: statement clobbers memory: printf (" Mop/s total     =             %12.2f\n", mops_21(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:47:5: missed: statement clobbers memory: printf (" Operation type  = %24s\n", optype_23(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:52:9: missed: statement clobbers memory: __builtin_puts (&" Verification    =             UNSUCCESSFUL"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:50:9: missed: statement clobbers memory: __builtin_puts (&" Verification    =               SUCCESSFUL"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:54:5: missed: statement clobbers memory: printf (" Version         =           %12s\n", npbversion_28(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:56:5: missed: statement clobbers memory: printf (" Compile date    =             %12s\n", compiletime_30(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:58:5: missed: statement clobbers memory: __builtin_puts (&"\n Compile options:"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:60:5: missed: statement clobbers memory: printf ("    CC           = %s\n", cc_33(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:62:5: missed: statement clobbers memory: printf ("    CLINK        = %s\n", clink_35(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:64:5: missed: statement clobbers memory: printf ("    C_LIB        = %s\n", c_lib_37(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:66:5: missed: statement clobbers memory: printf ("    C_INC        = %s\n", c_inc_39(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:68:5: missed: statement clobbers memory: printf ("    CFLAGS       = %s\n", cflags_41(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:70:5: missed: statement clobbers memory: printf ("    CLINKFLAGS   = %s\n", clinkflags_43(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:72:5: missed: statement clobbers memory: printf ("    RAND         = %s\n", rand_45(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_randdp.c:118:19: missed: couldn't vectorize loop
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_randdp.c:127:12: missed: not vectorized: unsupported use in stmt.
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/wtime.c:8:3: missed: statement clobbers memory: gettimeofday (&tv, 0B);
+BT/bt_#_omp.c:441:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:442:22: missed: not vectorized: no vectype for stmt: _1 = ce[m_52][0];
+ scalar_type: double
+BT/bt_#_omp.c:599:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:599:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:600:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:600:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:676:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:679:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:601:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:605:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:914:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:914:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:915:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:919:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:916:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:919:54: missed: not vectorized: no vectype for stmt: _102 = fjac[i_612][_1519][k_616][0][0];
+ scalar_type: double
+BT/bt_#_omp.c:830:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:830:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:831:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:833:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:832:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:833:25: missed: not vectorized: no vectype for stmt: _1 = u[i_611][j_613][k_615][0];
+ scalar_type: double
+BT/bt_#_omp.c:1640:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1640:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1641:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1641:19: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1642:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1644:34: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1631:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1635:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1621:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1625:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1608:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1608:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1609:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1613:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1599:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1603:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1589:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1593:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1538:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1538:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1539:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1552:15: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1540:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1541:7: missed: not vectorized: no vectype for stmt: wijk_888 = ws[i_676][j_657][k_479];
+ scalar_type: double
+BT/bt_#_omp.c:1529:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1533:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1519:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1523:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1506:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1506:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1507:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1511:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1497:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1501:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1487:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1491:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1436:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1436:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1437:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1450:17: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1438:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1439:7: missed: not vectorized: no vectype for stmt: vijk_919 = vs[i_670][j_655][k_645];
+ scalar_type: double
+BT/bt_#_omp.c:1427:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1431:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1417:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1421:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1404:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1404:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1405:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1409:21: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1395:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1399:22: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1385:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1389:20: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1334:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1334:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1335:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1339:7: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1336:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1337:7: missed: not vectorized: no vectype for stmt: uijk_951 = us[i_668][j_649][k_639];
+ scalar_type: double
+BT/bt_#_omp.c:1325:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1325:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1326:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1329:38: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1310:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1310:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1311:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1315:14: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1312:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1313:26: missed: not vectorized: no vectype for stmt: _1 = u[i_666][j_647][k_637][0];
+ scalar_type: double
+BT/bt_#_omp.c:1947:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1947:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:1930:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1930:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:183:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:183:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:173:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:173:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:174:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:174:19: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:175:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:177:8: missed: not vectorized: no vectype for stmt: add_327 = rhs[i_272][j_314][k_302][0];
+ scalar_type: double
+BT/bt_#_omp.c:160:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:160:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:146:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:146:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:148:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:148:19: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:150:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:152:2: missed: statement clobbers memory: exact_solution (xi_224, eta_228, zeta_232, &u_exact);
+BT/bt_#_omp.c:152:2: missed: statement clobbers memory: exact_solution (xi_224, eta_228, zeta_232, &u_exact);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _546 = sqrt (_386);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _280 = sqrt (_269);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _610 = sqrt (_608);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _628 = sqrt (_626);
+BT/bt_#_omp.c:164:14: missed: statement clobbers memory: _416 = sqrt (_448);
+BT/bt_#_omp.c:1816:3: missed: statement clobbers memory: compute_rhs ();
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _206 = sqrt (_208);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _46 = sqrt (_175);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _347 = sqrt (_400);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _423 = sqrt (_313);
+BT/bt_#_omp.c:187:14: missed: statement clobbers memory: _197 = sqrt (_322);
+BT/bt_#_omp.c:1923:5: missed: statement clobbers memory: __builtin_puts (&" Unknown class"[0]);
+BT/bt_#_omp.c:1915:5: missed: statement clobbers memory: printf (" Verification being performed for class %1c\n", _26);
+BT/bt_#_omp.c:1916:5: missed: statement clobbers memory: printf (" accuracy setting for epsilon = %20.13e\n", 1.00000000000000002092256083012847267532663408928783610463e-8);
+BT/bt_#_omp.c:1920:7: missed: statement clobbers memory: printf (" DT does not match the reference value of %15.8e\n", dtref_51);
+BT/bt_#_omp.c:1928:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of residual"[0]);
+BT/bt_#_omp.c:1926:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of residual"[0]);
+BT/bt_#_omp.c:1938:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_204, pretmp_600, pretmp_598, _33);
+BT/bt_#_omp.c:1935:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_204, pretmp_600, pretmp_598, _33);
+BT/bt_#_omp.c:1932:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_204, pretmp_600);
+BT/bt_#_omp.c:1945:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of solution error"[0]);
+BT/bt_#_omp.c:1943:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of solution error"[0]);
+BT/bt_#_omp.c:1955:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_181, pretmp_597, pretmp_595, _42);
+BT/bt_#_omp.c:1952:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_181, pretmp_597, pretmp_595, _42);
+BT/bt_#_omp.c:1949:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_181, pretmp_597);
+BT/bt_#_omp.c:1965:5: missed: statement clobbers memory: __builtin_puts (&" Verification failed"[0]);
+BT/bt_#_omp.c:1963:5: missed: statement clobbers memory: __builtin_puts (&" Verification Successful"[0]);
+BT/bt_#_omp.c:1960:5: missed: statement clobbers memory: __builtin_puts (&" No reference values provided"[0]);
+BT/bt_#_omp.c:1961:5: missed: statement clobbers memory: __builtin_puts (&" No verification performed"[0]);
+BT/bt_#_omp.c:1838:15: missed: Using original scalar computation for live lane because there is an out-of-loop definition for it
+BT/bt_#_omp.c:558:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:564:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:546:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:552:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:534:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:540:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:522:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:528:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:510:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:510:17: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:498:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:504:16: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:464:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:464:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:466:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:468:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:455:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:455:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:456:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:459:18: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (0.0, eta_187, zeta_189, &MEM <double> [(void *)&Pface]);
+BT/bt_#_omp.c:471:4: missed: statement clobbers memory: exact_solution (1.0e+0, eta_187, zeta_189, &MEM <double> [(void *)&Pface + 120B]);
+BT/bt_#_omp.c:475:4: missed: statement clobbers memory: exact_solution (xi_185, 0.0, zeta_189, &MEM <double> [(void *)&Pface + 40B]);
+BT/bt_#_omp.c:475:4: missed: statement clobbers memory: exact_solution (xi_185, 1.0e+0, zeta_189, &MEM <double> [(void *)&Pface + 160B]);
+BT/bt_#_omp.c:479:4: missed: statement clobbers memory: exact_solution (xi_185, eta_187, 0.0, &MEM <double> [(void *)&Pface + 80B]);
+BT/bt_#_omp.c:479:4: missed: statement clobbers memory: exact_solution (xi_185, eta_187, 1.0e+0, &MEM <double> [(void *)&Pface + 200B]);
+BT/bt_#_omp.c:451:13: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:451:13: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:123:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:123:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:124:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:127:30: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2459:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2459:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2460:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2464:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2461:36: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2464:36: missed: not vectorized: no vectype for stmt: _2126 = rhs[i_2526][j_2531][k_2548][0];
+ scalar_type: double
+BT/bt_#_omp.c:2496:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2497:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2482:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2482:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2483:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2484:18: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2475:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:2476:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:1153:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1153:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1154:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1158:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1155:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1158:54: missed: not vectorized: no vectype for stmt: _207 = fjac[i_2067][j_2097][_204][0][0];
+ scalar_type: double
+BT/bt_#_omp.c:1070:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1070:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1071:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1073:25: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1072:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1073:25: missed: not vectorized: no vectype for stmt: _96 = u[i_1917][j_1947][k_2007][0];
+ scalar_type: double
+BT/bt_#_omp.c:2403:32: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2403:32: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2404:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2408:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:2405:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2408:36: missed: not vectorized: no vectype for stmt: _2286 = rhs[i_736][j_619][k_708][0];
+ scalar_type: double
+BT/bt_#_omp.c:2440:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2441:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2426:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2426:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:2427:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2428:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2419:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:2420:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:1975:32: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1975:32: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1976:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1980:36: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:1977:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1980:36: missed: not vectorized: no vectype for stmt: _2446 = rhs[i_1890][j_1860][k_1750][0];
+ scalar_type: double
+BT/bt_#_omp.c:2012:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:2013:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:1998:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1998:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:1999:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:2000:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:1991:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:1992:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:134:5: missed: statement clobbers memory: compute_rhs ();
+BT/bt_#_omp.c:1969:3: missed: statement clobbers memory: lhsx ();
+BT/bt_#_omp.c:2397:3: missed: statement clobbers memory: lhsy ();
+BT/bt_#_omp.c:1993:7: missed: statement clobbers memory: binvcrhs (_642, _641, _640);
+BT/bt_#_omp.c:2003:2: missed: statement clobbers memory: matmul_sub (_655, _657, _656);
+BT/bt_#_omp.c:2006:2: missed: statement clobbers memory: binvcrhs (_656, _658, _652);
+BT/bt_#_omp.c:2016:7: missed: statement clobbers memory: matmul_sub (_670, _672, _671);
+BT/bt_#_omp.c:2019:7: missed: statement clobbers memory: binvrhs (_675, _674);
+BT/bt_#_omp.c:2397:3: missed: statement clobbers memory: lhsy ();
+BT/bt_#_omp.c:2421:7: missed: statement clobbers memory: binvcrhs (_579, _578, _577);
+BT/bt_#_omp.c:2431:2: missed: statement clobbers memory: matmul_sub (_592, _594, _593);
+BT/bt_#_omp.c:2434:2: missed: statement clobbers memory: binvcrhs (_593, _595, _589);
+BT/bt_#_omp.c:2444:7: missed: statement clobbers memory: matmul_sub (_607, _609, _608);
+BT/bt_#_omp.c:2447:7: missed: statement clobbers memory: binvrhs (_608, _604);
+BT/bt_#_omp.c:2477:7: missed: statement clobbers memory: binvcrhs (_58, _57, _56);
+BT/bt_#_omp.c:2487:2: missed: statement clobbers memory: matmul_sub (_71, _73, _72);
+BT/bt_#_omp.c:2490:2: missed: statement clobbers memory: binvcrhs (_72, _74, _68);
+BT/bt_#_omp.c:2500:7: missed: statement clobbers memory: matmul_sub (_86, _88, _87);
+BT/bt_#_omp.c:2503:7: missed: statement clobbers memory: binvrhs (_87, _83);
+BT/bt_#_omp.c:2464:22: missed: not vectorized: vectorization is not profitable.
+BT/bt_#_omp.c:84:25: missed: couldn't vectorize loop
+BT/bt_#_omp.c:84:25: missed: not vectorized: control flow in loop.
+BT/bt_#_omp.c:427:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:427:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:428:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:431:49: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:352:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:352:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:354:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:354:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:409:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:411:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:372:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:375:40: missed: not vectorized: no vectype for stmt: _680 = forcing[i_649][j_654][k_606][0];
+ scalar_type: double
+BT/bt_#_omp.c:356:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:358:2: missed: statement clobbers memory: exact_solution (xi_640, eta_644, zeta_648, &dtemp);
+BT/bt_#_omp.c:277:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:277:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:279:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:279:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:334:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:336:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:297:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:300:40: missed: not vectorized: no vectype for stmt: _413 = forcing[i_934][j_906][k_925][0];
+ scalar_type: double
+BT/bt_#_omp.c:281:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:283:2: missed: statement clobbers memory: exact_solution (xi_373, eta_381, zeta_377, &dtemp);
+BT/bt_#_omp.c:203:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:203:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:205:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:205:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+BT/bt_#_omp.c:259:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:261:42: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:223:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:226:40: missed: not vectorized: no vectype for stmt: _145 = forcing[i_99][j_279][k_286][0];
+ scalar_type: double
+BT/bt_#_omp.c:207:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:209:2: missed: statement clobbers memory: exact_solution (xi_113, eta_105, zeta_109, &dtemp);
+BT/bt_#_omp.c:194:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:194:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:195:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:198:24: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:196:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:198:24: missed: not vectorized: no vectype for stmt: forcing[i_242][j_254][k_270][0] = 0.0;
+ scalar_type: double
+BT/bt_#_omp.c:586:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:586:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:587:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:590:26: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:588:21: missed: couldn't vectorize loop
+BT/bt_#_omp.c:590:26: missed: not vectorized: no vectype for stmt: lhs[i_918][j_1051][k_2387][1][0][0] = 1.0e+0;
+ scalar_type: double
+BT/bt_#_omp.c:573:17: missed: couldn't vectorize loop
+BT/bt_#_omp.c:573:17: missed: not vectorized: multiple nested loops.
+BT/bt_#_omp.c:574:19: missed: couldn't vectorize loop
+BT/bt_#_omp.c:578:28: missed: not vectorized: complicated access pattern.
+BT/bt_#_omp.c:48:22: missed: couldn't vectorize loop
+BT/bt_#_omp.c:48:22: missed: not vectorized: number of iterations cannot be computed.
+BT/bt_#_omp.c:46:22: missed: couldn't vectorize loop
+BT/bt_#_omp.c:46:22: missed: not vectorized: number of iterations cannot be computed.
+BT/bt_#_omp.c:40:3: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - BT Benchmark\n"[0]);
+BT/bt_#_omp.c:42:8: missed: statement clobbers memory: fp_48 = fopen ("inputbt.data", "r");
+BT/bt_#_omp.c:53:5: missed: statement clobbers memory: __builtin_puts (&" No input file inputbt.data. Using compiled defaults"[0]);
+BT/bt_#_omp.c:44:5: missed: statement clobbers memory: printf (" Reading from input file inputbt.data");
+BT/bt_#_omp.c:45:5: missed: statement clobbers memory: fscanf (fp_48, "%d", &niter);
+BT/bt_#_omp.c:46:12: missed: statement clobbers memory: _1 = fgetc (fp_48);
+BT/bt_#_omp.c:47:5: missed: statement clobbers memory: fscanf (fp_48, "%lg", &dt);
+BT/bt_#_omp.c:48:12: missed: statement clobbers memory: _2 = fgetc (fp_48);
+BT/bt_#_omp.c:49:5: missed: statement clobbers memory: fscanf (fp_48, "%d%d%d", &grid_points[0], &grid_points[1], &grid_points[2]);
+BT/bt_#_omp.c:51:5: missed: statement clobbers memory: fclose (fp_48);
+BT/bt_#_omp.c:60:3: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d\n", _5, _4, _3);
+BT/bt_#_omp.c:62:3: missed: statement clobbers memory: printf (" Iterations: %3d   dt: %10.6f\n", niter.1_7, dt.0_6);
+BT/bt_#_omp.c:72:5: missed: statement clobbers memory: initialize ();
+BT/bt_#_omp.c:209:2: missed: statement clobbers memory: exact_solution (xi_113, eta_105, zeta_109, &dtemp);
+BT/bt_#_omp.c:283:2: missed: statement clobbers memory: exact_solution (xi_373, eta_381, zeta_377, &dtemp);
+BT/bt_#_omp.c:358:2: missed: statement clobbers memory: exact_solution (xi_640, eta_644, zeta_648, &dtemp);
+BT/bt_#_omp.c:75:5: missed: statement clobbers memory: adi ();
+BT/bt_#_omp.c:76:5: missed: statement clobbers memory: initialize ();
+BT/bt_#_omp.c:78:3: missed: statement clobbers memory: timer_clear (1);
+BT/bt_#_omp.c:79:3: missed: statement clobbers memory: timer_start (1);
+BT/bt_#_omp.c:86:17: missed: statement clobbers memory: printf (" Time step %4d\n", step_208);
+BT/bt_#_omp.c:88:9: missed: statement clobbers memory: adi ();
+BT/bt_#_omp.c:95:16: missed: statement clobbers memory: nthreads_73 = omp_get_num_threads ();
+BT/bt_#_omp.c:99:3: missed: statement clobbers memory: timer_stop (1);
+BT/bt_#_omp.c:100:10: missed: statement clobbers memory: tmax_76 = timer_read (1);
+BT/bt_#_omp.c:103:5: missed: statement clobbers memory: verify (niter.3_15, &class, &verified);
+BT/bt_#_omp.c:115:3: missed: statement clobbers memory: c_print_results ("BT", _37, _16, _17, _19, niter.6_35, nthreads_73, tmax_76, mflops_39, "          floating point", verified.5_34, "3.0 structured", "13 May 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp", "-fopenmp -lm", "(none)");
+BT/bt_#_omp.c:66:5: missed: statement clobbers memory: printf (" %dx%dx%d\n", _8, _12, _11);
+BT/bt_#_omp.c:67:5: missed: statement clobbers memory: __builtin_puts (&" Problem size too big for compiled array sizes"[0]);
+BT/bt_#_omp.c:68:5: missed: statement clobbers memory: exit (1);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:30:5: missed: statement clobbers memory: printf ("\n\n %s Benchmark Completed\n", name_6(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:32:5: missed: statement clobbers memory: printf (" Class           =                        %c\n", _1);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:37:9: missed: statement clobbers memory: printf (" Size            =              %3dx%3dx%3d\n", n1_12(D), n2_10(D), n3_11(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:35:9: missed: statement clobbers memory: printf (" Size            =             %12d\n", n1_12(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:39:5: missed: statement clobbers memory: printf (" Iterations      =             %12d\n", niter_15(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:41:5: missed: statement clobbers memory: printf (" Threads         =             %12d\n", nthreads_17(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:43:5: missed: statement clobbers memory: printf (" Time in seconds =             %12.2f\n", t_19(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:45:5: missed: statement clobbers memory: printf (" Mop/s total     =             %12.2f\n", mops_21(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:47:5: missed: statement clobbers memory: printf (" Operation type  = %24s\n", optype_23(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:52:9: missed: statement clobbers memory: __builtin_puts (&" Verification    =             UNSUCCESSFUL"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:50:9: missed: statement clobbers memory: __builtin_puts (&" Verification    =               SUCCESSFUL"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:54:5: missed: statement clobbers memory: printf (" Version         =           %12s\n", npbversion_28(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:56:5: missed: statement clobbers memory: printf (" Compile date    =             %12s\n", compiletime_30(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:58:5: missed: statement clobbers memory: __builtin_puts (&"\n Compile options:"[0]);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:60:5: missed: statement clobbers memory: printf ("    CC           = %s\n", cc_33(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:62:5: missed: statement clobbers memory: printf ("    CLINK        = %s\n", clink_35(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:64:5: missed: statement clobbers memory: printf ("    C_LIB        = %s\n", c_lib_37(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:66:5: missed: statement clobbers memory: printf ("    C_INC        = %s\n", c_inc_39(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:68:5: missed: statement clobbers memory: printf ("    CFLAGS       = %s\n", cflags_41(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:70:5: missed: statement clobbers memory: printf ("    CLINKFLAGS   = %s\n", clinkflags_43(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_print_results.c:72:5: missed: statement clobbers memory: printf ("    RAND         = %s\n", rand_45(D));
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_randdp.c:118:19: missed: couldn't vectorize loop
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_randdp.c:127:12: missed: not vectorized: unsupported use in stmt.
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
+/home/yongjie/quick_yongjie/yongjie_workspace/New_NPB_frame/NPB3.0-omp-C/common/wtime.c:8:3: missed: statement clobbers memory: gettimeofday (&tv, 0B);

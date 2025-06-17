@@ -21,5 +21,3 @@ Attention:
 
 (3) The nowait clause cannot be nested within another work-sharing region.
 Work-sharing regions refer to directives such as #pragma omp for, #pragma omp parallel for, and #pragma omp sections.
-
-Note: You can only add and delete omp primitives and use the.patch file format for output

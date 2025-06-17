@@ -3,10 +3,20 @@ import time
 import re
 import os
 import subprocess
+import asyncio
+from openai import AsyncOpenAI
 base_dir = os.environ.get("BASE_DIR")
 
-openai.base_url = 'https://api.siliconflow.cn/v1/'
+# openai.base_url = 'https://api.siliconflow.cn/v1/'
+# openai.api_key = 'sk-lxmpctywfxndtshonqgixypnockmmtaaqcfzcxilysircimv'
+
+openai.base_url = 'https://open.xiaojingai.com/v1/'
 openai.api_key = ''
+client = AsyncOpenAI(
+    base_url='https://open.xiaojingai.com/v1/',
+    api_key=''
+)
+
 
 def ask_gpt_question(prompt, max_retries=5, retry_delay=5):
     """
@@ -16,7 +26,7 @@ def ask_gpt_question(prompt, max_retries=5, retry_delay=5):
     while retries < max_retries:
         try:
             response = openai.chat.completions.create(
-                model='gemini-2.5-flash-preview-04-17',  
+                model='o4-mini-high-all',  
                 messages=[
                     {"role": "user", "content": prompt}
                 ],
@@ -29,6 +39,7 @@ def ask_gpt_question(prompt, max_retries=5, retry_delay=5):
     
     return "Max retries exceeded, unable to get a response from the API."
 
+
 def sys_question(sys_prompt, prompt, max_retries=5, retry_delay=5):
     """
     添加系统提示词的API调用, print(ask_gpt_question("无论我输入什么，你都输出你好","1+1=?")
@@ -37,7 +48,7 @@ def sys_question(sys_prompt, prompt, max_retries=5, retry_delay=5):
     while retries < max_retries:
         try:
             response = openai.chat.completions.create(
-                model='gemini-2.5-flash-preview-04-17',  
+                model='o4-mini-high-all',  
                 messages=[
                     {"role":"system","content":sys_prompt},
                     {"role": "user", "content": prompt}
@@ -52,8 +63,7 @@ def sys_question(sys_prompt, prompt, max_retries=5, retry_delay=5):
     return "Max retries exceeded, unable to get a response from the API."
 
 
-
-def patch_sys_question(sys_prompt, prompt, before_file, max_retries=3, retry_delay=5):
+def patch_sys_question(sys_prompt, prompt, before_file, max_retries=1, retry_delay=5):
     """
     基于系统提示词API改进的patch生成, 用于生成可执行patch, 示例见draft/test_API_patch.py
     """
@@ -61,7 +71,7 @@ def patch_sys_question(sys_prompt, prompt, before_file, max_retries=3, retry_del
     while retries < max_retries:
         try:
             response = openai.chat.completions.create(
-                model='gemini-2.5-flash-preview-04-17',
+                model='o4-mini-high-all',
                 messages=[
                     {"role": "system", "content": sys_prompt},
                     {"role": "user", "content": prompt}
@@ -72,7 +82,7 @@ def patch_sys_question(sys_prompt, prompt, before_file, max_retries=3, retry_del
             retries += 1
             if patch_content:
                 patch_content = patch_content.group(1).strip()
-
+                patch_content = patch_content + '\n'
                 with open(f'{base_dir}/draft/test.patch', 'w') as f:
                     f.write(patch_content)
 
@@ -87,6 +97,28 @@ def patch_sys_question(sys_prompt, prompt, before_file, max_retries=3, retry_del
         except Exception as e:
             retries += 1
             print(f"Error occurred, retrying ({retries}/{max_retries}): {e}")
+            print('*'*10)
             time.sleep(retry_delay)
 
     return "Max retries exceeded, unable to get a response from the API."
+
+
+async def ask_gpt_question_async(prompt, max_retries=5, retry_delay=5):
+    retries = 0
+    while retries < max_retries:
+        try:
+            response = await client.chat.completions.create(
+                model='gpt-4o-mini',
+                messages=[{"role": "user", "content": prompt}]
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            retries += 1
+            print(f"Error occurred, retrying ({retries}/{max_retries}): {e}")
+            await asyncio.sleep(retry_delay)
+    return "Max retries exceeded, unable to get a response from the API."
+
+async def batch_ask_questions(questions):
+    tasks = [ask_gpt_question_async(q) for q in questions]
+    return await asyncio.gather(*tasks)
+

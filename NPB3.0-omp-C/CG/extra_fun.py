@@ -1,8 +1,9 @@
 import os
+base_dir = os.environ.get("BASE_DIR")
 
 # 定义源文件路径和目标文件夹路径
-source_file = '/home/yongjie/data04/yongjie_models/omp/DB/NPB3.0-omp-C/CG/cg_fun_time.c'
-target_folder = '/home/yongjie/data04/yongjie_models/omp/DB/NPB3.0-omp-C/CG/function'
+source_file = f'{base_dir}/NPB3.0-omp-C/CG/cg_ori.c'
+target_folder = f'{base_dir}/NPB3.0-omp-C/CG/function_ori'
 
 # 确保目标文件夹存在
 os.makedirs(target_folder, exist_ok=True)

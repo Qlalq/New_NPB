@@ -1,12 +1,4 @@
 static void jacu(int k) {
-
-/*--------------------------------------------------------------------
-c   compute the upper triangular part of the jacobian matrix
---------------------------------------------------------------------*/
-
-/*--------------------------------------------------------------------
-c  local variables
---------------------------------------------------------------------*/
   int i, j;
   double  r43;
   double  c1345;
@@ -17,7 +9,6 @@ c  local variables
   c1345 = C1 * C3 * C4 * C5;
   c34 = C3 * C4;
 
-#pragma omp for nowait schedule(static)
 #if defined(_OPENMP)  
   for (i = iend; i >= ist; i--) {
       for (j = jend; j >= jst; j--) {
@@ -26,9 +17,6 @@ c  local variables
     for (j = jst; j <= jend; j++) {
 #endif	
 
-/*--------------------------------------------------------------------
-c   form the block daigonal
---------------------------------------------------------------------*/
       tmp1 = 1.0 / u[i][j][k][0];
       tmp2 = tmp1 * tmp1;
       tmp3 = tmp1 * tmp2;
@@ -123,9 +111,6 @@ c   form the block daigonal
 			+  ty1 * dy5
 			+  tz1 * dz5 );
 
-/*--------------------------------------------------------------------
-c   form the first block sub-diagonal
---------------------------------------------------------------------*/
       tmp1 = 1.0 / u[i+1][j][k][0];
       tmp2 = tmp1 * tmp1;
       tmp3 = tmp1 * tmp2;
@@ -204,9 +189,6 @@ c   form the first block sub-diagonal
 	- dt * tx1 * c1345 * tmp1
 	- dt * tx1 * dx5;
 
-/*--------------------------------------------------------------------
-c   form the second block sub-diagonal
---------------------------------------------------------------------*/
       tmp1 = 1.0 / u[i][j+1][k][0];
       tmp2 = tmp1 * tmp1;
       tmp3 = tmp1 * tmp2;
@@ -285,9 +267,6 @@ c   form the second block sub-diagonal
 	- dt * ty1 * c1345 * tmp1
 	- dt * ty1 * dy5;
 
-/*--------------------------------------------------------------------
-c   form the third block sub-diagonal
---------------------------------------------------------------------*/
       tmp1 = 1.0 / u[i][j][k+1][0];
       tmp2 = tmp1 * tmp1;
       tmp3 = tmp1 * tmp2;

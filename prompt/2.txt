@@ -6,5 +6,3 @@ In the context of OpenMP program optimization, attention must be paid to the pro
 3. If restructuring is not feasible:
    - Determine if it is possible to add OpenMP primitives at any level of nesting, prioritizing adding them at the outermost level whenever possible.
    - If the innermost loop still has data dependencies that cannot be eliminated, the original code structure is retained, parallelization is not performed, and the original code is output.
-
-Note: You can only add and delete omp primitives and use the.patch file format for output

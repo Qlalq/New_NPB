@@ -8,12 +8,12 @@ c  in this directory. Do not modify it by hand.
 #define	NITER_DEFAULT	60
 #define	DT_DEFAULT	0.010
 #define	CONVERTDOUBLE	FALSE
-#define COMPILETIME "05 May 2025"
+#define COMPILETIME "17 May 2025"
 #define NPBVERSION "3.0 structured"
 #define CS1 "gcc"
 #define CS2 "gcc"
 #define CS3 "-lm"
 #define CS4 "-I../common"
-#define CS5 "-O3 -fopenmp"
+#define CS5 "-O3 -fopenmp -fopt-info-vec-missed=vec-miss..."
 #define CS6 "-fopenmp -lm"
 #define CS7 "randdp"

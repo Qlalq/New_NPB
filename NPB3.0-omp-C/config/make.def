@@ -47,7 +47,7 @@ F_INC =
 #---------------------------------------------------------------------------
 # Global *compile time* flags for Fortran programs
 #---------------------------------------------------------------------------
-FFLAGS	= -O3 -fopenmp
+FFLAGS	= -O3 -fopenmp -fopt-info-vec-missed=vec-missed.txt
 
 #---------------------------------------------------------------------------
 # Global *link time* flags. Flags for increasing maximum executable 
@@ -92,7 +92,7 @@ C_INC = -I../common
 #---------------------------------------------------------------------------
 # Global *compile time* flags for C programs
 #---------------------------------------------------------------------------
-CFLAGS	= -O3 -fopenmp
+CFLAGS	= -O3 -fopenmp -fopt-info-vec-missed=vec-missed.txt
 
 #---------------------------------------------------------------------------
 # Global *link time* flags. Flags for increasing maximum executable 

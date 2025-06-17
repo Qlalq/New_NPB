@@ -1,0 +1,48 @@
+test.c:37:22: missed: couldn't vectorize loop
+test.c:37:22: missed: not vectorized: multiple nested loops.
+test.c:36:17: missed: couldn't vectorize loop
+test.c:39:33: missed: not vectorized: complicated access pattern.
+test.c:38:21: missed: couldn't vectorize loop
+test.c:39:33: missed: not vectorized: complicated access pattern.
+test.c:14:13: missed: couldn't vectorize loop
+test.c:14:13: missed: not vectorized: multiple nested loops.
+test.c:15:17: missed: couldn't vectorize loop
+test.c:18:33: missed: not vectorized: complicated access pattern.
+test.c:17:21: missed: couldn't vectorize loop
+test.c:18:33: missed: not vectorized: complicated access pattern.
+test.c:24:13: missed: couldn't vectorize loop
+test.c:24:13: missed: not vectorized: multiple nested loops.
+test.c:25:17: missed: couldn't vectorize loop
+test.c:28:33: missed: not vectorized: complicated access pattern.
+test.c:27:21: missed: couldn't vectorize loop
+test.c:28:33: missed: not vectorized: complicated access pattern.
+test.c:46:13: missed: couldn't vectorize loop
+test.c:46:13: missed: not vectorized: multiple nested loops.
+test.c:47:17: missed: couldn't vectorize loop
+test.c:50:33: missed: not vectorized: complicated access pattern.
+test.c:49:21: missed: couldn't vectorize loop
+test.c:50:33: missed: not vectorized: complicated access pattern.
+test.c:57:13: missed: couldn't vectorize loop
+test.c:57:13: missed: not vectorized: multiple nested loops.
+test.c:58:17: missed: couldn't vectorize loop
+test.c:61:33: missed: not vectorized: complicated access pattern.
+test.c:60:21: missed: couldn't vectorize loop
+test.c:61:33: missed: not vectorized: complicated access pattern.
+test.c:10:5: missed: statement clobbers memory: gettimeofday (&start, 0B);
+test.c:8:6: missed: statement clobbers memory: __builtin_GOMP_parallel (matrix_multiply._omp_fn.0, &.omp_data_o.1, 0, 0);
+test.c:68:5: missed: statement clobbers memory: gettimeofday (&end, 0B);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "%d: %lf \xe7\xa7\x92\n", mode_86(D), _58);
+test.c:76:5: missed: couldn't vectorize loop
+test.c:78:23: missed: statement clobbers memory: _1 = rand ();
+test.c:77:9: missed: couldn't vectorize loop
+test.c:78:23: missed: statement clobbers memory: _1 = rand ();
+test.c:78:23: missed: statement clobbers memory: _1 = rand ();
+test.c:79:23: missed: statement clobbers memory: _3 = rand ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Usage: %s <mode>\n", _5);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __builtin_puts (&"0: \xe4\xb8\xb2\xe8\xa1\x8c -O0"[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __builtin_puts (&"1: \xe4\xb8\xb2\xe8\xa1\x8c -O3"[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __builtin_puts (&"2: OpenMP"[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __builtin_puts (&"3: -fopenmp-simd"[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __builtin_puts (&"4: -ftree-parallelize-loops"[0]);
+/usr/include/stdlib.h:363:16: missed: statement clobbers memory: _26 = strtol (_6, 0B, 10);
+test.c:94:5: missed: statement clobbers memory: matrix_multiply (&A, &B, &C, _27);

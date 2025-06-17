@@ -71,27 +71,21 @@ int main(int argc, char **argv) {
       timer_stop(T_FFT);
     }
     for (iter = 1; iter <= niter; iter++) {
-	    if (TIMERS_ENABLED == TRUE) {
-		#pragma omp parallel 	     
+	    if (TIMERS_ENABLED == TRUE) {     
 	      timer_start(T_EVOLVE);
 	    }
 	    evolve(u0, u1, iter, indexmap, dims[0]);
-            if (TIMERS_ENABLED == TRUE) { 
-		#pragma omp parallel    
+            if (TIMERS_ENABLED == TRUE) {    
 	      timer_stop(T_EVOLVE);
 	    }
             if (TIMERS_ENABLED == TRUE) {  
-		#pragma omp parallel 
 	      timer_start(T_FFT);
 	    }
-		#pragma omp parallel 
             fft(-1, u1, u2);
-            if (TIMERS_ENABLED == TRUE) {   
-		#pragma omp parallel    
+            if (TIMERS_ENABLED == TRUE) {      
 	      timer_stop(T_FFT);
 	    }
-            if (TIMERS_ENABLED == TRUE) {    
-		#pragma omp parallel  
+            if (TIMERS_ENABLED == TRUE) {     
 	      timer_start(T_CHECKSUM);
 	    }	
             checksum(iter, u2, dims[0]);
@@ -102,6 +96,7 @@ int main(int argc, char **argv) {
     verify(NX, NY, NZ, niter, &verified, &class);
   {
 #if defined(_OPENMP)
+#pragma omp master    
     nthreads = omp_get_num_threads();
 #endif     
   } 
@@ -121,92 +116,36 @@ int main(int argc, char **argv) {
 		    CS1, CS2, CS3, CS4, CS5, CS6, CS7);
     if (TIMERS_ENABLED == TRUE) print_timers();
 }
-#include <omp.h>
 static void evolve(dcomplex u0[NZ][NY][NX], dcomplex u1[NZ][NY][NX],
-                   int t, int indexmap[NZ][NY][NX], int d[3]) {
+		   int t, int indexmap[NZ][NY][NX], int d[3]) {
     int i, j, k;
-    // Using explicit local variables for dimension sizes improves clarity
-    // and makes the loop bounds explicit for parallelization directives.
-    int nx = d[0]; // Size of the innermost loop dimension (e.g., X)
-    int ny = d[1]; // Size of the middle loop dimension (e.g., Y)
-    int nz = d[2]; // Size of the outermost loop dimension (e.g., Z)
-
-    // This triple nested loop iterates over a 3D grid.
-    // Inside the innermost loop, the operation is:
-    // u1[k][j][i] = u0[k][j][i] * ex[t * indexmap[k][j][i]] (conceptually, via crmul)
-    //
-    // 1. Data Dependencies:
-    //    - The write operation is to u1[k][j][i]. For each unique combination of (k, j, i),
-    //      a unique memory location in u1 is written to.
-    //    - The read operations are from u0[k][j][i] and ex[...]. These are read-only for
-    //      the purpose of computing u1[k][j][i].
-    //    - There are no loop-carried dependencies. The computation for u1[k][j][i] does not
-    //      depend on the value of u1 from a previous iteration (e.g., u1[k][j][i-1] or u1[k-1][j][i]).
-    //    - The index for ex depends on t and indexmap[k][j][i]. While indexmap is read,
-    //      its value for a given (k, j, i) is constant for that iteration and does not create
-    //      a loop-carried dependency.
-    //    - Therefore, each iteration (k, j, i) is independent and can be executed in any order.
-    //      No structural change is needed to break dependencies.
-    //
-    // 2. Load Imbalance:
-    //    - Assuming the cost of the crmul operation is roughly constant for all valid inputs,
-    //      the workload for each iteration (k, j, i) is approximately uniform.
-    //    - Standard OpenMP loop parallelization directives (like #pragma omp parallel for)
-    //      with default scheduling or static/dynamic scheduling will distribute the iterations
-    //      across threads, providing reasonable load balance for a uniform workload.
-    //    - No structural change like loop partitioning or adaptive scheduling is needed at
-    //      this level of refinement, as the uniform workload is handled well by OpenMP.
-    //
-    // 3. Synchronization Overhead:
-    //    - Since each iteration writes to a unique memory location u1[k][j][i], there are
-    //      no concurrent writes to shared data by different iterations.
-    //    - No explicit synchronization (like locks, atomics, critical sections) is required
-    //      within the loop body.
-    //    - The structure inherently minimizes synchronization needs, requiring only potential
-    //      implicit synchronization at the end of the parallel region (e.g., via a barrier).
-    //
-    // Conclusion: The original loop structure is already well-suited for OpenMP parallelization
-    // because the iterations are independent and the workload is uniform. The primary refinement
-    // applied here is making the loop bounds clearer using local variables, which aids in
-    // writing clear OpenMP directives (e.g., for collapse clauses). No fundamental structural
-    // changes (like introducing temporary arrays to break dependencies) are necessary as
-    // no such dependencies exist.
-
-    for (k = 0; k < nz; k++) {
-        for (j = 0; j < ny; j++) {
-            for (i = 0; i < nx; i++) {
-                crmul(u1[k][j][i], u0[k][j][i], ex[t*indexmap[k][j][i]]);
-            }
-        }
+    for (k = 0; k < d[2]; k++) {
+	for (j = 0; j < d[1]; j++) {
+            for (i = 0; i < d[0]; i++) {
+	      crmul(u1[k][j][i], u0[k][j][i], ex[t*indexmap[k][j][i]]);
+	    }
+	}
     }
 }
-#include <omp.h>
 static void compute_initial_conditions(dcomplex u0[NZ][NY][NX], int d[3]) {
     int k;
     double x0, start, an, dummy;
     static double tmp[NX*2*MAXDIM+1];
-    int i, j, t;
+    int i,j,t;
     start = SEED;
-    ipow46(A, (zstart[0] - 1) * 2 * NX * NY + (ystart[0] - 1) * 2 * NX, &an);
+    ipow46(A, (zstart[0]-1)*2*NX*NY + (ystart[0]-1)*2*NX, &an);
     dummy = randlc(&start, an);
-    ipow46(A, 2 * NX * NY, &an);
-    {
-        for (k = 0; k < dims[0][2]; k++) {
-            x0 = start;
-            vranlc(2 * NX * dims[0][1], &x0, A, tmp);
-            t = 1;
-            for (j = 0; j < dims[0][1]; j++) {
-                for (i = 0; i < NX; i++) {
-                    u0[k][j][i].real = tmp[t++];
-                    u0[k][j][i].imag = tmp[t++];
-                }
-            }
-            if (k != dims[0][2]) {
-                {
-                    dummy = randlc(&start, an);
-                }
-            }
-        }
+    ipow46(A, 2*NX*NY, &an);
+    for (k = 0; k < dims[0][2]; k++) {
+	x0 = start;
+        vranlc(2*NX*dims[0][1], &x0, A, tmp);
+	t = 1;
+	for (j = 0; j < dims[0][1]; j++)
+	  for (i = 0; i < NX; i++) {
+	    u0[k][j][i].real = tmp[t++];
+	    u0[k][j][i].imag = tmp[t++];
+	  }
+        if (k != dims[0][2]) dummy = randlc(&start, an);
     }
 }
 static void ipow46(double a, int exponent, double *result) {
@@ -291,17 +230,42 @@ static void print_timers(void) {
 	}
     }
 }
+#include <omp.h>
+
 static void fft(int dir, dcomplex x1[NZ][NY][NX], dcomplex x2[NZ][NY][NX]) {
     dcomplex y0[NX][FFTBLOCKPAD];
     dcomplex y1[NX][FFTBLOCKPAD];
+
     if (dir == 1) {
-        cffts1(1, dims[0], x1, x1, y0, y1);	
-        cffts2(1, dims[1], x1, x1, y0, y1);	
-        cffts3(1, dims[2], x1, x2, y0, y1);	
+        #pragma omp parallel
+        {
+            #pragma omp sections
+            {
+                #pragma omp section
+                cffts1(1, dims[0], x1, x1, y0, y1);
+
+                #pragma omp section
+                cffts2(1, dims[1], x1, x1, y0, y1);
+
+                #pragma omp section
+                cffts3(1, dims[2], x1, x2, y0, y1);
+            }
+        }
     } else {
-	cffts3(-1, dims[2], x1, x1, y0, y1);	
-    cffts2(-1, dims[1], x1, x1, y0, y1);	
-    cffts1(-1, dims[0], x1, x2, y0, y1);	
+        #pragma omp parallel
+        {
+            #pragma omp sections
+            {
+                #pragma omp section
+                cffts3(-1, dims[2], x1, x1, y0, y1);
+
+                #pragma omp section
+                cffts2(-1, dims[1], x1, x1, y0, y1);
+
+                #pragma omp section
+                cffts1(-1, dims[0], x1, x2, y0, y1);
+            }
+        }
     }
 }
 static void cffts1(int is, int d[3], dcomplex x[NZ][NY][NX],

@@ -1,0 +1,126 @@
+{"bench": "BT", "function": "main", "class": "W", "time": 1.97, "saved_time": 0}
+{"bench": "BT", "function": "adi", "class": "W", "time": 9999, "saved_time": -9997.03}
+{"bench": "BT", "function": "exact_rhs", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "initialize", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "lhsinit", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "set_constants", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "verify", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "add", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "compute_rhs", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "x_solve", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "y_solve", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "z_solve", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "exact_solution", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "error_norm", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "rhs_norm", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "lhsx", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "x_backsubstitute", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "x_solve_cell", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "lhsy", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "y_backsubstitute", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "y_solve_cell", "class": "W", "time": 11.19, "saved_time": 0}
+{"bench": "BT", "function": "lhsz", "class": "W", "time": 9999, "saved_time": -9987.81}
+{"bench": "BT", "function": "z_backsubstitute", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "BT", "function": "z_solve_cell", "class": "W", "time": 0.23, "saved_time": 0}
+{"bench": "BT", "function": "binvcrhs", "class": "W", "time": 0.22, "saved_time": 0.010000000000000009}
+{"bench": "BT", "function": "binvrhs", "class": "W", "time": 0.27, "saved_time": -0.05000000000000002}
+{"bench": "BT", "function": "matmul_sub", "class": "W", "time": 0.24, "saved_time": 0.030000000000000027}
+{"bench": "BT", "function": "matvec_sub", "class": "W", "time": 0.28, "saved_time": -0.040000000000000036}
+
+
+
+{"bench": "CG", "function": "main", "class": "W", "time": 0.2, "saved_time": 0}
+{"bench": "CG", "function": "conj_grad", "class": "W", "time": 0.03, "saved_time": 0.17}
+{"bench": "CG", "function": "makea", "class": "W", "time": 0.03, "saved_time": 0.0}
+{"bench": "CG", "function": "sparse", "class": "W", "time": 0.03, "saved_time": 0.0}
+{"bench": "CG", "function": "sprnvc", "class": "W", "time": 0.02, "saved_time": 0.009999999999999998}
+{"bench": "CG", "function": "vecset", "class": "W", "time": 0.03, "saved_time": -0.009999999999999998}
+{"bench": "CG", "function": "icnvrt", "class": "W", "time": 0.03, "saved_time": 0.0}
+
+
+
+{"bench": "EP", "function": "main", "class": "W", "time": 0.06, "saved_time": 0}
+
+
+
+{"bench": "FT", "function": "main", "class": "W", "time": 0.13, "saved_time": 0}
+{"bench": "FT", "function": "checksum", "class": "W", "time": 0.15, "saved_time": -0.01999999999999999}
+{"bench": "FT", "function": "compute_indexmap", "class": "W", "time": 0.14, "saved_time": 0.009999999999999981}
+{"bench": "FT", "function": "compute_initial_conditions", "class": "W", "time": 0.14, "saved_time": 0.0}
+{"bench": "FT", "function": "evolve", "class": "W", "time": 0.14, "saved_time": 0.0}
+{"bench": "FT", "function": "fft", "class": "W", "time": 0.13, "saved_time": 0.010000000000000009}
+{"bench": "FT", "function": "fft_init", "class": "W", "time": 0.13, "saved_time": 0.0}
+{"bench": "FT", "function": "print_timers", "class": "W", "time": 0.13, "saved_time": 0.0}
+{"bench": "FT", "function": "setup", "class": "W", "time": 0.14, "saved_time": -0.010000000000000009}
+{"bench": "FT", "function": "verify", "class": "W", "time": 0.14, "saved_time": 0.0}
+{"bench": "FT", "function": "ipow46", "class": "W", "time": 0.15, "saved_time": -0.009999999999999981}
+{"bench": "FT", "function": "cffts1", "class": "W", "time": 0.1, "saved_time": 0.04999999999999999}
+{"bench": "FT", "function": "cffts2", "class": "W", "time": 0.07, "saved_time": 0.03}
+{"bench": "FT", "function": "cffts3", "class": "W", "time": 0.05, "saved_time": 0.020000000000000004}
+{"bench": "FT", "function": "ilog2", "class": "W", "time": 0.05, "saved_time": 0.0}
+{"bench": "FT", "function": "cfftz", "class": "W", "time": 0.05, "saved_time": 0.0}
+{"bench": "FT", "function": "fftz2", "class": "W", "time": 0.05, "saved_time": 0.0}
+
+
+
+{"bench": "LU", "function": "main", "class": "W", "time": 4.06, "saved_time": 0}
+{"bench": "LU", "function": "domain", "class": "W", "time": 3.83, "saved_time": 0.22999999999999954}
+{"bench": "LU", "function": "erhs", "class": "W", "time": 3.85, "saved_time": -0.020000000000000018}
+{"bench": "LU", "function": "error", "class": "W", "time": 3.55, "saved_time": 0.30000000000000027}
+{"bench": "LU", "function": "pintgr", "class": "W", "time": 3.82, "saved_time": -0.27}
+{"bench": "LU", "function": "read_input", "class": "W", "time": 3.43, "saved_time": 0.3899999999999997}
+{"bench": "LU", "function": "setbv", "class": "W", "time": 3.82, "saved_time": -0.3899999999999997}
+{"bench": "LU", "function": "setcoeff", "class": "W", "time": 3.79, "saved_time": 0.029999999999999805}
+{"bench": "LU", "function": "setiv", "class": "W", "time": 3.76, "saved_time": 0.03000000000000025}
+{"bench": "LU", "function": "ssor", "class": "W", "time": 9999, "saved_time": -9995.24}
+{"bench": "LU", "function": "verify", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "LU", "function": "exact", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "LU", "function": "blts", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "LU", "function": "buts", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "LU", "function": "jacld", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "LU", "function": "jacu", "class": "W", "time": 1.25, "saved_time": 0}
+{"bench": "LU", "function": "l2norm", "class": "W", "time": 1.34, "saved_time": -0.09000000000000008}
+{"bench": "LU", "function": "rhs", "class": "W", "time": 0.37, "saved_time": 0.9700000000000001}
+
+
+
+{"bench": "MG", "function": "main", "class": "W", "time": 0.09, "saved_time": 0}
+{"bench": "MG", "function": "mg3P", "class": "W", "time": 0.09, "saved_time": 0.0}
+{"bench": "MG", "function": "norm2u3", "class": "W", "time": 0.09, "saved_time": 0.0}
+{"bench": "MG", "function": "resid", "class": "W", "time": 0.08, "saved_time": 0.009999999999999995}
+{"bench": "MG", "function": "setup", "class": "W", "time": 0.06, "saved_time": 0.020000000000000004}
+{"bench": "MG", "function": "zero3", "class": "W", "time": 0.09, "saved_time": -0.03}
+{"bench": "MG", "function": "zran3", "class": "W", "time": 0.11, "saved_time": -0.020000000000000004}
+{"bench": "MG", "function": "interp", "class": "W", "time": 0.07, "saved_time": 0.039999999999999994}
+{"bench": "MG", "function": "psinv", "class": "W", "time": 0.04, "saved_time": 0.030000000000000006}
+{"bench": "MG", "function": "rprj3", "class": "W", "time": 0.03, "saved_time": 0.010000000000000002}
+{"bench": "MG", "function": "comm3", "class": "W", "time": 0.03, "saved_time": 0.0}
+{"bench": "MG", "function": "rep_nrm", "class": "W", "time": 0.03, "saved_time": 0.0}
+{"bench": "MG", "function": "showall", "class": "W", "time": 0.03, "saved_time": 0.0}
+{"bench": "MG", "function": "bubble", "class": "W", "time": 0.03, "saved_time": 0.0}
+{"bench": "MG", "function": "power", "class": "W", "time": 0.03, "saved_time": 0.0}
+
+
+
+{"bench": "SP", "function": "main", "class": "W", "time": 2.73, "saved_time": 0}
+{"bench": "SP", "function": "adi", "class": "W", "time": 2.96, "saved_time": -0.22999999999999998}
+{"bench": "SP", "function": "exact_rhs", "class": "W", "time": 3.01, "saved_time": -0.04999999999999982}
+{"bench": "SP", "function": "initialize", "class": "W", "time": 2.98, "saved_time": 0.029999999999999805}
+{"bench": "SP", "function": "lhsinit", "class": "W", "time": 2.98, "saved_time": 0.0}
+{"bench": "SP", "function": "set_constants", "class": "W", "time": 2.89, "saved_time": 0.08999999999999986}
+{"bench": "SP", "function": "verify", "class": "W", "time": 2.64, "saved_time": 0.25}
+{"bench": "SP", "function": "add", "class": "W", "time": 2.95, "saved_time": -0.31000000000000005}
+{"bench": "SP", "function": "compute_rhs", "class": "W", "time": 2.72, "saved_time": 0.22999999999999998}
+{"bench": "SP", "function": "txinvr", "class": "W", "time": 2.61, "saved_time": 0.11000000000000032}
+{"bench": "SP", "function": "x_solve", "class": "W", "time": 9999, "saved_time": -9996.39}
+{"bench": "SP", "function": "y_solve", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "z_solve", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "exact_solution", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "error_norm", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "rhs_norm", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "lhsx", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "ninvr", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "lhsy", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "pinvr", "class": "W", "time": 9999, "saved_time": 0}
+{"bench": "SP", "function": "lhsz", "class": "W", "time": 13.1, "saved_time": 0}
+{"bench": "SP", "function": "tzetar", "class": "W", "time": 13.71, "saved_time": -0.6100000000000012}

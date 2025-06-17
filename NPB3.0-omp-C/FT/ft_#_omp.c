@@ -71,27 +71,21 @@ int main(int argc, char **argv) {
       timer_stop(T_FFT);
     }
     for (iter = 1; iter <= niter; iter++) {
-	    if (TIMERS_ENABLED == TRUE) {
-		#pragma omp parallel 	     
+	    if (TIMERS_ENABLED == TRUE) {     
 	      timer_start(T_EVOLVE);
 	    }
 	    evolve(u0, u1, iter, indexmap, dims[0]);
-            if (TIMERS_ENABLED == TRUE) { 
-		#pragma omp parallel    
+            if (TIMERS_ENABLED == TRUE) {    
 	      timer_stop(T_EVOLVE);
 	    }
             if (TIMERS_ENABLED == TRUE) {  
-		#pragma omp parallel 
 	      timer_start(T_FFT);
 	    }
-		#pragma omp parallel 
             fft(-1, u1, u2);
-            if (TIMERS_ENABLED == TRUE) {   
-		#pragma omp parallel    
+            if (TIMERS_ENABLED == TRUE) {      
 	      timer_stop(T_FFT);
 	    }
-            if (TIMERS_ENABLED == TRUE) {    
-		#pragma omp parallel  
+            if (TIMERS_ENABLED == TRUE) {     
 	      timer_start(T_CHECKSUM);
 	    }	
             checksum(iter, u2, dims[0]);
@@ -102,6 +96,7 @@ int main(int argc, char **argv) {
     verify(NX, NY, NZ, niter, &verified, &class);
   {
 #if defined(_OPENMP)
+#pragma omp master    
     nthreads = omp_get_num_threads();
 #endif     
   } 
@@ -121,45 +116,36 @@ int main(int argc, char **argv) {
 		    CS1, CS2, CS3, CS4, CS5, CS6, CS7);
     if (TIMERS_ENABLED == TRUE) print_timers();
 }
-#include <omp.h>
 static void evolve(dcomplex u0[NZ][NY][NX], dcomplex u1[NZ][NY][NX],
-                   int t, int indexmap[NZ][NY][NX], int d[3]) {
+		   int t, int indexmap[NZ][NY][NX], int d[3]) {
     int i, j, k;
     for (k = 0; k < d[2]; k++) {
-        for (j = 0; j < d[1]; j++) {
+	for (j = 0; j < d[1]; j++) {
             for (i = 0; i < d[0]; i++) {
-                crmul(u1[k][j][i], u0[k][j][i], ex[t*indexmap[k][j][i]]);
-            }
-        }
+	      crmul(u1[k][j][i], u0[k][j][i], ex[t*indexmap[k][j][i]]);
+	    }
+	}
     }
 }
-#include <omp.h>
 static void compute_initial_conditions(dcomplex u0[NZ][NY][NX], int d[3]) {
     int k;
     double x0, start, an, dummy;
     static double tmp[NX*2*MAXDIM+1];
-    int i, j, t;
+    int i,j,t;
     start = SEED;
-    ipow46(A, (zstart[0] - 1) * 2 * NX * NY + (ystart[0] - 1) * 2 * NX, &an);
+    ipow46(A, (zstart[0]-1)*2*NX*NY + (ystart[0]-1)*2*NX, &an);
     dummy = randlc(&start, an);
-    ipow46(A, 2 * NX * NY, &an);
-    {
-        for (k = 0; k < dims[0][2]; k++) {
-            x0 = start;
-            vranlc(2 * NX * dims[0][1], &x0, A, tmp);
-            t = 1;
-            for (j = 0; j < dims[0][1]; j++) {
-                for (i = 0; i < NX; i++) {
-                    u0[k][j][i].real = tmp[t++];
-                    u0[k][j][i].imag = tmp[t++];
-                }
-            }
-            if (k != dims[0][2]) {
-                {
-                    dummy = randlc(&start, an);
-                }
-            }
-        }
+    ipow46(A, 2*NX*NY, &an);
+    for (k = 0; k < dims[0][2]; k++) {
+	x0 = start;
+        vranlc(2*NX*dims[0][1], &x0, A, tmp);
+	t = 1;
+	for (j = 0; j < dims[0][1]; j++)
+	  for (i = 0; i < NX; i++) {
+	    u0[k][j][i].real = tmp[t++];
+	    u0[k][j][i].imag = tmp[t++];
+	  }
+        if (k != dims[0][2]) dummy = randlc(&start, an);
     }
 }
 static void ipow46(double a, int exponent, double *result) {

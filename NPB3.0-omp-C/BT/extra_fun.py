@@ -2,8 +2,8 @@ import os
 base_dir = os.environ.get("BASE_DIR")
 
 # 定义源文件路径和目标文件夹路径
-source_file = f'{base_dir}/NPB3.0-omp-C/BT/bt.c'
-target_folder = f'{base_dir}/NPB3.0-omp-C/BT/function_#_omp'
+source_file = f'{base_dir}/NPB3.0-omp-C/BT/bt_ori.c'
+target_folder = f'{base_dir}/NPB3.0-omp-C/BT/function_ori'
 
 
 # 确保目标文件夹存在
@@ -31,7 +31,7 @@ functions = [
     'static void matvec_sub(double ablock[5][5], double avec[5], double bvec[5])',
     'static void matmul_sub(double ablock[5][5], double bblock[5][5], double cblock[5][5])',
     'static void binvcrhs(double lhs[5][5], double c[5][5], double r[5])',
-    'static void binvrhs(double lhs[5][5], double r[5])',
+    'static void binvrhs( double lhs[5][5], double r[5] )',
     'static void y_solve(void)',
     'static void y_backsubstitute(void)',
     'static void y_solve_cell(void)',

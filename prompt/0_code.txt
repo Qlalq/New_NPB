@@ -1,0 +1,4 @@
+Please parallel the tasks in the code and follow the best practices of OpenMP
+Note: 
+You can only add and delete omp primitives and use the code block output of.c(like ```c).
+I'm going to execute your code, so don't omit it, please print it out in full.

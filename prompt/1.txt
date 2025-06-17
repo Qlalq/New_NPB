@@ -19,6 +19,4 @@ for (int i = 1; i < size; ++i) {{
 ```
 If such statements are inside loop bodies, attempt to restructure the code to move these statements outside while ensuring correctness. If restructuring is not feasible without compromising correctness, do not optimize that loop body. If OpenMP optimization primitives were previously added to it, remove them.
 
-3. Apply parallel optimizations using OpenMP primitives based on rules from Step A.1 and Step A.2.
-
-Note: You can only add and delete omp primitives and use the.patch file format for output
+3. Apply parallel optimizations using OpenMP primitives based on rules from Step 1 and Step 2.

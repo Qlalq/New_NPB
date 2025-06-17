@@ -1,3 +1,0 @@
-Please follow the OpenMP best practices to add the omp primitive to the following C code (including line numbers).
-
-Note: You can only add and delete omp primitives and use the code block output of.patch(like ```patch)
