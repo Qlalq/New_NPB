@@ -1,0 +1,196 @@
+cg.c:241:19: missed: couldn't vectorize loop
+cg.c:241:19: missed: not vectorized: unsupported control flow in loop.
+cg.c:243:24: missed: couldn't vectorize loop
+cg.c:244:22: missed: not vectorized: no vectype for stmt: _114 = *_113;
+ scalar_type: double
+cg.c:208:25: missed: couldn't vectorize loop
+cg.c:208:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+cg.c:213:16: missed: couldn't vectorize loop
+cg.c:213:16: missed: not vectorized: unsupported control flow in loop.
+cg.c:215:28: missed: couldn't vectorize loop
+cg.c:216:16: missed: not vectorized: no vectype for stmt: _35 = *_34;
+ scalar_type: double
+cg.c:198:7: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&q + 8B], 0, _487);
+cg.c:199:7: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&z + 8B], 0, _487);
+cg.c:253:16: missed: statement clobbers memory: _178 = sqrt (sum_250);
+cg.c:123:21: missed: couldn't vectorize loop
+cg.c:123:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+cg.c:88:19: missed: couldn't vectorize loop
+cg.c:88:19: missed: not vectorized: unsupported control flow in loop.
+cg.c:382:19: missed: couldn't vectorize loop
+cg.c:382:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+cg.c:393:16: missed: couldn't vectorize loop
+cg.c:393:16: missed: not vectorized: unsupported control flow in loop.
+cg.c:384:20: missed: couldn't vectorize loop
+cg.c:384:20: missed: not vectorized: unsupported control flow in loop.
+cg.c:365:23: missed: couldn't vectorize loop
+cg.c:368:13: missed: not vectorized: no vectype for stmt: _334 = *_330;
+ scalar_type: double
+cg.c:361:19: missed: couldn't vectorize loop
+cg.c:361:19: missed: not vectorized: unsupported control flow in loop.
+cg.c:358:19: missed: couldn't vectorize loop
+cg.c:359:32: missed: not vectorized, possible dependence between data-refs *_298 and *_295
+cg.c:353:23: missed: couldn't vectorize loop
+cg.c:355:20: missed: possible alias involving gather/scatter between *_288 and *_288
+cg.c:311:26: missed: couldn't vectorize loop
+cg.c:311:26: missed: not vectorized: unsupported control flow in loop.
+cg.c:283:29: missed: couldn't vectorize loop
+cg.c:283:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+cg.c:287:24: missed: couldn't vectorize loop
+cg.c:287:24: missed: not vectorized: unsupported control flow in loop.
+cg.c:291:27: missed: couldn't vectorize loop
+cg.c:291:27: missed: not vectorized: unsupported control flow in loop.
+cg.c:439:21: missed: couldn't vectorize loop
+cg.c:440:4: missed: possible alias involving gather/scatter between *_259 and *_263
+cg.c:425:16: missed: couldn't vectorize loop
+cg.c:425:16: missed: not vectorized: unsupported control flow in loop.
+cg.c:424:18: missed: couldn't vectorize loop
+cg.c:424:18: missed: not vectorized: number of iterations cannot be computed.
+cg.c:75:5: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - CG Benchmark"[0]);
+cg.c:77:5: missed: statement clobbers memory: printf (" Size: %10d\n", 7000);
+cg.c:78:5: missed: statement clobbers memory: printf (" Iterations: %5d\n", 15);
+cg.c:83:15: missed: statement clobbers memory: randlc (&tran, 1.220703125e+9);
+cg.c:278:13: missed: statement clobbers memory: ratio_142 = pow (1.000000000000000055511151231257827021181583404541015625e-1, _141);
+cg.c:281:14: missed: statement clobbers memory: __builtin_memset (_875, 0, _879);
+cg.c:426:11: missed: statement clobbers memory: vecelt_233 = randlc (&tran, amult.24_232);
+cg.c:427:11: missed: statement clobbers memory: vecloc_235 = randlc (&tran, amult.25_234);
+cg.c:349:12: missed: statement clobbers memory: __builtin_memset (&MEM <int[7002]> [(void *)&rowstr + 4B], 0, _826);
+cg.c:350:10: missed: statement clobbers memory: __builtin_memset (&MEM <int[14002]> [(void *)&iv + 4B], 0, _826);
+cg.c:363:14: missed: statement clobbers memory: __builtin_memset (_831, 0, _834);
+cg.c:373:14: missed: statement clobbers memory: __builtin_memmove (_848, _841, _855);
+cg.c:378:7: missed: statement clobbers memory: __builtin_memset (&MEM <double[7002]> [(void *)&v + 8B], 0, _868);
+cg.c:379:10: missed: statement clobbers memory: __builtin_memset (&MEM <int[14002]> [(void *)&iv + 4B], 0, _861);
+cg.c:105:2: missed: statement clobbers memory: conj_grad.constprop (&rnorm);
+cg.c:97:15: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&q + 8B], 0, _981);
+cg.c:98:15: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&z + 8B], 0, _981);
+cg.c:99:15: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&r + 8B], 0, _981);
+cg.c:100:15: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&p + 8B], 0, _981);
+cg.c:105:2: missed: statement clobbers memory: conj_grad.constprop (&rnorm);
+cg.c:112:22: missed: statement clobbers memory: _153 = sqrt (norm_temp12_435);
+cg.c:121:5: missed: statement clobbers memory: timer_clear (1);
+cg.c:122:5: missed: statement clobbers memory: timer_start (1);
+cg.c:124:2: missed: statement clobbers memory: conj_grad.constprop (&rnorm);
+cg.c:131:22: missed: statement clobbers memory: _515 = sqrt (norm_temp12_440);
+cg.c:134:4: missed: statement clobbers memory: __builtin_puts (&"   iteration           ||r||                 zeta"[0]);
+cg.c:136:2: missed: statement clobbers memory: printf ("    %5d       %20.14e%20.13e\n", 1, rnorm.18_40, zeta_112);
+cg.c:124:2: missed: statement clobbers memory: conj_grad.constprop (&rnorm);
+cg.c:131:22: missed: statement clobbers memory: _938 = sqrt (norm_temp12_941);
+cg.c:136:2: missed: statement clobbers memory: printf ("    %5d       %20.14e%20.13e\n", it_957, rnorm.18_923, zeta_929);
+cg.c:143:16: missed: statement clobbers memory: nthreads_95 = omp_get_num_threads ();
+cg.c:146:5: missed: statement clobbers memory: timer_stop (1);
+cg.c:147:9: missed: statement clobbers memory: t_98 = timer_read (1);
+cg.c:148:5: missed: statement clobbers memory: __builtin_puts (&" Benchmark completed"[0]);
+cg.c:158:6: missed: statement clobbers memory: __builtin_puts (&" VERIFICATION FAILED"[0]);
+cg.c:159:6: missed: statement clobbers memory: printf (" Zeta                %20.12e\n", zeta_924);
+cg.c:160:6: missed: statement clobbers memory: printf (" The correct zeta is %20.12e\n", 1.036259508712399934893255704082548618316650390625e+1);
+cg.c:153:6: missed: statement clobbers memory: __builtin_puts (&" VERIFICATION SUCCESSFUL"[0]);
+cg.c:154:6: missed: statement clobbers memory: printf (" Zeta is    %20.12e\n", zeta_924);
+cg.c:155:6: missed: statement clobbers memory: printf (" Error is   %20.12e\n", _47);
+cg.c:174:5: missed: statement clobbers memory: c_print_results ("CG", 87, 7000, 0, 0, 15, nthreads_95, t_98, mflops_65, "          floating point", verified_66, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "randdp");
+cg.c:316:3: missed: statement clobbers memory: __builtin_puts (&"Space for matrix elements exceeded in makea"[0]);
+cg.c:317:3: missed: statement clobbers memory: printf ("nnza, nzmax = %d, %d\n", nnza_681, nzz.5_5);
+cg.c:318:3: missed: statement clobbers memory: printf ("iouter = %d\n", iouter_210);
+cg.c:319:3: missed: statement clobbers memory: exit (1);
+cg.c:296:8: missed: statement clobbers memory: __builtin_puts (&"Space for matrix elements exceeded in makea"[0]);
+cg.c:298:8: missed: statement clobbers memory: printf ("nnza, nzmax = %d, %d\n", nnza_988, nzz.5_5);
+cg.c:299:8: missed: statement clobbers memory: printf ("iouter = %d\n", iouter_995);
+cg.c:300:8: missed: statement clobbers memory: exit (1);
+cg.c:373:14: missed: not vectorized: vectorization is not profitable.
+cg.c:241:19: missed: couldn't vectorize loop
+cg.c:241:19: missed: not vectorized: unsupported control flow in loop.
+cg.c:243:24: missed: couldn't vectorize loop
+cg.c:244:22: missed: not vectorized: no vectype for stmt: _114 = *_113;
+ scalar_type: double
+cg.c:208:25: missed: couldn't vectorize loop
+cg.c:208:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+cg.c:213:16: missed: couldn't vectorize loop
+cg.c:213:16: missed: not vectorized: unsupported control flow in loop.
+cg.c:215:28: missed: couldn't vectorize loop
+cg.c:216:16: missed: not vectorized: no vectype for stmt: _35 = *_34;
+ scalar_type: double
+cg.c:198:7: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&q + 8B], 0, _487);
+cg.c:199:7: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&z + 8B], 0, _487);
+cg.c:253:16: missed: statement clobbers memory: _178 = sqrt (sum_250);
+cg.c:123:21: missed: couldn't vectorize loop
+cg.c:123:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+cg.c:88:19: missed: couldn't vectorize loop
+cg.c:88:19: missed: not vectorized: unsupported control flow in loop.
+cg.c:382:19: missed: couldn't vectorize loop
+cg.c:382:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+cg.c:393:16: missed: couldn't vectorize loop
+cg.c:393:16: missed: not vectorized: unsupported control flow in loop.
+cg.c:384:20: missed: couldn't vectorize loop
+cg.c:384:20: missed: not vectorized: unsupported control flow in loop.
+cg.c:365:23: missed: couldn't vectorize loop
+cg.c:368:13: missed: not vectorized: no vectype for stmt: _334 = *_330;
+ scalar_type: double
+cg.c:361:19: missed: couldn't vectorize loop
+cg.c:361:19: missed: not vectorized: unsupported control flow in loop.
+cg.c:358:19: missed: couldn't vectorize loop
+cg.c:359:32: missed: not vectorized, possible dependence between data-refs *_298 and *_295
+cg.c:353:23: missed: couldn't vectorize loop
+cg.c:355:20: missed: possible alias involving gather/scatter between *_288 and *_288
+cg.c:311:26: missed: couldn't vectorize loop
+cg.c:311:26: missed: not vectorized: unsupported control flow in loop.
+cg.c:283:29: missed: couldn't vectorize loop
+cg.c:283:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+cg.c:287:24: missed: couldn't vectorize loop
+cg.c:287:24: missed: not vectorized: unsupported control flow in loop.
+cg.c:291:27: missed: couldn't vectorize loop
+cg.c:291:27: missed: not vectorized: unsupported control flow in loop.
+cg.c:439:21: missed: couldn't vectorize loop
+cg.c:440:4: missed: possible alias involving gather/scatter between *_259 and *_263
+cg.c:425:16: missed: couldn't vectorize loop
+cg.c:425:16: missed: not vectorized: unsupported control flow in loop.
+cg.c:424:18: missed: couldn't vectorize loop
+cg.c:424:18: missed: not vectorized: number of iterations cannot be computed.
+cg.c:75:5: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - CG Benchmark"[0]);
+cg.c:77:5: missed: statement clobbers memory: printf (" Size: %10d\n", 7000);
+cg.c:78:5: missed: statement clobbers memory: printf (" Iterations: %5d\n", 15);
+cg.c:83:15: missed: statement clobbers memory: randlc (&tran, 1.220703125e+9);
+cg.c:278:13: missed: statement clobbers memory: ratio_142 = pow (1.000000000000000055511151231257827021181583404541015625e-1, _141);
+cg.c:281:14: missed: statement clobbers memory: __builtin_memset (_875, 0, _879);
+cg.c:426:11: missed: statement clobbers memory: vecelt_233 = randlc (&tran, amult.24_232);
+cg.c:427:11: missed: statement clobbers memory: vecloc_235 = randlc (&tran, amult.25_234);
+cg.c:349:12: missed: statement clobbers memory: __builtin_memset (&MEM <int[7002]> [(void *)&rowstr + 4B], 0, _826);
+cg.c:350:10: missed: statement clobbers memory: __builtin_memset (&MEM <int[14002]> [(void *)&iv + 4B], 0, _826);
+cg.c:363:14: missed: statement clobbers memory: __builtin_memset (_831, 0, _834);
+cg.c:373:14: missed: statement clobbers memory: __builtin_memmove (_848, _841, _855);
+cg.c:378:7: missed: statement clobbers memory: __builtin_memset (&MEM <double[7002]> [(void *)&v + 8B], 0, _868);
+cg.c:379:10: missed: statement clobbers memory: __builtin_memset (&MEM <int[14002]> [(void *)&iv + 4B], 0, _861);
+cg.c:105:2: missed: statement clobbers memory: conj_grad.constprop (&rnorm);
+cg.c:97:15: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&q + 8B], 0, _981);
+cg.c:98:15: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&z + 8B], 0, _981);
+cg.c:99:15: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&r + 8B], 0, _981);
+cg.c:100:15: missed: statement clobbers memory: __builtin_memset (&MEM <double[7003]> [(void *)&p + 8B], 0, _981);
+cg.c:105:2: missed: statement clobbers memory: conj_grad.constprop (&rnorm);
+cg.c:112:22: missed: statement clobbers memory: _153 = sqrt (norm_temp12_435);
+cg.c:121:5: missed: statement clobbers memory: timer_clear (1);
+cg.c:122:5: missed: statement clobbers memory: timer_start (1);
+cg.c:124:2: missed: statement clobbers memory: conj_grad.constprop (&rnorm);
+cg.c:131:22: missed: statement clobbers memory: _515 = sqrt (norm_temp12_440);
+cg.c:134:4: missed: statement clobbers memory: __builtin_puts (&"   iteration           ||r||                 zeta"[0]);
+cg.c:136:2: missed: statement clobbers memory: printf ("    %5d       %20.14e%20.13e\n", 1, rnorm.18_40, zeta_112);
+cg.c:124:2: missed: statement clobbers memory: conj_grad.constprop (&rnorm);
+cg.c:131:22: missed: statement clobbers memory: _938 = sqrt (norm_temp12_941);
+cg.c:136:2: missed: statement clobbers memory: printf ("    %5d       %20.14e%20.13e\n", it_957, rnorm.18_923, zeta_929);
+cg.c:143:16: missed: statement clobbers memory: nthreads_95 = omp_get_num_threads ();
+cg.c:146:5: missed: statement clobbers memory: timer_stop (1);
+cg.c:147:9: missed: statement clobbers memory: t_98 = timer_read (1);
+cg.c:148:5: missed: statement clobbers memory: __builtin_puts (&" Benchmark completed"[0]);
+cg.c:158:6: missed: statement clobbers memory: __builtin_puts (&" VERIFICATION FAILED"[0]);
+cg.c:159:6: missed: statement clobbers memory: printf (" Zeta                %20.12e\n", zeta_924);
+cg.c:160:6: missed: statement clobbers memory: printf (" The correct zeta is %20.12e\n", 1.036259508712399934893255704082548618316650390625e+1);
+cg.c:153:6: missed: statement clobbers memory: __builtin_puts (&" VERIFICATION SUCCESSFUL"[0]);
+cg.c:154:6: missed: statement clobbers memory: printf (" Zeta is    %20.12e\n", zeta_924);
+cg.c:155:6: missed: statement clobbers memory: printf (" Error is   %20.12e\n", _47);
+cg.c:174:5: missed: statement clobbers memory: c_print_results ("CG", 87, 7000, 0, 0, 15, nthreads_95, t_98, mflops_65, "          floating point", verified_66, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "randdp");
+cg.c:316:3: missed: statement clobbers memory: __builtin_puts (&"Space for matrix elements exceeded in makea"[0]);
+cg.c:317:3: missed: statement clobbers memory: printf ("nnza, nzmax = %d, %d\n", nnza_681, nzz.5_5);
+cg.c:318:3: missed: statement clobbers memory: printf ("iouter = %d\n", iouter_210);
+cg.c:319:3: missed: statement clobbers memory: exit (1);
+cg.c:296:8: missed: statement clobbers memory: __builtin_puts (&"Space for matrix elements exceeded in makea"[0]);
+cg.c:298:8: missed: statement clobbers memory: printf ("nnza, nzmax = %d, %d\n", nnza_988, nzz.5_5);
+cg.c:299:8: missed: statement clobbers memory: printf ("iouter = %d\n", iouter_995);
+cg.c:300:8: missed: statement clobbers memory: exit (1);
+cg.c:373:14: missed: not vectorized: vectorization is not profitable.

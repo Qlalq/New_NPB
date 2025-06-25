@@ -1,0 +1,1040 @@
+sp.c:100:17: missed: couldn't vectorize loop
+sp.c:100:17: missed: not vectorized: multiple nested loops.
+sp.c:101:19: missed: couldn't vectorize loop
+sp.c:101:19: missed: not vectorized: multiple nested loops.
+sp.c:102:21: missed: couldn't vectorize loop
+sp.c:104:30: missed: not vectorized: complicated access pattern.
+sp.c:1361:17: missed: couldn't vectorize loop
+sp.c:1361:17: missed: not vectorized: multiple nested loops.
+sp.c:1362:19: missed: couldn't vectorize loop
+sp.c:1365:5: missed: not vectorized: complicated access pattern.
+sp.c:805:17: missed: couldn't vectorize loop
+sp.c:805:17: missed: not vectorized: multiple nested loops.
+sp.c:806:19: missed: couldn't vectorize loop
+sp.c:808:5: missed: not vectorized: complicated access pattern.
+sp.c:1718:17: missed: couldn't vectorize loop
+sp.c:1718:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1720:34: missed: couldn't vectorize loop
+sp.c:1720:34: missed: not vectorized: multiple nested loops.
+sp.c:1723:21: missed: couldn't vectorize loop
+sp.c:1725:34: missed: not vectorized: complicated access pattern.
+sp.c:1705:32: missed: couldn't vectorize loop
+sp.c:1705:32: missed: not vectorized: multiple nested loops.
+sp.c:1708:19: missed: couldn't vectorize loop
+sp.c:1708:19: missed: not vectorized: multiple nested loops.
+sp.c:1709:21: missed: couldn't vectorize loop
+sp.c:1711:34: missed: not vectorized: complicated access pattern.
+sp.c:1695:17: missed: couldn't vectorize loop
+sp.c:1695:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1696:19: missed: couldn't vectorize loop
+sp.c:1699:32: missed: not vectorized: complicated access pattern.
+sp.c:1687:17: missed: couldn't vectorize loop
+sp.c:1687:17: missed: not vectorized: multiple nested loops.
+sp.c:1688:19: missed: couldn't vectorize loop
+sp.c:1690:32: missed: not vectorized: complicated access pattern.
+sp.c:1639:17: missed: couldn't vectorize loop
+sp.c:1639:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:1667:19: missed: couldn't vectorize loop
+sp.c:1672:41: missed: not vectorized: complicated access pattern.
+sp.c:1641:19: missed: couldn't vectorize loop
+sp.c:1641:19: missed: not vectorized: multiple nested loops.
+sp.c:1644:21: missed: couldn't vectorize loop
+sp.c:1649:39: missed: not vectorized: complicated access pattern.
+sp.c:1617:17: missed: couldn't vectorize loop
+sp.c:1630:34: missed: not vectorized: complicated access pattern.
+sp.c:1585:17: missed: couldn't vectorize loop
+sp.c:1585:17: missed: not vectorized: multiple nested loops.
+sp.c:1588:19: missed: couldn't vectorize loop
+sp.c:1594:39: missed: not vectorized: complicated access pattern.
+sp.c:625:17: missed: couldn't vectorize loop
+sp.c:625:17: missed: not vectorized: multiple nested loops.
+sp.c:626:19: missed: couldn't vectorize loop
+sp.c:630:25: missed: not vectorized: complicated access pattern.
+sp.c:614:17: missed: couldn't vectorize loop
+sp.c:616:37: missed: not vectorized: complicated access pattern.
+sp.c:602:17: missed: couldn't vectorize loop
+sp.c:602:17: missed: not vectorized: multiple nested loops.
+sp.c:603:19: missed: couldn't vectorize loop
+sp.c:605:32: missed: not vectorized: complicated access pattern.
+sp.c:591:17: missed: couldn't vectorize loop
+sp.c:596:41: missed: not vectorized: complicated access pattern.
+sp.c:571:17: missed: couldn't vectorize loop
+sp.c:571:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:572:19: missed: couldn't vectorize loop
+sp.c:572:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:574:24: missed: not vectorized: vectorization is not profitable.
+sp.c:575:18: missed: not vectorized: vectorization is not profitable.
+sp.c:827:17: missed: couldn't vectorize loop
+sp.c:827:17: missed: not vectorized: multiple nested loops.
+sp.c:828:19: missed: couldn't vectorize loop
+sp.c:830:5: missed: not vectorized: complicated access pattern.
+sp.c:1874:17: missed: couldn't vectorize loop
+sp.c:1874:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1876:34: missed: couldn't vectorize loop
+sp.c:1876:34: missed: not vectorized: multiple nested loops.
+sp.c:1879:21: missed: couldn't vectorize loop
+sp.c:1881:34: missed: not vectorized: complicated access pattern.
+sp.c:1861:17: missed: couldn't vectorize loop
+sp.c:1861:17: missed: not vectorized: multiple nested loops.
+sp.c:1862:34: missed: couldn't vectorize loop
+sp.c:1862:34: missed: not vectorized: multiple nested loops.
+sp.c:1865:21: missed: couldn't vectorize loop
+sp.c:1867:34: missed: not vectorized: complicated access pattern.
+sp.c:1851:17: missed: couldn't vectorize loop
+sp.c:1851:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1852:19: missed: couldn't vectorize loop
+sp.c:1855:32: missed: not vectorized: complicated access pattern.
+sp.c:1843:17: missed: couldn't vectorize loop
+sp.c:1843:17: missed: not vectorized: multiple nested loops.
+sp.c:1844:19: missed: couldn't vectorize loop
+sp.c:1846:32: missed: not vectorized: complicated access pattern.
+sp.c:1795:17: missed: couldn't vectorize loop
+sp.c:1795:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:1823:19: missed: couldn't vectorize loop
+sp.c:1828:41: missed: not vectorized: complicated access pattern.
+sp.c:1797:19: missed: couldn't vectorize loop
+sp.c:1797:19: missed: not vectorized: multiple nested loops.
+sp.c:1800:21: missed: couldn't vectorize loop
+sp.c:1805:39: missed: not vectorized: complicated access pattern.
+sp.c:1773:17: missed: couldn't vectorize loop
+sp.c:1779:37: missed: not vectorized: complicated access pattern.
+sp.c:1741:17: missed: couldn't vectorize loop
+sp.c:1741:17: missed: not vectorized: multiple nested loops.
+sp.c:1744:19: missed: couldn't vectorize loop
+sp.c:1750:39: missed: not vectorized: complicated access pattern.
+sp.c:703:17: missed: couldn't vectorize loop
+sp.c:703:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:704:19: missed: couldn't vectorize loop
+sp.c:708:25: missed: not vectorized: complicated access pattern.
+sp.c:704:41: missed: couldn't vectorize loop
+sp.c:708:25: missed: not vectorized: complicated access pattern.
+sp.c:692:17: missed: couldn't vectorize loop
+sp.c:694:37: missed: not vectorized: complicated access pattern.
+sp.c:680:17: missed: couldn't vectorize loop
+sp.c:680:17: missed: not vectorized: multiple nested loops.
+sp.c:681:19: missed: couldn't vectorize loop
+sp.c:683:32: missed: not vectorized: complicated access pattern.
+sp.c:669:17: missed: couldn't vectorize loop
+sp.c:674:41: missed: not vectorized: complicated access pattern.
+sp.c:649:17: missed: couldn't vectorize loop
+sp.c:649:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:650:19: missed: couldn't vectorize loop
+sp.c:650:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:652:24: missed: not vectorized: vectorization is not profitable.
+sp.c:653:18: missed: not vectorized: vectorization is not profitable.
+sp.c:1392:17: missed: couldn't vectorize loop
+sp.c:1392:17: missed: not vectorized: multiple nested loops.
+sp.c:1393:19: missed: couldn't vectorize loop
+sp.c:1406:8: missed: not vectorized: complicated access pattern.
+sp.c:2030:17: missed: couldn't vectorize loop
+sp.c:2030:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:2032:19: missed: couldn't vectorize loop
+sp.c:2032:19: missed: not vectorized: multiple nested loops.
+sp.c:2033:21: missed: couldn't vectorize loop
+sp.c:2037:34: missed: not vectorized: complicated access pattern.
+sp.c:2034:31: missed: couldn't vectorize loop
+sp.c:2037:34: missed: not vectorized: no vectype for stmt: _160 = rhs[m_736][i_719][j_727][k_731];
+ scalar_type: double
+sp.c:2017:17: missed: couldn't vectorize loop
+sp.c:2017:17: missed: not vectorized: multiple nested loops.
+sp.c:2018:19: missed: couldn't vectorize loop
+sp.c:2018:19: missed: not vectorized: multiple nested loops.
+sp.c:2019:21: missed: couldn't vectorize loop
+sp.c:2023:34: missed: not vectorized: complicated access pattern.
+sp.c:2020:31: missed: couldn't vectorize loop
+sp.c:2023:34: missed: not vectorized: no vectype for stmt: _148 = rhs[m_735][i_718][j_726][k_730];
+ scalar_type: double
+sp.c:2007:17: missed: couldn't vectorize loop
+sp.c:2007:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:2009:19: missed: couldn't vectorize loop
+sp.c:2011:32: missed: not vectorized: complicated access pattern.
+sp.c:2010:21: missed: couldn't vectorize loop
+sp.c:2011:32: missed: not vectorized: no vectype for stmt: _140 = rhs[m_734][i_717][j_725][_1165];
+ scalar_type: double
+sp.c:1999:17: missed: couldn't vectorize loop
+sp.c:1999:17: missed: not vectorized: multiple nested loops.
+sp.c:2000:19: missed: couldn't vectorize loop
+sp.c:2002:32: missed: not vectorized: complicated access pattern.
+sp.c:2001:21: missed: couldn't vectorize loop
+sp.c:2002:32: missed: not vectorized: no vectype for stmt: _133 = rhs[m_733][i_716][j_724][_1165];
+ scalar_type: double
+sp.c:1951:17: missed: couldn't vectorize loop
+sp.c:1951:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:1979:19: missed: couldn't vectorize loop
+sp.c:1984:41: missed: not vectorized: complicated access pattern.
+sp.c:1980:21: missed: couldn't vectorize loop
+sp.c:1981:40: missed: not vectorized: no vectype for stmt: _104 = lhs[_1058][i_715][j_723][_1165];
+ scalar_type: double
+sp.c:1953:19: missed: couldn't vectorize loop
+sp.c:1953:19: missed: not vectorized: multiple nested loops.
+sp.c:1954:21: missed: couldn't vectorize loop
+sp.c:1961:39: missed: not vectorized: complicated access pattern.
+sp.c:1955:16: missed: couldn't vectorize loop
+sp.c:1958:42: missed: not vectorized: no vectype for stmt: _62 = lhs[_1047][i_714][j_722][k_729];
+ scalar_type: double
+sp.c:1929:17: missed: couldn't vectorize loop
+sp.c:1935:37: missed: not vectorized: complicated access pattern.
+sp.c:1930:19: missed: couldn't vectorize loop
+sp.c:1931:45: missed: not vectorized: no vectype for stmt: _38 = lhs[2][i_713][j_721][_1165];
+ scalar_type: double
+sp.c:1897:17: missed: couldn't vectorize loop
+sp.c:1897:17: missed: not vectorized: multiple nested loops.
+sp.c:1898:19: missed: couldn't vectorize loop
+sp.c:1906:39: missed: not vectorized: complicated access pattern.
+sp.c:1899:21: missed: couldn't vectorize loop
+sp.c:1902:40: missed: not vectorized: no vectype for stmt: _1 = lhs[2][i_712][j_720][k_728];
+ scalar_type: double
+sp.c:781:17: missed: couldn't vectorize loop
+sp.c:781:17: missed: not vectorized: multiple nested loops.
+sp.c:782:19: missed: couldn't vectorize loop
+sp.c:786:23: missed: not vectorized: complicated access pattern.
+sp.c:770:17: missed: couldn't vectorize loop
+sp.c:772:37: missed: not vectorized: complicated access pattern.
+sp.c:771:19: missed: couldn't vectorize loop
+sp.c:772:37: missed: not vectorized: no vectype for stmt: _426 = lhs[0][i_798][j_799][_1162];
+ scalar_type: double
+sp.c:758:17: missed: couldn't vectorize loop
+sp.c:758:17: missed: not vectorized: multiple nested loops.
+sp.c:759:19: missed: couldn't vectorize loop
+sp.c:761:32: missed: not vectorized: complicated access pattern.
+sp.c:747:17: missed: couldn't vectorize loop
+sp.c:752:39: missed: not vectorized: complicated access pattern.
+sp.c:748:19: missed: couldn't vectorize loop
+sp.c:749:37: missed: not vectorized: no vectype for stmt: _377 = lhs[2][i_793][j_794][1];
+ scalar_type: double
+sp.c:727:17: missed: couldn't vectorize loop
+sp.c:727:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:728:19: missed: couldn't vectorize loop
+sp.c:728:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:731:8: missed: statement clobbers memory: __builtin_memcpy (&cv, _1133, _1139);
+sp.c:1935:18: missed: not vectorized: vectorization is not profitable.
+sp.c:1962:23: missed: not vectorized: vectorization is not profitable.
+sp.c:2023:20: missed: not vectorized: vectorization is not profitable.
+sp.c:2037:20: missed: not vectorized: vectorization is not profitable.
+sp.c:1185:17: missed: couldn't vectorize loop
+sp.c:1185:17: missed: not vectorized: multiple nested loops.
+sp.c:1186:19: missed: couldn't vectorize loop
+sp.c:1186:19: missed: not vectorized: multiple nested loops.
+sp.c:1187:21: missed: couldn't vectorize loop
+sp.c:1189:34: missed: not vectorized: complicated access pattern.
+sp.c:1176:17: missed: couldn't vectorize loop
+sp.c:1176:17: missed: not vectorized: multiple nested loops.
+sp.c:1177:19: missed: couldn't vectorize loop
+sp.c:1180:16: missed: not vectorized: complicated access pattern.
+sp.c:1178:21: missed: couldn't vectorize loop
+sp.c:1179:32: missed: not vectorized: no vectype for stmt: _719 = rhs[m_1266][i_1215][j_1232][_3317];
+ scalar_type: double
+sp.c:1166:17: missed: couldn't vectorize loop
+sp.c:1166:17: missed: not vectorized: multiple nested loops.
+sp.c:1167:19: missed: couldn't vectorize loop
+sp.c:1170:16: missed: not vectorized: complicated access pattern.
+sp.c:1168:21: missed: couldn't vectorize loop
+sp.c:1169:32: missed: not vectorized: no vectype for stmt: _701 = rhs[m_1265][i_1214][j_1231][k_878];
+ scalar_type: double
+sp.c:1153:17: missed: couldn't vectorize loop
+sp.c:1153:17: missed: not vectorized: multiple nested loops.
+sp.c:1154:19: missed: couldn't vectorize loop
+sp.c:1154:19: missed: not vectorized: multiple nested loops.
+sp.c:1155:21: missed: couldn't vectorize loop
+sp.c:1158:19: missed: not vectorized: complicated access pattern.
+sp.c:1144:17: missed: couldn't vectorize loop
+sp.c:1144:17: missed: not vectorized: multiple nested loops.
+sp.c:1145:19: missed: couldn't vectorize loop
+sp.c:1148:20: missed: not vectorized: complicated access pattern.
+sp.c:1146:21: missed: couldn't vectorize loop
+sp.c:1147:32: missed: not vectorized: no vectype for stmt: _662 = rhs[m_1263][i_1212][j_1229][2];
+ scalar_type: double
+sp.c:1134:17: missed: couldn't vectorize loop
+sp.c:1134:17: missed: not vectorized: multiple nested loops.
+sp.c:1135:19: missed: couldn't vectorize loop
+sp.c:1138:20: missed: not vectorized: complicated access pattern.
+sp.c:1136:21: missed: couldn't vectorize loop
+sp.c:1137:32: missed: not vectorized: no vectype for stmt: _650 = rhs[m_1262][i_1211][j_1228][1];
+ scalar_type: double
+sp.c:1083:17: missed: couldn't vectorize loop
+sp.c:1083:17: missed: not vectorized: multiple nested loops.
+sp.c:1084:19: missed: couldn't vectorize loop
+sp.c:1091:15: missed: not vectorized: complicated access pattern.
+sp.c:1074:17: missed: couldn't vectorize loop
+sp.c:1074:17: missed: not vectorized: multiple nested loops.
+sp.c:1075:19: missed: couldn't vectorize loop
+sp.c:1078:18: missed: not vectorized: complicated access pattern.
+sp.c:1064:17: missed: couldn't vectorize loop
+sp.c:1064:17: missed: not vectorized: multiple nested loops.
+sp.c:1065:19: missed: couldn't vectorize loop
+sp.c:1068:18: missed: not vectorized: complicated access pattern.
+sp.c:1051:17: missed: couldn't vectorize loop
+sp.c:1051:17: missed: not vectorized: multiple nested loops.
+sp.c:1052:19: missed: couldn't vectorize loop
+sp.c:1052:19: missed: not vectorized: multiple nested loops.
+sp.c:1053:23: missed: couldn't vectorize loop
+sp.c:1056:21: missed: not vectorized: complicated access pattern.
+sp.c:1042:17: missed: couldn't vectorize loop
+sp.c:1042:17: missed: not vectorized: multiple nested loops.
+sp.c:1043:19: missed: couldn't vectorize loop
+sp.c:1046:22: missed: not vectorized: complicated access pattern.
+sp.c:1032:17: missed: couldn't vectorize loop
+sp.c:1032:17: missed: not vectorized: multiple nested loops.
+sp.c:1033:19: missed: couldn't vectorize loop
+sp.c:1036:20: missed: not vectorized: complicated access pattern.
+sp.c:981:17: missed: couldn't vectorize loop
+sp.c:981:17: missed: not vectorized: multiple nested loops.
+sp.c:982:19: missed: couldn't vectorize loop
+sp.c:989:17: missed: not vectorized: complicated access pattern.
+sp.c:972:17: missed: couldn't vectorize loop
+sp.c:972:17: missed: not vectorized: multiple nested loops.
+sp.c:973:19: missed: couldn't vectorize loop
+sp.c:976:18: missed: not vectorized: complicated access pattern.
+sp.c:962:17: missed: couldn't vectorize loop
+sp.c:962:17: missed: not vectorized: multiple nested loops.
+sp.c:963:19: missed: couldn't vectorize loop
+sp.c:966:18: missed: not vectorized: complicated access pattern.
+sp.c:949:17: missed: couldn't vectorize loop
+sp.c:949:17: missed: not vectorized: multiple nested loops.
+sp.c:950:21: missed: couldn't vectorize loop
+sp.c:950:21: missed: not vectorized: multiple nested loops.
+sp.c:951:21: missed: couldn't vectorize loop
+sp.c:954:21: missed: not vectorized: complicated access pattern.
+sp.c:940:17: missed: couldn't vectorize loop
+sp.c:940:17: missed: not vectorized: multiple nested loops.
+sp.c:941:19: missed: couldn't vectorize loop
+sp.c:944:22: missed: not vectorized: complicated access pattern.
+sp.c:930:17: missed: couldn't vectorize loop
+sp.c:930:17: missed: not vectorized: multiple nested loops.
+sp.c:931:19: missed: couldn't vectorize loop
+sp.c:934:20: missed: not vectorized: complicated access pattern.
+sp.c:879:17: missed: couldn't vectorize loop
+sp.c:879:17: missed: not vectorized: multiple nested loops.
+sp.c:880:19: missed: couldn't vectorize loop
+sp.c:887:17: missed: not vectorized: complicated access pattern.
+sp.c:870:17: missed: couldn't vectorize loop
+sp.c:870:17: missed: not vectorized: multiple nested loops.
+sp.c:871:19: missed: couldn't vectorize loop
+sp.c:874:20: missed: statement clobbers memory: __builtin_memcpy (_3260, _3251, _3272);
+sp.c:872:21: missed: couldn't vectorize loop
+sp.c:874:20: missed: statement clobbers memory: __builtin_memcpy (_3260, _3251, _3272);
+sp.c:851:17: missed: couldn't vectorize loop
+sp.c:851:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:852:19: missed: couldn't vectorize loop
+sp.c:852:19: missed: not vectorized: unsupported control flow in loop.
+sp.c:853:21: missed: couldn't vectorize loop
+sp.c:853:21: missed: not vectorized: unsupported control flow in loop.
+sp.c:864:8: missed: statement clobbers memory: aux_1068 = sqrt (aux_993);
+sp.c:874:20: missed: statement clobbers memory: __builtin_memcpy (_3260, _3251, _3272);
+sp.c:1558:17: missed: couldn't vectorize loop
+sp.c:1558:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1541:17: missed: couldn't vectorize loop
+sp.c:1541:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:161:17: missed: couldn't vectorize loop
+sp.c:161:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:151:17: missed: couldn't vectorize loop
+sp.c:151:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:152:19: missed: couldn't vectorize loop
+sp.c:152:19: missed: not vectorized: unsupported control flow in loop.
+sp.c:138:17: missed: couldn't vectorize loop
+sp.c:138:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:124:17: missed: couldn't vectorize loop
+sp.c:124:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:126:19: missed: couldn't vectorize loop
+sp.c:126:19: missed: not vectorized: unsupported control flow in loop.
+sp.c:128:21: missed: couldn't vectorize loop
+sp.c:130:2: missed: statement clobbers memory: exact_solution (xi_222, eta_226, zeta_230, &u_exact);
+sp.c:130:2: missed: statement clobbers memory: exact_solution (xi_222, eta_226, zeta_230, &u_exact);
+sp.c:142:14: missed: statement clobbers memory: _682 = sqrt (_680);
+sp.c:142:14: missed: statement clobbers memory: _700 = sqrt (_698);
+sp.c:142:14: missed: statement clobbers memory: _718 = sqrt (_716);
+sp.c:142:14: missed: statement clobbers memory: _736 = sqrt (_734);
+sp.c:142:14: missed: statement clobbers memory: _416 = sqrt (_448);
+sp.c:1427:3: missed: statement clobbers memory: compute_rhs ();
+sp.c:165:14: missed: statement clobbers memory: _342 = sqrt (_197);
+sp.c:165:14: missed: statement clobbers memory: _623 = sqrt (_35);
+sp.c:165:14: missed: statement clobbers memory: _646 = sqrt (_644);
+sp.c:165:14: missed: statement clobbers memory: _664 = sqrt (_662);
+sp.c:165:14: missed: statement clobbers memory: _421 = sqrt (_322);
+sp.c:1534:5: missed: statement clobbers memory: __builtin_puts (&" Unknown class"[0]);
+sp.c:1526:5: missed: statement clobbers memory: printf (" Verification being performed for class %1c\n", _26);
+sp.c:1527:5: missed: statement clobbers memory: printf (" accuracy setting for epsilon = %20.13e\n", 1.00000000000000002092256083012847267532663408928783610463e-8);
+sp.c:1531:7: missed: statement clobbers memory: printf (" DT does not match the reference value of %15.8e\n", dtref_50);
+sp.c:1539:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of residual"[0]);
+sp.c:1537:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of residual"[0]);
+sp.c:1549:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_383, pretmp_627, pretmp_625, _33);
+sp.c:1546:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_383, pretmp_627, pretmp_625, _33);
+sp.c:1543:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_383, pretmp_627);
+sp.c:1556:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of solution error"[0]);
+sp.c:1554:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of solution error"[0]);
+sp.c:1566:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_382, pretmp_624, pretmp_622, _42);
+sp.c:1563:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_382, pretmp_624, pretmp_622, _42);
+sp.c:1560:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_382, pretmp_624);
+sp.c:1576:5: missed: statement clobbers memory: __builtin_puts (&" Verification failed"[0]);
+sp.c:1574:5: missed: statement clobbers memory: __builtin_puts (&" Verification Successful"[0]);
+sp.c:1571:5: missed: statement clobbers memory: __builtin_puts (&" No reference values provided"[0]);
+sp.c:1572:5: missed: statement clobbers memory: __builtin_puts (&" No verification performed"[0]);
+sp.c:133:11: missed: Using original scalar computation for live lane because there is an out-of-loop definition for it
+sp.c:536:17: missed: couldn't vectorize loop
+sp.c:542:16: missed: not vectorized: complicated access pattern.
+sp.c:524:17: missed: couldn't vectorize loop
+sp.c:530:16: missed: not vectorized: complicated access pattern.
+sp.c:512:17: missed: couldn't vectorize loop
+sp.c:518:16: missed: not vectorized: complicated access pattern.
+sp.c:500:17: missed: couldn't vectorize loop
+sp.c:506:16: missed: not vectorized: complicated access pattern.
+sp.c:488:17: missed: couldn't vectorize loop
+sp.c:494:16: missed: not vectorized: complicated access pattern.
+sp.c:476:17: missed: couldn't vectorize loop
+sp.c:482:16: missed: not vectorized: complicated access pattern.
+sp.c:442:17: missed: couldn't vectorize loop
+sp.c:442:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:444:19: missed: couldn't vectorize loop
+sp.c:449:4: missed: statement clobbers memory: exact_solution (0.0, eta_183, zeta_185, &MEM <double> [(void *)&Pface]);
+sp.c:446:21: missed: couldn't vectorize loop
+sp.c:449:4: missed: statement clobbers memory: exact_solution (0.0, eta_183, zeta_185, &MEM <double> [(void *)&Pface]);
+sp.c:431:17: missed: couldn't vectorize loop
+sp.c:431:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:432:19: missed: couldn't vectorize loop
+sp.c:432:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:435:16: missed: statement clobbers memory: __builtin_memset (_2480, 0, 288);
+sp.c:436:16: missed: statement clobbers memory: __builtin_memset (_2473, 0, 288);
+sp.c:437:16: missed: statement clobbers memory: __builtin_memset (_2466, 0, 288);
+sp.c:449:4: missed: statement clobbers memory: exact_solution (0.0, eta_183, zeta_185, &MEM <double> [(void *)&Pface]);
+sp.c:449:4: missed: statement clobbers memory: exact_solution (1.0e+0, eta_183, zeta_185, &MEM <double> [(void *)&Pface + 120B]);
+sp.c:453:4: missed: statement clobbers memory: exact_solution (xi_181, 0.0, zeta_185, &MEM <double> [(void *)&Pface + 40B]);
+sp.c:453:4: missed: statement clobbers memory: exact_solution (xi_181, 1.0e+0, zeta_185, &MEM <double> [(void *)&Pface + 160B]);
+sp.c:457:4: missed: statement clobbers memory: exact_solution (xi_181, eta_183, 0.0, &MEM <double> [(void *)&Pface + 80B]);
+sp.c:457:4: missed: statement clobbers memory: exact_solution (xi_181, eta_183, 1.0e+0, &MEM <double> [(void *)&Pface + 200B]);
+sp.c:70:23: missed: couldn't vectorize loop
+sp.c:70:23: missed: not vectorized: unsupported control flow in loop.
+sp.c:404:17: missed: couldn't vectorize loop
+sp.c:404:17: missed: not vectorized: multiple nested loops.
+sp.c:405:19: missed: couldn't vectorize loop
+sp.c:405:19: missed: not vectorized: multiple nested loops.
+sp.c:406:21: missed: couldn't vectorize loop
+sp.c:408:49: missed: not vectorized: complicated access pattern.
+sp.c:329:17: missed: couldn't vectorize loop
+sp.c:329:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:331:19: missed: couldn't vectorize loop
+sp.c:331:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:386:21: missed: couldn't vectorize loop
+sp.c:388:42: missed: not vectorized: complicated access pattern.
+sp.c:333:21: missed: couldn't vectorize loop
+sp.c:335:2: missed: statement clobbers memory: exact_solution (xi_630, eta_626, zeta_634, &dtemp);
+sp.c:254:17: missed: couldn't vectorize loop
+sp.c:254:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:256:19: missed: couldn't vectorize loop
+sp.c:256:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:311:21: missed: couldn't vectorize loop
+sp.c:313:42: missed: not vectorized: complicated access pattern.
+sp.c:258:21: missed: couldn't vectorize loop
+sp.c:260:2: missed: statement clobbers memory: exact_solution (xi_364, eta_368, zeta_360, &dtemp);
+sp.c:180:17: missed: couldn't vectorize loop
+sp.c:180:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:182:19: missed: couldn't vectorize loop
+sp.c:182:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:236:21: missed: couldn't vectorize loop
+sp.c:238:42: missed: not vectorized: complicated access pattern.
+sp.c:184:21: missed: couldn't vectorize loop
+sp.c:186:2: missed: statement clobbers memory: exact_solution (xi_100, eta_96, zeta_92, &dtemp);
+sp.c:171:17: missed: couldn't vectorize loop
+sp.c:171:17: missed: not vectorized: multiple nested loops.
+sp.c:172:19: missed: couldn't vectorize loop
+sp.c:175:24: missed: statement clobbers memory: __builtin_memset (_891, 0, _195);
+sp.c:173:21: missed: couldn't vectorize loop
+sp.c:175:24: missed: statement clobbers memory: __builtin_memset (_891, 0, _195);
+sp.c:558:17: missed: couldn't vectorize loop
+sp.c:558:17: missed: not vectorized: multiple nested loops.
+sp.c:559:19: missed: couldn't vectorize loop
+sp.c:559:19: missed: not vectorized: multiple nested loops.
+sp.c:560:21: missed: couldn't vectorize loop
+sp.c:562:24: missed: not vectorized: complicated access pattern.
+sp.c:549:17: missed: couldn't vectorize loop
+sp.c:549:17: missed: not vectorized: multiple nested loops.
+sp.c:550:19: missed: couldn't vectorize loop
+sp.c:553:20: missed: statement clobbers memory: __builtin_memset (_623, 0, _33);
+sp.c:551:21: missed: couldn't vectorize loop
+sp.c:553:20: missed: statement clobbers memory: __builtin_memset (_623, 0, _33);
+sp.c:40:24: missed: couldn't vectorize loop
+sp.c:40:24: missed: not vectorized: number of iterations cannot be computed.
+sp.c:38:24: missed: couldn't vectorize loop
+sp.c:38:24: missed: not vectorized: number of iterations cannot be computed.
+sp.c:32:3: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - SP Benchmark\n"[0]);
+sp.c:34:8: missed: statement clobbers memory: fp_37 = fopen ("inputsp.data", "r");
+sp.c:45:7: missed: statement clobbers memory: printf (" No input file inputsp.data. Using compiled defaults");
+sp.c:36:7: missed: statement clobbers memory: __builtin_puts (&" Reading from input file inputsp.data"[0]);
+sp.c:37:7: missed: statement clobbers memory: fscanf (fp_37, "%d", &niter);
+sp.c:38:14: missed: statement clobbers memory: _1 = fgetc (fp_37);
+sp.c:39:7: missed: statement clobbers memory: fscanf (fp_37, "%lf", &dt);
+sp.c:40:14: missed: statement clobbers memory: _2 = fgetc (fp_37);
+sp.c:41:7: missed: statement clobbers memory: fscanf (fp_37, "%d%d%d", &grid_points[0], &grid_points[1], &grid_points[2]);
+sp.c:43:7: missed: statement clobbers memory: fclose (fp_37);
+sp.c:52:3: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d\n", _5, _4, _3);
+sp.c:54:3: missed: statement clobbers memory: printf (" Iterations: %3d   dt: %10.6f\n", niter.1_7, dt.0_6);
+sp.c:63:3: missed: statement clobbers memory: initialize ();
+sp.c:553:20: missed: statement clobbers memory: __builtin_memset (_623, 0, _33);
+sp.c:175:24: missed: statement clobbers memory: __builtin_memset (_891, 0, _195);
+sp.c:186:2: missed: statement clobbers memory: exact_solution (xi_100, eta_96, zeta_92, &dtemp);
+sp.c:260:2: missed: statement clobbers memory: exact_solution (xi_364, eta_368, zeta_360, &dtemp);
+sp.c:335:2: missed: statement clobbers memory: exact_solution (xi_630, eta_626, zeta_634, &dtemp);
+sp.c:111:3: missed: statement clobbers memory: compute_rhs ();
+sp.c:112:3: missed: statement clobbers memory: txinvr ();
+sp.c:113:3: missed: statement clobbers memory: x_solve ();
+sp.c:114:3: missed: statement clobbers memory: y_solve ();
+sp.c:115:3: missed: statement clobbers memory: z_solve ();
+sp.c:116:3: missed: statement clobbers memory: add ();
+sp.c:67:3: missed: statement clobbers memory: initialize ();
+sp.c:68:3: missed: statement clobbers memory: timer_clear (1);
+sp.c:69:3: missed: statement clobbers memory: timer_start (1);
+sp.c:72:7: missed: statement clobbers memory: printf (" Time step %4d\n", step_1023);
+sp.c:111:3: missed: statement clobbers memory: compute_rhs ();
+sp.c:112:3: missed: statement clobbers memory: txinvr ();
+sp.c:113:3: missed: statement clobbers memory: x_solve ();
+sp.c:114:3: missed: statement clobbers memory: y_solve ();
+sp.c:115:3: missed: statement clobbers memory: z_solve ();
+sp.c:116:3: missed: statement clobbers memory: add ();
+sp.c:78:14: missed: statement clobbers memory: nthreads_62 = omp_get_num_threads ();
+sp.c:81:3: missed: statement clobbers memory: timer_stop (1);
+sp.c:82:10: missed: statement clobbers memory: tmax_65 = timer_read (1);
+sp.c:83:3: missed: statement clobbers memory: verify (niter.3_15, &class, &verified);
+sp.c:92:3: missed: statement clobbers memory: c_print_results ("SP", _26, _24, _23, _22, pretmp_4125, nthreads_62, tmax_65, mflops_28, "          floating point", verified.5_20, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "(none)");
+sp.c:58:5: missed: statement clobbers memory: printf ("%d, %d, %d\n", _8, pretmp_4146, pretmp_4147);
+sp.c:59:5: missed: statement clobbers memory: __builtin_puts (&" Problem size too big for compiled array sizes"[0]);
+sp.c:60:5: missed: statement clobbers memory: exit (1);
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:202:40: missed: not vectorized: vectorization is not profitable.
+sp.c:205:40: missed: not vectorized: vectorization is not profitable.
+sp.c:210:40: missed: not vectorized: vectorization is not profitable.
+sp.c:214:40: missed: not vectorized: vectorization is not profitable.
+sp.c:218:40: missed: not vectorized: vectorization is not profitable.
+sp.c:238:42: missed: not vectorized: vectorization is not profitable.
+sp.c:238:42: missed: not vectorized: vectorization is not profitable.
+sp.c:277:40: missed: not vectorized: vectorization is not profitable.
+sp.c:280:40: missed: not vectorized: vectorization is not profitable.
+sp.c:284:40: missed: not vectorized: vectorization is not profitable.
+sp.c:289:40: missed: not vectorized: vectorization is not profitable.
+sp.c:293:40: missed: not vectorized: vectorization is not profitable.
+sp.c:313:42: missed: not vectorized: vectorization is not profitable.
+sp.c:313:42: missed: not vectorized: vectorization is not profitable.
+sp.c:313:42: missed: not vectorized: vectorization is not profitable.
+sp.c:313:42: missed: not vectorized: vectorization is not profitable.
+sp.c:100:17: missed: couldn't vectorize loop
+sp.c:100:17: missed: not vectorized: multiple nested loops.
+sp.c:101:19: missed: couldn't vectorize loop
+sp.c:101:19: missed: not vectorized: multiple nested loops.
+sp.c:102:21: missed: couldn't vectorize loop
+sp.c:104:30: missed: not vectorized: complicated access pattern.
+sp.c:1361:17: missed: couldn't vectorize loop
+sp.c:1361:17: missed: not vectorized: multiple nested loops.
+sp.c:1362:19: missed: couldn't vectorize loop
+sp.c:1365:5: missed: not vectorized: complicated access pattern.
+sp.c:805:17: missed: couldn't vectorize loop
+sp.c:805:17: missed: not vectorized: multiple nested loops.
+sp.c:806:19: missed: couldn't vectorize loop
+sp.c:808:5: missed: not vectorized: complicated access pattern.
+sp.c:1718:17: missed: couldn't vectorize loop
+sp.c:1718:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1720:34: missed: couldn't vectorize loop
+sp.c:1720:34: missed: not vectorized: multiple nested loops.
+sp.c:1723:21: missed: couldn't vectorize loop
+sp.c:1725:34: missed: not vectorized: complicated access pattern.
+sp.c:1705:32: missed: couldn't vectorize loop
+sp.c:1705:32: missed: not vectorized: multiple nested loops.
+sp.c:1708:19: missed: couldn't vectorize loop
+sp.c:1708:19: missed: not vectorized: multiple nested loops.
+sp.c:1709:21: missed: couldn't vectorize loop
+sp.c:1711:34: missed: not vectorized: complicated access pattern.
+sp.c:1695:17: missed: couldn't vectorize loop
+sp.c:1695:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1696:19: missed: couldn't vectorize loop
+sp.c:1699:32: missed: not vectorized: complicated access pattern.
+sp.c:1687:17: missed: couldn't vectorize loop
+sp.c:1687:17: missed: not vectorized: multiple nested loops.
+sp.c:1688:19: missed: couldn't vectorize loop
+sp.c:1690:32: missed: not vectorized: complicated access pattern.
+sp.c:1639:17: missed: couldn't vectorize loop
+sp.c:1639:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:1667:19: missed: couldn't vectorize loop
+sp.c:1672:41: missed: not vectorized: complicated access pattern.
+sp.c:1641:19: missed: couldn't vectorize loop
+sp.c:1641:19: missed: not vectorized: multiple nested loops.
+sp.c:1644:21: missed: couldn't vectorize loop
+sp.c:1649:39: missed: not vectorized: complicated access pattern.
+sp.c:1617:17: missed: couldn't vectorize loop
+sp.c:1630:34: missed: not vectorized: complicated access pattern.
+sp.c:1585:17: missed: couldn't vectorize loop
+sp.c:1585:17: missed: not vectorized: multiple nested loops.
+sp.c:1588:19: missed: couldn't vectorize loop
+sp.c:1594:39: missed: not vectorized: complicated access pattern.
+sp.c:625:17: missed: couldn't vectorize loop
+sp.c:625:17: missed: not vectorized: multiple nested loops.
+sp.c:626:19: missed: couldn't vectorize loop
+sp.c:630:25: missed: not vectorized: complicated access pattern.
+sp.c:614:17: missed: couldn't vectorize loop
+sp.c:616:37: missed: not vectorized: complicated access pattern.
+sp.c:602:17: missed: couldn't vectorize loop
+sp.c:602:17: missed: not vectorized: multiple nested loops.
+sp.c:603:19: missed: couldn't vectorize loop
+sp.c:605:32: missed: not vectorized: complicated access pattern.
+sp.c:591:17: missed: couldn't vectorize loop
+sp.c:596:41: missed: not vectorized: complicated access pattern.
+sp.c:571:17: missed: couldn't vectorize loop
+sp.c:571:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:572:19: missed: couldn't vectorize loop
+sp.c:572:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:574:24: missed: not vectorized: vectorization is not profitable.
+sp.c:575:18: missed: not vectorized: vectorization is not profitable.
+sp.c:827:17: missed: couldn't vectorize loop
+sp.c:827:17: missed: not vectorized: multiple nested loops.
+sp.c:828:19: missed: couldn't vectorize loop
+sp.c:830:5: missed: not vectorized: complicated access pattern.
+sp.c:1874:17: missed: couldn't vectorize loop
+sp.c:1874:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1876:34: missed: couldn't vectorize loop
+sp.c:1876:34: missed: not vectorized: multiple nested loops.
+sp.c:1879:21: missed: couldn't vectorize loop
+sp.c:1881:34: missed: not vectorized: complicated access pattern.
+sp.c:1861:17: missed: couldn't vectorize loop
+sp.c:1861:17: missed: not vectorized: multiple nested loops.
+sp.c:1862:34: missed: couldn't vectorize loop
+sp.c:1862:34: missed: not vectorized: multiple nested loops.
+sp.c:1865:21: missed: couldn't vectorize loop
+sp.c:1867:34: missed: not vectorized: complicated access pattern.
+sp.c:1851:17: missed: couldn't vectorize loop
+sp.c:1851:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1852:19: missed: couldn't vectorize loop
+sp.c:1855:32: missed: not vectorized: complicated access pattern.
+sp.c:1843:17: missed: couldn't vectorize loop
+sp.c:1843:17: missed: not vectorized: multiple nested loops.
+sp.c:1844:19: missed: couldn't vectorize loop
+sp.c:1846:32: missed: not vectorized: complicated access pattern.
+sp.c:1795:17: missed: couldn't vectorize loop
+sp.c:1795:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:1823:19: missed: couldn't vectorize loop
+sp.c:1828:41: missed: not vectorized: complicated access pattern.
+sp.c:1797:19: missed: couldn't vectorize loop
+sp.c:1797:19: missed: not vectorized: multiple nested loops.
+sp.c:1800:21: missed: couldn't vectorize loop
+sp.c:1805:39: missed: not vectorized: complicated access pattern.
+sp.c:1773:17: missed: couldn't vectorize loop
+sp.c:1779:37: missed: not vectorized: complicated access pattern.
+sp.c:1741:17: missed: couldn't vectorize loop
+sp.c:1741:17: missed: not vectorized: multiple nested loops.
+sp.c:1744:19: missed: couldn't vectorize loop
+sp.c:1750:39: missed: not vectorized: complicated access pattern.
+sp.c:703:17: missed: couldn't vectorize loop
+sp.c:703:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:704:19: missed: couldn't vectorize loop
+sp.c:708:25: missed: not vectorized: complicated access pattern.
+sp.c:704:41: missed: couldn't vectorize loop
+sp.c:708:25: missed: not vectorized: complicated access pattern.
+sp.c:692:17: missed: couldn't vectorize loop
+sp.c:694:37: missed: not vectorized: complicated access pattern.
+sp.c:680:17: missed: couldn't vectorize loop
+sp.c:680:17: missed: not vectorized: multiple nested loops.
+sp.c:681:19: missed: couldn't vectorize loop
+sp.c:683:32: missed: not vectorized: complicated access pattern.
+sp.c:669:17: missed: couldn't vectorize loop
+sp.c:674:41: missed: not vectorized: complicated access pattern.
+sp.c:649:17: missed: couldn't vectorize loop
+sp.c:649:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:650:19: missed: couldn't vectorize loop
+sp.c:650:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:652:24: missed: not vectorized: vectorization is not profitable.
+sp.c:653:18: missed: not vectorized: vectorization is not profitable.
+sp.c:1392:17: missed: couldn't vectorize loop
+sp.c:1392:17: missed: not vectorized: multiple nested loops.
+sp.c:1393:19: missed: couldn't vectorize loop
+sp.c:1406:8: missed: not vectorized: complicated access pattern.
+sp.c:2030:17: missed: couldn't vectorize loop
+sp.c:2030:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:2032:19: missed: couldn't vectorize loop
+sp.c:2032:19: missed: not vectorized: multiple nested loops.
+sp.c:2033:21: missed: couldn't vectorize loop
+sp.c:2037:34: missed: not vectorized: complicated access pattern.
+sp.c:2034:31: missed: couldn't vectorize loop
+sp.c:2037:34: missed: not vectorized: no vectype for stmt: _160 = rhs[m_736][i_719][j_727][k_731];
+ scalar_type: double
+sp.c:2017:17: missed: couldn't vectorize loop
+sp.c:2017:17: missed: not vectorized: multiple nested loops.
+sp.c:2018:19: missed: couldn't vectorize loop
+sp.c:2018:19: missed: not vectorized: multiple nested loops.
+sp.c:2019:21: missed: couldn't vectorize loop
+sp.c:2023:34: missed: not vectorized: complicated access pattern.
+sp.c:2020:31: missed: couldn't vectorize loop
+sp.c:2023:34: missed: not vectorized: no vectype for stmt: _148 = rhs[m_735][i_718][j_726][k_730];
+ scalar_type: double
+sp.c:2007:17: missed: couldn't vectorize loop
+sp.c:2007:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:2009:19: missed: couldn't vectorize loop
+sp.c:2011:32: missed: not vectorized: complicated access pattern.
+sp.c:2010:21: missed: couldn't vectorize loop
+sp.c:2011:32: missed: not vectorized: no vectype for stmt: _140 = rhs[m_734][i_717][j_725][_1165];
+ scalar_type: double
+sp.c:1999:17: missed: couldn't vectorize loop
+sp.c:1999:17: missed: not vectorized: multiple nested loops.
+sp.c:2000:19: missed: couldn't vectorize loop
+sp.c:2002:32: missed: not vectorized: complicated access pattern.
+sp.c:2001:21: missed: couldn't vectorize loop
+sp.c:2002:32: missed: not vectorized: no vectype for stmt: _133 = rhs[m_733][i_716][j_724][_1165];
+ scalar_type: double
+sp.c:1951:17: missed: couldn't vectorize loop
+sp.c:1951:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:1979:19: missed: couldn't vectorize loop
+sp.c:1984:41: missed: not vectorized: complicated access pattern.
+sp.c:1980:21: missed: couldn't vectorize loop
+sp.c:1981:40: missed: not vectorized: no vectype for stmt: _104 = lhs[_1058][i_715][j_723][_1165];
+ scalar_type: double
+sp.c:1953:19: missed: couldn't vectorize loop
+sp.c:1953:19: missed: not vectorized: multiple nested loops.
+sp.c:1954:21: missed: couldn't vectorize loop
+sp.c:1961:39: missed: not vectorized: complicated access pattern.
+sp.c:1955:16: missed: couldn't vectorize loop
+sp.c:1958:42: missed: not vectorized: no vectype for stmt: _62 = lhs[_1047][i_714][j_722][k_729];
+ scalar_type: double
+sp.c:1929:17: missed: couldn't vectorize loop
+sp.c:1935:37: missed: not vectorized: complicated access pattern.
+sp.c:1930:19: missed: couldn't vectorize loop
+sp.c:1931:45: missed: not vectorized: no vectype for stmt: _38 = lhs[2][i_713][j_721][_1165];
+ scalar_type: double
+sp.c:1897:17: missed: couldn't vectorize loop
+sp.c:1897:17: missed: not vectorized: multiple nested loops.
+sp.c:1898:19: missed: couldn't vectorize loop
+sp.c:1906:39: missed: not vectorized: complicated access pattern.
+sp.c:1899:21: missed: couldn't vectorize loop
+sp.c:1902:40: missed: not vectorized: no vectype for stmt: _1 = lhs[2][i_712][j_720][k_728];
+ scalar_type: double
+sp.c:781:17: missed: couldn't vectorize loop
+sp.c:781:17: missed: not vectorized: multiple nested loops.
+sp.c:782:19: missed: couldn't vectorize loop
+sp.c:786:23: missed: not vectorized: complicated access pattern.
+sp.c:770:17: missed: couldn't vectorize loop
+sp.c:772:37: missed: not vectorized: complicated access pattern.
+sp.c:771:19: missed: couldn't vectorize loop
+sp.c:772:37: missed: not vectorized: no vectype for stmt: _426 = lhs[0][i_798][j_799][_1162];
+ scalar_type: double
+sp.c:758:17: missed: couldn't vectorize loop
+sp.c:758:17: missed: not vectorized: multiple nested loops.
+sp.c:759:19: missed: couldn't vectorize loop
+sp.c:761:32: missed: not vectorized: complicated access pattern.
+sp.c:747:17: missed: couldn't vectorize loop
+sp.c:752:39: missed: not vectorized: complicated access pattern.
+sp.c:748:19: missed: couldn't vectorize loop
+sp.c:749:37: missed: not vectorized: no vectype for stmt: _377 = lhs[2][i_793][j_794][1];
+ scalar_type: double
+sp.c:727:17: missed: couldn't vectorize loop
+sp.c:727:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:728:19: missed: couldn't vectorize loop
+sp.c:728:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:731:8: missed: statement clobbers memory: __builtin_memcpy (&cv, _1133, _1139);
+sp.c:1935:18: missed: not vectorized: vectorization is not profitable.
+sp.c:1962:23: missed: not vectorized: vectorization is not profitable.
+sp.c:2023:20: missed: not vectorized: vectorization is not profitable.
+sp.c:2037:20: missed: not vectorized: vectorization is not profitable.
+sp.c:1185:17: missed: couldn't vectorize loop
+sp.c:1185:17: missed: not vectorized: multiple nested loops.
+sp.c:1186:19: missed: couldn't vectorize loop
+sp.c:1186:19: missed: not vectorized: multiple nested loops.
+sp.c:1187:21: missed: couldn't vectorize loop
+sp.c:1189:34: missed: not vectorized: complicated access pattern.
+sp.c:1176:17: missed: couldn't vectorize loop
+sp.c:1176:17: missed: not vectorized: multiple nested loops.
+sp.c:1177:19: missed: couldn't vectorize loop
+sp.c:1180:16: missed: not vectorized: complicated access pattern.
+sp.c:1178:21: missed: couldn't vectorize loop
+sp.c:1179:32: missed: not vectorized: no vectype for stmt: _719 = rhs[m_1266][i_1215][j_1232][_3317];
+ scalar_type: double
+sp.c:1166:17: missed: couldn't vectorize loop
+sp.c:1166:17: missed: not vectorized: multiple nested loops.
+sp.c:1167:19: missed: couldn't vectorize loop
+sp.c:1170:16: missed: not vectorized: complicated access pattern.
+sp.c:1168:21: missed: couldn't vectorize loop
+sp.c:1169:32: missed: not vectorized: no vectype for stmt: _701 = rhs[m_1265][i_1214][j_1231][k_878];
+ scalar_type: double
+sp.c:1153:17: missed: couldn't vectorize loop
+sp.c:1153:17: missed: not vectorized: multiple nested loops.
+sp.c:1154:19: missed: couldn't vectorize loop
+sp.c:1154:19: missed: not vectorized: multiple nested loops.
+sp.c:1155:21: missed: couldn't vectorize loop
+sp.c:1158:19: missed: not vectorized: complicated access pattern.
+sp.c:1144:17: missed: couldn't vectorize loop
+sp.c:1144:17: missed: not vectorized: multiple nested loops.
+sp.c:1145:19: missed: couldn't vectorize loop
+sp.c:1148:20: missed: not vectorized: complicated access pattern.
+sp.c:1146:21: missed: couldn't vectorize loop
+sp.c:1147:32: missed: not vectorized: no vectype for stmt: _662 = rhs[m_1263][i_1212][j_1229][2];
+ scalar_type: double
+sp.c:1134:17: missed: couldn't vectorize loop
+sp.c:1134:17: missed: not vectorized: multiple nested loops.
+sp.c:1135:19: missed: couldn't vectorize loop
+sp.c:1138:20: missed: not vectorized: complicated access pattern.
+sp.c:1136:21: missed: couldn't vectorize loop
+sp.c:1137:32: missed: not vectorized: no vectype for stmt: _650 = rhs[m_1262][i_1211][j_1228][1];
+ scalar_type: double
+sp.c:1083:17: missed: couldn't vectorize loop
+sp.c:1083:17: missed: not vectorized: multiple nested loops.
+sp.c:1084:19: missed: couldn't vectorize loop
+sp.c:1091:15: missed: not vectorized: complicated access pattern.
+sp.c:1074:17: missed: couldn't vectorize loop
+sp.c:1074:17: missed: not vectorized: multiple nested loops.
+sp.c:1075:19: missed: couldn't vectorize loop
+sp.c:1078:18: missed: not vectorized: complicated access pattern.
+sp.c:1064:17: missed: couldn't vectorize loop
+sp.c:1064:17: missed: not vectorized: multiple nested loops.
+sp.c:1065:19: missed: couldn't vectorize loop
+sp.c:1068:18: missed: not vectorized: complicated access pattern.
+sp.c:1051:17: missed: couldn't vectorize loop
+sp.c:1051:17: missed: not vectorized: multiple nested loops.
+sp.c:1052:19: missed: couldn't vectorize loop
+sp.c:1052:19: missed: not vectorized: multiple nested loops.
+sp.c:1053:23: missed: couldn't vectorize loop
+sp.c:1056:21: missed: not vectorized: complicated access pattern.
+sp.c:1042:17: missed: couldn't vectorize loop
+sp.c:1042:17: missed: not vectorized: multiple nested loops.
+sp.c:1043:19: missed: couldn't vectorize loop
+sp.c:1046:22: missed: not vectorized: complicated access pattern.
+sp.c:1032:17: missed: couldn't vectorize loop
+sp.c:1032:17: missed: not vectorized: multiple nested loops.
+sp.c:1033:19: missed: couldn't vectorize loop
+sp.c:1036:20: missed: not vectorized: complicated access pattern.
+sp.c:981:17: missed: couldn't vectorize loop
+sp.c:981:17: missed: not vectorized: multiple nested loops.
+sp.c:982:19: missed: couldn't vectorize loop
+sp.c:989:17: missed: not vectorized: complicated access pattern.
+sp.c:972:17: missed: couldn't vectorize loop
+sp.c:972:17: missed: not vectorized: multiple nested loops.
+sp.c:973:19: missed: couldn't vectorize loop
+sp.c:976:18: missed: not vectorized: complicated access pattern.
+sp.c:962:17: missed: couldn't vectorize loop
+sp.c:962:17: missed: not vectorized: multiple nested loops.
+sp.c:963:19: missed: couldn't vectorize loop
+sp.c:966:18: missed: not vectorized: complicated access pattern.
+sp.c:949:17: missed: couldn't vectorize loop
+sp.c:949:17: missed: not vectorized: multiple nested loops.
+sp.c:950:21: missed: couldn't vectorize loop
+sp.c:950:21: missed: not vectorized: multiple nested loops.
+sp.c:951:21: missed: couldn't vectorize loop
+sp.c:954:21: missed: not vectorized: complicated access pattern.
+sp.c:940:17: missed: couldn't vectorize loop
+sp.c:940:17: missed: not vectorized: multiple nested loops.
+sp.c:941:19: missed: couldn't vectorize loop
+sp.c:944:22: missed: not vectorized: complicated access pattern.
+sp.c:930:17: missed: couldn't vectorize loop
+sp.c:930:17: missed: not vectorized: multiple nested loops.
+sp.c:931:19: missed: couldn't vectorize loop
+sp.c:934:20: missed: not vectorized: complicated access pattern.
+sp.c:879:17: missed: couldn't vectorize loop
+sp.c:879:17: missed: not vectorized: multiple nested loops.
+sp.c:880:19: missed: couldn't vectorize loop
+sp.c:887:17: missed: not vectorized: complicated access pattern.
+sp.c:870:17: missed: couldn't vectorize loop
+sp.c:870:17: missed: not vectorized: multiple nested loops.
+sp.c:871:19: missed: couldn't vectorize loop
+sp.c:874:20: missed: statement clobbers memory: __builtin_memcpy (_3260, _3251, _3272);
+sp.c:872:21: missed: couldn't vectorize loop
+sp.c:874:20: missed: statement clobbers memory: __builtin_memcpy (_3260, _3251, _3272);
+sp.c:851:17: missed: couldn't vectorize loop
+sp.c:851:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:852:19: missed: couldn't vectorize loop
+sp.c:852:19: missed: not vectorized: unsupported control flow in loop.
+sp.c:853:21: missed: couldn't vectorize loop
+sp.c:853:21: missed: not vectorized: unsupported control flow in loop.
+sp.c:864:8: missed: statement clobbers memory: aux_1068 = sqrt (aux_993);
+sp.c:874:20: missed: statement clobbers memory: __builtin_memcpy (_3260, _3251, _3272);
+sp.c:1558:17: missed: couldn't vectorize loop
+sp.c:1558:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:1541:17: missed: couldn't vectorize loop
+sp.c:1541:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:161:17: missed: couldn't vectorize loop
+sp.c:161:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:151:17: missed: couldn't vectorize loop
+sp.c:151:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:152:19: missed: couldn't vectorize loop
+sp.c:152:19: missed: not vectorized: unsupported control flow in loop.
+sp.c:138:17: missed: couldn't vectorize loop
+sp.c:138:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:124:17: missed: couldn't vectorize loop
+sp.c:124:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:126:19: missed: couldn't vectorize loop
+sp.c:126:19: missed: not vectorized: unsupported control flow in loop.
+sp.c:128:21: missed: couldn't vectorize loop
+sp.c:130:2: missed: statement clobbers memory: exact_solution (xi_222, eta_226, zeta_230, &u_exact);
+sp.c:130:2: missed: statement clobbers memory: exact_solution (xi_222, eta_226, zeta_230, &u_exact);
+sp.c:142:14: missed: statement clobbers memory: _682 = sqrt (_680);
+sp.c:142:14: missed: statement clobbers memory: _700 = sqrt (_698);
+sp.c:142:14: missed: statement clobbers memory: _718 = sqrt (_716);
+sp.c:142:14: missed: statement clobbers memory: _736 = sqrt (_734);
+sp.c:142:14: missed: statement clobbers memory: _416 = sqrt (_448);
+sp.c:1427:3: missed: statement clobbers memory: compute_rhs ();
+sp.c:165:14: missed: statement clobbers memory: _342 = sqrt (_197);
+sp.c:165:14: missed: statement clobbers memory: _623 = sqrt (_35);
+sp.c:165:14: missed: statement clobbers memory: _646 = sqrt (_644);
+sp.c:165:14: missed: statement clobbers memory: _664 = sqrt (_662);
+sp.c:165:14: missed: statement clobbers memory: _421 = sqrt (_322);
+sp.c:1534:5: missed: statement clobbers memory: __builtin_puts (&" Unknown class"[0]);
+sp.c:1526:5: missed: statement clobbers memory: printf (" Verification being performed for class %1c\n", _26);
+sp.c:1527:5: missed: statement clobbers memory: printf (" accuracy setting for epsilon = %20.13e\n", 1.00000000000000002092256083012847267532663408928783610463e-8);
+sp.c:1531:7: missed: statement clobbers memory: printf (" DT does not match the reference value of %15.8e\n", dtref_50);
+sp.c:1539:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of residual"[0]);
+sp.c:1537:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of residual"[0]);
+sp.c:1549:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_383, pretmp_627, pretmp_625, _33);
+sp.c:1546:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_383, pretmp_627, pretmp_625, _33);
+sp.c:1543:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_383, pretmp_627);
+sp.c:1556:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of solution error"[0]);
+sp.c:1554:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of solution error"[0]);
+sp.c:1566:7: missed: statement clobbers memory: printf ("          %2d%20.13e%20.13e%20.13e\n", m_382, pretmp_624, pretmp_622, _42);
+sp.c:1563:7: missed: statement clobbers memory: printf (" FAILURE: %2d%20.13e%20.13e%20.13e\n", m_382, pretmp_624, pretmp_622, _42);
+sp.c:1560:7: missed: statement clobbers memory: printf ("          %2d%20.13e\n", m_382, pretmp_624);
+sp.c:1576:5: missed: statement clobbers memory: __builtin_puts (&" Verification failed"[0]);
+sp.c:1574:5: missed: statement clobbers memory: __builtin_puts (&" Verification Successful"[0]);
+sp.c:1571:5: missed: statement clobbers memory: __builtin_puts (&" No reference values provided"[0]);
+sp.c:1572:5: missed: statement clobbers memory: __builtin_puts (&" No verification performed"[0]);
+sp.c:133:11: missed: Using original scalar computation for live lane because there is an out-of-loop definition for it
+sp.c:536:17: missed: couldn't vectorize loop
+sp.c:542:16: missed: not vectorized: complicated access pattern.
+sp.c:524:17: missed: couldn't vectorize loop
+sp.c:530:16: missed: not vectorized: complicated access pattern.
+sp.c:512:17: missed: couldn't vectorize loop
+sp.c:518:16: missed: not vectorized: complicated access pattern.
+sp.c:500:17: missed: couldn't vectorize loop
+sp.c:506:16: missed: not vectorized: complicated access pattern.
+sp.c:488:17: missed: couldn't vectorize loop
+sp.c:494:16: missed: not vectorized: complicated access pattern.
+sp.c:476:17: missed: couldn't vectorize loop
+sp.c:482:16: missed: not vectorized: complicated access pattern.
+sp.c:442:17: missed: couldn't vectorize loop
+sp.c:442:17: missed: not vectorized: unsupported control flow in loop.
+sp.c:444:19: missed: couldn't vectorize loop
+sp.c:449:4: missed: statement clobbers memory: exact_solution (0.0, eta_183, zeta_185, &MEM <double> [(void *)&Pface]);
+sp.c:446:21: missed: couldn't vectorize loop
+sp.c:449:4: missed: statement clobbers memory: exact_solution (0.0, eta_183, zeta_185, &MEM <double> [(void *)&Pface]);
+sp.c:431:17: missed: couldn't vectorize loop
+sp.c:431:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:432:19: missed: couldn't vectorize loop
+sp.c:432:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:435:16: missed: statement clobbers memory: __builtin_memset (_2480, 0, 288);
+sp.c:436:16: missed: statement clobbers memory: __builtin_memset (_2473, 0, 288);
+sp.c:437:16: missed: statement clobbers memory: __builtin_memset (_2466, 0, 288);
+sp.c:449:4: missed: statement clobbers memory: exact_solution (0.0, eta_183, zeta_185, &MEM <double> [(void *)&Pface]);
+sp.c:449:4: missed: statement clobbers memory: exact_solution (1.0e+0, eta_183, zeta_185, &MEM <double> [(void *)&Pface + 120B]);
+sp.c:453:4: missed: statement clobbers memory: exact_solution (xi_181, 0.0, zeta_185, &MEM <double> [(void *)&Pface + 40B]);
+sp.c:453:4: missed: statement clobbers memory: exact_solution (xi_181, 1.0e+0, zeta_185, &MEM <double> [(void *)&Pface + 160B]);
+sp.c:457:4: missed: statement clobbers memory: exact_solution (xi_181, eta_183, 0.0, &MEM <double> [(void *)&Pface + 80B]);
+sp.c:457:4: missed: statement clobbers memory: exact_solution (xi_181, eta_183, 1.0e+0, &MEM <double> [(void *)&Pface + 200B]);
+sp.c:70:23: missed: couldn't vectorize loop
+sp.c:70:23: missed: not vectorized: unsupported control flow in loop.
+sp.c:404:17: missed: couldn't vectorize loop
+sp.c:404:17: missed: not vectorized: multiple nested loops.
+sp.c:405:19: missed: couldn't vectorize loop
+sp.c:405:19: missed: not vectorized: multiple nested loops.
+sp.c:406:21: missed: couldn't vectorize loop
+sp.c:408:49: missed: not vectorized: complicated access pattern.
+sp.c:329:17: missed: couldn't vectorize loop
+sp.c:329:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:331:19: missed: couldn't vectorize loop
+sp.c:331:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:386:21: missed: couldn't vectorize loop
+sp.c:388:42: missed: not vectorized: complicated access pattern.
+sp.c:333:21: missed: couldn't vectorize loop
+sp.c:335:2: missed: statement clobbers memory: exact_solution (xi_630, eta_626, zeta_634, &dtemp);
+sp.c:254:17: missed: couldn't vectorize loop
+sp.c:254:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:256:19: missed: couldn't vectorize loop
+sp.c:256:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:311:21: missed: couldn't vectorize loop
+sp.c:313:42: missed: not vectorized: complicated access pattern.
+sp.c:258:21: missed: couldn't vectorize loop
+sp.c:260:2: missed: statement clobbers memory: exact_solution (xi_364, eta_368, zeta_360, &dtemp);
+sp.c:180:17: missed: couldn't vectorize loop
+sp.c:180:17: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:182:19: missed: couldn't vectorize loop
+sp.c:182:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+sp.c:236:21: missed: couldn't vectorize loop
+sp.c:238:42: missed: not vectorized: complicated access pattern.
+sp.c:184:21: missed: couldn't vectorize loop
+sp.c:186:2: missed: statement clobbers memory: exact_solution (xi_100, eta_96, zeta_92, &dtemp);
+sp.c:171:17: missed: couldn't vectorize loop
+sp.c:171:17: missed: not vectorized: multiple nested loops.
+sp.c:172:19: missed: couldn't vectorize loop
+sp.c:175:24: missed: statement clobbers memory: __builtin_memset (_891, 0, _195);
+sp.c:173:21: missed: couldn't vectorize loop
+sp.c:175:24: missed: statement clobbers memory: __builtin_memset (_891, 0, _195);
+sp.c:558:17: missed: couldn't vectorize loop
+sp.c:558:17: missed: not vectorized: multiple nested loops.
+sp.c:559:19: missed: couldn't vectorize loop
+sp.c:559:19: missed: not vectorized: multiple nested loops.
+sp.c:560:21: missed: couldn't vectorize loop
+sp.c:562:24: missed: not vectorized: complicated access pattern.
+sp.c:549:17: missed: couldn't vectorize loop
+sp.c:549:17: missed: not vectorized: multiple nested loops.
+sp.c:550:19: missed: couldn't vectorize loop
+sp.c:553:20: missed: statement clobbers memory: __builtin_memset (_623, 0, _33);
+sp.c:551:21: missed: couldn't vectorize loop
+sp.c:553:20: missed: statement clobbers memory: __builtin_memset (_623, 0, _33);
+sp.c:40:24: missed: couldn't vectorize loop
+sp.c:40:24: missed: not vectorized: number of iterations cannot be computed.
+sp.c:38:24: missed: couldn't vectorize loop
+sp.c:38:24: missed: not vectorized: number of iterations cannot be computed.
+sp.c:32:3: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - SP Benchmark\n"[0]);
+sp.c:34:8: missed: statement clobbers memory: fp_37 = fopen ("inputsp.data", "r");
+sp.c:45:7: missed: statement clobbers memory: printf (" No input file inputsp.data. Using compiled defaults");
+sp.c:36:7: missed: statement clobbers memory: __builtin_puts (&" Reading from input file inputsp.data"[0]);
+sp.c:37:7: missed: statement clobbers memory: fscanf (fp_37, "%d", &niter);
+sp.c:38:14: missed: statement clobbers memory: _1 = fgetc (fp_37);
+sp.c:39:7: missed: statement clobbers memory: fscanf (fp_37, "%lf", &dt);
+sp.c:40:14: missed: statement clobbers memory: _2 = fgetc (fp_37);
+sp.c:41:7: missed: statement clobbers memory: fscanf (fp_37, "%d%d%d", &grid_points[0], &grid_points[1], &grid_points[2]);
+sp.c:43:7: missed: statement clobbers memory: fclose (fp_37);
+sp.c:52:3: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d\n", _5, _4, _3);
+sp.c:54:3: missed: statement clobbers memory: printf (" Iterations: %3d   dt: %10.6f\n", niter.1_7, dt.0_6);
+sp.c:63:3: missed: statement clobbers memory: initialize ();
+sp.c:553:20: missed: statement clobbers memory: __builtin_memset (_623, 0, _33);
+sp.c:175:24: missed: statement clobbers memory: __builtin_memset (_891, 0, _195);
+sp.c:186:2: missed: statement clobbers memory: exact_solution (xi_100, eta_96, zeta_92, &dtemp);
+sp.c:260:2: missed: statement clobbers memory: exact_solution (xi_364, eta_368, zeta_360, &dtemp);
+sp.c:335:2: missed: statement clobbers memory: exact_solution (xi_630, eta_626, zeta_634, &dtemp);
+sp.c:111:3: missed: statement clobbers memory: compute_rhs ();
+sp.c:112:3: missed: statement clobbers memory: txinvr ();
+sp.c:113:3: missed: statement clobbers memory: x_solve ();
+sp.c:114:3: missed: statement clobbers memory: y_solve ();
+sp.c:115:3: missed: statement clobbers memory: z_solve ();
+sp.c:116:3: missed: statement clobbers memory: add ();
+sp.c:67:3: missed: statement clobbers memory: initialize ();
+sp.c:68:3: missed: statement clobbers memory: timer_clear (1);
+sp.c:69:3: missed: statement clobbers memory: timer_start (1);
+sp.c:72:7: missed: statement clobbers memory: printf (" Time step %4d\n", step_1023);
+sp.c:111:3: missed: statement clobbers memory: compute_rhs ();
+sp.c:112:3: missed: statement clobbers memory: txinvr ();
+sp.c:113:3: missed: statement clobbers memory: x_solve ();
+sp.c:114:3: missed: statement clobbers memory: y_solve ();
+sp.c:115:3: missed: statement clobbers memory: z_solve ();
+sp.c:116:3: missed: statement clobbers memory: add ();
+sp.c:78:14: missed: statement clobbers memory: nthreads_62 = omp_get_num_threads ();
+sp.c:81:3: missed: statement clobbers memory: timer_stop (1);
+sp.c:82:10: missed: statement clobbers memory: tmax_65 = timer_read (1);
+sp.c:83:3: missed: statement clobbers memory: verify (niter.3_15, &class, &verified);
+sp.c:92:3: missed: statement clobbers memory: c_print_results ("SP", _26, _24, _23, _22, pretmp_4125, nthreads_62, tmax_65, mflops_28, "          floating point", verified.5_20, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "(none)");
+sp.c:58:5: missed: statement clobbers memory: printf ("%d, %d, %d\n", _8, pretmp_4146, pretmp_4147);
+sp.c:59:5: missed: statement clobbers memory: __builtin_puts (&" Problem size too big for compiled array sizes"[0]);
+sp.c:60:5: missed: statement clobbers memory: exit (1);
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:395:22: missed: not vectorized: vectorization is not profitable.
+sp.c:202:40: missed: not vectorized: vectorization is not profitable.
+sp.c:205:40: missed: not vectorized: vectorization is not profitable.
+sp.c:210:40: missed: not vectorized: vectorization is not profitable.
+sp.c:214:40: missed: not vectorized: vectorization is not profitable.
+sp.c:218:40: missed: not vectorized: vectorization is not profitable.
+sp.c:238:42: missed: not vectorized: vectorization is not profitable.
+sp.c:238:42: missed: not vectorized: vectorization is not profitable.
+sp.c:277:40: missed: not vectorized: vectorization is not profitable.
+sp.c:280:40: missed: not vectorized: vectorization is not profitable.
+sp.c:284:40: missed: not vectorized: vectorization is not profitable.
+sp.c:289:40: missed: not vectorized: vectorization is not profitable.
+sp.c:293:40: missed: not vectorized: vectorization is not profitable.
+sp.c:313:42: missed: not vectorized: vectorization is not profitable.
+sp.c:313:42: missed: not vectorized: vectorization is not profitable.
+sp.c:313:42: missed: not vectorized: vectorization is not profitable.
+sp.c:313:42: missed: not vectorized: vectorization is not profitable.

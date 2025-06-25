@@ -6,15 +6,16 @@ import subprocess
 import asyncio
 from openai import AsyncOpenAI
 base_dir = os.environ.get("BASE_DIR")
-
+base_url = 'https://open.xiaojingai.com/v1/'
+api_key = ''
 # openai.base_url = 'https://api.siliconflow.cn/v1/'
-# openai.api_key = 'sk-lxmpctywfxndtshonqgixypnockmmtaaqcfzcxilysircimv'
+# openai.api_key = ''
 
-openai.base_url = 'https://open.xiaojingai.com/v1/'
-openai.api_key = ''
+openai.base_url = base_url
+openai.api_key = api_key
 client = AsyncOpenAI(
-    base_url='https://open.xiaojingai.com/v1/',
-    api_key=''
+    base_url = base_url,
+    api_key = api_key
 )
 
 

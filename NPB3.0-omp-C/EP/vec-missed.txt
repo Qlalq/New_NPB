@@ -1,0 +1,60 @@
+ep.c:78:19: missed: couldn't vectorize loop
+ep.c:78:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ep.c:102:17: missed: couldn't vectorize loop
+ep.c:102:17: missed: not vectorized: unsupported control flow in loop.
+ep.c:85:16: missed: couldn't vectorize loop
+ep.c:85:16: missed: not vectorized: unsupported control flow in loop.
+ep.c:54:20: missed: couldn't vectorize loop
+ep.c:55:7: missed: statement clobbers memory: randlc (&t1, prephitmp_156);
+ep.c:27:20: missed: couldn't vectorize loop
+ep.c:27:20: missed: not vectorized: unsupported control flow in loop.
+ep.c:26:5: missed: statement clobbers memory: sprintf (&size, "%12.0f", 6.7108864e+7);
+ep.c:36:5: missed: statement clobbers memory: vranlc (0, &dum[0], _2, &dum[2]);
+ep.c:37:14: missed: statement clobbers memory: _4 = randlc (&dum[1], _3);
+ep.c:43:5: missed: statement clobbers memory: timer_clear (1);
+ep.c:44:5: missed: statement clobbers memory: timer_clear (2);
+ep.c:45:5: missed: statement clobbers memory: timer_clear (3);
+ep.c:46:5: missed: statement clobbers memory: timer_start (1);
+ep.c:48:5: missed: statement clobbers memory: vranlc (0, &t1, 1.220703125e+9, &x);
+ep.c:55:7: missed: statement clobbers memory: randlc (&t1, prephitmp_156);
+ep.c:65:7: missed: statement clobbers memory: __builtin_memset (&q, 0, 80);
+ep.c:76:36: missed: statement clobbers memory: __builtin_memset (&qq, 0, 80);
+ep.c:87:36: missed: statement clobbers memory: randlc (&t1, t2.1_7);
+ep.c:89:18: missed: statement clobbers memory: randlc (&t2, t2.2_8);
+ep.c:96:2: missed: statement clobbers memory: vranlc (131072, &t1, 1.220703125e+9, &MEM <double[131072]> [(void *)&x + -8B]);
+ep.c:107:20: missed: statement clobbers memory: _18 = log (_17);
+ep.c:107:8: missed: statement clobbers memory: _132 = sqrt (_20);
+ep.c:122:16: missed: statement clobbers memory: nthreads_84 = omp_get_num_threads ();
+ep.c:130:5: missed: statement clobbers memory: timer_stop (1);
+ep.c:131:10: missed: statement clobbers memory: tm_90 = timer_read (1);
+ep.c:163:5: missed: statement clobbers memory: c_print_results ("EP", 87, 26, 0, 0, 0, nthreads_84, tm_90, Mops_91, "Random numbers generated", verified_46, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "randdp");
+ep.c:78:19: missed: couldn't vectorize loop
+ep.c:78:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ep.c:102:17: missed: couldn't vectorize loop
+ep.c:102:17: missed: not vectorized: unsupported control flow in loop.
+ep.c:85:16: missed: couldn't vectorize loop
+ep.c:85:16: missed: not vectorized: unsupported control flow in loop.
+ep.c:54:20: missed: couldn't vectorize loop
+ep.c:55:7: missed: statement clobbers memory: randlc (&t1, prephitmp_156);
+ep.c:27:20: missed: couldn't vectorize loop
+ep.c:27:20: missed: not vectorized: unsupported control flow in loop.
+ep.c:26:5: missed: statement clobbers memory: sprintf (&size, "%12.0f", 6.7108864e+7);
+ep.c:36:5: missed: statement clobbers memory: vranlc (0, &dum[0], _2, &dum[2]);
+ep.c:37:14: missed: statement clobbers memory: _4 = randlc (&dum[1], _3);
+ep.c:43:5: missed: statement clobbers memory: timer_clear (1);
+ep.c:44:5: missed: statement clobbers memory: timer_clear (2);
+ep.c:45:5: missed: statement clobbers memory: timer_clear (3);
+ep.c:46:5: missed: statement clobbers memory: timer_start (1);
+ep.c:48:5: missed: statement clobbers memory: vranlc (0, &t1, 1.220703125e+9, &x);
+ep.c:55:7: missed: statement clobbers memory: randlc (&t1, prephitmp_156);
+ep.c:65:7: missed: statement clobbers memory: __builtin_memset (&q, 0, 80);
+ep.c:76:36: missed: statement clobbers memory: __builtin_memset (&qq, 0, 80);
+ep.c:87:36: missed: statement clobbers memory: randlc (&t1, t2.1_7);
+ep.c:89:18: missed: statement clobbers memory: randlc (&t2, t2.2_8);
+ep.c:96:2: missed: statement clobbers memory: vranlc (131072, &t1, 1.220703125e+9, &MEM <double[131072]> [(void *)&x + -8B]);
+ep.c:107:20: missed: statement clobbers memory: _18 = log (_17);
+ep.c:107:8: missed: statement clobbers memory: _132 = sqrt (_20);
+ep.c:122:16: missed: statement clobbers memory: nthreads_84 = omp_get_num_threads ();
+ep.c:130:5: missed: statement clobbers memory: timer_stop (1);
+ep.c:131:10: missed: statement clobbers memory: tm_90 = timer_read (1);
+ep.c:163:5: missed: statement clobbers memory: c_print_results ("EP", 87, 26, 0, 0, 0, nthreads_84, tm_90, Mops_91, "Random numbers generated", verified_46, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "randdp");

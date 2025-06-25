@@ -1,0 +1,846 @@
+lu.c:886:17: missed: couldn't vectorize loop
+lu.c:887:24: missed: not vectorized: no vectype for stmt: _13 = ce[m_85][0];
+ scalar_type: double
+lu.c:887:16: missed: not vectorized: vectorization is not profitable.
+lu.c:911:19: missed: couldn't vectorize loop
+lu.c:1071:32: missed: not vectorized: complicated access pattern.
+lu.c:912:21: missed: couldn't vectorize loop
+lu.c:913:30: missed: not vectorized: no vectype for stmt: _1 = u[i_667][j_668][k_547(D)][0];
+ scalar_type: double
+lu.c:1747:20: missed: couldn't vectorize loop
+lu.c:1747:20: missed: not vectorized: unsupported control flow in loop.
+lu.c:1735:22: missed: couldn't vectorize loop
+lu.c:1742:21: missed: not vectorized: complicated access pattern.
+lu.c:1737:23: missed: couldn't vectorize loop
+lu.c:1738:34: missed: not vectorized: no vectype for stmt: _126 = u[ifin_188][j_355][k_364][4];
+ scalar_type: double
+lu.c:1722:22: missed: couldn't vectorize loop
+lu.c:1729:21: missed: not vectorized: complicated access pattern.
+lu.c:1724:23: missed: couldn't vectorize loop
+lu.c:1725:34: missed: not vectorized: no vectype for stmt: _111 = u[ibeg_186][j_354][k_363][4];
+ scalar_type: double
+lu.c:1701:20: missed: couldn't vectorize loop
+lu.c:1701:20: missed: not vectorized: unsupported control flow in loop.
+lu.c:1689:22: missed: couldn't vectorize loop
+lu.c:1696:21: missed: not vectorized: complicated access pattern.
+lu.c:1691:23: missed: couldn't vectorize loop
+lu.c:1692:34: missed: not vectorized: no vectype for stmt: _76 = u[i_349][jfin_303][k_360][4];
+ scalar_type: double
+lu.c:1676:22: missed: couldn't vectorize loop
+lu.c:1683:21: missed: not vectorized: complicated access pattern.
+lu.c:1678:23: missed: couldn't vectorize loop
+lu.c:1679:34: missed: not vectorized: no vectype for stmt: _61 = u[i_348][jbeg_191][k_359][4];
+ scalar_type: double
+lu.c:1655:20: missed: couldn't vectorize loop
+lu.c:1655:20: missed: not vectorized: unsupported control flow in loop.
+lu.c:1636:20: missed: couldn't vectorize loop
+lu.c:1645:16: missed: not vectorized: complicated access pattern.
+lu.c:1638:22: missed: couldn't vectorize loop
+lu.c:1641:36: missed: not vectorized: no vectype for stmt: _13 = u[i_345][j_352][k_267][4];
+ scalar_type: double
+lu.c:1632:18: missed: statement clobbers memory: __builtin_memset (&phi1, 0, 9800);
+lu.c:1633:18: missed: statement clobbers memory: __builtin_memset (&phi2, 0, 9800);
+lu.c:1670:18: missed: statement clobbers memory: __builtin_memset (&phi1, 0, 9800);
+lu.c:1671:18: missed: statement clobbers memory: __builtin_memset (&phi2, 0, 9800);
+lu.c:1716:18: missed: statement clobbers memory: __builtin_memset (&phi1, 0, 9800);
+lu.c:1717:18: missed: statement clobbers memory: __builtin_memset (&phi2, 0, 9800);
+lu.c:2063:19: missed: couldn't vectorize loop
+lu.c:2063:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:2064:21: missed: couldn't vectorize loop
+lu.c:2064:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:2104:21: missed: couldn't vectorize loop
+lu.c:2105:32: missed: not vectorized: no vectype for stmt: _521 = rsd[i_950][j_650][k_659][0];
+ scalar_type: double
+lu.c:2083:21: missed: couldn't vectorize loop
+lu.c:2084:24: missed: not vectorized: no vectype for stmt: _481 = u[i_950][j_650][k_658][0];
+ scalar_type: double
+lu.c:2065:21: missed: couldn't vectorize loop
+lu.c:2066:31: missed: not vectorized: no vectype for stmt: _449 = u[i_950][j_650][k_656][3];
+ scalar_type: double
+lu.c:1971:19: missed: couldn't vectorize loop
+lu.c:1971:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:1972:19: missed: couldn't vectorize loop
+lu.c:1972:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:2040:24: missed: couldn't vectorize loop
+lu.c:2042:34: missed: not vectorized: no vectype for stmt: _1498 = rsd[i_979][j_649][k_655][0];
+ scalar_type: double
+lu.c:2001:23: missed: couldn't vectorize loop
+lu.c:2002:32: missed: not vectorized: no vectype for stmt: _302 = rsd[i_979][j_648][k_655][0];
+ scalar_type: double
+lu.c:1980:23: missed: couldn't vectorize loop
+lu.c:1981:24: missed: not vectorized: no vectype for stmt: _262 = u[i_979][j_647][k_655][0];
+ scalar_type: double
+lu.c:1973:23: missed: couldn't vectorize loop
+lu.c:1975:35: missed: not vectorized: no vectype for stmt: _1748 = rsd[i_979][j_646][k_655][0];
+ scalar_type: double
+lu.c:1955:19: missed: couldn't vectorize loop
+lu.c:1955:19: missed: not vectorized: multiple nested loops.
+lu.c:1956:20: missed: couldn't vectorize loop
+lu.c:1959:34: missed: not vectorized: complicated access pattern.
+lu.c:1957:21: missed: couldn't vectorize loop
+lu.c:1958:31: missed: not vectorized: no vectype for stmt: _229 = u[i_1008][j_645][k_654][2];
+ scalar_type: double
+lu.c:1861:19: missed: couldn't vectorize loop
+lu.c:1861:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:1862:19: missed: couldn't vectorize loop
+lu.c:1862:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:1930:24: missed: couldn't vectorize loop
+lu.c:1933:40: missed: not vectorized: complicated access pattern.
+lu.c:1891:23: missed: couldn't vectorize loop
+lu.c:1893:43: missed: not vectorized: complicated access pattern.
+lu.c:1870:23: missed: couldn't vectorize loop
+lu.c:1876:26: missed: not vectorized: complicated access pattern.
+lu.c:1863:23: missed: couldn't vectorize loop
+lu.c:1865:35: missed: not vectorized: complicated access pattern.
+lu.c:1844:18: missed: couldn't vectorize loop
+lu.c:1844:18: missed: not vectorized: multiple nested loops.
+lu.c:1845:21: missed: couldn't vectorize loop
+lu.c:1848:34: missed: not vectorized: complicated access pattern.
+lu.c:1846:21: missed: couldn't vectorize loop
+lu.c:1847:31: missed: not vectorized: no vectype for stmt: _6 = u[i_1133][j_643][k_652][1];
+ scalar_type: double
+lu.c:1833:17: missed: couldn't vectorize loop
+lu.c:1833:17: missed: not vectorized: multiple nested loops.
+lu.c:1834:19: missed: couldn't vectorize loop
+lu.c:1837:20: missed: not vectorized: complicated access pattern.
+lu.c:1596:18: missed: couldn't vectorize loop
+lu.c:1596:18: missed: not vectorized: unsupported control flow in loop.
+lu.c:1578:19: missed: couldn't vectorize loop
+lu.c:1578:19: missed: not vectorized: unsupported control flow in loop.
+lu.c:1579:21: missed: couldn't vectorize loop
+lu.c:1579:21: missed: not vectorized: unsupported control flow in loop.
+lu.c:1580:21: missed: couldn't vectorize loop
+lu.c:1581:28: missed: not vectorized: no vectype for stmt: _13 = (*_10)[j_110][k_104][0];
+ scalar_type: double
+lu.c:1597:14: missed: statement clobbers memory: _121 = sqrt (_146);
+lu.c:1597:14: missed: statement clobbers memory: _79 = sqrt (_98);
+lu.c:1597:14: missed: statement clobbers memory: _41 = sqrt (_44);
+lu.c:1597:14: missed: statement clobbers memory: _177 = sqrt (_175);
+lu.c:1597:14: missed: statement clobbers memory: _95 = sqrt (_68);
+lu.c:2347:13: missed: couldn't vectorize loop
+lu.c:2347:13: missed: not vectorized: could not determine main exit from loop with multiple exits.
+lu.c:2347:13: missed: couldn't vectorize loop
+lu.c:2347:13: missed: not vectorized: could not determine main exit from loop with multiple exits.
+lu.c:2347:13: missed: couldn't vectorize loop
+lu.c:2347:13: missed: not vectorized: could not determine main exit from loop with multiple exits.
+lu.c:2347:13: missed: couldn't vectorize loop
+lu.c:2347:13: missed: not vectorized: could not determine main exit from loop with multiple exits.
+lu.c:2373:25: missed: couldn't vectorize loop
+lu.c:2373:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:2405:21: missed: couldn't vectorize loop
+lu.c:2405:21: missed: not vectorized: multiple nested loops.
+lu.c:2406:23: missed: couldn't vectorize loop
+lu.c:2409:32: missed: not vectorized: complicated access pattern.
+lu.c:2396:24: missed: couldn't vectorize loop
+lu.c:2396:24: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:286:20: missed: couldn't vectorize loop
+lu.c:286:20: missed: not vectorized: unsupported control flow in loop.
+lu.c:299:22: missed: couldn't vectorize loop
+lu.c:301:24: missed: not vectorized: no vectype for stmt: _1550 = (*_1549)[j_1509][0];
+ scalar_type: double
+lu.c:274:20: missed: couldn't vectorize loop
+lu.c:277:14: missed: not vectorized: complicated access pattern.
+lu.c:275:22: missed: couldn't vectorize loop
+lu.c:278:27: missed: not vectorized: no vectype for stmt: _1840 = (*_1839)[j_1505][0][0];
+ scalar_type: double
+lu.c:1230:20: missed: couldn't vectorize loop
+lu.c:1237:30: missed: not vectorized: complicated access pattern.
+lu.c:1231:24: missed: couldn't vectorize loop
+lu.c:1237:30: missed: not vectorized: no vectype for stmt: _687 = u[i_1511][j_1521][k_1535][0];
+ scalar_type: double
+lu.c:2387:19: missed: couldn't vectorize loop
+lu.c:2387:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:102:19: missed: couldn't vectorize loop
+lu.c:102:19: missed: not vectorized: unsupported control flow in loop.
+lu.c:115:21: missed: couldn't vectorize loop
+lu.c:117:28: missed: not vectorized: no vectype for stmt: _2080 = (*_2079)[j_1493][k_1519][0];
+ scalar_type: double
+lu.c:90:19: missed: couldn't vectorize loop
+lu.c:94:29: missed: not vectorized: complicated access pattern.
+lu.c:91:21: missed: couldn't vectorize loop
+lu.c:93:28: missed: not vectorized: no vectype for stmt: _2355 = (*_2354)[j_1489][k_1519][0];
+ scalar_type: double
+lu.c:2378:21: missed: couldn't vectorize loop
+lu.c:2378:21: missed: not vectorized: multiple nested loops.
+lu.c:2379:23: missed: couldn't vectorize loop
+lu.c:2382:41: missed: not vectorized: complicated access pattern.
+lu.c:2354:17: missed: couldn't vectorize loop
+lu.c:2358:18: missed: not vectorized: complicated access pattern.
+lu.c:2367:3: missed: statement clobbers memory: rhs ();
+lu.c:2368:3: missed: statement clobbers memory: l2norm.constprop (nx0.253_10, ny0.252_9, nz0.251_8, ist.250_7, iend.249_6, jst.248_5, jend.247_4, &rsdnm);
+lu.c:2371:3: missed: statement clobbers memory: timer_clear (1);
+lu.c:2372:3: missed: statement clobbers memory: timer_start (1);
+lu.c:2375:7: missed: statement clobbers memory: printf (" Time step %4d\n", istep_1398);
+lu.c:2388:7: missed: statement clobbers memory: jacld (k_1519);
+lu.c:2421:5: missed: statement clobbers memory: rhs ();
+lu.c:2417:7: missed: statement clobbers memory: l2norm.constprop (nx0.291_54, ny0.290_53, nz0.289_52, i_118, iend.258_1270, jst.286_51, jend.285_50, &delunm);
+lu.c:2421:5: missed: statement clobbers memory: rhs ();
+lu.c:2424:7: missed: statement clobbers memory: l2norm.constprop (prephitmp_5183, prephitmp_5181, prephitmp_5179, i_118, iend.258_1270, prephitmp_5185, prephitmp_5187, &rsdnm);
+lu.c:2436:3: missed: statement clobbers memory: timer_stop (1);
+lu.c:2437:12: missed: statement clobbers memory: _72 = timer_read (1);
+lu.c:2433:2: missed: statement clobbers memory: exit (1);
+lu.c:93:16: missed: not vectorized: vectorization is not profitable.
+lu.c:252:21: missed: not vectorized: vectorization is not profitable.
+lu.c:277:14: missed: not vectorized: vectorization is not profitable.
+lu.c:438:21: missed: not vectorized: vectorization is not profitable.
+lu.c:886:17: missed: couldn't vectorize loop
+lu.c:887:24: missed: not vectorized: no vectype for stmt: _19 = ce[m_83][0];
+ scalar_type: double
+lu.c:887:16: missed: not vectorized: vectorization is not profitable.
+lu.c:886:17: missed: couldn't vectorize loop
+lu.c:887:24: missed: not vectorized: no vectype for stmt: _19 = ce[m_83][0];
+ scalar_type: double
+lu.c:887:16: missed: not vectorized: vectorization is not profitable.
+lu.c:886:17: missed: couldn't vectorize loop
+lu.c:887:24: missed: not vectorized: no vectype for stmt: _19 = ce[m_83][0];
+ scalar_type: double
+lu.c:887:16: missed: not vectorized: vectorization is not profitable.
+lu.c:2564:17: missed: couldn't vectorize loop
+lu.c:2564:17: missed: not vectorized: unsupported control flow in loop.
+lu.c:2564:17: missed: couldn't vectorize loop
+lu.c:2566:7: missed: statement clobbers memory: printf ("          %2d  %20.13e\n", m_3153, pretmp_6464);
+lu.c:2547:17: missed: couldn't vectorize loop
+lu.c:2547:17: missed: not vectorized: unsupported control flow in loop.
+lu.c:2547:17: missed: couldn't vectorize loop
+lu.c:2549:7: missed: statement clobbers memory: printf ("          %2d  %20.13e\n", m_3151, pretmp_6473);
+lu.c:876:17: missed: couldn't vectorize loop
+lu.c:876:17: missed: not vectorized: unsupported control flow in loop.
+lu.c:863:19: missed: couldn't vectorize loop
+lu.c:863:19: missed: not vectorized: unsupported control flow in loop.
+lu.c:865:21: missed: couldn't vectorize loop
+lu.c:865:21: missed: not vectorized: unsupported control flow in loop.
+lu.c:867:21: missed: couldn't vectorize loop
+lu.c:868:2: missed: statement clobbers memory: exact (i_3158, j_3159, k_3160, &u000ijk);
+lu.c:750:19: missed: couldn't vectorize loop
+lu.c:750:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:751:21: missed: couldn't vectorize loop
+lu.c:751:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:793:21: missed: couldn't vectorize loop
+lu.c:794:34: missed: not vectorized: no vectype for stmt: _875 = frct[i_3210][j_3211][k_3227][0];
+ scalar_type: double
+lu.c:771:21: missed: couldn't vectorize loop
+lu.c:772:26: missed: not vectorized: no vectype for stmt: _823 = rsd[i_3210][j_3211][k_3222][0];
+ scalar_type: double
+lu.c:752:21: missed: couldn't vectorize loop
+lu.c:753:33: missed: not vectorized: no vectype for stmt: _783 = rsd[i_3210][j_3211][k_3212][3];
+ scalar_type: double
+lu.c:658:19: missed: couldn't vectorize loop
+lu.c:658:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:659:19: missed: couldn't vectorize loop
+lu.c:659:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:727:24: missed: couldn't vectorize loop
+lu.c:729:36: missed: not vectorized: no vectype for stmt: _2263 = frct[i_3204][j_3209][k_3206][0];
+ scalar_type: double
+lu.c:688:23: missed: couldn't vectorize loop
+lu.c:689:34: missed: not vectorized: no vectype for stmt: _625 = frct[i_3204][j_3208][k_3206][0];
+ scalar_type: double
+lu.c:666:23: missed: couldn't vectorize loop
+lu.c:667:26: missed: not vectorized: no vectype for stmt: _573 = rsd[i_3204][j_3207][k_3206][0];
+ scalar_type: double
+lu.c:660:23: missed: couldn't vectorize loop
+lu.c:662:37: missed: not vectorized: no vectype for stmt: _2503 = frct[i_3204][j_3205][k_3206][0];
+ scalar_type: double
+lu.c:641:19: missed: couldn't vectorize loop
+lu.c:641:19: missed: not vectorized: multiple nested loops.
+lu.c:642:20: missed: couldn't vectorize loop
+lu.c:645:38: missed: not vectorized: complicated access pattern.
+lu.c:643:21: missed: couldn't vectorize loop
+lu.c:644:33: missed: not vectorized: no vectype for stmt: _528 = rsd[i_3201][j_3202][k_3203][2];
+ scalar_type: double
+lu.c:547:19: missed: couldn't vectorize loop
+lu.c:547:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:548:19: missed: couldn't vectorize loop
+lu.c:548:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:616:24: missed: couldn't vectorize loop
+lu.c:619:43: missed: not vectorized: complicated access pattern.
+lu.c:577:23: missed: couldn't vectorize loop
+lu.c:579:45: missed: not vectorized: complicated access pattern.
+lu.c:555:23: missed: couldn't vectorize loop
+lu.c:561:28: missed: not vectorized: complicated access pattern.
+lu.c:549:23: missed: couldn't vectorize loop
+lu.c:551:37: missed: not vectorized: complicated access pattern.
+lu.c:530:18: missed: couldn't vectorize loop
+lu.c:530:18: missed: not vectorized: multiple nested loops.
+lu.c:531:21: missed: couldn't vectorize loop
+lu.c:534:38: missed: not vectorized: complicated access pattern.
+lu.c:532:21: missed: couldn't vectorize loop
+lu.c:533:33: missed: not vectorized: no vectype for stmt: _266 = rsd[i_3192][j_3193][k_3194][1];
+ scalar_type: double
+lu.c:502:17: missed: couldn't vectorize loop
+lu.c:502:17: missed: not vectorized: multiple nested loops.
+lu.c:505:19: missed: couldn't vectorize loop
+lu.c:511:20: missed: not vectorized: complicated access pattern.
+lu.c:493:17: missed: couldn't vectorize loop
+lu.c:493:17: missed: not vectorized: multiple nested loops.
+lu.c:494:19: missed: couldn't vectorize loop
+lu.c:497:21: missed: not vectorized: complicated access pattern.
+lu.c:2313:17: missed: couldn't vectorize loop
+lu.c:2313:17: missed: not vectorized: unsupported control flow in loop.
+lu.c:2315:19: missed: couldn't vectorize loop
+lu.c:2315:19: missed: not vectorized: unsupported control flow in loop.
+lu.c:2319:16: missed: couldn't vectorize loop
+lu.c:2319:16: missed: not vectorized: unsupported control flow in loop.
+lu.c:2196:17: missed: couldn't vectorize loop
+lu.c:2199:7: missed: statement clobbers memory: exact (_1124, j_3264, k_3265, _1117);
+lu.c:2198:19: missed: couldn't vectorize loop
+lu.c:2199:7: missed: statement clobbers memory: exact (_1124, j_3264, k_3265, _1117);
+lu.c:2190:17: missed: couldn't vectorize loop
+lu.c:2193:7: missed: statement clobbers memory: exact.constprop (j_3259, k_3263, _1109);
+lu.c:2192:19: missed: couldn't vectorize loop
+lu.c:2193:7: missed: statement clobbers memory: exact.constprop (j_3259, k_3263, _1109);
+lu.c:2184:17: missed: couldn't vectorize loop
+lu.c:2187:7: missed: statement clobbers memory: exact (i_3254, _1128, k_3256, _1101);
+lu.c:2186:19: missed: couldn't vectorize loop
+lu.c:2187:7: missed: statement clobbers memory: exact (i_3254, _1128, k_3256, _1101);
+lu.c:2178:17: missed: couldn't vectorize loop
+lu.c:2181:7: missed: statement clobbers memory: exact.constprop (i_3250, k_3253, _1093);
+lu.c:2180:19: missed: couldn't vectorize loop
+lu.c:2181:7: missed: statement clobbers memory: exact.constprop (i_3250, k_3253, _1093);
+lu.c:2170:17: missed: couldn't vectorize loop
+lu.c:2174:7: missed: statement clobbers memory: exact.constprop (i_3243, j_3249, _1083);
+lu.c:2172:19: missed: couldn't vectorize loop
+lu.c:2174:7: missed: statement clobbers memory: exact.constprop (i_3243, j_3249, _1083);
+lu.c:1787:21: missed: couldn't vectorize loop
+lu.c:1787:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1785:47: missed: couldn't vectorize loop
+lu.c:1785:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1785:21: missed: couldn't vectorize loop
+lu.c:1785:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1784:21: missed: couldn't vectorize loop
+lu.c:1784:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1781:47: missed: couldn't vectorize loop
+lu.c:1781:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1781:21: missed: couldn't vectorize loop
+lu.c:1781:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1780:21: missed: couldn't vectorize loop
+lu.c:1780:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1778:47: missed: couldn't vectorize loop
+lu.c:1778:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1778:21: missed: couldn't vectorize loop
+lu.c:1778:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1777:21: missed: couldn't vectorize loop
+lu.c:1777:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1775:47: missed: couldn't vectorize loop
+lu.c:1775:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1775:21: missed: couldn't vectorize loop
+lu.c:1775:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1774:21: missed: couldn't vectorize loop
+lu.c:1774:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1772:47: missed: couldn't vectorize loop
+lu.c:1772:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1772:21: missed: couldn't vectorize loop
+lu.c:1772:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1771:21: missed: couldn't vectorize loop
+lu.c:1771:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1769:47: missed: couldn't vectorize loop
+lu.c:1769:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1769:21: missed: couldn't vectorize loop
+lu.c:1769:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1764:3: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - LU Benchmark\n"[0]);
+lu.c:1766:8: missed: statement clobbers memory: fp_1158 = fopen ("inputlu.data", "r");
+lu.c:1768:5: missed: statement clobbers memory: __builtin_puts (&" Reading from input file inputlu.data"[0]);
+lu.c:1769:11: missed: statement clobbers memory: _1159 = fgetc (fp_1158);
+lu.c:1769:37: missed: statement clobbers memory: _1160 = fgetc (fp_1158);
+lu.c:1770:5: missed: statement clobbers memory: fscanf (fp_1158, "%d%d", &ipr, &inorm);
+lu.c:1771:11: missed: statement clobbers memory: _1161 = fgetc (fp_1158);
+lu.c:1772:11: missed: statement clobbers memory: _1162 = fgetc (fp_1158);
+lu.c:1772:37: missed: statement clobbers memory: _1163 = fgetc (fp_1158);
+lu.c:1773:5: missed: statement clobbers memory: fscanf (fp_1158, "%d", &itmax);
+lu.c:1774:11: missed: statement clobbers memory: _1164 = fgetc (fp_1158);
+lu.c:1775:11: missed: statement clobbers memory: _1165 = fgetc (fp_1158);
+lu.c:1775:37: missed: statement clobbers memory: _1166 = fgetc (fp_1158);
+lu.c:1776:5: missed: statement clobbers memory: fscanf (fp_1158, "%lf", &dt);
+lu.c:1777:11: missed: statement clobbers memory: _1167 = fgetc (fp_1158);
+lu.c:1778:11: missed: statement clobbers memory: _1168 = fgetc (fp_1158);
+lu.c:1778:37: missed: statement clobbers memory: _1169 = fgetc (fp_1158);
+lu.c:1779:5: missed: statement clobbers memory: fscanf (fp_1158, "%lf", &omega);
+lu.c:1780:11: missed: statement clobbers memory: _1170 = fgetc (fp_1158);
+lu.c:1781:11: missed: statement clobbers memory: _1171 = fgetc (fp_1158);
+lu.c:1781:37: missed: statement clobbers memory: _1172 = fgetc (fp_1158);
+lu.c:1782:5: missed: statement clobbers memory: fscanf (fp_1158, "%lf%lf%lf%lf%lf", &tolrsd[0], &tolrsd[1], &tolrsd[2], &tolrsd[3], &tolrsd[4]);
+lu.c:1784:11: missed: statement clobbers memory: _1173 = fgetc (fp_1158);
+lu.c:1785:11: missed: statement clobbers memory: _1174 = fgetc (fp_1158);
+lu.c:1785:37: missed: statement clobbers memory: _1175 = fgetc (fp_1158);
+lu.c:1786:5: missed: statement clobbers memory: fscanf (fp_1158, "%d%d%d", &nx0, &ny0, &nz0);
+lu.c:1787:11: missed: statement clobbers memory: _1176 = fgetc (fp_1158);
+lu.c:1788:5: missed: statement clobbers memory: fclose (fp_1158);
+lu.c:1815:3: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d\n", nx0.22_3141, ny0.23_1178, nz0.24_1179);
+lu.c:1816:3: missed: statement clobbers memory: printf (" Iterations: %3d\n", itmax.31_1180);
+lu.c:2174:7: missed: statement clobbers memory: exact.constprop (i_3243, j_3249, _1083);
+lu.c:2175:7: missed: statement clobbers memory: exact (i_3243, j_3249, _1132, _1086);
+lu.c:2181:7: missed: statement clobbers memory: exact.constprop (i_3250, k_3253, _1093);
+lu.c:2187:7: missed: statement clobbers memory: exact (i_3254, _1128, k_3256, _1101);
+lu.c:2193:7: missed: statement clobbers memory: exact.constprop (j_3259, k_3263, _1109);
+lu.c:2199:7: missed: statement clobbers memory: exact (_1124, j_3264, k_3265, _1117);
+lu.c:2323:6: missed: statement clobbers memory: exact.constprop (j_3241, k_3240, &ue_1jk);
+lu.c:2324:6: missed: statement clobbers memory: exact (_1124, j_3241, k_3240, &ue_nx0jk);
+lu.c:2325:6: missed: statement clobbers memory: exact.constprop (i_3242, k_3240, &ue_i1k);
+lu.c:2326:6: missed: statement clobbers memory: exact (i_3242, _1128, k_3240, &ue_iny0k);
+lu.c:2327:6: missed: statement clobbers memory: exact.constprop (i_3242, j_3241, &ue_ij1);
+lu.c:2328:6: missed: statement clobbers memory: exact (i_3242, j_3241, _1132, &ue_ijnz);
+lu.c:58:14: missed: statement clobbers memory: nthreads_38 = omp_get_num_threads ();
+lu.c:61:3: missed: statement clobbers memory: ssor ();
+lu.c:868:2: missed: statement clobbers memory: exact (i_3158, j_3159, k_3160, &u000ijk);
+lu.c:877:16: missed: statement clobbers memory: _3975 = sqrt (_4257);
+lu.c:877:16: missed: statement clobbers memory: _4030 = sqrt (_4028);
+lu.c:877:16: missed: statement clobbers memory: _3510 = sqrt (_3508);
+lu.c:877:16: missed: statement clobbers memory: _2595 = sqrt (_3521);
+lu.c:877:16: missed: statement clobbers memory: _293 = sqrt (_167);
+lu.c:63:3: missed: statement clobbers memory: pintgr ();
+lu.c:2540:5: missed: statement clobbers memory: __builtin_puts (&" Unknown class"[0]);
+lu.c:2532:5: missed: statement clobbers memory: printf ("\n Verification being performed for class %1c\n", _86);
+lu.c:2533:5: missed: statement clobbers memory: printf (" Accuracy setting for epsilon = %20.13e\n", 1.00000000000000002092256083012847267532663408928783610463e-8);
+lu.c:2543:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of residual"[0]);
+lu.c:2537:7: missed: statement clobbers memory: printf (" DT does not match the reference value of %15.8e\n", dtref_88);
+lu.c:2545:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of residual"[0]);
+lu.c:2549:7: missed: statement clobbers memory: printf ("          %2d  %20.13e\n", m_3151, pretmp_6473);
+lu.c:2555:7: missed: statement clobbers memory: printf ("          %2d  %20.13e%20.13e%20.13e\n", m_6334, pretmp_6328, pretmp_6288, _6289);
+lu.c:2552:7: missed: statement clobbers memory: printf (" FAILURE: %2d  %20.13e%20.13e%20.13e\n", m_6334, pretmp_6328, pretmp_6288, _6289);
+lu.c:2562:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of solution error"[0]);
+lu.c:2560:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of solution error"[0]);
+lu.c:2566:7: missed: statement clobbers memory: printf ("          %2d  %20.13e\n", m_3153, pretmp_6464);
+lu.c:2572:7: missed: statement clobbers memory: printf ("          %2d  %20.13e%20.13e%20.13e\n", m_6349, pretmp_6343, pretmp_6341, _6342);
+lu.c:2569:7: missed: statement clobbers memory: printf (" FAILURE: %2d  %20.13e%20.13e%20.13e\n", m_6349, pretmp_6343, pretmp_6341, _6342);
+lu.c:2579:5: missed: statement clobbers memory: __builtin_puts (&" Surface integral"[0]);
+lu.c:2582:5: missed: statement clobbers memory: printf ("              %20.13e\n", frc.0_1);
+lu.c:2592:5: missed: statement clobbers memory: __builtin_puts (&" No reference values provided"[0]);
+lu.c:2593:5: missed: statement clobbers memory: __builtin_puts (&" No verification performed"[0]);
+lu.c:2577:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of surface integral"[0]);
+lu.c:2588:5: missed: statement clobbers memory: printf ("              %20.13e%20.13e%20.13e\n", frc.0_1, xciref_81, xcidif_84);
+lu.c:2595:5: missed: statement clobbers memory: __builtin_puts (&" Verification Successful"[0]);
+lu.c:2585:5: missed: statement clobbers memory: printf (" FAILURE:     %20.13e%20.13e%20.13e\n", frc.0_1, xciref_81, xcidif_84);
+lu.c:2597:5: missed: statement clobbers memory: __builtin_puts (&" Verification failed"[0]);
+lu.c:72:3: missed: statement clobbers memory: c_print_results ("LU", prephitmp_6447, nx0.2_4, ny0.3_7, nz0.4_10, itmax.1_2, nthreads_38, maxtime.14_25, mflops_43, "          floating point", verified_929, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "(none)");
+lu.c:462:5: missed: statement clobbers memory: printf ("     SUBDOMAIN SIZE IS TOO LARGE - \n     ADJUST PROBLEM SIZE OR NUMBER OF PROCESSORS\n     SO THAT NX, NY AND NZ ARE LESS THAN OR EQUAL TO \n     ISIZ1, ISIZ2 AND ISIZ3 RESPECTIVELY.  THEY ARE\n     CURRENTLY%4d%4d%4d\n", nx0.32_1153, ny0.33_1154, nz0.34_1155);
+lu.c:467:5: missed: statement clobbers memory: exit (1);
+lu.c:455:5: missed: statement clobbers memory: printf ("     SUBDOMAIN SIZE IS TOO SMALL - \n     ADJUST PROBLEM SIZE OR NUMBER OF PROCESSORS\n     SO THAT NX, NY AND NZ ARE GREATER THAN OR EQUAL\n     TO 4 THEY ARE CURRENTLY%3d%3d%3d\n", nx0.32_1153, ny0.33_1154, nz0.34_1155);
+lu.c:459:5: missed: statement clobbers memory: exit (1);
+lu.c:1810:5: missed: statement clobbers memory: __builtin_puts (&"     PROBLEM SIZE IS TOO LARGE - \n     NX, NY AND NZ SHOULD BE EQUAL TO \n     ISIZ1, ISIZ2 AND ISIZ3 RESPECTIVELY"[0]);
+lu.c:1813:5: missed: statement clobbers memory: exit (1);
+lu.c:1805:5: missed: statement clobbers memory: __builtin_puts (&"     PROBLEM SIZE IS TOO SMALL - \n     SET EACH OF NX, NY AND NZ AT LEAST EQUAL TO 5"[0]);
+lu.c:1807:5: missed: statement clobbers memory: exit (1);
+lu.c:45:5: missed: not vectorized: vectorization is not profitable.
+lu.c:871:13: missed: Using original scalar computation for live lane because there is an out-of-loop definition for it
+lu.c:886:17: missed: couldn't vectorize loop
+lu.c:887:24: missed: not vectorized: no vectype for stmt: _13 = ce[m_85][0];
+ scalar_type: double
+lu.c:887:16: missed: not vectorized: vectorization is not profitable.
+lu.c:911:19: missed: couldn't vectorize loop
+lu.c:1071:32: missed: not vectorized: complicated access pattern.
+lu.c:912:21: missed: couldn't vectorize loop
+lu.c:913:30: missed: not vectorized: no vectype for stmt: _1 = u[i_667][j_668][k_547(D)][0];
+ scalar_type: double
+lu.c:1747:20: missed: couldn't vectorize loop
+lu.c:1747:20: missed: not vectorized: unsupported control flow in loop.
+lu.c:1735:22: missed: couldn't vectorize loop
+lu.c:1742:21: missed: not vectorized: complicated access pattern.
+lu.c:1737:23: missed: couldn't vectorize loop
+lu.c:1738:34: missed: not vectorized: no vectype for stmt: _126 = u[ifin_188][j_355][k_364][4];
+ scalar_type: double
+lu.c:1722:22: missed: couldn't vectorize loop
+lu.c:1729:21: missed: not vectorized: complicated access pattern.
+lu.c:1724:23: missed: couldn't vectorize loop
+lu.c:1725:34: missed: not vectorized: no vectype for stmt: _111 = u[ibeg_186][j_354][k_363][4];
+ scalar_type: double
+lu.c:1701:20: missed: couldn't vectorize loop
+lu.c:1701:20: missed: not vectorized: unsupported control flow in loop.
+lu.c:1689:22: missed: couldn't vectorize loop
+lu.c:1696:21: missed: not vectorized: complicated access pattern.
+lu.c:1691:23: missed: couldn't vectorize loop
+lu.c:1692:34: missed: not vectorized: no vectype for stmt: _76 = u[i_349][jfin_303][k_360][4];
+ scalar_type: double
+lu.c:1676:22: missed: couldn't vectorize loop
+lu.c:1683:21: missed: not vectorized: complicated access pattern.
+lu.c:1678:23: missed: couldn't vectorize loop
+lu.c:1679:34: missed: not vectorized: no vectype for stmt: _61 = u[i_348][jbeg_191][k_359][4];
+ scalar_type: double
+lu.c:1655:20: missed: couldn't vectorize loop
+lu.c:1655:20: missed: not vectorized: unsupported control flow in loop.
+lu.c:1636:20: missed: couldn't vectorize loop
+lu.c:1645:16: missed: not vectorized: complicated access pattern.
+lu.c:1638:22: missed: couldn't vectorize loop
+lu.c:1641:36: missed: not vectorized: no vectype for stmt: _13 = u[i_345][j_352][k_267][4];
+ scalar_type: double
+lu.c:1632:18: missed: statement clobbers memory: __builtin_memset (&phi1, 0, 9800);
+lu.c:1633:18: missed: statement clobbers memory: __builtin_memset (&phi2, 0, 9800);
+lu.c:1670:18: missed: statement clobbers memory: __builtin_memset (&phi1, 0, 9800);
+lu.c:1671:18: missed: statement clobbers memory: __builtin_memset (&phi2, 0, 9800);
+lu.c:1716:18: missed: statement clobbers memory: __builtin_memset (&phi1, 0, 9800);
+lu.c:1717:18: missed: statement clobbers memory: __builtin_memset (&phi2, 0, 9800);
+lu.c:2063:19: missed: couldn't vectorize loop
+lu.c:2063:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:2064:21: missed: couldn't vectorize loop
+lu.c:2064:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:2104:21: missed: couldn't vectorize loop
+lu.c:2105:32: missed: not vectorized: no vectype for stmt: _521 = rsd[i_950][j_650][k_659][0];
+ scalar_type: double
+lu.c:2083:21: missed: couldn't vectorize loop
+lu.c:2084:24: missed: not vectorized: no vectype for stmt: _481 = u[i_950][j_650][k_658][0];
+ scalar_type: double
+lu.c:2065:21: missed: couldn't vectorize loop
+lu.c:2066:31: missed: not vectorized: no vectype for stmt: _449 = u[i_950][j_650][k_656][3];
+ scalar_type: double
+lu.c:1971:19: missed: couldn't vectorize loop
+lu.c:1971:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:1972:19: missed: couldn't vectorize loop
+lu.c:1972:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:2040:24: missed: couldn't vectorize loop
+lu.c:2042:34: missed: not vectorized: no vectype for stmt: _1498 = rsd[i_979][j_649][k_655][0];
+ scalar_type: double
+lu.c:2001:23: missed: couldn't vectorize loop
+lu.c:2002:32: missed: not vectorized: no vectype for stmt: _302 = rsd[i_979][j_648][k_655][0];
+ scalar_type: double
+lu.c:1980:23: missed: couldn't vectorize loop
+lu.c:1981:24: missed: not vectorized: no vectype for stmt: _262 = u[i_979][j_647][k_655][0];
+ scalar_type: double
+lu.c:1973:23: missed: couldn't vectorize loop
+lu.c:1975:35: missed: not vectorized: no vectype for stmt: _1748 = rsd[i_979][j_646][k_655][0];
+ scalar_type: double
+lu.c:1955:19: missed: couldn't vectorize loop
+lu.c:1955:19: missed: not vectorized: multiple nested loops.
+lu.c:1956:20: missed: couldn't vectorize loop
+lu.c:1959:34: missed: not vectorized: complicated access pattern.
+lu.c:1957:21: missed: couldn't vectorize loop
+lu.c:1958:31: missed: not vectorized: no vectype for stmt: _229 = u[i_1008][j_645][k_654][2];
+ scalar_type: double
+lu.c:1861:19: missed: couldn't vectorize loop
+lu.c:1861:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:1862:19: missed: couldn't vectorize loop
+lu.c:1862:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:1930:24: missed: couldn't vectorize loop
+lu.c:1933:40: missed: not vectorized: complicated access pattern.
+lu.c:1891:23: missed: couldn't vectorize loop
+lu.c:1893:43: missed: not vectorized: complicated access pattern.
+lu.c:1870:23: missed: couldn't vectorize loop
+lu.c:1876:26: missed: not vectorized: complicated access pattern.
+lu.c:1863:23: missed: couldn't vectorize loop
+lu.c:1865:35: missed: not vectorized: complicated access pattern.
+lu.c:1844:18: missed: couldn't vectorize loop
+lu.c:1844:18: missed: not vectorized: multiple nested loops.
+lu.c:1845:21: missed: couldn't vectorize loop
+lu.c:1848:34: missed: not vectorized: complicated access pattern.
+lu.c:1846:21: missed: couldn't vectorize loop
+lu.c:1847:31: missed: not vectorized: no vectype for stmt: _6 = u[i_1133][j_643][k_652][1];
+ scalar_type: double
+lu.c:1833:17: missed: couldn't vectorize loop
+lu.c:1833:17: missed: not vectorized: multiple nested loops.
+lu.c:1834:19: missed: couldn't vectorize loop
+lu.c:1837:20: missed: not vectorized: complicated access pattern.
+lu.c:1596:18: missed: couldn't vectorize loop
+lu.c:1596:18: missed: not vectorized: unsupported control flow in loop.
+lu.c:1578:19: missed: couldn't vectorize loop
+lu.c:1578:19: missed: not vectorized: unsupported control flow in loop.
+lu.c:1579:21: missed: couldn't vectorize loop
+lu.c:1579:21: missed: not vectorized: unsupported control flow in loop.
+lu.c:1580:21: missed: couldn't vectorize loop
+lu.c:1581:28: missed: not vectorized: no vectype for stmt: _13 = (*_10)[j_110][k_104][0];
+ scalar_type: double
+lu.c:1597:14: missed: statement clobbers memory: _121 = sqrt (_146);
+lu.c:1597:14: missed: statement clobbers memory: _79 = sqrt (_98);
+lu.c:1597:14: missed: statement clobbers memory: _41 = sqrt (_44);
+lu.c:1597:14: missed: statement clobbers memory: _177 = sqrt (_175);
+lu.c:1597:14: missed: statement clobbers memory: _95 = sqrt (_68);
+lu.c:2347:13: missed: couldn't vectorize loop
+lu.c:2347:13: missed: not vectorized: could not determine main exit from loop with multiple exits.
+lu.c:2347:13: missed: couldn't vectorize loop
+lu.c:2347:13: missed: not vectorized: could not determine main exit from loop with multiple exits.
+lu.c:2347:13: missed: couldn't vectorize loop
+lu.c:2347:13: missed: not vectorized: could not determine main exit from loop with multiple exits.
+lu.c:2347:13: missed: couldn't vectorize loop
+lu.c:2347:13: missed: not vectorized: could not determine main exit from loop with multiple exits.
+lu.c:2373:25: missed: couldn't vectorize loop
+lu.c:2373:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:2405:21: missed: couldn't vectorize loop
+lu.c:2405:21: missed: not vectorized: multiple nested loops.
+lu.c:2406:23: missed: couldn't vectorize loop
+lu.c:2409:32: missed: not vectorized: complicated access pattern.
+lu.c:2396:24: missed: couldn't vectorize loop
+lu.c:2396:24: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:286:20: missed: couldn't vectorize loop
+lu.c:286:20: missed: not vectorized: unsupported control flow in loop.
+lu.c:299:22: missed: couldn't vectorize loop
+lu.c:301:24: missed: not vectorized: no vectype for stmt: _1550 = (*_1549)[j_1509][0];
+ scalar_type: double
+lu.c:274:20: missed: couldn't vectorize loop
+lu.c:277:14: missed: not vectorized: complicated access pattern.
+lu.c:275:22: missed: couldn't vectorize loop
+lu.c:278:27: missed: not vectorized: no vectype for stmt: _1840 = (*_1839)[j_1505][0][0];
+ scalar_type: double
+lu.c:1230:20: missed: couldn't vectorize loop
+lu.c:1237:30: missed: not vectorized: complicated access pattern.
+lu.c:1231:24: missed: couldn't vectorize loop
+lu.c:1237:30: missed: not vectorized: no vectype for stmt: _687 = u[i_1511][j_1521][k_1535][0];
+ scalar_type: double
+lu.c:2387:19: missed: couldn't vectorize loop
+lu.c:2387:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:102:19: missed: couldn't vectorize loop
+lu.c:102:19: missed: not vectorized: unsupported control flow in loop.
+lu.c:115:21: missed: couldn't vectorize loop
+lu.c:117:28: missed: not vectorized: no vectype for stmt: _2080 = (*_2079)[j_1493][k_1519][0];
+ scalar_type: double
+lu.c:90:19: missed: couldn't vectorize loop
+lu.c:94:29: missed: not vectorized: complicated access pattern.
+lu.c:91:21: missed: couldn't vectorize loop
+lu.c:93:28: missed: not vectorized: no vectype for stmt: _2355 = (*_2354)[j_1489][k_1519][0];
+ scalar_type: double
+lu.c:2378:21: missed: couldn't vectorize loop
+lu.c:2378:21: missed: not vectorized: multiple nested loops.
+lu.c:2379:23: missed: couldn't vectorize loop
+lu.c:2382:41: missed: not vectorized: complicated access pattern.
+lu.c:2354:17: missed: couldn't vectorize loop
+lu.c:2358:18: missed: not vectorized: complicated access pattern.
+lu.c:2367:3: missed: statement clobbers memory: rhs ();
+lu.c:2368:3: missed: statement clobbers memory: l2norm.constprop (nx0.253_10, ny0.252_9, nz0.251_8, ist.250_7, iend.249_6, jst.248_5, jend.247_4, &rsdnm);
+lu.c:2371:3: missed: statement clobbers memory: timer_clear (1);
+lu.c:2372:3: missed: statement clobbers memory: timer_start (1);
+lu.c:2375:7: missed: statement clobbers memory: printf (" Time step %4d\n", istep_1398);
+lu.c:2388:7: missed: statement clobbers memory: jacld (k_1519);
+lu.c:2421:5: missed: statement clobbers memory: rhs ();
+lu.c:2417:7: missed: statement clobbers memory: l2norm.constprop (nx0.291_54, ny0.290_53, nz0.289_52, i_118, iend.258_1270, jst.286_51, jend.285_50, &delunm);
+lu.c:2421:5: missed: statement clobbers memory: rhs ();
+lu.c:2424:7: missed: statement clobbers memory: l2norm.constprop (prephitmp_5183, prephitmp_5181, prephitmp_5179, i_118, iend.258_1270, prephitmp_5185, prephitmp_5187, &rsdnm);
+lu.c:2436:3: missed: statement clobbers memory: timer_stop (1);
+lu.c:2437:12: missed: statement clobbers memory: _72 = timer_read (1);
+lu.c:2433:2: missed: statement clobbers memory: exit (1);
+lu.c:93:16: missed: not vectorized: vectorization is not profitable.
+lu.c:252:21: missed: not vectorized: vectorization is not profitable.
+lu.c:277:14: missed: not vectorized: vectorization is not profitable.
+lu.c:438:21: missed: not vectorized: vectorization is not profitable.
+lu.c:886:17: missed: couldn't vectorize loop
+lu.c:887:24: missed: not vectorized: no vectype for stmt: _19 = ce[m_83][0];
+ scalar_type: double
+lu.c:887:16: missed: not vectorized: vectorization is not profitable.
+lu.c:886:17: missed: couldn't vectorize loop
+lu.c:887:24: missed: not vectorized: no vectype for stmt: _19 = ce[m_83][0];
+ scalar_type: double
+lu.c:887:16: missed: not vectorized: vectorization is not profitable.
+lu.c:886:17: missed: couldn't vectorize loop
+lu.c:887:24: missed: not vectorized: no vectype for stmt: _19 = ce[m_83][0];
+ scalar_type: double
+lu.c:887:16: missed: not vectorized: vectorization is not profitable.
+lu.c:2564:17: missed: couldn't vectorize loop
+lu.c:2564:17: missed: not vectorized: unsupported control flow in loop.
+lu.c:2564:17: missed: couldn't vectorize loop
+lu.c:2566:7: missed: statement clobbers memory: printf ("          %2d  %20.13e\n", m_3153, pretmp_6464);
+lu.c:2547:17: missed: couldn't vectorize loop
+lu.c:2547:17: missed: not vectorized: unsupported control flow in loop.
+lu.c:2547:17: missed: couldn't vectorize loop
+lu.c:2549:7: missed: statement clobbers memory: printf ("          %2d  %20.13e\n", m_3151, pretmp_6473);
+lu.c:876:17: missed: couldn't vectorize loop
+lu.c:876:17: missed: not vectorized: unsupported control flow in loop.
+lu.c:863:19: missed: couldn't vectorize loop
+lu.c:863:19: missed: not vectorized: unsupported control flow in loop.
+lu.c:865:21: missed: couldn't vectorize loop
+lu.c:865:21: missed: not vectorized: unsupported control flow in loop.
+lu.c:867:21: missed: couldn't vectorize loop
+lu.c:868:2: missed: statement clobbers memory: exact (i_3158, j_3159, k_3160, &u000ijk);
+lu.c:750:19: missed: couldn't vectorize loop
+lu.c:750:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:751:21: missed: couldn't vectorize loop
+lu.c:751:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:793:21: missed: couldn't vectorize loop
+lu.c:794:34: missed: not vectorized: no vectype for stmt: _875 = frct[i_3210][j_3211][k_3227][0];
+ scalar_type: double
+lu.c:771:21: missed: couldn't vectorize loop
+lu.c:772:26: missed: not vectorized: no vectype for stmt: _823 = rsd[i_3210][j_3211][k_3222][0];
+ scalar_type: double
+lu.c:752:21: missed: couldn't vectorize loop
+lu.c:753:33: missed: not vectorized: no vectype for stmt: _783 = rsd[i_3210][j_3211][k_3212][3];
+ scalar_type: double
+lu.c:658:19: missed: couldn't vectorize loop
+lu.c:658:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:659:19: missed: couldn't vectorize loop
+lu.c:659:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:727:24: missed: couldn't vectorize loop
+lu.c:729:36: missed: not vectorized: no vectype for stmt: _2263 = frct[i_3204][j_3209][k_3206][0];
+ scalar_type: double
+lu.c:688:23: missed: couldn't vectorize loop
+lu.c:689:34: missed: not vectorized: no vectype for stmt: _625 = frct[i_3204][j_3208][k_3206][0];
+ scalar_type: double
+lu.c:666:23: missed: couldn't vectorize loop
+lu.c:667:26: missed: not vectorized: no vectype for stmt: _573 = rsd[i_3204][j_3207][k_3206][0];
+ scalar_type: double
+lu.c:660:23: missed: couldn't vectorize loop
+lu.c:662:37: missed: not vectorized: no vectype for stmt: _2503 = frct[i_3204][j_3205][k_3206][0];
+ scalar_type: double
+lu.c:641:19: missed: couldn't vectorize loop
+lu.c:641:19: missed: not vectorized: multiple nested loops.
+lu.c:642:20: missed: couldn't vectorize loop
+lu.c:645:38: missed: not vectorized: complicated access pattern.
+lu.c:643:21: missed: couldn't vectorize loop
+lu.c:644:33: missed: not vectorized: no vectype for stmt: _528 = rsd[i_3201][j_3202][k_3203][2];
+ scalar_type: double
+lu.c:547:19: missed: couldn't vectorize loop
+lu.c:547:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:548:19: missed: couldn't vectorize loop
+lu.c:548:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+lu.c:616:24: missed: couldn't vectorize loop
+lu.c:619:43: missed: not vectorized: complicated access pattern.
+lu.c:577:23: missed: couldn't vectorize loop
+lu.c:579:45: missed: not vectorized: complicated access pattern.
+lu.c:555:23: missed: couldn't vectorize loop
+lu.c:561:28: missed: not vectorized: complicated access pattern.
+lu.c:549:23: missed: couldn't vectorize loop
+lu.c:551:37: missed: not vectorized: complicated access pattern.
+lu.c:530:18: missed: couldn't vectorize loop
+lu.c:530:18: missed: not vectorized: multiple nested loops.
+lu.c:531:21: missed: couldn't vectorize loop
+lu.c:534:38: missed: not vectorized: complicated access pattern.
+lu.c:532:21: missed: couldn't vectorize loop
+lu.c:533:33: missed: not vectorized: no vectype for stmt: _266 = rsd[i_3192][j_3193][k_3194][1];
+ scalar_type: double
+lu.c:502:17: missed: couldn't vectorize loop
+lu.c:502:17: missed: not vectorized: multiple nested loops.
+lu.c:505:19: missed: couldn't vectorize loop
+lu.c:511:20: missed: not vectorized: complicated access pattern.
+lu.c:493:17: missed: couldn't vectorize loop
+lu.c:493:17: missed: not vectorized: multiple nested loops.
+lu.c:494:19: missed: couldn't vectorize loop
+lu.c:497:21: missed: not vectorized: complicated access pattern.
+lu.c:2313:17: missed: couldn't vectorize loop
+lu.c:2313:17: missed: not vectorized: unsupported control flow in loop.
+lu.c:2315:19: missed: couldn't vectorize loop
+lu.c:2315:19: missed: not vectorized: unsupported control flow in loop.
+lu.c:2319:16: missed: couldn't vectorize loop
+lu.c:2319:16: missed: not vectorized: unsupported control flow in loop.
+lu.c:2196:17: missed: couldn't vectorize loop
+lu.c:2199:7: missed: statement clobbers memory: exact (_1124, j_3264, k_3265, _1117);
+lu.c:2198:19: missed: couldn't vectorize loop
+lu.c:2199:7: missed: statement clobbers memory: exact (_1124, j_3264, k_3265, _1117);
+lu.c:2190:17: missed: couldn't vectorize loop
+lu.c:2193:7: missed: statement clobbers memory: exact.constprop (j_3259, k_3263, _1109);
+lu.c:2192:19: missed: couldn't vectorize loop
+lu.c:2193:7: missed: statement clobbers memory: exact.constprop (j_3259, k_3263, _1109);
+lu.c:2184:17: missed: couldn't vectorize loop
+lu.c:2187:7: missed: statement clobbers memory: exact (i_3254, _1128, k_3256, _1101);
+lu.c:2186:19: missed: couldn't vectorize loop
+lu.c:2187:7: missed: statement clobbers memory: exact (i_3254, _1128, k_3256, _1101);
+lu.c:2178:17: missed: couldn't vectorize loop
+lu.c:2181:7: missed: statement clobbers memory: exact.constprop (i_3250, k_3253, _1093);
+lu.c:2180:19: missed: couldn't vectorize loop
+lu.c:2181:7: missed: statement clobbers memory: exact.constprop (i_3250, k_3253, _1093);
+lu.c:2170:17: missed: couldn't vectorize loop
+lu.c:2174:7: missed: statement clobbers memory: exact.constprop (i_3243, j_3249, _1083);
+lu.c:2172:19: missed: couldn't vectorize loop
+lu.c:2174:7: missed: statement clobbers memory: exact.constprop (i_3243, j_3249, _1083);
+lu.c:1787:21: missed: couldn't vectorize loop
+lu.c:1787:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1785:47: missed: couldn't vectorize loop
+lu.c:1785:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1785:21: missed: couldn't vectorize loop
+lu.c:1785:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1784:21: missed: couldn't vectorize loop
+lu.c:1784:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1781:47: missed: couldn't vectorize loop
+lu.c:1781:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1781:21: missed: couldn't vectorize loop
+lu.c:1781:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1780:21: missed: couldn't vectorize loop
+lu.c:1780:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1778:47: missed: couldn't vectorize loop
+lu.c:1778:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1778:21: missed: couldn't vectorize loop
+lu.c:1778:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1777:21: missed: couldn't vectorize loop
+lu.c:1777:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1775:47: missed: couldn't vectorize loop
+lu.c:1775:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1775:21: missed: couldn't vectorize loop
+lu.c:1775:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1774:21: missed: couldn't vectorize loop
+lu.c:1774:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1772:47: missed: couldn't vectorize loop
+lu.c:1772:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1772:21: missed: couldn't vectorize loop
+lu.c:1772:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1771:21: missed: couldn't vectorize loop
+lu.c:1771:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1769:47: missed: couldn't vectorize loop
+lu.c:1769:47: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1769:21: missed: couldn't vectorize loop
+lu.c:1769:21: missed: not vectorized: number of iterations cannot be computed.
+lu.c:1764:3: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - LU Benchmark\n"[0]);
+lu.c:1766:8: missed: statement clobbers memory: fp_1158 = fopen ("inputlu.data", "r");
+lu.c:1768:5: missed: statement clobbers memory: __builtin_puts (&" Reading from input file inputlu.data"[0]);
+lu.c:1769:11: missed: statement clobbers memory: _1159 = fgetc (fp_1158);
+lu.c:1769:37: missed: statement clobbers memory: _1160 = fgetc (fp_1158);
+lu.c:1770:5: missed: statement clobbers memory: fscanf (fp_1158, "%d%d", &ipr, &inorm);
+lu.c:1771:11: missed: statement clobbers memory: _1161 = fgetc (fp_1158);
+lu.c:1772:11: missed: statement clobbers memory: _1162 = fgetc (fp_1158);
+lu.c:1772:37: missed: statement clobbers memory: _1163 = fgetc (fp_1158);
+lu.c:1773:5: missed: statement clobbers memory: fscanf (fp_1158, "%d", &itmax);
+lu.c:1774:11: missed: statement clobbers memory: _1164 = fgetc (fp_1158);
+lu.c:1775:11: missed: statement clobbers memory: _1165 = fgetc (fp_1158);
+lu.c:1775:37: missed: statement clobbers memory: _1166 = fgetc (fp_1158);
+lu.c:1776:5: missed: statement clobbers memory: fscanf (fp_1158, "%lf", &dt);
+lu.c:1777:11: missed: statement clobbers memory: _1167 = fgetc (fp_1158);
+lu.c:1778:11: missed: statement clobbers memory: _1168 = fgetc (fp_1158);
+lu.c:1778:37: missed: statement clobbers memory: _1169 = fgetc (fp_1158);
+lu.c:1779:5: missed: statement clobbers memory: fscanf (fp_1158, "%lf", &omega);
+lu.c:1780:11: missed: statement clobbers memory: _1170 = fgetc (fp_1158);
+lu.c:1781:11: missed: statement clobbers memory: _1171 = fgetc (fp_1158);
+lu.c:1781:37: missed: statement clobbers memory: _1172 = fgetc (fp_1158);
+lu.c:1782:5: missed: statement clobbers memory: fscanf (fp_1158, "%lf%lf%lf%lf%lf", &tolrsd[0], &tolrsd[1], &tolrsd[2], &tolrsd[3], &tolrsd[4]);
+lu.c:1784:11: missed: statement clobbers memory: _1173 = fgetc (fp_1158);
+lu.c:1785:11: missed: statement clobbers memory: _1174 = fgetc (fp_1158);
+lu.c:1785:37: missed: statement clobbers memory: _1175 = fgetc (fp_1158);
+lu.c:1786:5: missed: statement clobbers memory: fscanf (fp_1158, "%d%d%d", &nx0, &ny0, &nz0);
+lu.c:1787:11: missed: statement clobbers memory: _1176 = fgetc (fp_1158);
+lu.c:1788:5: missed: statement clobbers memory: fclose (fp_1158);
+lu.c:1815:3: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d\n", nx0.22_3141, ny0.23_1178, nz0.24_1179);
+lu.c:1816:3: missed: statement clobbers memory: printf (" Iterations: %3d\n", itmax.31_1180);
+lu.c:2174:7: missed: statement clobbers memory: exact.constprop (i_3243, j_3249, _1083);
+lu.c:2175:7: missed: statement clobbers memory: exact (i_3243, j_3249, _1132, _1086);
+lu.c:2181:7: missed: statement clobbers memory: exact.constprop (i_3250, k_3253, _1093);
+lu.c:2187:7: missed: statement clobbers memory: exact (i_3254, _1128, k_3256, _1101);
+lu.c:2193:7: missed: statement clobbers memory: exact.constprop (j_3259, k_3263, _1109);
+lu.c:2199:7: missed: statement clobbers memory: exact (_1124, j_3264, k_3265, _1117);
+lu.c:2323:6: missed: statement clobbers memory: exact.constprop (j_3241, k_3240, &ue_1jk);
+lu.c:2324:6: missed: statement clobbers memory: exact (_1124, j_3241, k_3240, &ue_nx0jk);
+lu.c:2325:6: missed: statement clobbers memory: exact.constprop (i_3242, k_3240, &ue_i1k);
+lu.c:2326:6: missed: statement clobbers memory: exact (i_3242, _1128, k_3240, &ue_iny0k);
+lu.c:2327:6: missed: statement clobbers memory: exact.constprop (i_3242, j_3241, &ue_ij1);
+lu.c:2328:6: missed: statement clobbers memory: exact (i_3242, j_3241, _1132, &ue_ijnz);
+lu.c:58:14: missed: statement clobbers memory: nthreads_38 = omp_get_num_threads ();
+lu.c:61:3: missed: statement clobbers memory: ssor ();
+lu.c:868:2: missed: statement clobbers memory: exact (i_3158, j_3159, k_3160, &u000ijk);
+lu.c:877:16: missed: statement clobbers memory: _3975 = sqrt (_4257);
+lu.c:877:16: missed: statement clobbers memory: _4030 = sqrt (_4028);
+lu.c:877:16: missed: statement clobbers memory: _3510 = sqrt (_3508);
+lu.c:877:16: missed: statement clobbers memory: _2595 = sqrt (_3521);
+lu.c:877:16: missed: statement clobbers memory: _293 = sqrt (_167);
+lu.c:63:3: missed: statement clobbers memory: pintgr ();
+lu.c:2540:5: missed: statement clobbers memory: __builtin_puts (&" Unknown class"[0]);
+lu.c:2532:5: missed: statement clobbers memory: printf ("\n Verification being performed for class %1c\n", _86);
+lu.c:2533:5: missed: statement clobbers memory: printf (" Accuracy setting for epsilon = %20.13e\n", 1.00000000000000002092256083012847267532663408928783610463e-8);
+lu.c:2543:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of residual"[0]);
+lu.c:2537:7: missed: statement clobbers memory: printf (" DT does not match the reference value of %15.8e\n", dtref_88);
+lu.c:2545:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of residual"[0]);
+lu.c:2549:7: missed: statement clobbers memory: printf ("          %2d  %20.13e\n", m_3151, pretmp_6473);
+lu.c:2555:7: missed: statement clobbers memory: printf ("          %2d  %20.13e%20.13e%20.13e\n", m_6334, pretmp_6328, pretmp_6288, _6289);
+lu.c:2552:7: missed: statement clobbers memory: printf (" FAILURE: %2d  %20.13e%20.13e%20.13e\n", m_6334, pretmp_6328, pretmp_6288, _6289);
+lu.c:2562:5: missed: statement clobbers memory: __builtin_puts (&" RMS-norms of solution error"[0]);
+lu.c:2560:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of RMS-norms of solution error"[0]);
+lu.c:2566:7: missed: statement clobbers memory: printf ("          %2d  %20.13e\n", m_3153, pretmp_6464);
+lu.c:2572:7: missed: statement clobbers memory: printf ("          %2d  %20.13e%20.13e%20.13e\n", m_6349, pretmp_6343, pretmp_6341, _6342);
+lu.c:2569:7: missed: statement clobbers memory: printf (" FAILURE: %2d  %20.13e%20.13e%20.13e\n", m_6349, pretmp_6343, pretmp_6341, _6342);
+lu.c:2579:5: missed: statement clobbers memory: __builtin_puts (&" Surface integral"[0]);
+lu.c:2582:5: missed: statement clobbers memory: printf ("              %20.13e\n", frc.0_1);
+lu.c:2592:5: missed: statement clobbers memory: __builtin_puts (&" No reference values provided"[0]);
+lu.c:2593:5: missed: statement clobbers memory: __builtin_puts (&" No verification performed"[0]);
+lu.c:2577:5: missed: statement clobbers memory: __builtin_puts (&" Comparison of surface integral"[0]);
+lu.c:2588:5: missed: statement clobbers memory: printf ("              %20.13e%20.13e%20.13e\n", frc.0_1, xciref_81, xcidif_84);
+lu.c:2595:5: missed: statement clobbers memory: __builtin_puts (&" Verification Successful"[0]);
+lu.c:2585:5: missed: statement clobbers memory: printf (" FAILURE:     %20.13e%20.13e%20.13e\n", frc.0_1, xciref_81, xcidif_84);
+lu.c:2597:5: missed: statement clobbers memory: __builtin_puts (&" Verification failed"[0]);
+lu.c:72:3: missed: statement clobbers memory: c_print_results ("LU", prephitmp_6447, nx0.2_4, ny0.3_7, nz0.4_10, itmax.1_2, nthreads_38, maxtime.14_25, mflops_43, "          floating point", verified_929, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "(none)");
+lu.c:462:5: missed: statement clobbers memory: printf ("     SUBDOMAIN SIZE IS TOO LARGE - \n     ADJUST PROBLEM SIZE OR NUMBER OF PROCESSORS\n     SO THAT NX, NY AND NZ ARE LESS THAN OR EQUAL TO \n     ISIZ1, ISIZ2 AND ISIZ3 RESPECTIVELY.  THEY ARE\n     CURRENTLY%4d%4d%4d\n", nx0.32_1153, ny0.33_1154, nz0.34_1155);
+lu.c:467:5: missed: statement clobbers memory: exit (1);
+lu.c:455:5: missed: statement clobbers memory: printf ("     SUBDOMAIN SIZE IS TOO SMALL - \n     ADJUST PROBLEM SIZE OR NUMBER OF PROCESSORS\n     SO THAT NX, NY AND NZ ARE GREATER THAN OR EQUAL\n     TO 4 THEY ARE CURRENTLY%3d%3d%3d\n", nx0.32_1153, ny0.33_1154, nz0.34_1155);
+lu.c:459:5: missed: statement clobbers memory: exit (1);
+lu.c:1810:5: missed: statement clobbers memory: __builtin_puts (&"     PROBLEM SIZE IS TOO LARGE - \n     NX, NY AND NZ SHOULD BE EQUAL TO \n     ISIZ1, ISIZ2 AND ISIZ3 RESPECTIVELY"[0]);
+lu.c:1813:5: missed: statement clobbers memory: exit (1);
+lu.c:1805:5: missed: statement clobbers memory: __builtin_puts (&"     PROBLEM SIZE IS TOO SMALL - \n     SET EACH OF NX, NY AND NZ AT LEAST EQUAL TO 5"[0]);
+lu.c:1807:5: missed: statement clobbers memory: exit (1);
+lu.c:45:5: missed: not vectorized: vectorization is not profitable.
+lu.c:871:13: missed: Using original scalar computation for live lane because there is an out-of-loop definition for it

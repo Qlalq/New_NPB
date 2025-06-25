@@ -1,0 +1,562 @@
+mg.c:205:23: missed: couldn't vectorize loop
+mg.c:206:12: missed: not vectorized, possible dependence between data-refs nx[_1] and nx[k_68]
+mg.c:225:2: missed: statement clobbers memory: __builtin_puts (&" in setup, "[0]);
+mg.c:226:2: missed: statement clobbers memory: __builtin_puts (&"  lt  nx  ny  nz  n1  n2  n3 is1 is2 is3 ie1 ie2 ie3"[0]);
+mg.c:227:2: missed: statement clobbers memory: printf ("%4d%4d%4d%4d%4d%4d%4d%4d%4d%4d%4d%4d%4d\n", lt_38(D), _32, _31, _30, _29, _28, _27, is1.140_26, is2.139_25, is3.138_24, ie1.137_23, ie2.136_22, ie3.135_21);
+mg.c:501:21: missed: couldn't vectorize loop
+mg.c:501:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:502:18: missed: couldn't vectorize loop
+mg.c:502:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:503:29: missed: couldn't vectorize loop
+mg.c:495:13: missed: not vectorized: unsupported use in stmt.
+mg.c:511:10: missed: statement clobbers memory: _59 = sqrt (_21);
+mg.c:680:15: missed: couldn't vectorize loop
+mg.c:680:15: missed: not vectorized: unsupported control flow in loop.
+mg.c:681:30: missed: statement clobbers memory: randlc (&power, prephitmp_1);
+mg.c:682:11: missed: statement clobbers memory: randlc (&aj, prephitmp_17);
+mg.c:536:22: missed: couldn't vectorize loop
+mg.c:538:32: missed: failed: evolution of base is not affine.
+mg.c:523:22: missed: couldn't vectorize loop
+mg.c:523:22: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:524:19: missed: couldn't vectorize loop
+mg.c:525:29: missed: not vectorized: no vectype for stmt: _11 = *_10;
+ scalar_type: double *
+mg.c:649:22: missed: couldn't vectorize loop
+mg.c:650:3: missed: not vectorized: no vectype for stmt: _163 = *_162;
+ scalar_type: double * *
+mg.c:646:22: missed: couldn't vectorize loop
+mg.c:647:3: missed: not vectorized: no vectype for stmt: _147 = *_146;
+ scalar_type: double * *
+mg.c:639:21: missed: couldn't vectorize loop
+mg.c:642:17: missed: statement clobbers memory: __builtin_memset (_134, 0, _2378);
+mg.c:640:18: missed: couldn't vectorize loop
+mg.c:642:17: missed: statement clobbers memory: __builtin_memset (_134, 0, _2378);
+mg.c:607:25: missed: couldn't vectorize loop
+mg.c:544:13: missed: not vectorized: unsupported use in stmt.
+mg.c:607:25: missed: couldn't vectorize loop
+mg.c:607:25: missed: not vectorized: unsupported control flow in loop.
+mg.c:585:21: missed: couldn't vectorize loop
+mg.c:585:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:586:18: missed: couldn't vectorize loop
+mg.c:586:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:587:29: missed: couldn't vectorize loop
+mg.c:587:29: missed: not vectorized: unsupported control flow in loop.
+mg.c:566:21: missed: couldn't vectorize loop
+mg.c:566:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:568:18: missed: couldn't vectorize loop
+mg.c:568:18: missed: not vectorized: latch block not empty.
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_16, 0, _2373);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_16, 0, _2373);
+mg.c:555:10: missed: statement clobbers memory: a1_2 = power.constprop (nx_1(D));
+mg.c:556:10: missed: statement clobbers memory: a2_5 = power.constprop (_4);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_16, 0, _2373);
+mg.c:559:10: missed: statement clobbers memory: ai_37 = power.constprop (i_36);
+mg.c:565:14: missed: statement clobbers memory: randlc (&x0, ai_37);
+mg.c:570:13: missed: statement clobbers memory: vranlc (d1_41, &xx, 1.220703125e+9, _61);
+mg.c:571:22: missed: statement clobbers memory: randlc (&x1, a1_2);
+mg.c:573:11: missed: statement clobbers memory: randlc (&x0, a2_5);
+mg.c:642:17: missed: statement clobbers memory: __builtin_memset (_134, 0, _2378);
+mg.c:652:5: missed: statement clobbers memory: comm3.isra (z_9(D), n1_22(D), n2_24(D), n3_26(D));
+mg.c:501:21: missed: couldn't vectorize loop
+mg.c:501:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:502:18: missed: couldn't vectorize loop
+mg.c:502:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:503:29: missed: couldn't vectorize loop
+mg.c:513:13: missed: not vectorized: unsupported use in stmt.
+mg.c:511:10: missed: statement clobbers memory: _56 = sqrt (_50);
+mg.c:517:5: missed: statement clobbers memory: printf (" Level%2d in %8s: norms =%21.14e%21.14e\n", kk_7(D), title_13(D), _54, tmp_29);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _151);
+mg.c:289:21: missed: couldn't vectorize loop
+mg.c:289:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:290:18: missed: couldn't vectorize loop
+mg.c:290:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:305:5: missed: statement clobbers memory: comm3.isra (r_116(D), n1_117(D), n2_118(D), n3_115(D));
+mg.c:307:2: missed: statement clobbers memory: rep_nrm (r_116(D), n1_117(D), n2_118(D), n3_115(D), "   resid", k_119(D));
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _151);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _152);
+mg.c:260:21: missed: couldn't vectorize loop
+mg.c:260:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:261:18: missed: couldn't vectorize loop
+mg.c:261:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:277:5: missed: statement clobbers memory: comm3.isra (u_118(D), n1_119(D), n2_120(D), n3_117(D));
+mg.c:279:2: missed: statement clobbers memory: rep_nrm (u_118(D), n1_119(D), n2_120(D), n3_117(D), "   psinv", k_121(D));
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _152);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _223);
+mg.c:332:21: missed: couldn't vectorize loop
+mg.c:332:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:334:18: missed: couldn't vectorize loop
+mg.c:334:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:336:29: missed: couldn't vectorize loop
+mg.c:338:23: missed: not vectorized: no vectype for stmt: _16 = *_15;
+ scalar_type: double
+mg.c:357:5: missed: statement clobbers memory: comm3.isra (s_184(D), m1j_185(D), m2j_186(D), m3j_182(D));
+mg.c:359:2: missed: statement clobbers memory: rep_nrm (s_184(D), m1j_185(D), m2j_186(D), m3j_182(D), "   rprj3", _162);
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _223);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _679);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _700);
+mg.c:370:18: missed: couldn't vectorize loop
+mg.c:370:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:371:29: missed: couldn't vectorize loop
+mg.c:371:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:453:19: missed: couldn't vectorize loop
+mg.c:453:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:467:23: missed: couldn't vectorize loop
+mg.c:467:23: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:454:31: missed: couldn't vectorize loop
+mg.c:454:31: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:426:20: missed: couldn't vectorize loop
+mg.c:426:20: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:439:30: missed: couldn't vectorize loop
+mg.c:439:30: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:427:31: missed: couldn't vectorize loop
+mg.c:427:31: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:487:2: missed: statement clobbers memory: rep_nrm (z_624(D), mm1_615(D), mm2_613(D), mm3_612(D), "z: inter", _555);
+mg.c:488:2: missed: statement clobbers memory: rep_nrm (u_617(D), n1_608(D), n2_609(D), n3_610(D), "u: inter", k_654(D));
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _700);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _679);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:242:22: missed: couldn't vectorize loop
+mg.c:242:22: missed: not vectorized: unsupported control flow in loop.
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_68, 0, _243);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_68, 0, _243);
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_37, 0, _238);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_37, 0, _238);
+mg.c:234:20: missed: couldn't vectorize loop
+mg.c:234:20: missed: not vectorized: number of iterations cannot be computed.
+mg.c:236:2: missed: statement clobbers memory: rprj3 (_18, _14, _13, _12, _11, _6, _5, _4, k_164);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_37, 0, _238);
+mg.c:241:5: missed: statement clobbers memory: psinv (_46, _27, _22, _21, _20, c_47(D), lb.162_165);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_68, 0, _243);
+mg.c:245:2: missed: statement clobbers memory: interp (_82, _78, _77, _76, _58, _54, _53, _52, k_169);
+mg.c:247:2: missed: statement clobbers memory: resid (_88, _87, _87, _85, _84, _83, a_89(D), k_169);
+mg.c:248:2: missed: statement clobbers memory: psinv (_94, _93, _92, _91, _90, c_47(D), k_169);
+mg.c:252:5: missed: statement clobbers memory: interp (_108, _104, _103, _102, _101, n1_109(D), n2_110(D), n3_111(D), lt.164_173);
+mg.c:253:5: missed: statement clobbers memory: resid (_118, v_119(D), _116, n1_109(D), n2_110(D), n3_111(D), a_89(D), lt.164_173);
+mg.c:254:5: missed: statement clobbers memory: psinv (_126, _124, n1_109(D), n2_110(D), n3_111(D), c_47(D), lt.164_173);
+mg.c:147:22: missed: couldn't vectorize loop
+mg.c:147:22: missed: not vectorized: number of iterations cannot be computed.
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_352, 0, _552);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_352, 0, _552);
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_369, 0, _547);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_369, 0, _547);
+mg.c:121:20: missed: couldn't vectorize loop
+mg.c:121:20: missed: not vectorized: unsupported control flow in loop.
+mg.c:123:16: missed: couldn't vectorize loop
+mg.c:123:16: missed: not vectorized: unsupported control flow in loop.
+mg.c:125:20: missed: couldn't vectorize loop
+mg.c:126:26: missed: statement clobbers memory: _84 = malloc (_511);
+mg.c:114:19: missed: couldn't vectorize loop
+mg.c:114:19: missed: not vectorized: unsupported control flow in loop.
+mg.c:116:16: missed: couldn't vectorize loop
+mg.c:117:26: missed: statement clobbers memory: _63 = malloc (_495);
+mg.c:104:20: missed: couldn't vectorize loop
+mg.c:104:20: missed: not vectorized: unsupported control flow in loop.
+mg.c:106:16: missed: couldn't vectorize loop
+mg.c:106:16: missed: not vectorized: unsupported control flow in loop.
+mg.c:108:20: missed: couldn't vectorize loop
+mg.c:109:26: missed: statement clobbers memory: _46 = malloc (_478);
+mg.c:56:16: missed: couldn't vectorize loop
+mg.c:57:6: missed: statement clobbers memory: fscanf (fp_226, "%d", _8);
+mg.c:55:18: missed: couldn't vectorize loop
+mg.c:55:18: missed: not vectorized: number of iterations cannot be computed.
+mg.c:53:18: missed: couldn't vectorize loop
+mg.c:53:18: missed: not vectorized: number of iterations cannot be computed.
+mg.c:51:18: missed: couldn't vectorize loop
+mg.c:51:18: missed: not vectorized: number of iterations cannot be computed.
+mg.c:42:5: missed: statement clobbers memory: timer_clear (1);
+mg.c:43:5: missed: statement clobbers memory: timer_clear (2);
+mg.c:44:5: missed: statement clobbers memory: timer_start (2);
+mg.c:45:5: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - MG Benchmark\n"[0]);
+mg.c:47:10: missed: statement clobbers memory: fp_226 = fopen ("mg.input", "r");
+mg.c:61:2: missed: statement clobbers memory: __builtin_puts (&" No input file. Using compiled defaults"[0]);
+mg.c:68:19: missed: statement clobbers memory: __builtin_memset (&debug_vec, 0, 32);
+mg.c:49:2: missed: statement clobbers memory: __builtin_puts (&" Reading from input file mg.input"[0]);
+mg.c:50:2: missed: statement clobbers memory: fscanf (fp_226, "%d", &lt);
+mg.c:51:8: missed: statement clobbers memory: _1 = fgetc (fp_226);
+mg.c:52:2: missed: statement clobbers memory: fscanf (fp_226, "%d%d%d", _5, _4, _3);
+mg.c:53:8: missed: statement clobbers memory: _6 = fgetc (fp_226);
+mg.c:54:2: missed: statement clobbers memory: fscanf (fp_226, "%d", &nit);
+mg.c:55:8: missed: statement clobbers memory: _7 = fgetc (fp_226);
+mg.c:57:6: missed: statement clobbers memory: fscanf (fp_226, "%d", _8);
+mg.c:59:2: missed: statement clobbers memory: fclose (fp_226);
+mg.c:102:5: missed: statement clobbers memory: setup (&n1, &n2, &n3, lt.6_10);
+mg.c:103:22: missed: statement clobbers memory: u_268 = malloc (_25);
+mg.c:105:21: missed: statement clobbers memory: _32 = malloc (_28);
+mg.c:107:27: missed: statement clobbers memory: _39 = malloc (_474);
+mg.c:109:26: missed: statement clobbers memory: _46 = malloc (_478);
+mg.c:113:21: missed: statement clobbers memory: v_270 = malloc (_49);
+mg.c:115:20: missed: statement clobbers memory: _56 = malloc (_491);
+mg.c:117:26: missed: statement clobbers memory: _63 = malloc (_495);
+mg.c:120:22: missed: statement clobbers memory: r_272 = malloc (_25);
+mg.c:122:21: missed: statement clobbers memory: _70 = malloc (_66);
+mg.c:124:27: missed: statement clobbers memory: _77 = malloc (_507);
+mg.c:126:26: missed: statement clobbers memory: _84 = malloc (_511);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_369, 0, _547);
+mg.c:131:5: missed: statement clobbers memory: zran3.isra (v_270, n1.32_87, n2.31_86, n3.30_85, _93, _92);
+mg.c:132:5: missed: statement clobbers memory: norm2u3 (v_270, n1.32_87, n2.31_86, n3.30_85, &rnm2, &rnmu, _97, _96, _95);
+mg.c:133:5: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d (class %1c)\n", _97, _96, _95, _99);
+mg.c:135:5: missed: statement clobbers memory: printf (" Iterations: %3d\n", nit.50_100);
+mg.c:136:5: missed: statement clobbers memory: resid (_107, v_270, _105, n1.32_87, n2.31_86, n3.30_85, &a, lt.51_101);
+mg.c:137:5: missed: statement clobbers memory: norm2u3 (_115, n1.32_87, n2.31_86, n3.30_85, &rnm2, &rnmu, _111, _110, _109);
+mg.c:138:5: missed: statement clobbers memory: mg3P.constprop (u_268, v_270, r_272, &a, &c, n1.32_87, n2.31_86, n3.30_85);
+mg.c:139:5: missed: statement clobbers memory: resid (_122, v_270, _120, n1.32_87, n2.31_86, n3.30_85, &a, lt.68_116);
+mg.c:140:5: missed: statement clobbers memory: setup (&n1, &n2, &n3, lt.74_123);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_352, 0, _552);
+mg.c:142:5: missed: statement clobbers memory: zran3.isra (v_270, n1.77_126, n2.76_125, n3.75_124, _133, _132);
+mg.c:143:5: missed: statement clobbers memory: timer_stop (2);
+mg.c:144:5: missed: statement clobbers memory: timer_start (1);
+mg.c:145:5: missed: statement clobbers memory: resid (_140, v_270, _138, n1.77_126, n2.76_125, n3.75_124, &a, lt.85_134);
+mg.c:146:5: missed: statement clobbers memory: norm2u3 (_148, n1.77_126, n2.76_125, n3.75_124, &rnm2, &rnmu, _144, _143, _142);
+mg.c:148:2: missed: statement clobbers memory: mg3P.constprop (u_268, v_270, r_272, &a, &c, n1.77_126, n2.76_125, n3.75_124);
+mg.c:149:2: missed: statement clobbers memory: resid (_156, v_270, _154, n1.77_126, n2.76_125, n3.75_124, &a, lt.102_150);
+mg.c:151:5: missed: statement clobbers memory: norm2u3 (_165, n1.77_126, n2.76_125, n3.75_124, &rnm2, &rnmu, _161, _160, _159);
+mg.c:154:14: missed: statement clobbers memory: nthreads_289 = omp_get_num_threads ();
+mg.c:157:5: missed: statement clobbers memory: timer_stop (1);
+mg.c:158:9: missed: statement clobbers memory: t_292 = timer_read (1);
+mg.c:159:13: missed: statement clobbers memory: tinit_294 = timer_read (2);
+mg.c:162:5: missed: statement clobbers memory: printf (" Initialization time: %15.3f seconds\n", tinit_294);
+mg.c:163:5: missed: statement clobbers memory: __builtin_puts (&" Benchmark completed"[0]);
+mg.c:183:6: missed: statement clobbers memory: __builtin_puts (&" VERIFICATION FAILED"[0]);
+mg.c:184:6: missed: statement clobbers memory: printf (" L2 Norm is             %20.12e\n", rnm2.122_167);
+mg.c:185:6: missed: statement clobbers memory: printf (" The correct L2 Norm is %20.12e\n", verify_value_193);
+mg.c:178:6: missed: statement clobbers memory: __builtin_puts (&" VERIFICATION SUCCESSFUL"[0]);
+mg.c:179:6: missed: statement clobbers memory: printf (" L2 Norm is %20.12e\n", rnm2.122_167);
+mg.c:180:6: missed: statement clobbers memory: printf (" Error is   %20.12e\n", _168);
+mg.c:189:2: missed: statement clobbers memory: __builtin_puts (&" Problem size unknown"[0]);
+mg.c:190:2: missed: statement clobbers memory: __builtin_puts (&" NO VERIFICATION PERFORMED"[0]);
+mg.c:198:5: missed: statement clobbers memory: c_print_results ("MG", _187, pretmp_556, pretmp_557, pretmp_558, pretmp_559, nthreads_289, t_292, mflops_192, "          floating point", verified_194, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "randdp");
+mg.c:205:23: missed: couldn't vectorize loop
+mg.c:206:12: missed: not vectorized, possible dependence between data-refs nx[_1] and nx[k_68]
+mg.c:225:2: missed: statement clobbers memory: __builtin_puts (&" in setup, "[0]);
+mg.c:226:2: missed: statement clobbers memory: __builtin_puts (&"  lt  nx  ny  nz  n1  n2  n3 is1 is2 is3 ie1 ie2 ie3"[0]);
+mg.c:227:2: missed: statement clobbers memory: printf ("%4d%4d%4d%4d%4d%4d%4d%4d%4d%4d%4d%4d%4d\n", lt_38(D), _32, _31, _30, _29, _28, _27, is1.140_26, is2.139_25, is3.138_24, ie1.137_23, ie2.136_22, ie3.135_21);
+mg.c:501:21: missed: couldn't vectorize loop
+mg.c:501:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:502:18: missed: couldn't vectorize loop
+mg.c:502:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:503:29: missed: couldn't vectorize loop
+mg.c:495:13: missed: not vectorized: unsupported use in stmt.
+mg.c:511:10: missed: statement clobbers memory: _59 = sqrt (_21);
+mg.c:680:15: missed: couldn't vectorize loop
+mg.c:680:15: missed: not vectorized: unsupported control flow in loop.
+mg.c:681:30: missed: statement clobbers memory: randlc (&power, prephitmp_1);
+mg.c:682:11: missed: statement clobbers memory: randlc (&aj, prephitmp_17);
+mg.c:536:22: missed: couldn't vectorize loop
+mg.c:538:32: missed: failed: evolution of base is not affine.
+mg.c:523:22: missed: couldn't vectorize loop
+mg.c:523:22: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:524:19: missed: couldn't vectorize loop
+mg.c:525:29: missed: not vectorized: no vectype for stmt: _11 = *_10;
+ scalar_type: double *
+mg.c:649:22: missed: couldn't vectorize loop
+mg.c:650:3: missed: not vectorized: no vectype for stmt: _163 = *_162;
+ scalar_type: double * *
+mg.c:646:22: missed: couldn't vectorize loop
+mg.c:647:3: missed: not vectorized: no vectype for stmt: _147 = *_146;
+ scalar_type: double * *
+mg.c:639:21: missed: couldn't vectorize loop
+mg.c:642:17: missed: statement clobbers memory: __builtin_memset (_134, 0, _2378);
+mg.c:640:18: missed: couldn't vectorize loop
+mg.c:642:17: missed: statement clobbers memory: __builtin_memset (_134, 0, _2378);
+mg.c:607:25: missed: couldn't vectorize loop
+mg.c:544:13: missed: not vectorized: unsupported use in stmt.
+mg.c:607:25: missed: couldn't vectorize loop
+mg.c:607:25: missed: not vectorized: unsupported control flow in loop.
+mg.c:585:21: missed: couldn't vectorize loop
+mg.c:585:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:586:18: missed: couldn't vectorize loop
+mg.c:586:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:587:29: missed: couldn't vectorize loop
+mg.c:587:29: missed: not vectorized: unsupported control flow in loop.
+mg.c:566:21: missed: couldn't vectorize loop
+mg.c:566:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:568:18: missed: couldn't vectorize loop
+mg.c:568:18: missed: not vectorized: latch block not empty.
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_16, 0, _2373);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_16, 0, _2373);
+mg.c:555:10: missed: statement clobbers memory: a1_2 = power.constprop (nx_1(D));
+mg.c:556:10: missed: statement clobbers memory: a2_5 = power.constprop (_4);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_16, 0, _2373);
+mg.c:559:10: missed: statement clobbers memory: ai_37 = power.constprop (i_36);
+mg.c:565:14: missed: statement clobbers memory: randlc (&x0, ai_37);
+mg.c:570:13: missed: statement clobbers memory: vranlc (d1_41, &xx, 1.220703125e+9, _61);
+mg.c:571:22: missed: statement clobbers memory: randlc (&x1, a1_2);
+mg.c:573:11: missed: statement clobbers memory: randlc (&x0, a2_5);
+mg.c:642:17: missed: statement clobbers memory: __builtin_memset (_134, 0, _2378);
+mg.c:652:5: missed: statement clobbers memory: comm3.isra (z_9(D), n1_22(D), n2_24(D), n3_26(D));
+mg.c:501:21: missed: couldn't vectorize loop
+mg.c:501:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:502:18: missed: couldn't vectorize loop
+mg.c:502:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:503:29: missed: couldn't vectorize loop
+mg.c:513:13: missed: not vectorized: unsupported use in stmt.
+mg.c:511:10: missed: statement clobbers memory: _56 = sqrt (_50);
+mg.c:517:5: missed: statement clobbers memory: printf (" Level%2d in %8s: norms =%21.14e%21.14e\n", kk_7(D), title_13(D), _54, tmp_29);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _151);
+mg.c:289:21: missed: couldn't vectorize loop
+mg.c:289:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:290:18: missed: couldn't vectorize loop
+mg.c:290:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:305:5: missed: statement clobbers memory: comm3.isra (r_116(D), n1_117(D), n2_118(D), n3_115(D));
+mg.c:307:2: missed: statement clobbers memory: rep_nrm (r_116(D), n1_117(D), n2_118(D), n3_115(D), "   resid", k_119(D));
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _151);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _152);
+mg.c:260:21: missed: couldn't vectorize loop
+mg.c:260:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:261:18: missed: couldn't vectorize loop
+mg.c:261:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:277:5: missed: statement clobbers memory: comm3.isra (u_118(D), n1_119(D), n2_120(D), n3_117(D));
+mg.c:279:2: missed: statement clobbers memory: rep_nrm (u_118(D), n1_119(D), n2_120(D), n3_117(D), "   psinv", k_121(D));
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _152);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _223);
+mg.c:332:21: missed: couldn't vectorize loop
+mg.c:332:21: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:334:18: missed: couldn't vectorize loop
+mg.c:334:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:336:29: missed: couldn't vectorize loop
+mg.c:338:23: missed: not vectorized: no vectype for stmt: _16 = *_15;
+ scalar_type: double
+mg.c:357:5: missed: statement clobbers memory: comm3.isra (s_184(D), m1j_185(D), m2j_186(D), m3j_182(D));
+mg.c:359:2: missed: statement clobbers memory: rep_nrm (s_184(D), m1j_185(D), m2j_186(D), m3j_182(D), "   rprj3", _162);
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _223);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _679);
+mg.c:661:21: missed: couldn't vectorize loop
+mg.c:661:21: missed: not vectorized: unsupported control flow in loop.
+mg.c:662:18: missed: couldn't vectorize loop
+mg.c:662:18: missed: not vectorized: unsupported control flow in loop.
+mg.c:663:22: missed: couldn't vectorize loop
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _700);
+mg.c:370:18: missed: couldn't vectorize loop
+mg.c:370:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:371:29: missed: couldn't vectorize loop
+mg.c:371:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:453:19: missed: couldn't vectorize loop
+mg.c:453:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:467:23: missed: couldn't vectorize loop
+mg.c:467:23: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:454:31: missed: couldn't vectorize loop
+mg.c:454:31: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:426:20: missed: couldn't vectorize loop
+mg.c:426:20: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:439:30: missed: couldn't vectorize loop
+mg.c:439:30: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:427:31: missed: couldn't vectorize loop
+mg.c:427:31: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+mg.c:487:2: missed: statement clobbers memory: rep_nrm (z_624(D), mm1_615(D), mm2_613(D), mm3_612(D), "z: inter", _555);
+mg.c:488:2: missed: statement clobbers memory: rep_nrm (u_617(D), n1_608(D), n2_609(D), n3_610(D), "u: inter", k_654(D));
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _700);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:660:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:664:3: missed: statement clobbers memory: printf ("%6.3f", _679);
+mg.c:666:6: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:668:2: missed: statement clobbers memory: __builtin_puts (&" - - - - - - - "[0]);
+mg.c:670:5: missed: statement clobbers memory: __builtin_putchar (10);
+mg.c:242:22: missed: couldn't vectorize loop
+mg.c:242:22: missed: not vectorized: unsupported control flow in loop.
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_68, 0, _243);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_68, 0, _243);
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_37, 0, _238);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_37, 0, _238);
+mg.c:234:20: missed: couldn't vectorize loop
+mg.c:234:20: missed: not vectorized: number of iterations cannot be computed.
+mg.c:236:2: missed: statement clobbers memory: rprj3 (_18, _14, _13, _12, _11, _6, _5, _4, k_164);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_37, 0, _238);
+mg.c:241:5: missed: statement clobbers memory: psinv (_46, _27, _22, _21, _20, c_47(D), lb.162_165);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_68, 0, _243);
+mg.c:245:2: missed: statement clobbers memory: interp (_82, _78, _77, _76, _58, _54, _53, _52, k_169);
+mg.c:247:2: missed: statement clobbers memory: resid (_88, _87, _87, _85, _84, _83, a_89(D), k_169);
+mg.c:248:2: missed: statement clobbers memory: psinv (_94, _93, _92, _91, _90, c_47(D), k_169);
+mg.c:252:5: missed: statement clobbers memory: interp (_108, _104, _103, _102, _101, n1_109(D), n2_110(D), n3_111(D), lt.164_173);
+mg.c:253:5: missed: statement clobbers memory: resid (_118, v_119(D), _116, n1_109(D), n2_110(D), n3_111(D), a_89(D), lt.164_173);
+mg.c:254:5: missed: statement clobbers memory: psinv (_126, _124, n1_109(D), n2_110(D), n3_111(D), c_47(D), lt.164_173);
+mg.c:147:22: missed: couldn't vectorize loop
+mg.c:147:22: missed: not vectorized: number of iterations cannot be computed.
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_352, 0, _552);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_352, 0, _552);
+mg.c:733:20: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_369, 0, _547);
+mg.c:734:18: missed: couldn't vectorize loop
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_369, 0, _547);
+mg.c:121:20: missed: couldn't vectorize loop
+mg.c:121:20: missed: not vectorized: unsupported control flow in loop.
+mg.c:123:16: missed: couldn't vectorize loop
+mg.c:123:16: missed: not vectorized: unsupported control flow in loop.
+mg.c:125:20: missed: couldn't vectorize loop
+mg.c:126:26: missed: statement clobbers memory: _84 = malloc (_511);
+mg.c:114:19: missed: couldn't vectorize loop
+mg.c:114:19: missed: not vectorized: unsupported control flow in loop.
+mg.c:116:16: missed: couldn't vectorize loop
+mg.c:117:26: missed: statement clobbers memory: _63 = malloc (_495);
+mg.c:104:20: missed: couldn't vectorize loop
+mg.c:104:20: missed: not vectorized: unsupported control flow in loop.
+mg.c:106:16: missed: couldn't vectorize loop
+mg.c:106:16: missed: not vectorized: unsupported control flow in loop.
+mg.c:108:20: missed: couldn't vectorize loop
+mg.c:109:26: missed: statement clobbers memory: _46 = malloc (_478);
+mg.c:56:16: missed: couldn't vectorize loop
+mg.c:57:6: missed: statement clobbers memory: fscanf (fp_226, "%d", _8);
+mg.c:55:18: missed: couldn't vectorize loop
+mg.c:55:18: missed: not vectorized: number of iterations cannot be computed.
+mg.c:53:18: missed: couldn't vectorize loop
+mg.c:53:18: missed: not vectorized: number of iterations cannot be computed.
+mg.c:51:18: missed: couldn't vectorize loop
+mg.c:51:18: missed: not vectorized: number of iterations cannot be computed.
+mg.c:42:5: missed: statement clobbers memory: timer_clear (1);
+mg.c:43:5: missed: statement clobbers memory: timer_clear (2);
+mg.c:44:5: missed: statement clobbers memory: timer_start (2);
+mg.c:45:5: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - MG Benchmark\n"[0]);
+mg.c:47:10: missed: statement clobbers memory: fp_226 = fopen ("mg.input", "r");
+mg.c:61:2: missed: statement clobbers memory: __builtin_puts (&" No input file. Using compiled defaults"[0]);
+mg.c:68:19: missed: statement clobbers memory: __builtin_memset (&debug_vec, 0, 32);
+mg.c:49:2: missed: statement clobbers memory: __builtin_puts (&" Reading from input file mg.input"[0]);
+mg.c:50:2: missed: statement clobbers memory: fscanf (fp_226, "%d", &lt);
+mg.c:51:8: missed: statement clobbers memory: _1 = fgetc (fp_226);
+mg.c:52:2: missed: statement clobbers memory: fscanf (fp_226, "%d%d%d", _5, _4, _3);
+mg.c:53:8: missed: statement clobbers memory: _6 = fgetc (fp_226);
+mg.c:54:2: missed: statement clobbers memory: fscanf (fp_226, "%d", &nit);
+mg.c:55:8: missed: statement clobbers memory: _7 = fgetc (fp_226);
+mg.c:57:6: missed: statement clobbers memory: fscanf (fp_226, "%d", _8);
+mg.c:59:2: missed: statement clobbers memory: fclose (fp_226);
+mg.c:102:5: missed: statement clobbers memory: setup (&n1, &n2, &n3, lt.6_10);
+mg.c:103:22: missed: statement clobbers memory: u_268 = malloc (_25);
+mg.c:105:21: missed: statement clobbers memory: _32 = malloc (_28);
+mg.c:107:27: missed: statement clobbers memory: _39 = malloc (_474);
+mg.c:109:26: missed: statement clobbers memory: _46 = malloc (_478);
+mg.c:113:21: missed: statement clobbers memory: v_270 = malloc (_49);
+mg.c:115:20: missed: statement clobbers memory: _56 = malloc (_491);
+mg.c:117:26: missed: statement clobbers memory: _63 = malloc (_495);
+mg.c:120:22: missed: statement clobbers memory: r_272 = malloc (_25);
+mg.c:122:21: missed: statement clobbers memory: _70 = malloc (_66);
+mg.c:124:27: missed: statement clobbers memory: _77 = malloc (_507);
+mg.c:126:26: missed: statement clobbers memory: _84 = malloc (_511);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_369, 0, _547);
+mg.c:131:5: missed: statement clobbers memory: zran3.isra (v_270, n1.32_87, n2.31_86, n3.30_85, _93, _92);
+mg.c:132:5: missed: statement clobbers memory: norm2u3 (v_270, n1.32_87, n2.31_86, n3.30_85, &rnm2, &rnmu, _97, _96, _95);
+mg.c:133:5: missed: statement clobbers memory: printf (" Size: %3dx%3dx%3d (class %1c)\n", _97, _96, _95, _99);
+mg.c:135:5: missed: statement clobbers memory: printf (" Iterations: %3d\n", nit.50_100);
+mg.c:136:5: missed: statement clobbers memory: resid (_107, v_270, _105, n1.32_87, n2.31_86, n3.30_85, &a, lt.51_101);
+mg.c:137:5: missed: statement clobbers memory: norm2u3 (_115, n1.32_87, n2.31_86, n3.30_85, &rnm2, &rnmu, _111, _110, _109);
+mg.c:138:5: missed: statement clobbers memory: mg3P.constprop (u_268, v_270, r_272, &a, &c, n1.32_87, n2.31_86, n3.30_85);
+mg.c:139:5: missed: statement clobbers memory: resid (_122, v_270, _120, n1.32_87, n2.31_86, n3.30_85, &a, lt.68_116);
+mg.c:140:5: missed: statement clobbers memory: setup (&n1, &n2, &n3, lt.74_123);
+mg.c:736:17: missed: statement clobbers memory: __builtin_memset (_352, 0, _552);
+mg.c:142:5: missed: statement clobbers memory: zran3.isra (v_270, n1.77_126, n2.76_125, n3.75_124, _133, _132);
+mg.c:143:5: missed: statement clobbers memory: timer_stop (2);
+mg.c:144:5: missed: statement clobbers memory: timer_start (1);
+mg.c:145:5: missed: statement clobbers memory: resid (_140, v_270, _138, n1.77_126, n2.76_125, n3.75_124, &a, lt.85_134);
+mg.c:146:5: missed: statement clobbers memory: norm2u3 (_148, n1.77_126, n2.76_125, n3.75_124, &rnm2, &rnmu, _144, _143, _142);
+mg.c:148:2: missed: statement clobbers memory: mg3P.constprop (u_268, v_270, r_272, &a, &c, n1.77_126, n2.76_125, n3.75_124);
+mg.c:149:2: missed: statement clobbers memory: resid (_156, v_270, _154, n1.77_126, n2.76_125, n3.75_124, &a, lt.102_150);
+mg.c:151:5: missed: statement clobbers memory: norm2u3 (_165, n1.77_126, n2.76_125, n3.75_124, &rnm2, &rnmu, _161, _160, _159);
+mg.c:154:14: missed: statement clobbers memory: nthreads_289 = omp_get_num_threads ();
+mg.c:157:5: missed: statement clobbers memory: timer_stop (1);
+mg.c:158:9: missed: statement clobbers memory: t_292 = timer_read (1);
+mg.c:159:13: missed: statement clobbers memory: tinit_294 = timer_read (2);
+mg.c:162:5: missed: statement clobbers memory: printf (" Initialization time: %15.3f seconds\n", tinit_294);
+mg.c:163:5: missed: statement clobbers memory: __builtin_puts (&" Benchmark completed"[0]);
+mg.c:183:6: missed: statement clobbers memory: __builtin_puts (&" VERIFICATION FAILED"[0]);
+mg.c:184:6: missed: statement clobbers memory: printf (" L2 Norm is             %20.12e\n", rnm2.122_167);
+mg.c:185:6: missed: statement clobbers memory: printf (" The correct L2 Norm is %20.12e\n", verify_value_193);
+mg.c:178:6: missed: statement clobbers memory: __builtin_puts (&" VERIFICATION SUCCESSFUL"[0]);
+mg.c:179:6: missed: statement clobbers memory: printf (" L2 Norm is %20.12e\n", rnm2.122_167);
+mg.c:180:6: missed: statement clobbers memory: printf (" Error is   %20.12e\n", _168);
+mg.c:189:2: missed: statement clobbers memory: __builtin_puts (&" Problem size unknown"[0]);
+mg.c:190:2: missed: statement clobbers memory: __builtin_puts (&" NO VERIFICATION PERFORMED"[0]);
+mg.c:198:5: missed: statement clobbers memory: c_print_results ("MG", _187, pretmp_556, pretmp_557, pretmp_558, pretmp_559, nthreads_289, t_292, mflops_192, "          floating point", verified_194, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "randdp");

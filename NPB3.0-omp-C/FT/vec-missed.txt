@@ -1,0 +1,382 @@
+ft.c:351:19: missed: couldn't vectorize loop
+ft.c:351:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:353:16: missed: couldn't vectorize loop
+ft.c:355:26: missed: not vectorized: no vectype for stmt: u[_4].real = _5;
+ scalar_type: double
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:214:19: missed: couldn't vectorize loop
+ft.c:215:12: missed: not vectorized: no vectype for stmt: _35 = ex[_34];
+ scalar_type: double
+ft.c:199:19: missed: couldn't vectorize loop
+ft.c:199:19: missed: not vectorized: multiple nested loops.
+ft.c:202:16: missed: couldn't vectorize loop
+ft.c:207:21: missed: not vectorized: complicated access pattern.
+ft.c:159:14: missed: couldn't vectorize loop
+ft.c:159:14: missed: not vectorized: unsupported control flow in loop.
+ft.c:165:21: missed: statement clobbers memory: randlc (&r, prephitmp_23);
+ft.c:162:21: missed: statement clobbers memory: randlc (&q, prephitmp_23);
+ft.c:169:13: missed: statement clobbers memory: randlc (&r, q.16_7);
+ft.c:139:19: missed: couldn't vectorize loop
+ft.c:139:19: missed: not vectorized: could not determine main exit from loop with multiple exits.
+ft.c:143:16: missed: couldn't vectorize loop
+ft.c:145:23: missed: not vectorized: complicated access pattern.
+ft.c:130:13: missed: statement clobbers memory: ipow46.part.0.constprop (_7, &an);
+ft.c:137:13: missed: statement clobbers memory: randlc (&start, an.9_8);
+ft.c:130:13: missed: statement clobbers memory: ipow46.part.0.constprop (32768, &an);
+ft.c:141:9: missed: statement clobbers memory: vranlc (_11, &x0, 1.220703125e+9, &tmp);
+ft.c:148:38: missed: statement clobbers memory: randlc (&start, an.13_27);
+ft.c:404:19: missed: couldn't vectorize loop
+ft.c:404:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:416:23: missed: couldn't vectorize loop
+ft.c:426:20: missed: not vectorized: complicated access pattern.
+ft.c:420:18: missed: couldn't vectorize loop
+ft.c:426:20: missed: not vectorized: complicated access pattern.
+ft.c:386:13: missed: not vectorized: vectorization is not profitable.
+ft.c:386:13: missed: not vectorized: vectorization is not profitable.
+ft.c:378:16: missed: couldn't vectorize loop
+ft.c:380:16: missed: not vectorized: complicated access pattern.
+ft.c:380:19: missed: couldn't vectorize loop
+ft.c:380:16: missed: not vectorized: complicated access pattern.
+ft.c:372:19: missed: couldn't vectorize loop
+ft.c:373:9: missed: statement clobbers memory: fftz2.constprop (l_45, m_6(D), n_10(D), pretmp_33, x_11(D), y_12(D));
+ft.c:373:9: missed: statement clobbers memory: fftz2.constprop (l_45, m_6(D), n_10(D), pretmp_33, x_11(D), y_12(D));
+ft.c:375:2: missed: statement clobbers memory: fftz2.constprop (_21, m_6(D), n_10(D), pretmp_33, y_12(D), x_11(D));
+ft.c:367:2: missed: statement clobbers memory: printf ("CFFTZ: Either U has not been initialized, or else\none of the input parameters is invalid%5d%5d%5d\n", -1, m_6(D), mx_2);
+ft.c:370:2: missed: statement clobbers memory: exit (1);
+ft.c:404:19: missed: couldn't vectorize loop
+ft.c:404:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:416:23: missed: couldn't vectorize loop
+ft.c:426:20: missed: not vectorized: complicated access pattern.
+ft.c:420:18: missed: couldn't vectorize loop
+ft.c:426:20: missed: not vectorized: complicated access pattern.
+ft.c:386:13: missed: not vectorized: vectorization is not profitable.
+ft.c:386:13: missed: not vectorized: vectorization is not profitable.
+ft.c:378:16: missed: couldn't vectorize loop
+ft.c:380:16: missed: not vectorized: complicated access pattern.
+ft.c:380:19: missed: couldn't vectorize loop
+ft.c:380:16: missed: not vectorized: complicated access pattern.
+ft.c:372:19: missed: couldn't vectorize loop
+ft.c:373:9: missed: statement clobbers memory: fftz2.constprop (l_45, m_6(D), n_10(D), pretmp_33, x_11(D), y_12(D));
+ft.c:373:9: missed: statement clobbers memory: fftz2.constprop (l_45, m_6(D), n_10(D), pretmp_33, x_11(D), y_12(D));
+ft.c:375:2: missed: statement clobbers memory: fftz2.constprop (_21, m_6(D), n_10(D), pretmp_33, y_12(D), x_11(D));
+ft.c:367:2: missed: statement clobbers memory: printf ("CFFTZ: Either U has not been initialized, or else\none of the input parameters is invalid%5d%5d%5d\n", 1, m_6(D), mx_2);
+ft.c:370:2: missed: statement clobbers memory: exit (1);
+ft.c:632:16: missed: couldn't vectorize loop
+ft.c:633:20: missed: not vectorized: no vectype for stmt: _29 = sums[i_190].real;
+ scalar_type: double
+ft.c:699:2: missed: statement clobbers memory: __builtin_puts (&"Result verification failed"[0]);
+ft.c:697:2: missed: statement clobbers memory: __builtin_puts (&"Result verification successful"[0]);
+ft.c:701:5: missed: statement clobbers memory: printf ("class = %1c\n", _94);
+ft.c:322:19: missed: couldn't vectorize loop
+ft.c:322:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:323:25: missed: couldn't vectorize loop
+ft.c:323:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:332:26: missed: couldn't vectorize loop
+ft.c:334:28: missed: not vectorized: complicated access pattern.
+ft.c:324:20: missed: couldn't vectorize loop
+ft.c:326:36: missed: not vectorized: complicated access pattern.
+ft.c:316:18: missed: couldn't vectorize loop
+ft.c:316:18: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:290:19: missed: couldn't vectorize loop
+ft.c:290:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:291:25: missed: couldn't vectorize loop
+ft.c:291:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:300:26: missed: couldn't vectorize loop
+ft.c:302:28: missed: not vectorized: complicated access pattern.
+ft.c:292:20: missed: couldn't vectorize loop
+ft.c:294:36: missed: not vectorized: complicated access pattern.
+ft.c:284:19: missed: couldn't vectorize loop
+ft.c:284:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:258:19: missed: couldn't vectorize loop
+ft.c:258:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:259:18: missed: couldn't vectorize loop
+ft.c:259:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:268:27: missed: couldn't vectorize loop
+ft.c:270:27: missed: not vectorized: complicated access pattern.
+ft.c:260:27: missed: couldn't vectorize loop
+ft.c:262:36: missed: not vectorized: complicated access pattern.
+ft.c:252:19: missed: couldn't vectorize loop
+ft.c:252:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:266:13: missed: statement clobbers memory: cfftz.constprop (pretmp_150, pretmp_342, &y0, &y1);
+ft.c:298:6: missed: statement clobbers memory: cfftz.constprop (pretmp_139, prephitmp_167, &y0, &y1);
+ft.c:330:12: missed: statement clobbers memory: cfftz.constprop (pretmp_236, prephitmp_239, &y0, &y1);
+ft.c:258:19: missed: couldn't vectorize loop
+ft.c:258:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:259:18: missed: couldn't vectorize loop
+ft.c:259:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:268:27: missed: couldn't vectorize loop
+ft.c:270:27: missed: not vectorized: complicated access pattern.
+ft.c:260:27: missed: couldn't vectorize loop
+ft.c:262:36: missed: not vectorized: complicated access pattern.
+ft.c:252:19: missed: couldn't vectorize loop
+ft.c:252:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:290:19: missed: couldn't vectorize loop
+ft.c:290:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:291:25: missed: couldn't vectorize loop
+ft.c:291:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:300:26: missed: couldn't vectorize loop
+ft.c:302:28: missed: not vectorized: complicated access pattern.
+ft.c:292:20: missed: couldn't vectorize loop
+ft.c:294:36: missed: not vectorized: complicated access pattern.
+ft.c:284:19: missed: couldn't vectorize loop
+ft.c:284:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:322:19: missed: couldn't vectorize loop
+ft.c:322:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:323:25: missed: couldn't vectorize loop
+ft.c:323:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:332:26: missed: couldn't vectorize loop
+ft.c:334:28: missed: not vectorized: complicated access pattern.
+ft.c:324:20: missed: couldn't vectorize loop
+ft.c:326:36: missed: not vectorized: complicated access pattern.
+ft.c:316:18: missed: couldn't vectorize loop
+ft.c:316:18: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:330:12: missed: statement clobbers memory: cfftz.constprop (pretmp_24, prephitmp_144, &y0, &y1);
+ft.c:298:6: missed: statement clobbers memory: cfftz.constprop (pretmp_237, prephitmp_162, &y0, &y1);
+ft.c:266:13: missed: statement clobbers memory: cfftz.constprop (pretmp_208, pretmp_347, &y0, &y1);
+ft.c:73:25: missed: couldn't vectorize loop
+ft.c:73:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:453:19: missed: couldn't vectorize loop
+ft.c:453:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:122:19: missed: couldn't vectorize loop
+ft.c:122:19: missed: not vectorized: multiple nested loops.
+ft.c:123:16: missed: couldn't vectorize loop
+ft.c:125:8: missed: not vectorized: data ref analysis failed: _155 = ex[_157];
+ft.c:124:27: missed: couldn't vectorize loop
+ft.c:125:8: missed: not vectorized: no vectype for stmt: _158 = (*_188)[j_168][i_160].real;
+ scalar_type: double
+ft.c:122:19: missed: couldn't vectorize loop
+ft.c:122:19: missed: not vectorized: multiple nested loops.
+ft.c:123:16: missed: couldn't vectorize loop
+ft.c:125:8: missed: not vectorized: data ref analysis failed: _104 = ex[_103];
+ft.c:124:27: missed: couldn't vectorize loop
+ft.c:125:8: missed: not vectorized: no vectype for stmt: _99 = (*_96)[j_178][i_179].real;
+ scalar_type: double
+ft.c:55:19: missed: couldn't vectorize loop
+ft.c:56:2: missed: statement clobbers memory: timer_clear (i_163);
+ft.c:47:19: missed: couldn't vectorize loop
+ft.c:48:2: missed: statement clobbers memory: timer_clear (i_162);
+ft.c:48:2: missed: statement clobbers memory: timer_clear (i_162);
+ft.c:174:5: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - FT Benchmark\n"[0]);
+ft.c:177:5: missed: statement clobbers memory: printf (" Size                : %3dx%3dx%3d\n", 128, 128, 32);
+ft.c:178:5: missed: statement clobbers memory: printf (" Iterations          :     %7d\n", niter.6_52);
+ft.c:51:5: missed: statement clobbers memory: compute_indexmap.constprop ();
+ft.c:52:5: missed: statement clobbers memory: compute_initial_conditions.constprop ();
+ft.c:53:5: missed: statement clobbers memory: fft_init (_1);
+ft.c:54:5: missed: statement clobbers memory: fft.constprop ();
+ft.c:56:2: missed: statement clobbers memory: timer_clear (i_163);
+ft.c:58:5: missed: statement clobbers memory: timer_start (0);
+ft.c:60:5: missed: statement clobbers memory: compute_indexmap.constprop ();
+ft.c:61:5: missed: statement clobbers memory: compute_initial_conditions.constprop ();
+ft.c:62:5: missed: statement clobbers memory: fft_init (_2);
+ft.c:69:5: missed: statement clobbers memory: fft.constprop ();
+ft.c:84:13: missed: statement clobbers memory: fft.constprop ();
+ft.c:472:5: missed: statement clobbers memory: printf ("T = %5d     Checksum = %22.12e %22.12e\n", iter_164, _89, _90);
+ft.c:96:5: missed: statement clobbers memory: verify.constprop (niter.0_161, &verified, &class);
+ft.c:100:16: missed: statement clobbers memory: nthreads_36 = omp_get_num_threads ();
+ft.c:103:5: missed: statement clobbers memory: timer_stop (0);
+ft.c:104:18: missed: statement clobbers memory: total_time_39 = timer_read (0);
+ft.c:113:5: missed: statement clobbers memory: c_print_results ("FT", _12, 128, 128, 32, pretmp_199, nthreads_16, total_time_39, mflops_17, "          floating point", verified.3_9, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "randdp");
+ft.c:351:19: missed: couldn't vectorize loop
+ft.c:351:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:353:16: missed: couldn't vectorize loop
+ft.c:355:26: missed: not vectorized: no vectype for stmt: u[_4].real = _5;
+ scalar_type: double
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:214:19: missed: couldn't vectorize loop
+ft.c:215:12: missed: not vectorized: no vectype for stmt: _35 = ex[_34];
+ scalar_type: double
+ft.c:199:19: missed: couldn't vectorize loop
+ft.c:199:19: missed: not vectorized: multiple nested loops.
+ft.c:202:16: missed: couldn't vectorize loop
+ft.c:207:21: missed: not vectorized: complicated access pattern.
+ft.c:159:14: missed: couldn't vectorize loop
+ft.c:159:14: missed: not vectorized: unsupported control flow in loop.
+ft.c:165:21: missed: statement clobbers memory: randlc (&r, prephitmp_23);
+ft.c:162:21: missed: statement clobbers memory: randlc (&q, prephitmp_23);
+ft.c:169:13: missed: statement clobbers memory: randlc (&r, q.16_7);
+ft.c:139:19: missed: couldn't vectorize loop
+ft.c:139:19: missed: not vectorized: could not determine main exit from loop with multiple exits.
+ft.c:143:16: missed: couldn't vectorize loop
+ft.c:145:23: missed: not vectorized: complicated access pattern.
+ft.c:130:13: missed: statement clobbers memory: ipow46.part.0.constprop (_7, &an);
+ft.c:137:13: missed: statement clobbers memory: randlc (&start, an.9_8);
+ft.c:130:13: missed: statement clobbers memory: ipow46.part.0.constprop (32768, &an);
+ft.c:141:9: missed: statement clobbers memory: vranlc (_11, &x0, 1.220703125e+9, &tmp);
+ft.c:148:38: missed: statement clobbers memory: randlc (&start, an.13_27);
+ft.c:404:19: missed: couldn't vectorize loop
+ft.c:404:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:416:23: missed: couldn't vectorize loop
+ft.c:426:20: missed: not vectorized: complicated access pattern.
+ft.c:420:18: missed: couldn't vectorize loop
+ft.c:426:20: missed: not vectorized: complicated access pattern.
+ft.c:386:13: missed: not vectorized: vectorization is not profitable.
+ft.c:386:13: missed: not vectorized: vectorization is not profitable.
+ft.c:378:16: missed: couldn't vectorize loop
+ft.c:380:16: missed: not vectorized: complicated access pattern.
+ft.c:380:19: missed: couldn't vectorize loop
+ft.c:380:16: missed: not vectorized: complicated access pattern.
+ft.c:372:19: missed: couldn't vectorize loop
+ft.c:373:9: missed: statement clobbers memory: fftz2.constprop (l_45, m_6(D), n_10(D), pretmp_33, x_11(D), y_12(D));
+ft.c:373:9: missed: statement clobbers memory: fftz2.constprop (l_45, m_6(D), n_10(D), pretmp_33, x_11(D), y_12(D));
+ft.c:375:2: missed: statement clobbers memory: fftz2.constprop (_21, m_6(D), n_10(D), pretmp_33, y_12(D), x_11(D));
+ft.c:367:2: missed: statement clobbers memory: printf ("CFFTZ: Either U has not been initialized, or else\none of the input parameters is invalid%5d%5d%5d\n", -1, m_6(D), mx_2);
+ft.c:370:2: missed: statement clobbers memory: exit (1);
+ft.c:404:19: missed: couldn't vectorize loop
+ft.c:404:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:416:23: missed: couldn't vectorize loop
+ft.c:426:20: missed: not vectorized: complicated access pattern.
+ft.c:420:18: missed: couldn't vectorize loop
+ft.c:426:20: missed: not vectorized: complicated access pattern.
+ft.c:386:13: missed: not vectorized: vectorization is not profitable.
+ft.c:386:13: missed: not vectorized: vectorization is not profitable.
+ft.c:378:16: missed: couldn't vectorize loop
+ft.c:380:16: missed: not vectorized: complicated access pattern.
+ft.c:380:19: missed: couldn't vectorize loop
+ft.c:380:16: missed: not vectorized: complicated access pattern.
+ft.c:372:19: missed: couldn't vectorize loop
+ft.c:373:9: missed: statement clobbers memory: fftz2.constprop (l_45, m_6(D), n_10(D), pretmp_33, x_11(D), y_12(D));
+ft.c:373:9: missed: statement clobbers memory: fftz2.constprop (l_45, m_6(D), n_10(D), pretmp_33, x_11(D), y_12(D));
+ft.c:375:2: missed: statement clobbers memory: fftz2.constprop (_21, m_6(D), n_10(D), pretmp_33, y_12(D), x_11(D));
+ft.c:367:2: missed: statement clobbers memory: printf ("CFFTZ: Either U has not been initialized, or else\none of the input parameters is invalid%5d%5d%5d\n", 1, m_6(D), mx_2);
+ft.c:370:2: missed: statement clobbers memory: exit (1);
+ft.c:632:16: missed: couldn't vectorize loop
+ft.c:633:20: missed: not vectorized: no vectype for stmt: _29 = sums[i_190].real;
+ scalar_type: double
+ft.c:699:2: missed: statement clobbers memory: __builtin_puts (&"Result verification failed"[0]);
+ft.c:697:2: missed: statement clobbers memory: __builtin_puts (&"Result verification successful"[0]);
+ft.c:701:5: missed: statement clobbers memory: printf ("class = %1c\n", _94);
+ft.c:322:19: missed: couldn't vectorize loop
+ft.c:322:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:323:25: missed: couldn't vectorize loop
+ft.c:323:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:332:26: missed: couldn't vectorize loop
+ft.c:334:28: missed: not vectorized: complicated access pattern.
+ft.c:324:20: missed: couldn't vectorize loop
+ft.c:326:36: missed: not vectorized: complicated access pattern.
+ft.c:316:18: missed: couldn't vectorize loop
+ft.c:316:18: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:290:19: missed: couldn't vectorize loop
+ft.c:290:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:291:25: missed: couldn't vectorize loop
+ft.c:291:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:300:26: missed: couldn't vectorize loop
+ft.c:302:28: missed: not vectorized: complicated access pattern.
+ft.c:292:20: missed: couldn't vectorize loop
+ft.c:294:36: missed: not vectorized: complicated access pattern.
+ft.c:284:19: missed: couldn't vectorize loop
+ft.c:284:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:258:19: missed: couldn't vectorize loop
+ft.c:258:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:259:18: missed: couldn't vectorize loop
+ft.c:259:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:268:27: missed: couldn't vectorize loop
+ft.c:270:27: missed: not vectorized: complicated access pattern.
+ft.c:260:27: missed: couldn't vectorize loop
+ft.c:262:36: missed: not vectorized: complicated access pattern.
+ft.c:252:19: missed: couldn't vectorize loop
+ft.c:252:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:266:13: missed: statement clobbers memory: cfftz.constprop (pretmp_150, pretmp_342, &y0, &y1);
+ft.c:298:6: missed: statement clobbers memory: cfftz.constprop (pretmp_139, prephitmp_167, &y0, &y1);
+ft.c:330:12: missed: statement clobbers memory: cfftz.constprop (pretmp_236, prephitmp_239, &y0, &y1);
+ft.c:258:19: missed: couldn't vectorize loop
+ft.c:258:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:259:18: missed: couldn't vectorize loop
+ft.c:259:18: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:268:27: missed: couldn't vectorize loop
+ft.c:270:27: missed: not vectorized: complicated access pattern.
+ft.c:260:27: missed: couldn't vectorize loop
+ft.c:262:36: missed: not vectorized: complicated access pattern.
+ft.c:252:19: missed: couldn't vectorize loop
+ft.c:252:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:290:19: missed: couldn't vectorize loop
+ft.c:290:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:291:25: missed: couldn't vectorize loop
+ft.c:291:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:300:26: missed: couldn't vectorize loop
+ft.c:302:28: missed: not vectorized: complicated access pattern.
+ft.c:292:20: missed: couldn't vectorize loop
+ft.c:294:36: missed: not vectorized: complicated access pattern.
+ft.c:284:19: missed: couldn't vectorize loop
+ft.c:284:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:322:19: missed: couldn't vectorize loop
+ft.c:322:19: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:323:25: missed: couldn't vectorize loop
+ft.c:323:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:332:26: missed: couldn't vectorize loop
+ft.c:334:28: missed: not vectorized: complicated access pattern.
+ft.c:324:20: missed: couldn't vectorize loop
+ft.c:326:36: missed: not vectorized: complicated access pattern.
+ft.c:316:18: missed: couldn't vectorize loop
+ft.c:316:18: missed: not vectorized: unsupported control flow in loop.
+ft.c:441:15: missed: couldn't vectorize loop
+ft.c:441:15: missed: not vectorized: number of iterations cannot be computed.
+ft.c:330:12: missed: statement clobbers memory: cfftz.constprop (pretmp_24, prephitmp_144, &y0, &y1);
+ft.c:298:6: missed: statement clobbers memory: cfftz.constprop (pretmp_237, prephitmp_162, &y0, &y1);
+ft.c:266:13: missed: statement clobbers memory: cfftz.constprop (pretmp_208, pretmp_347, &y0, &y1);
+ft.c:73:25: missed: couldn't vectorize loop
+ft.c:73:25: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+ft.c:453:19: missed: couldn't vectorize loop
+ft.c:453:19: missed: not vectorized: unsupported control flow in loop.
+ft.c:122:19: missed: couldn't vectorize loop
+ft.c:122:19: missed: not vectorized: multiple nested loops.
+ft.c:123:16: missed: couldn't vectorize loop
+ft.c:125:8: missed: not vectorized: data ref analysis failed: _155 = ex[_157];
+ft.c:124:27: missed: couldn't vectorize loop
+ft.c:125:8: missed: not vectorized: no vectype for stmt: _158 = (*_188)[j_168][i_160].real;
+ scalar_type: double
+ft.c:122:19: missed: couldn't vectorize loop
+ft.c:122:19: missed: not vectorized: multiple nested loops.
+ft.c:123:16: missed: couldn't vectorize loop
+ft.c:125:8: missed: not vectorized: data ref analysis failed: _104 = ex[_103];
+ft.c:124:27: missed: couldn't vectorize loop
+ft.c:125:8: missed: not vectorized: no vectype for stmt: _99 = (*_96)[j_178][i_179].real;
+ scalar_type: double
+ft.c:55:19: missed: couldn't vectorize loop
+ft.c:56:2: missed: statement clobbers memory: timer_clear (i_163);
+ft.c:47:19: missed: couldn't vectorize loop
+ft.c:48:2: missed: statement clobbers memory: timer_clear (i_162);
+ft.c:48:2: missed: statement clobbers memory: timer_clear (i_162);
+ft.c:174:5: missed: statement clobbers memory: __builtin_puts (&"\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version - FT Benchmark\n"[0]);
+ft.c:177:5: missed: statement clobbers memory: printf (" Size                : %3dx%3dx%3d\n", 128, 128, 32);
+ft.c:178:5: missed: statement clobbers memory: printf (" Iterations          :     %7d\n", niter.6_52);
+ft.c:51:5: missed: statement clobbers memory: compute_indexmap.constprop ();
+ft.c:52:5: missed: statement clobbers memory: compute_initial_conditions.constprop ();
+ft.c:53:5: missed: statement clobbers memory: fft_init (_1);
+ft.c:54:5: missed: statement clobbers memory: fft.constprop ();
+ft.c:56:2: missed: statement clobbers memory: timer_clear (i_163);
+ft.c:58:5: missed: statement clobbers memory: timer_start (0);
+ft.c:60:5: missed: statement clobbers memory: compute_indexmap.constprop ();
+ft.c:61:5: missed: statement clobbers memory: compute_initial_conditions.constprop ();
+ft.c:62:5: missed: statement clobbers memory: fft_init (_2);
+ft.c:69:5: missed: statement clobbers memory: fft.constprop ();
+ft.c:84:13: missed: statement clobbers memory: fft.constprop ();
+ft.c:472:5: missed: statement clobbers memory: printf ("T = %5d     Checksum = %22.12e %22.12e\n", iter_164, _89, _90);
+ft.c:96:5: missed: statement clobbers memory: verify.constprop (niter.0_161, &verified, &class);
+ft.c:100:16: missed: statement clobbers memory: nthreads_36 = omp_get_num_threads ();
+ft.c:103:5: missed: statement clobbers memory: timer_stop (0);
+ft.c:104:18: missed: statement clobbers memory: total_time_39 = timer_read (0);
+ft.c:113:5: missed: statement clobbers memory: c_print_results ("FT", _12, 128, 128, 32, pretmp_199, nthreads_16, total_time_39, mflops_17, "          floating point", verified.3_9, "3.0 structured", "25 Jun 2025", "gcc", "gcc", "-lm", "-I../common", "-O3 -fopenmp -fopt-info-vec-missed=vec-miss...", "-fopenmp -lm", "randdp");
