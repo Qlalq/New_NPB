@@ -79,7 +79,7 @@ int ilog2(int i);
 
 enum benchmark_types {SP, BT, LU, MG, FT, IS, EP, CG};
 
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
   int type;
   char class, class_old;

@@ -92,7 +92,7 @@ C_INC = -I../common
 #---------------------------------------------------------------------------
 # Global *compile time* flags for C programs
 #---------------------------------------------------------------------------
-CFLAGS	= -O3 -fopenmp -fopt-info-vec-missed=vec-missed.txt
+CFLAGS	= -O3 -fopenmp -pg -g -fopt-info-vec-missed=vec-missed.txt
 
 #---------------------------------------------------------------------------
 # Global *link time* flags. Flags for increasing maximum executable 
