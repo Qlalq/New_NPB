@@ -1,7 +1,8 @@
-from project import init_NPB, replace_NPB, run_NPB
+from project import *
 
 # 设置参数
-benchmarks = ["BT", "CG", "EP", "FT", "LU", "MG", "SP"]
+# benchmarks = ["BT", "CG", "EP", "FT", "LU", "MG", "SP"]
+benchmarks = ["CG", "MG"]
 class_type = "W"  # 可选 S, W, A, B, C 等
 num_runs = 5  # 运行次数
 
@@ -12,7 +13,7 @@ for benchmark in benchmarks:
     print(f"\n正在测试 {benchmark}...")
     
     # 初始化原始源文件
-    init_NPB(benchmark)
+    init_NPB(benchmark, "autoPar")
     
     # 记录所有运行时间
     runtimes = []

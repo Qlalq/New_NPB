@@ -8,22 +8,33 @@ base_dir = os.environ.get("BASE_DIR")
 NPB_dir = f"{base_dir}/NPB3.0-omp-C"
 
 
-def init_NPB(bench):
+def init_NPB(bench, mode="no_omp"):
     """
     NPB bench初始化
     
     Args:
         bench (str): NPB 基准测试名称，例如 "BT"
+        mode (str): 初始化模式
+            - "no_omp": 使用 {bench_lower}_#_omp.c (默认)
+            - "ori": 使用 {bench_lower}_ori.c  
+            - "autoPar": 使用 rose_{bench_lower}_#_omp.c
     """
     bench_lower = bench.lower()
-
-    src_file = f"{NPB_dir}/{bench}/{bench_lower}_#_omp.c"
+    
+    # 根据模式确定源文件路径
+    if mode == "no_omp":
+        src_file = f"{NPB_dir}/{bench}/{bench_lower}_#_omp.c"
+    elif mode == "ori":
+        src_file = f"{NPB_dir}/{bench}/{bench_lower}_ori.c"
+    elif mode == "autoPar":
+        src_file = f"{NPB_dir}/{bench}/rose_{bench_lower}_#_omp.c"
+    else:
+        raise ValueError(f"不支持的模式: {mode}. 支持的模式: 'no_omp', 'ori', 'autoPar'")
+    
     dst_file = f"{NPB_dir}/{bench}/{bench_lower}.c"
     shutil.copy(src_file, dst_file)
     
-    print(f"{bench} has been initialized")
-
-
+    print(f"{bench} has been initialized with mode '{mode}'")
 
 def replace_NPB(bench, function, folder):
     """
@@ -79,7 +90,7 @@ def replace_NPB(bench, function, folder):
         print(f"替换过程中出错: {e}，跳过替换")
 
 
-def run_NPB(bench, CLASS, timeout=20):
+def run_NPB(bench, CLASS, timeout=300):
     """
     执行 NPB , 返回结果正确性 & 执行时间
     
