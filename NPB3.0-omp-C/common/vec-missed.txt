@@ -23,3 +23,5 @@ c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
 c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
 c_timers.c:15:5: missed: statement clobbers memory: wtime_ (&t);
 ../common/wtime.c:8:3: missed: statement clobbers memory: gettimeofday (&tv, 0B);
+c_randdp.c:118:5: missed: couldn't vectorize loop
+c_randdp.c:127:12: missed: not vectorized: unsupported use in stmt.

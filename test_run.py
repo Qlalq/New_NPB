@@ -4,7 +4,7 @@ from project import *
 # benchmarks = ["BT", "CG", "EP", "FT", "LU", "MG", "SP"]
 benchmarks = ["CG", "MG"]
 class_type = "W"  # 可选 S, W, A, B, C 等
-num_runs = 5  # 运行次数
+num_runs = 1  # 运行次数
 
 # 存储所有结果
 results = {}
@@ -13,7 +13,7 @@ for benchmark in benchmarks:
     print(f"\n正在测试 {benchmark}...")
     
     # 初始化原始源文件
-    init_NPB(benchmark, "autoPar")
+    init_NPB(benchmark)
     
     # 记录所有运行时间
     runtimes = []
@@ -21,7 +21,7 @@ for benchmark in benchmarks:
     
     for run_idx in range(num_runs):
         print(f"  第 {run_idx + 1}/{num_runs} 次运行...")
-        success, runtime = run_NPB(benchmark, class_type)
+        success, runtime = run_NPB(benchmark, class_type,times=3)
         
         if not success:
             print(f"[✗] {benchmark} 验证失败或运行异常，跳过此benchmark")

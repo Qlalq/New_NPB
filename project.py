@@ -90,14 +90,15 @@ def replace_NPB(bench, function, folder):
         print(f"替换过程中出错: {e}，跳过替换")
 
 
-def run_NPB(bench, CLASS, timeout=300):
+def run_NPB(bench, CLASS, timeout=300, times=1):
     """
     执行 NPB , 返回结果正确性 & 执行时间
     
     Args:
         bench (str): NPB 基准测试名称，例如 "BT"
         CLASS (str): 数据大小，例如 "S", 从小到大可选"S" "W" "A" "B" "C" 
-        timeout (int): 执行超时时间(秒)，默认50秒
+        timeout (int): 执行超时时间(秒)，默认300秒
+        times (int): 重复执行次数，默认1次
     
     Return:
         正常执行?/执行时间(s), 执行失败则执行时间是9999
@@ -115,25 +116,40 @@ def run_NPB(bench, CLASS, timeout=300):
     # 构建运行命令
     run_command = f"./bin/{bench}.{CLASS}"
     
-    # 执行基准测试并获取输出
-    try:
-        result = subprocess.run(run_command, shell=True, check=True, cwd=NPB_dir, 
-                               capture_output=True, text=True, timeout=timeout)
-        output = result.stdout
-    except subprocess.TimeoutExpired:
-        return False, 9999  # 执行超时，返回错误
-    except subprocess.CalledProcessError:
-        return False, 9999  # 运行失败，返回错误
-
-    # 检查输出以确认结果
-    verification_successful = re.search(r"Verification\s*=\s*SUCCESSFUL", output)
-    time_match = re.search(r"Time in seconds\s*=\s*([\d.]+)", output)
+    # 存储每次运行的时间
+    execution_times = []
     
-    if verification_successful and time_match:
-        time_taken = float(time_match.group(1))
-        return True, time_taken  # 返回结果正确和执行时间
-    else:
-        return False, 9999  # 验证失败，返回错误
+    # 重复执行 times 次
+    for i in range(times):
+        # 执行基准测试并获取输出
+        try:
+            result = subprocess.run(run_command, shell=True, check=True, cwd=NPB_dir, 
+                                   capture_output=True, text=True, timeout=timeout)
+            output = result.stdout
+        except subprocess.TimeoutExpired:
+            return False, 9999  # 执行超时，返回错误
+        except subprocess.CalledProcessError:
+            return False, 9999  # 运行失败，返回错误
+
+        # 检查输出以确认结果
+        verification_successful = re.search(r"Verification\s*=\s*SUCCESSFUL", output)
+        time_match = re.search(r"Time in seconds\s*=\s*([\d.]+)", output)
+        
+        if verification_successful and time_match:
+            time_taken = float(time_match.group(1))
+            execution_times.append(time_taken)
+        else:
+            return False, 9999  # 验证失败，返回错误
+    
+    # 计算平均执行时间
+    average_time = sum(execution_times) / len(execution_times)
+    
+    # 汇总打印结果
+    print(f"{bench}.{CLASS} executed {times} times:")
+    print(f"Times: {execution_times}")
+    print(f"Average: {average_time:.3f}s")
+    
+    return True, average_time
 
 
 
