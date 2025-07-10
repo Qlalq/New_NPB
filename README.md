@@ -15,11 +15,10 @@
 
 ### 1. 环境变量设置
 
-在运行项目脚本之前，需要设置 `BASE_DIR` 环境变量，指向项目的根目录（即 `New_NPB_frame` 所在的路径）。
+在运行项目脚本之前，需要设置 `BASE_DIR`和`API_KEY` 环境变量，指向项目的根目录（即 `New_NPB_frame` 所在的路径）。
 
 ```shell
 export BASE_DIR="/path/to/your/New_NPB_frame"
-
 # 例如：
 # export BASE_DIR="workspace/New_NPB_frame"
 ```
