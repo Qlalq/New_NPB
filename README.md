@@ -23,17 +23,6 @@ export BASE_DIR="/path/to/your/New_NPB_frame"
 # export BASE_DIR="workspace/New_NPB_frame"
 ```
 
-### 2. 配置 API Key
-
-请在 `API.py` 文件中填入项目所需的API Key，以便调用相关的服务（如大型语言模型等）。
-
-```python
-# API.py 文件示例 (请替换 your_api_key_here)
-# ... 其他导入或代码 ...
-openai.api_key = "your_api_key_here"
-# ... 其他API调用代码 ...
-```
-
 
 ## 使用方法
 
