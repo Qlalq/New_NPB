@@ -11,6 +11,7 @@
 #define	TIMERS_ENABLED	FALSE
 
 static double x[2*NK];
+#pragma omp threadprivate(x)
 static double q[NQ];
 
 int main(int argc, char **argv) {
@@ -118,9 +119,7 @@ int main(int argc, char **argv) {
     {
       for (i = 0; i <= NQ - 1; i++) q[i] += qq[i];
     }
-#if defined(_OPENMP)
-    nthreads = omp_get_num_threads();
-#endif     
+    nthreads = omp_get_num_threads();    
 }     
 
     for (i = 0; i <= NQ-1; i++) {
