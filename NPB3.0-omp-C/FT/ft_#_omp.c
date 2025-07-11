@@ -94,6 +94,7 @@ int main(int argc, char **argv) {
 	    }
     }
     verify(NX, NY, NZ, niter, &verified, &class);
+#pragma omp parallel 
   {
 #if defined(_OPENMP)
 #pragma omp master    
