@@ -28,8 +28,10 @@ def init_NPB(bench, mode="no_omp"):
         src_file = f"{NPB_dir}/{bench}/{bench_lower}_ori.c"
     elif mode == "autoPar":
         src_file = f"{NPB_dir}/{bench}/rose_{bench_lower}_#_omp.c"
+    elif mode == "aaai":
+        src_file = f"{NPB_dir}/{bench}/{bench_lower}_aaai.c"
     else:
-        raise ValueError(f"不支持的模式: {mode}. 支持的模式: 'no_omp', 'ori', 'autoPar'")
+        raise ValueError(f"不支持的模式: {mode}.")
     
     dst_file = f"{NPB_dir}/{bench}/{bench_lower}.c"
     shutil.copy(src_file, dst_file)
